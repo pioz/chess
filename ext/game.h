@@ -34,9 +34,6 @@ Board* current_board (Game *g);
 Board* get_board (Game *g, int index);
 char* current_move (Game *g);
 char* current_full_move (Game *g);
-// bool pseudo_legal_move (Game *g, int from, int to);
-// void get_coord (Game *g, char piece, const char* disambiguating, const char *to_coord, char promote_in, int *from, int *to);
-// bool try_move (Board *board, int from, int to, char promote_in, Board *new_board, char **move_done, char *capture);
 bool apply_move (Game *g, int from, int to, char promote_in);
 void rollback (Game *g);
 

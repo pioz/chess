@@ -141,51 +141,61 @@ main ()
   init_chess_library ();
   int i, from, to;
 
-  Game *ga = init_game ();
-  Board *board = current_board (ga);
-  bboard king = board->king[WHITE];
-
-  print_bitboard (king);
-  printf ("%d\n", square2 (king));
-  print_bitboard (xray (board, 0, FALSE) & ~board->pieces[WHITE]);
-  return 0;
   for (i = 0; i < 1000; i++)
   {
     Game *g = init_game ();
-    Board *board = current_board (g);
+    Board *board;
+    char *fen;
+    // 1. e4 a6 2. Bc4 a5 3. Qh5 a4 4. Qxf7#
+    board = current_board (g);
     get_coord (board, 'P', "e", "e4", 0, &from, &to);
     pseudo_legal_move (board, from, to);
     apply_move (g, from, to, 0);
-    char *fen = to_fen (current_board (g));
-    free_game (g);
+    fen = to_fen (board);
     free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'P', "a", "a6", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'B', "", "c4", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'P', "a", "a5", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'Q', "", "h5", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'P', "a", "a4", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    board = current_board (g);
+    get_coord (board, 'Q', "", "f7", 0, &from, &to);
+    pseudo_legal_move (board, from, to);
+    apply_move (g, from, to, 0);
+    fen = to_fen (current_board (g));
+    free (fen);
+
+    free_game (g);
   }
-
-  /*
-  init_chess_library ();
-
-  Game *g = init_game ();
-
-  int i, from, to;
-  char string[6], promo;
-
-  while (1)
-    {
-      printf ("\n-----------------\n");
-      printf ("%s\n", print_board (current_board (g)));
-      printf ("Give me a move: ");
-      fgets (string, 7, stdin);
-      i = (int) strlen (string) - 1;
-      string[i] = '\0';
-      from = (string[0] - 97) + ((string[1] - 49) * 8);
-      to = (string[2] - 97) + ((string[3] - 49) * 8);
-      promo = string[4];
-      if (pseudo_legal_move (s, from, to) && apply_move (s, from, to, promo))
-          printf ("Move done is '%s'\n", current_move (g));
-      else
-        printf ("Invalid move\n");
-
-    }
-  free_game (g);
-  */
 }

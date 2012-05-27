@@ -331,13 +331,12 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
                 || disambiguating[0] == rank
                 || (disambiguating[0] == file && disambiguating[1] == rank))
                 {
-                  Board *new_board = NEW_BOARD;
-                  if (try_move (board, i, *to, promote_in, new_board, 0, 0))
+                  Board new_board;
+                  if (try_move (board, i, *to, promote_in, &new_board, 0, 0))
                     {
                       *from = i;
                       count++;
                     }
-                  free (new_board);
                 }
             }
         }
