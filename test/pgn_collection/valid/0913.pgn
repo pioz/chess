@@ -1,0 +1,25 @@
+[Event "Open"]
+[Site "Leeuwarden NED"]
+[Date "1997.10.??"]
+[Round "1"]
+[White "Van Mil, Johannes A J"]
+[Black "Van Wely, Loek"]
+[Result "1-0"]
+[WhiteELO "2420"]
+[BlackELO "2655"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A08"]
+[WhiteCountry "NED"]
+[BlackCountry "NED"]
+[PlyCount "117"]
+
+1.e4 c5 2.Nf3 e6 3.d3 Nc6 4.g3 d5 5.Nbd2 g6 6.Bg2 Bg7 7.O-O Nge7 8.Re1 b6 9.c3 Bb7 
+10.h4 h6 11.Nf1 d4 12.c4 e5 13.h5 g5 14.a3 Qd7 15.N3h2 O-O 16.Rb1 a6 17.b4 cxb4 
+18.axb4 b5 19.Nd2 Rfb8 20.Bf3 Bc8 21.Bg4 Qc7 22.Ba3 bxc4 23.Nxc4 Rb5 24.Bxc8 Nxc8 
+25.Qc2 Qd7 26.Kg2 Bf8 27.Nf3 f6 28.Rec1 N8a7 29.Qa4 Qb7 30.Ra1 Kg7 31.Nfd2 Nd8 32.Na5 
+Qf7 33.Qd1 Bxb4 34.Bxb4 Rxb4 35.Ndc4 Qe6 36.Nb3 Rc8 37.Nbd2 Nb5 38.Ra5 Nb7 39.Ra4 
+Rxa4 40.Qxa4 Nc5 41.Qc2 Nc3 42.Ra1 Rb8 43.Ra5 Qc6 44.Ra1 Rb4 45.Ra5 Kf8 46.Ra1 Ke7 
+47.Ra5 Rb5 48.Ra3 Qe8 49.Nb3 Nxb3 50.Rxb3 Qxh5 51.Ne3 dxe3 52.Rxc3 g4 53.Rc7+ Kf8 
+54.Rc8+ Kg7 55.Qc7+ Qf7 56.Qd8 Rb7 57.Qh8+ Kg6 58.Rg8+ Kh5 59.Rxg4 1-0
+

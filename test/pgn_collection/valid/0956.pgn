@@ -1,0 +1,21 @@
+[Event "-"]
+[Site "Akureyri"]
+[Date "1994.01.??"]
+[Round "9"]
+[White "Van Wely, Loek"]
+[Black "Berg, Klaus"]
+[Result "0-1"]
+[WhiteELO "2570"]
+[BlackELO "2440"]
+[WhiteTitle "IGM"]
+[BlackTitle "IGM"]
+[ECO "A57"]
+[WhiteCountry "NED"]
+[BlackCountry "DEN"]
+[PlyCount "50"]
+
+1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.b6 e6 6.Nc3 Nxd5 7.Nxd5 exd5 8.Qxd5 Nc6 9.Nf3 
+Rb8 10.e4 Be7 11.Bc4 O-O 12.O-O Na5 13.Bd3 Rxb6 14.Qh5 d5 15.Bd2 Nc6 16.Rad1 Rxb2 
+17.Bc3 Rxa2 18.exd5 g6 19.Qh6 Nd4 20.Bc4 Rc2 21.Nxd4 Rxc3 22.Nc6 Bg5 23.Nxd8 Bxh6 
+24.Nc6 Rxc4 25.d6 Bb7 0-1
+

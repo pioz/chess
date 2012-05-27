@@ -1,0 +1,19 @@
+[Event "AUT ch"]
+[Site "Finkenstein"]
+[Date "1989.??.??"]
+[White "Schroll, Gerhard"]
+[Black "Kummer, Helmut"]
+[Result "0-1"]
+[WhiteELO "2260"]
+[BlackELO "2270"]
+[WhiteTitle "FM"]
+[BlackTitle "FM"]
+[ECO "A52"]
+[WhiteCountry "AUT"]
+[BlackCountry "AUT"]
+[PlyCount "38"]
+
+1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e3 Nc6 6.Nc3 Ngxe5 7.Be2 O-O 8.O-O Re8 9.b3 
+d6 10.Na4 b6 11.a3 a5 12.Bd2 Bb7 13.Bc3 Re6 14.Qd2 Rg6 15.Ne1 Qh4 16.f4 Ng4 17.Nf3 
+Qe7 18.Bd4 Nxe3 19.f5 Rxg2+ 0-1
+

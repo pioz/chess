@@ -1,0 +1,17 @@
+[Event "-"]
+[Site "Poznan"]
+[Date "1983.08.??"]
+[Round "10"]
+[White "Stempin, Pawel"]
+[Black "Nowak, Ignacy"]
+[Result "1-0"]
+[WhiteELO "2380"]
+[BlackELO "2355"]
+[ECO "A70"]
+[WhiteCountry "POL"]
+[BlackCountry "POL"]
+[PlyCount "29"]
+
+1.d4 Nf6 2.c4 e6 3.Nf3 c5 4.d5 exd5 5.cxd5 g6 6.Nc3 d6 7.Bf4 Bg7 8.Qa4+ Bd7 9.Qb3 
+Qc7 10.e4 O-O 11.Be2 Bg4 12.O-O Bxf3 13.Nb5 Qb6 14.Bxf3 Rd8 15.Nxd6 1-0
+

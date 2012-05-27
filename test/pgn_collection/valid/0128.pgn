@@ -1,0 +1,21 @@
+[Event "Team tournament"]
+[Site "FRA"]
+[Date "1992.??.??"]
+[White "Anic, Darko"]
+[Black "Dorfman, Josif D"]
+[Result "0-1"]
+[WhiteELO "2415"]
+[BlackELO "2580"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A27"]
+[WhiteCountry "FRA"]
+[BlackCountry "FRA"]
+[PlyCount "64"]
+
+1.c4 e5 2.Nc3 Nc6 3.Nf3 f5 4.e4 Nf6 5.d4 exd4 6.Nxd4 fxe4 7.Bg5 Bb4 8.Rc1 O-O 9.Be2 
+Qe8 10.O-O Qe5 11.Be3 Bd6 12.g3 Bc5 13.Ncb5 Nxd4 14.Nxd4 d6 15.Qd2 Bg4 16.b4 Bxe2 
+17.Nxe2 Bxe3 18.fxe3 a5 19.Nd4 axb4 20.Rf5 Qe7 21.c5 d5 22.Qxb4 c6 23.a4 Ng4 24.Qb3 
+g6 25.Rff1 Ne5 26.Rb1 Rxf1+ 27.Rxf1 Nd3 28.Ra1 Rf8 29.a5 Qg5 30.Nc2 Qf6 31.Qxb7 
+Qf2+ 32.Kh1 Qe2 0-1
+

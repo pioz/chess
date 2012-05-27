@@ -1,0 +1,11 @@
+[Event "Edited game"]
+[Site "pyroblast.local"]
+[Date "2012.05.16"]
+[Round "-"]
+[White "-"]
+[Black "-"]
+[Result "1-0"]
+
+1. e4 a6 2. Qh5 a5 3. Qg4 f6 4. Qh5+ g6 5. Qh6 g5 6. Qh5#
+{Xboard adjudication: Checkmate} 1-0
+

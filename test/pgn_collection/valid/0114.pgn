@@ -1,0 +1,31 @@
+[Event "POL team tournament"]
+[Site "Krynica POL"]
+[Date "1997.09.29"]
+[Round "6"]
+[White "Socko, Bartosz"]
+[Black "Goj, Artur"]
+[Result "1-0"]
+[WhiteELO "2435"]
+[BlackELO "2330"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A07"]
+[WhiteCountry "POL"]
+[BlackCountry "POL"]
+[PlyCount "206"]
+
+1.g3 d5 2.Bg2 Nf6 3.Nf3 c6 4.O-O Bf5 5.d3 Nbd7 6.Nbd2 h6 7.Re1 e5 8.e4 dxe4 9.dxe4 
+Be6 10.Qe2 Bc5 11.b3 O-O 12.Bb2 Qc7 13.h3 b5 14.Nf1 Rfe8 15.g4 Nh7 16.Rad1 f6 17.Ng3 
+Ndf8 18.Nh4 Bf7 19.Nhf5 Ne6 20.h4 Nf4 21.Qf3 Bf8 22.Ne2 Ne6 23.Bc1 Red8 24.Qg3 Rxd1 
+25.Rxd1 Rd8 26.Rf1 Qa5 27.f4 Qxa2 28.g5 exf4 29.Nxf4 Nexg5 30.hxg5 hxg5 31.e5 Qxc2 
+32.e6 Qxf5 33.exf7+ Kxf7 34.Nh3 Qd3 35.Qc7+ Qd7 36.Qxd7+ Rxd7 37.Bxc6 Rd3 38.Nf2 
+Rg3+ 39.Kh2 Rc3 40.Bd5+ Ke8 41.Bg8 Bd6+ 42.Kh1 Bf4 43.Ba3 Nf8 44.Re1+ Re3 45.Rxe3+ 
+Bxe3 46.Ne4 Ng6 47.Nd6+ Kd7 48.Nxb5 Nf4 49.Nd6 g6 50.Ne4 Bd4 51.Bf7 g4 52.Bd6 g5 
+53.Ba3 Nd3 54.Kg2 Be5 55.Bc4 Nf4+ 56.Kh1 Kc6 57.Bc1 Nd5 58.Bd2 Bf4 59.Be1 f5 60.Ng3 
+Bxg3 61.Bxg3 Ne3 62.Be2 f4 63.Bf2 a5 64.Be1 Kb6 65.Bc3 g3 66.Bf6 Kc5 67.Bxg5 Kb4 
+68.Bxf4 Nd5 69.Bd2+ Kxb3 70.Bxa5 Nf4 71.Ba6 Kc2 72.Bc7 Nd5 73.Bxg3 Kc3 74.Kg2 Kd4 
+75.Kf3 Nb4 76.Bb7 Nd5 77.Bh4 Ke5 78.Bf2 Nf6 79.Ba7 Nd5 80.Bc5 Nf6 81.Ba3 Nd5 82.Bb2+ 
+Ke6 83.Ba6 Kf5 84.Bc8+ Kg5 85.Be6 Ne7 86.Ke4 Ng6 87.Bh3 Kh4 88.Bf5 Kg5 89.Ba3 Kf6 
+90.Bh3 Kg5 91.Bf1 Kf6 92.Bb2+ Kg5 93.Kf3 Nh4+ 94.Ke4 Ng6 95.Bb5 Kg4 96.Be8 Kg5 97.Bd7 
+Nf8 98.Bf5 Ng6 99.Ba3 Kf6 100.Bb2+ Kg5 101.Bh3 Nh4 102.Bc1+ Kf6 103.Bb2+ Kg6 1-0
+

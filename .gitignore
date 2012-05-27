@@ -1,0 +1,8 @@
+*.gem
+.bundle
+doc/*
+ext/Makefile
+ext/Makefile2
+ext/*.o
+Gemfile.lock
+pkg/*

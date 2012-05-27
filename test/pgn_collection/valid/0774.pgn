@@ -1,0 +1,27 @@
+[Event "Petrov mem"]
+[Site "St Petersburg RUS"]
+[Date "1995.??.??"]
+[Round "7"]
+[White "Skomorokhin, Roman"]
+[Black "Andreev, Konstantin"]
+[Result "1-0"]
+[WhiteELO "2450"]
+[BlackELO "2310"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A58"]
+[WhiteCountry "RUS"]
+[BlackCountry "RUS"]
+[PlyCount "135"]
+
+1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 Bxa6 6.Nc3 g6 7.g3 d6 8.Bg2 Bg7 9.Nf3 
+O-O 10.O-O Nbd7 11.Rb1 Qb6 12.b3 Rfb8 13.Qc2 Qb7 14.Rd1 Ne8 15.e4 Nc7 16.a4 Ra7 
+17.Bg5 h6 18.Be3 Qa8 19.Bh3 Ne8 20.Bf1 Rab7 21.h3 Bxf1 22.Rxf1 Qa5 23.Nb5 Nc7 24.Bd2 
+Qa6 25.Na3 e6 26.dxe6 Nxe6 27.Nb5 Qc6 28.Bc3 Nf6 29.Rfe1 Rd8 30.Rbd1 Rbd7 31.Qe2 
+Re8 32.Qd3 Ng5 33.Nxg5 hxg5 34.Bxf6 Bxf6 35.Qd5 Qa6 36.f4 gxf4 37.gxf4 Red8 38.Kg2 
+Kg7 39.Re3 Qc8 40.Red3 Qb8 41.Qc4 Qa8 42.Rxd6 Bd4 43.R1xd4 cxd4 44.Qxd4+ Kh6 45.Rxd7 
+Rxd7 46.Qxd7 Qxe4+ 47.Kf2 Qc2+ 48.Ke1 Qxb3 49.Qd4 Qb1+ 50.Kd2 Qa2+ 51.Kc1 Kh7 52.Nc3 
+Qb3 53.Kd2 Qb2+ 54.Kd3 Qg2 55.Ne4 Qf1+ 56.Kc2 Qg2+ 57.Kb3 Qxh3+ 58.Kb4 Qf1 59.Nc5 
+f5 60.a5 Qb1+ 61.Kc4 g5 62.fxg5 Qc1+ 63.Kb5 f4 64.a6 Qb1+ 65.Kc6 Qg6+ 66.Qd6 Qxg5 
+67.a7 Qg8 68.Qd7+ 1-0
+

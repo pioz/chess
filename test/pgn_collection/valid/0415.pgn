@@ -1,0 +1,25 @@
+[Event "FS GM"]
+[Site "Budapest HUN"]
+[Date "1998.02.12"]
+[Round "7"]
+[White "Vegh, Endre"]
+[Black "Borocz, Istvan"]
+[Result "0-1"]
+[WhiteELO "2350"]
+[BlackELO "2430"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A43"]
+[WhiteCountry "HUN"]
+[BlackCountry "HUN"]
+[PlyCount "116"]
+
+1.d4 e6 2.c4 c5 3.d5 exd5 4.cxd5 d6 5.Nc3 g6 6.e4 Bg7 7.Nf3 a6 8.a4 Bg4 9.Be2 Bxf3 
+10.Bxf3 Nd7 11.O-O Ne7 12.Bg5 h6 13.Be3 O-O 14.Qd2 Kh7 15.Be2 f5 16.exf5 Nxf5 17.Bd3 
+Ne5 18.Bxf5 Rxf5 19.Qe2 Qh4 20.f3 Re8 21.Bf2 Qc4 22.Qxc4 Nxc4 23.Ne4 Rxd5 24.Rad1 
+Rxd1 25.Rxd1 Bxb2 26.Rb1 b6 27.Nxd6 Nxd6 28.Rxb2 Nc4 29.Rc2 Na5 30.Rd2 Re7 31.Rd6 
+Nc4 32.Rc6 Rb7 33.Bg3 Kg7 34.Rc8 Kf6 35.Ra8 a5 36.Rc8 Re7 37.Bc7 Re6 38.Rb8 Ke7 
+39.Kf2 Kd7 40.Be5 g5 41.Rb7+ Kc6 42.Rc7+ Kd5 43.Rd7+ Nd6 44.Bg3 Kc6 45.Rh7 c4 46.h4 
+Nf5 47.Rc7+ Kd5 48.hxg5 Nxg3 49.Kxg3 hxg5 50.Kg4 Re5 51.g3 Kd4 52.f4 gxf4 53.gxf4 
+Re1 54.f5 c3 55.f6 Rf1 56.Kg5 Kd3 57.Rc6 c2 58.Rd6+ Ke4 0-1
+

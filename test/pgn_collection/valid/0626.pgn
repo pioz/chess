@@ -1,0 +1,22 @@
+[Event "Lloyds Bank"]
+[Site "London ENG"]
+[Date "1987.07.??"]
+[Round "6"]
+[White "Brenninkmeijer, Joris"]
+[Black "Hergott, Deen"]
+[Result "0-1"]
+[WhiteELO "2360"]
+[BlackELO "2305"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A43"]
+[WhiteCountry "NED"]
+[BlackCountry "CAN"]
+[PlyCount "60"]
+
+1.d4 g6 2.c4 Bg7 3.Nc3 c5 4.d5 Bxc3+ 5.bxc3 f5 6.g4 fxg4 7.e4 Qa5 8.Bd2 d6 9.h3 
+gxh3 10.f4 Nf6 11.e5 Ne4 12.Bxh3 Nd7 13.e6 Ndf6 14.Bg2 Nxd2 15.Qxd2 Qa4 16.Qd3 b5 
+17.cxb5 a6 18.Ne2 axb5 19.Qxg6+ Kd8 20.Qd3 Rg8 21.Bf3 Bb7 22.Rh6 Qc4 23.Qf5 Rg1+ 
+24.Nxg1 Qxc3+ 25.Kf2 Qd4+ 26.Kg2 Qxa1 27.Ne2 Rxa2 28.Qg5 Bxd5 29.Bxd5 Rxe2+ 30.Kh3 
+Qc3+ 0-1
+

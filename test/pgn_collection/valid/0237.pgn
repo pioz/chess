@@ -1,0 +1,21 @@
+[Event "FIN ch"]
+[Site "Espoo"]
+[Date "1983.??.??"]
+[Round "1"]
+[White "Kanko, Ilkka"]
+[Black "Havansi, E"]
+[Result "0-1"]
+[WhiteELO "2275"]
+[BlackELO "2265"]
+[ECO "A73"]
+[WhiteCountry "FIN"]
+[BlackCountry "FIN"]
+[PlyCount "81"]
+
+1.d4 Nf6 2.c4 e6 3.Nf3 c5 4.d5 d6 5.Nc3 e5 6.e4 Be7 7.Bd3 O-O 8.h3 Na6 9.Be3 Bd7 
+10.g4 Rb8 11.Qd2 Nc7 12.Nh4 Nfxd5 13.exd5 Bxh4 14.O-O-O b5 15.f4 bxc4 16.Bxc4 Rb4 
+17.b3 exf4 18.Bxf4 Bb5 19.a3 Rxc4 20.bxc4 Bxc4 21.g5 f6 22.Rdg1 fxg5 23.Bxg5 Bxg5 
+24.Rxg5 Qf6 25.Rhg1 g6 26.R5g4 Bxd5 27.Qd3 Bf7 28.Rf1 Qe5 29.Re4 Qg5+ 30.Kb2 Rb8+ 
+31.Ka1 Rb3 32.Ref4 Rxa3+ 33.Kb2 Rb3+ 34.Kc2 Nd5 35.Nxd5 Rxd3 36.Nf6+ Kg7 37.Kxd3 
+c4+ 38.Kc2 Be6 39.Ne8+ Kh6 40.h4 Qg2+ 41.R1f2 0-1
+

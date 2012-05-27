@@ -1,0 +1,12 @@
+= Chess =
+
+A fast Ruby library to play chess with Ruby.
+This library is quite fast because rappresent
+the game situations with bitboards. More over the
+move generator is write in C as a Ruby extension.
+
+== Installation ==
+
+    gem install chess
+
+== Usage ==

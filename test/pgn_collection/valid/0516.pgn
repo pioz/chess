@@ -1,0 +1,22 @@
+[Event "Zonal tournament"]
+[Site "Lyon FRA"]
+[Date "1990.03.??"]
+[Round "9"]
+[White "Seret, Jean-Luc"]
+[Black "Van der Wiel, John T H"]
+[Result "0-1"]
+[WhiteELO "2405"]
+[BlackELO "2550"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A13"]
+[WhiteCountry "FRA"]
+[BlackCountry "NED"]
+[PlyCount "62"]
+
+1.c4 e6 2.g3 Nf6 3.Bg2 d5 4.Nf3 dxc4 5.Qc2 a6 6.a4 Nc6 7.Na3 b5 8.O-O Nb4 9.Qb1 
+Bb7 10.b3 Be4 11.Qb2 cxb3 12.axb5 axb5 13.Nxb5 Rb8 14.Nc3 Bc2 15.Ne1 Be7 16.Ra3 
+O-O 17.Nxc2 bxc2 18.Rb3 c5 19.d3 Nfd5 20.Nxd5 exd5 21.Bf4 Bf6 22.Qc1 Ra8 23.Bd2 
+Ra2 24.e3 Qa5 25.Bxb4 cxb4 26.d4 Rc8 27.Qd2 c1=Q 28.Rxc1 Rxd2 29.Rxc8+ Bd8 30.Rxb4 
+Rd1+ 31.Bf1 g6 0-1
+

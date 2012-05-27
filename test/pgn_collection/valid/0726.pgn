@@ -1,0 +1,20 @@
+[Event "IBM III"]
+[Site "Amsterdam NED"]
+[Date "1980.05.??"]
+[Round "8"]
+[White "Haik, Aldo"]
+[Black "Van der Sterren, Paul"]
+[Result "0-1"]
+[WhiteELO "2440"]
+[BlackELO "2410"]
+[ECO "A57"]
+[WhiteCountry "FRA"]
+[BlackCountry "NED"]
+[PlyCount "72"]
+
+1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nf3 g6 5.g3 d6 6.Bg2 Bg7 7.O-O Nbd7 8.Nfd2 O-O 9.Re1 
+a6 10.Qc2 Rb8 11.Nc3 e6 12.Nde4 exd5 13.Nxf6+ Nxf6 14.cxd5 Re8 15.Bd2 Bd7 16.e4 
+Ng4 17.Nd1 c4 18.Ne3 Nxe3 19.Bxe3 b4 20.Rad1 Qa5 21.b3 Rbc8 22.bxc4 Ba4 23.Qe2 Bxd1 
+24.Rxd1 Qa4 25.Bh3 Rb8 26.Bg2 b3 27.axb3 Qxb3 28.c5 dxc5 29.Bxc5 a5 30.d6 Red8 31.h4 
+a4 32.Rd3 Qc4 33.Ba3 Be5 34.Qd1 Rb3 35.Bf1 Rxd3 36.Bxd3 Qd4 0-1
+

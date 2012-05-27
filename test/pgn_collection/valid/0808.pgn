@@ -1,0 +1,21 @@
+[Event "-"]
+[Site "Toscolano"]
+[Date "1996.10.18"]
+[Round "1"]
+[White "Tomasi, D"]
+[Black "Cugini, Werter"]
+[Result "0-1"]
+[WhiteELO "2045"]
+[BlackELO "2255"]
+[ECO "A41"]
+[WhiteCountry "ITA"]
+[BlackCountry "ITA"]
+[PlyCount "76"]
+
+1.d4 d6 2.c4 e5 3.dxe5 dxe5 4.Qxd8+ Kxd8 5.Nc3 c6 6.Bg5+ f6 7.O-O-O+ Kc7 8.Bh4 Be6 
+9.e4 Nd7 10.f3 Bc5 11.Nh3 Ne7 12.g4 h5 13.g5 Ng6 14.Be1 Rad8 15.gxf6 gxf6 16.Nf2 
+Nf4 17.Nd3 Nxd3+ 18.Bxd3 Be3+ 19.Kc2 Nc5 20.Bh4 Bg5 21.Bxg5 fxg5 22.Be2 Bf7 23.Rhg1 
+Ne6 24.Rxd8 Rxd8 25.b3 h4 26.Rd1 Nd4+ 27.Kc1 Bh5 28.Rg1 Nxe2+ 29.Nxe2 Bxf3 30.Nc3 
+g4 31.Kc2 Rd4 32.Re1 Kd7 33.Re3 Ke6 34.h3 Kf6 35.hxg4 Bxg4 36.Ne2 Rd7 37.Ng1 Kg5 
+38.Nf3+ Kf4 0-1
+
