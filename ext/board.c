@@ -207,14 +207,6 @@ capture (Board *board, int color, int square)
 bool
 pieces_can_safe_capture (Board *board, int color, int square)
 {
-  // int i;
-  // int pieces[16];
-  // int n = same_pieces_that_can_capture_a_square (board, color, square, pieces, 0);
-  // Board new_board;
-  // for (i = 0; i < n; i++)
-  //   if (try_move (board, pieces[i], square, 'Q', &new_board, 0, 0))
-  //     return TRUE;
-  // return FALSE;
   int pieces[16];
   return same_pieces_that_can_capture_a_square (board, color, square, pieces, 0) > 0;
 }
@@ -261,23 +253,6 @@ king_in_checkmate (Board *board, int color)
   bboard attack = xray (board, attacker, TRUE) & slide;
   bboard defend = all_xray_friend (board, color, FALSE);
   bboard shield = attack & defend;
-
-  // printf ("%s\n", print_board (board));
-  // printf ("Active color is %d\n", board->active_color);
-  // printf ("attackers\n");
-  // print_bitboard (attackers2);
-  // printf ("slide\n");
-  // print_bitboard (slide);
-  // printf ("xray\n");
-  // print_bitboard (xray (board, attacker));
-  // printf ("attack\n");
-  // print_bitboard (attack);
-  // printf ("defend\n");
-  // print_bitboard (defend);
-  // printf ("attack - defend\n");
-  // print_bitboard (attack & defend);
-  // printf ("\n\n\n=============\n\n\n");
-
   if (shield)
     {
       int s[64];
@@ -287,6 +262,17 @@ king_in_checkmate (Board *board, int color)
         if (pieces_can_safe_capture (board, color, s[i]))
           return FALSE;
     }
+  return TRUE;
+}
+
+bool
+stalemate (Board *board, int color)
+{
+  int i;
+  for (i = 0; i < 64; i++)
+    if (get_color (board, i) == color)
+      if (xray (board, i, FALSE))
+        return FALSE;
   return TRUE;
 }
 

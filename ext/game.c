@@ -50,7 +50,7 @@ current_board (Game *g)
 Board*
 get_board (Game *g, int index)
 {
-  if (index == 0)
+  if (index < 0)
     return &STARTING_BOARD;
   if (index < g->current)
     return g->boards[index];

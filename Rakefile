@@ -6,6 +6,7 @@ Rake::RDocTask.new do |rd|
   rd.main = 'README.rdoc'
   rd.rdoc_dir = 'doc'
   rd.rdoc_files.include('README.rdoc', 'lib/**/*.rb', 'ext/*.c')
+  rd.options << '-f' << 'horo'
 end
 
 require 'rake/testtask'
