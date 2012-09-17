@@ -45,6 +45,16 @@ module Chess
       moves.each { |m| move(m) }
     end
 
+    # Return `:white` if the active player is the white player, `:black` otherwise.
+    def active_player
+      self.board.active_color ? :black : :white
+    end
+
+    # Return `:white` if the inactive player is the white player, `:black` otherwise.
+    def inactive_player
+      self.board.active_color ? :white : :black
+    end
+
     private
 
     # Expand the short algebraic chess notation string +m+ in a hash like this:
