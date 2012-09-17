@@ -6,4 +6,5 @@ ext/Makefile2
 ext/*.bundle
 ext/*.o
 Gemfile.lock
+main.rb
 pkg/*
