@@ -1,12 +1,32 @@
-= Chess =
+= Chess
 
 A fast Ruby library to play chess with Ruby.
 This library is quite fast because rappresent
 the game situations with bitboards. More over the
 move generator is write in C as a Ruby extension.
 
-== Installation ==
+== Installation
 
     gem install chess
 
-== Usage ==
+== Usage
+
+  require 'chess'
+  g = Chess::Game.new
+  while (1)
+    begin
+      print "Give me a #{g.active_player} move: "
+      g.move = gets.chop
+      puts g.board
+      puts g.moves.last
+      if g.board.checkmate?
+        puts "#{g.unactive_player} wins"
+        break
+      end
+    rescue Chess::IllegalMoveError => e
+      puts 'Illegal move!'
+    end
+  end
+
+== Copyright
+Copyright © 2012 [Enrico Pilotto (@pioz)](http://github.com/pioz). See [LICENSE](https://github.com/pioz/chess/blob/master/LICENSE) for details.
