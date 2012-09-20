@@ -1,8 +1,8 @@
 *.gem
 .bundle
 doc
+ext/chess
 ext/Makefile
-ext/Makefile2
 ext/*.bundle
 ext/*.o
 Gemfile.lock
