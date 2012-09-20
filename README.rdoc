@@ -20,13 +20,25 @@ move generator is write in C as a Ruby extension.
       puts g.board
       puts g.moves.last
       if g.board.checkmate?
-        puts "#{g.unactive_player} wins"
+        puts "#{g.inactive_player} wins"
         break
       end
     rescue Chess::IllegalMoveError => e
       puts 'Illegal move!'
     end
   end
+
+== TODO
+
+* Draw
+  * Stalemate
+  * Insuf material
+* Draw request
+  * threefold repetition (use FEN)
+  * 50 move rule (use FEN)
+* Draw agreed (set result if your turn)
+* Resign (set result if your turn)
+* Test
 
 == Questions or problems?
 
