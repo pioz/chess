@@ -1,4 +1,3 @@
-# :nodoc:
 require 'test_helper'
 
 class ChessTest < Test::Unit::TestCase

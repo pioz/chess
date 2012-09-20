@@ -1,4 +1,3 @@
-# :nodoc:
 require 'chess'
 require 'test/unit'
 
