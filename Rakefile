@@ -12,16 +12,6 @@ end
 require 'rake/testtask'
 task :default => :test
 Rake::TestTask.new do |test|
-  test.verbose = true
   test.libs << 'test'
-  test.libs << 'lib'
-  test.test_files = FileList['test/test*.rb']
-end
-%w(collection to_check).each do |test_name|
-  Rake::TestTask.new("test:#{test_name}") do |test|
-    test.verbose = true
-    test.libs << 'test'
-    test.libs << 'lib'
-    test.test_files = FileList["test/test_pgn_#{test_name}.rb"]
-  end
+  test.test_files = FileList["test/test_#{ENV['T'] || '*'}.rb"]
 end
