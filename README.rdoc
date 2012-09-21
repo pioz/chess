@@ -13,32 +13,19 @@ move generator is write in C as a Ruby extension.
 
   require 'chess'
   g = Chess::Game.new
-  while (1)
+  while (!g.over?)
     begin
       print "Give me a #{g.active_player} move: "
-      g.move = gets.chop
+      input = gets.chop
+      break if input == 'quit'
+      g.move = input
       puts g.board
       puts g.moves.last
-      if g.board.checkmate?
-        puts "#{g.inactive_player} wins"
-        break
-      end
     rescue Chess::IllegalMoveError => e
       puts 'Illegal move!'
     end
   end
-
-== TODO
-
-* Draw
-  * Stalemate
-  * Insuf material
-* Draw request
-  * threefold repetition (use FEN)
-  * 50 move rule (use FEN)
-* Draw agreed (set result if your turn)
-* Resign (set result if your turn)
-* Test
+  puts g.status
 
 == Questions or problems?
 
