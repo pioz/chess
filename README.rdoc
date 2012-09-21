@@ -18,7 +18,7 @@ move generator is write in C as a Ruby extension.
       print "Give me a #{g.active_player} move: "
       input = gets.chop
       break if input == 'quit'
-      g.move = input
+      g << input
       puts g.board
       puts g.moves.last
     rescue Chess::IllegalMoveError => e
