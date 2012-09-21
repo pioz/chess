@@ -32,6 +32,54 @@ module Chess
       end
     end
 
+    # :nodoc:
+    def gen_pgn(file_to_save, moves = [])
+      done = false
+      pipe = IO.popen('gnuchess', 'r+')
+      begin
+        pipe.write("depth 1\n")
+        pipe.write("force\n")
+        pipe.write("name chess.rb\n")
+        moves.each do |move|
+          pipe.write("#{move}\n")
+        end
+        while(!done)
+          pipe.write("go\n")
+          while line = pipe.gets
+            if line =~ /My move is : /
+              break
+            elsif line =~ / : resign/
+              break
+            elsif line =~ / : 1-0 {White mates}/
+              done = :white_wins
+              break
+            elsif line =~ / : 0-1 {Black mates}/
+              done = :black_wins
+              break
+            elsif m = line.match(/1\/2-1\/2 {(.*?)}/)
+              case m[1]
+              when 'Stalemate'
+                done = :stalemate
+              when 'Draw by repetition'
+                done = :repetition
+              when 'Draw by fifty-move rule'
+                done = :fifty_move_rule
+              when 'Draw by insufficient material'
+                done = :insufficient_material
+              end
+              break
+            end
+          end
+        end
+        dir = File.dirname(file_to_save)
+        name = File.basename(file_to_save)
+        pipe.write("pgnsave #{File.join(dir, done.to_s, name)}\n")
+      ensure
+        pipe.write("quit\n")
+        pipe.close
+      end
+    end
+
     # # Open a pipe with Gnuchess.
     # def initialize
     #   @pipe = IO.popen('gnuchess -x', 'r+')

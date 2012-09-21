@@ -13,11 +13,24 @@ module Chess
 
     # Creates a new game from a file in PGN format.
     # May be raise an InvalidPgnFormatError or IllegalMoveError or BadNotationError.
-    def self.load_from_pgn(file)
+    def self.load_pgn(file)
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new
       pgn.moves.each { |m| game.move(m) }
       return game
+    end
+
+    # Creates a new game from a FEN string.
+    # _Warning_: this game do not have history before the FEN placement.
+    # May be raise an InvalidFenFormatError.
+    def self.load_fen(fen)
+      if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|\-)\s([a-h][1-8]|\-)\s(\d+)\s(\d+)$/
+        game = Chess::Game.new
+        game.set_fen!(fen)
+        return game
+      else
+        raise InvalidFenFormatError.new(fen)
+      end
     end
 
     # Make a move. This add a new Board in the Storyboard.
@@ -45,14 +58,22 @@ module Chess
       moves.each { |m| move(m) }
     end
 
-    # Return `:white` if the active player is the white player, `:black` otherwise.
+    # Return +:white+ if the active player is the white player, +:black+ otherwise.
     def active_player
       self.board.active_color ? :black : :white
     end
 
-    # Return `:white` if the inactive player is the white player, `:black` otherwise.
+    # Return +:white+ if the inactive player is the white player, +:black+ otherwise.
     def inactive_player
       self.board.active_color ? :white : :black
+    end
+
+    # Return the PGN rappresenting the game as string.
+    def to_pgn
+      pgn = Chess::Pgn.new
+      pgn.moves = self.moves
+      pgn.result = self.result
+      return pgn.to_s
     end
 
     private

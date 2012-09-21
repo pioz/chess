@@ -140,6 +140,25 @@ print_bitboard (bboard b)
 }
 
 // Bitboard manipulations
+
+bboard
+has_only_one_one (bboard b)
+{
+  return b && !(b & (b-1));
+}
+
+bboard
+only_white_squares (bboard b)
+{
+  return !((b ^ WHITE_SQUARES) & b);
+}
+
+bboard
+only_black_squares (bboard b)
+{
+  return !((b ^ BLACK_SQUARES) & b);
+}
+
 bboard
 mirror_horizontal (bboard b)
 {

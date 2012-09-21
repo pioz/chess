@@ -26,6 +26,23 @@ game_alloc (VALUE class)
 }
 
 /*
+ * call-seq: set_fen!(fen)
+ *
+ * Set the game position with a FEN string.
+ *
+ * Parameters are:
+ * +fen+:: the FEN (Forsyth–Edwards Notation) string notation used to set the game position.
+ */
+VALUE
+game_set_fen (VALUE self, VALUE fen)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  set_fen (g, StringValuePtr (fen));
+  return self;
+}
+
+/*
  * call-seq: move(piece, disambiguating, to_coord, promote_in)
  *
  * Make a move. This add a new Board in the Game.
@@ -188,16 +205,19 @@ game_full_moves (VALUE self)
 }
 
 /*
- * call-seq: size
+ * call-seq: threefold_repetition?
  *
- * Returns the number of moves done.
+ * Returns +true+ if a player can claim draw by the threefold repetition rule, +false+ otherwise.
  */
 VALUE
-game_size (VALUE self)
+game_threefold_repetition (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
-  return INT2FIX (g->current);
+  if (threefold_repetition (g))
+    return Qtrue;
+  else
+    return Qfalse;
 }
 
 /*
@@ -220,12 +240,48 @@ game_result (VALUE self)
   return rb_result;
 }
 
+/*
+ * call-seq: size
+ *
+ * Returns the number of moves done.
+ */
+VALUE
+game_size (VALUE self)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  return INT2FIX (g->current);
+}
+
+/*
+ * call-seq: each { |board| block }
+ *
+ * Calls +block+ once for each +board+ in self, passing that +board+ as a parameter. Return self.
+ * If no block is given, the array of game moves is returned instead.
+ */
+VALUE
+game_each (VALUE self)
+{
+  if (!rb_block_given_p ())
+    return game_moves(self);
+  int i;
+  Board *board;
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  for (i = 0; i < g->current; i++)
+    {
+      board = get_board (g, i);
+      rb_yield (Data_Wrap_Struct (board_klass, 0, 0, board));
+    }
+  return self;
+}
+
 // Board
 
 /*
  * call-seq: check?
  *
- * Returns +true+ if the king of the color that has the turn is in check, +false otherwise+.
+ * Returns +true+ if the king of the color that has the turn is in check, +false+ otherwise.
  */
 VALUE
 board_king_in_check (VALUE self)
@@ -241,7 +297,7 @@ board_king_in_check (VALUE self)
 /*
  * call-seq: checkmate?
  *
- * Returns +true+ if the king of the color that has the turn is in checkmate, +false otherwise+.
+ * Returns +true+ if the king of the color that has the turn is in checkmate, +false+ otherwise.
  */
 VALUE
 board_king_in_checkmate (VALUE self)
@@ -249,6 +305,54 @@ board_king_in_checkmate (VALUE self)
   Board *board;
   Data_Get_Struct (self, Board, board);
   if (king_in_checkmate (board, board->active_color))
+    return Qtrue;
+  else
+    return Qfalse;
+}
+
+/*
+ * call-seq: stalemate?
+ *
+ * Returns +true+ if the pieces of the color that has the turn are in stalemate, +false+ otherwise.
+ */
+VALUE
+board_stalemate (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  if (stalemate (board, board->active_color))
+    return Qtrue;
+  else
+    return Qfalse;
+}
+
+/*
+ * call-seq: insufficient_material?
+ *
+ * Returns +true+ if the board has insufficient material to checkmate, +false+ otherwise.
+ */
+VALUE
+board_insufficient_material (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  if (insufficient_material (board))
+    return Qtrue;
+  else
+    return Qfalse;
+}
+
+/*
+ * call-seq: fifty_move_rule?
+ *
+ * Returns +true+ if a player can claim draw by the fifty-move rule, +false+ otherwise.
+ */
+VALUE
+board_fifty_move_rule (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  if (fifty_move_rule (board))
     return Qtrue;
   else
     return Qfalse;
@@ -337,15 +441,11 @@ Init_chess ()
   VALUE chess = rb_define_module ("Chess");
 
   /*
-   * This exception will be raised​when making an illegal move.
-   */
-  illegal_move_error = rb_define_class_under (chess, "IllegalMoveError", rb_eStandardError);
-
-  /*
    * This class rappresents a collection of boards of a single chess game.
    */
   VALUE game = rb_define_class_under (chess, "CGame", rb_cObject);
   rb_define_alloc_func (game, game_alloc);
+  rb_define_method (game, "set_fen!", game_set_fen, 1);
   rb_define_method (game, "move", game_move, 4);
   rb_define_method (game, "move2", game_move2, 3);
   rb_define_method (game, "move3", game_move3, 3);
@@ -353,8 +453,10 @@ Init_chess ()
   rb_define_method (game, "board", game_last_board, 0);
   rb_define_method (game, "moves", game_moves, 0);
   rb_define_method (game, "full_moves", game_full_moves, 0);
-  rb_define_method (game, "size", game_size, 0);
+  rb_define_method (game, "threefold_repetition?", game_threefold_repetition, 0);
   rb_define_method (game, "result", game_result, 0);
+  rb_define_method (game, "size", game_size, 0);
+  rb_define_method (game, "each", game_each, 0);
 
   /*
    * This class rappresents a chess board.
@@ -364,9 +466,17 @@ Init_chess ()
   board_klass = rb_define_class_under (chess, "Board", rb_cObject);
   rb_define_method (board_klass, "check?", board_king_in_check, 0);
   rb_define_method (board_klass, "checkmate?", board_king_in_checkmate, 0);
+  rb_define_method (board_klass, "stalemate?", board_stalemate, 0);
+  rb_define_method (board_klass, "insufficient_material?", board_insufficient_material, 0);
+  rb_define_method (board_klass, "fifty_rule_move?", board_fifty_move_rule, 0);
   rb_define_method (board_klass, "active_color", board_active_color, 0);
   rb_define_method (board_klass, "halfmove_clock", board_halfmove_clock, 0);
   rb_define_method (board_klass, "fullmove_number", board_fullmove_number, 0);
   rb_define_method (board_klass, "to_fen", board_to_fen, 0);
   rb_define_method (board_klass, "to_s", board_to_s, 0);
+
+  /*
+   * This exception will be raised when making an illegal move.
+   */
+  illegal_move_error = rb_define_class_under (chess, "IllegalMoveError", rb_eStandardError);
 }

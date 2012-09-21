@@ -104,5 +104,7 @@ char* square_to_coord (int square);
 char* ft_to_full_move (int from, int to);
 char* result_to_s (unsigned short int r);
 char* castling_to_s (short int castling);
+char* en_passant_to_s (short int en_passant);
+bool compare (const void * a, const void * b);
 
 #endif

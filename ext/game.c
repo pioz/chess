@@ -108,14 +108,14 @@ apply_move (Game *g, int from, int to, char promote_in)
     {
       if (king_in_checkmate (new_board, new_board->active_color))
         {
-          //printf ("WE HAVE A CHECKMATE, %d win!!!\n", !new_board->active_color);
-          //printf ("%s\n", print_board (new_board));
           strcat (move_done, "#");
           g->result = !new_board->active_color;
         }
       else
         strcat (move_done, "+");
     }
+  if (stalemate (new_board, new_board->active_color))
+    g->result = DRAW;
   return TRUE;
 }
 
@@ -131,9 +131,187 @@ rollback (Game *g)
     }
 }
 
-//////////
-// MAIN //
-//////////
+bool
+threefold_repetition (Game *g)
+{
+  char placement[65];
+  char *fen, *castling, *ep;
+  char* s[g->current];
+  int i, j;
+  bool found = FALSE;
+  for (i = 0; i < g->current; i++)
+    {
+      fen = to_fen (g->boards[i]);
+      for (j = 0; fen[j] != ' '; j++)
+        placement[j] = fen[j];
+      placement[j] = '\0';
+      s[i] = (char *) malloc (80);
+      castling = castling_to_s (g->boards[i]->castling);
+      ep = en_passant_to_s (g->boards[i]->en_passant);
+      sprintf (s[i], "%s %s %s", placement, castling, ep);
+      free (fen);
+      free (castling);
+      free (ep);
+    }
+  qsort (s, g->current, sizeof (char *), compare);
+  for (i = 0; i < g->current-2; i++)
+    {
+      if (strcmp (s[i], s[i+1]) == 0 && strcmp (s[i], s[i+2]) == 0)
+        {
+          found = TRUE;
+          break;
+        }
+      free (s[i]);
+    }
+  free (s[g->current-1]);
+  free (s[g->current-2]);
+  return found;
+}
+
+void
+set_fen (Game *g, const char *fen)
+{
+  Board *board = NEW_BOARD;
+  int i = 0, j, k, pos, square;
+  char *pch;
+  char *s = (char *) malloc (strlen (fen));
+  memcpy (s, fen, strlen (fen));
+  // Init board
+  memset (board->placement, '\0', 64);
+  board->pawns[WHITE]   = 0x0;
+  board->pawns[BLACK]   = 0x0;
+  board->rooks[WHITE]   = 0x0;
+  board->rooks[BLACK]   = 0x0;
+  board->knights[WHITE] = 0x0;
+  board->knights[BLACK] = 0x0;
+  board->bishops[WHITE] = 0x0;
+  board->bishops[BLACK] = 0x0;
+  board->queens[WHITE]  = 0x0;
+  board->queens[BLACK]  = 0x0;
+  board->king[WHITE]    = 0x0;
+  board->king[BLACK]    = 0x0;
+  pch = strtok (s, " /");
+  while (pch != NULL)
+    {
+      if (i < 8)
+        {
+          for (j = 0, k = 0; j < (int) strlen (pch); j++)
+            {
+              if (pch[j] - 48 > 8)
+                {
+                  square = (abs (i - 7) * 8) + k;
+                  switch (pch[j])
+                    {
+                      case 'P':
+                      board->placement[square] = pch[j];
+                      board->pawns[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'p':
+                      board->placement[square] = pch[j];
+                      board->pawns[BLACK] ^= 1ULL << square;
+                      break;
+                      case 'R':
+                      board->placement[square] = pch[j];
+                      board->rooks[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'r':
+                      board->placement[square] = pch[j];
+                      board->rooks[BLACK] ^= 1ULL << square;
+                      break;
+                      case 'N':
+                      board->placement[square] = pch[j];
+                      board->knights[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'n':
+                      board->placement[square] = pch[j];
+                      board->knights[BLACK] ^= 1ULL << square;
+                      break;
+                      case 'B':
+                      board->placement[square] = pch[j];
+                      board->bishops[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'b':
+                      board->placement[square] = pch[j];
+                      board->bishops[BLACK] ^= 1ULL << square;
+                      break;
+                      case 'Q':
+                      board->placement[square] = pch[j];
+                      board->queens[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'q':
+                      board->placement[square] = pch[j];
+                      board->queens[BLACK] ^= 1ULL << square;
+                      break;
+                      case 'K':
+                      board->placement[square] = pch[j];
+                      board->king[WHITE] ^= 1ULL << square;
+                      break;
+                      case 'k':
+                      board->placement[square] = pch[j];
+                      board->king[BLACK] ^= 1ULL << square;
+                      break;
+                    }
+                  k++;
+                }
+              else
+                k += pch[j] - 48;
+            }
+        }
+      else if (i == 8)
+        {
+          board->active_color = pch[0] == 'b';
+        }
+      else if (i == 9)
+        {
+          board->castling = 0x0000;
+          for (j = 0; j < (int) strlen (pch); j++)
+            {
+              switch (pch[j])
+                {
+                  case 'K':
+                  board->castling |= 0x1000;
+                  break;
+                  case 'Q':
+                  board->castling |= 0x0100;
+                  break;
+                  case 'k':
+                  board->castling |= 0x0010;
+                  break;
+                  case 'q':
+                  board->castling |= 0x0001;
+                  break;
+                }
+            }
+        }
+      else if (i == 10)
+        {
+          board->en_passant = coord_to_square (pch);
+        }
+      else if (i == 11)
+        {
+          board->halfmove_clock = atoi (pch);
+        }
+      else if (i == 12)
+        {
+          board->fullmove_number = atoi (pch);
+        }
+      i++;
+      pch = strtok (NULL, " /");
+    }
+  set_occupied (board);
+  g->boards[g->current] = board;
+  g->moves[g->current] = (char *) malloc (11);
+  g->full_moves[g->current] = (char *) malloc (11);
+  memcpy (g->moves[g->current], "SET BY FEN", 11);
+  memcpy (g->full_moves[g->current], "SET BY FEN", 11);
+  g->current++;
+  free (s);
+  free (pch);
+}
+
+///////////////////////////////////
+// MAIN (only for internal test) //
+///////////////////////////////////
 int
 main ()
 {
@@ -142,60 +320,62 @@ main ()
   int i, from, to;
 
   for (i = 0; i < 1000; i++)
-  {
-    Game *g = init_game ();
-    Board *board;
-    char *fen;
-    // 1. e4 a6 2. Bc4 a5 3. Qh5 a4 4. Qxf7#
-    board = current_board (g);
-    get_coord (board, 'P', "e", "e4", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (board);
-    free (fen);
+    {
+      Game *g = init_game ();
+      Board *board;
+      char *fen;
 
-    board = current_board (g);
-    get_coord (board, 'P', "a", "a6", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      // 1. e4 a6 2. Bc4 a5 3. Qh5 a4 4. Qxf7#
+      board = current_board (g);
+      get_coord (board, 'P', "e", "e4", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (board);
+      free (fen);
 
-    board = current_board (g);
-    get_coord (board, 'B', "", "c4", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      board = current_board (g);
+      get_coord (board, 'P', "a", "a6", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
 
-    board = current_board (g);
-    get_coord (board, 'P', "a", "a5", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      board = current_board (g);
+      get_coord (board, 'B', "", "c4", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
 
-    board = current_board (g);
-    get_coord (board, 'Q', "", "h5", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      board = current_board (g);
+      get_coord (board, 'P', "a", "a5", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
 
-    board = current_board (g);
-    get_coord (board, 'P', "a", "a4", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      board = current_board (g);
+      get_coord (board, 'Q', "", "h5", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
 
-    board = current_board (g);
-    get_coord (board, 'Q', "", "f7", 0, &from, &to);
-    pseudo_legal_move (board, from, to);
-    apply_move (g, from, to, 0);
-    fen = to_fen (current_board (g));
-    free (fen);
+      board = current_board (g);
+      get_coord (board, 'P', "a", "a4", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
 
-    free_game (g);
-  }
+      board = current_board (g);
+      get_coord (board, 'Q', "", "f7", 0, &from, &to);
+      pseudo_legal_move (board, from, to);
+      apply_move (g, from, to, 0);
+      fen = to_fen (current_board (g));
+      free (fen);
+
+      free_game (g);
+    }
+  return 0;
 }

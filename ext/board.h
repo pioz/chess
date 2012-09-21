@@ -51,6 +51,8 @@ bool pieces_can_safe_capture (Board *board, int color, int square);
 bool king_in_check (Board *board, int color);
 bool king_in_checkmate (Board *board, int color);
 bool stalemate (Board *board, int color);
+bool insufficient_material (Board *board);
+bool fifty_move_rule (Board *board);
 bool pseudo_legal_move (Board *board, int from, int to);
 void get_coord (Board *board, char piece, const char* disambiguating, const char *to_coord, char promote_in, int *from, int *to);
 bool try_move (Board *board, int from, int to, char promote_in, Board *new_board, char **move_done, char *capture);

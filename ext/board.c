@@ -238,7 +238,7 @@ king_in_checkmate (Board *board, int color)
   // Test if there is a piece that can capture the attacker without put its king in check return false
   if (pieces_can_safe_capture (board, color, attacker))
     return FALSE;
-  // Test if ther is an en passant capture
+  // Test if there is an en passant capture
   if (have_en_passant2 (board, attacker))
     return FALSE;
   // Test if attack can be shielded
@@ -268,12 +268,58 @@ king_in_checkmate (Board *board, int color)
 bool
 stalemate (Board *board, int color)
 {
-  int i;
+  int i, j;
+  int s[64];
+  int n;
+  Board new_board;
   for (i = 0; i < 64; i++)
     if (get_color (board, i) == color)
-      if (xray (board, i, FALSE))
-        return FALSE;
+      {
+        bboard b = xray (board, i, FALSE) & ~board->pieces[color];
+        // if piece in i can move try move it
+        if (b)
+          {
+            squares (b, s, &n);
+            for (j = 0; j < n; j++)
+              if (try_move (board, i, s[j], 'Q', &new_board, 0, 0))
+                return FALSE;
+          }
+      }
   return TRUE;
+}
+
+bool
+insufficient_material (Board *board)
+{
+  if (board->queens[WHITE] || board->queens[BLACK]
+      || board->rooks[WHITE] || board->rooks[BLACK]
+      || board->pawns[WHITE] || board->pawns[BLACK])
+    return FALSE;
+  // King vs king
+  if (!board->bishops[WHITE] && !board->bishops[BLACK]
+      && !board->knights[WHITE] && !board->knights[BLACK])
+    return TRUE;
+  // King knight vs king
+  if (!board->bishops[WHITE] && !board->bishops[BLACK])
+    {
+      if ((has_only_one_one(board->knights[WHITE]) && !board->knights[BLACK])
+          || (has_only_one_one(board->knights[BLACK]) && !board->knights[WHITE]))
+        return TRUE;
+    }
+  // King bishops vs king bishops
+  if (!board->knights[WHITE] && !board->knights[BLACK])
+    {
+      if ((only_white_squares(board->bishops[WHITE]) && only_white_squares(board->bishops[BLACK]))
+          || (only_black_squares(board->bishops[WHITE]) && only_black_squares(board->bishops[BLACK])))
+        return TRUE;
+    }
+  return FALSE;
+}
+
+bool
+fifty_move_rule (Board *board)
+{
+  return board->halfmove_clock >= 50;
 }
 
 bool
@@ -283,7 +329,7 @@ pseudo_legal_move (Board *board, int from, int to)
   if (get_color (board, from) != board->active_color)
     return FALSE;
   // The move is a castling
-  if (castling_type (board, from ,to))
+  if (castling_type (board, from, to))
     return TRUE;
   // The move is en passant
   if (have_en_passant (board, from, to))

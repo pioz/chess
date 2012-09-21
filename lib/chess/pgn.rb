@@ -4,13 +4,13 @@ module Chess
   class Pgn
 
     # Array that include PGN standard tags.
-    TAGS = ['event', 'site', 'date', 'round', 'white', 'black', 'result']
+    TAGS = %w(event site date round white black result)
 
     attr_accessor *(TAGS + [:moves])
 
     # Creates a new PGN. If param +filename+, load it from file.
     def initialize(filename = nil)
-      load(filename) if filename
+      self.load(filename) if filename
     end
 
     # Load a PGN from file.
@@ -32,17 +32,17 @@ module Chess
     def to_s
       s = ''
       TAGS.each do |t|
-        s << "[#{t.capitalize} \"#{instance_variable_get("@#{t}")}\"]\n" unless instance_variable_get("@#{t}").nil?
+        tag = instance_variable_get("@#{t}")
+        s << "[#{t.capitalize} \"#{tag}\"]\n"
       end
       s << "\n"
-      @moves.each_with_index do |m, i|
-        if i % 2 == 0
-          s << "#{i+1}. #{m}"
-        else
-          s << " #{m} "
-        end
+      m = ''
+      @moves.each_with_index do |move, i|
+        m << "#{i/2+1}. " if i % 2 == 0
+        m << "#{move} "
       end
-      s << @result unless @result.nil?
+      m << @result unless @result.nil?
+      s << m.gsub(/(.{1,78})(?: +|$)\n?|(.{78})/, "\\1\\2\n")
     end
 
     # Write PGN to file.

@@ -20,8 +20,8 @@ typedef struct
   Board* boards[BUFFER_SIZE];
   char* moves[BUFFER_SIZE];
   char* full_moves[BUFFER_SIZE];
-  unsigned short result;
   int current;
+  unsigned short result;
 } Game;
 
 
@@ -36,5 +36,7 @@ char* current_move (Game *g);
 char* current_full_move (Game *g);
 bool apply_move (Game *g, int from, int to, char promote_in);
 void rollback (Game *g);
+bool threefold_repetition (Game *g);
+void set_fen (Game *g, const char *fen);
 
 #endif

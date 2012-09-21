@@ -15,12 +15,14 @@
 typedef uint64_t bboard;
 
 // Useful bitboards definitions
-#define EMPTY_BOARD 0x0000000000000000
-#define FULL_BOARD  0xffffffffffffffff
-#define NOT_FILE_A  0xfefefefefefefefe
-#define NOT_FILE_AB 0xfcfcfcfcfcfcfcfc
-#define NOT_FILE_H  0x7f7f7f7f7f7f7f7f
-#define NOT_FILE_GH 0x3f3f3f3f3f3f3f3f
+#define EMPTY_BOARD   0x0000000000000000
+#define FULL_BOARD    0xffffffffffffffff
+#define NOT_FILE_A    0xfefefefefefefefe
+#define NOT_FILE_AB   0xfcfcfcfcfcfcfcfc
+#define NOT_FILE_H    0x7f7f7f7f7f7f7f7f
+#define NOT_FILE_GH   0x3f3f3f3f3f3f3f3f
+#define WHITE_SQUARES 0x55aa55aa55aa55aa
+#define BLACK_SQUARES 0xaa55aa55aa55aa55
 
 // Bitboard getters
 int square (int file, int rank);
@@ -32,6 +34,9 @@ bboard get (bboard b, int square);
 bboard get2 (bboard b, int file, int rank);
 void print_bitboard (bboard b);
 // Bitboard manipulations
+bboard has_only_one_one (bboard b);
+bboard only_white_squares (bboard b);
+bboard only_black_squares (bboard b);
 bboard mirror_horizontal (bboard b);
 bboard mirror_vertical (bboard b);
 bboard rotate_left (bboard b, int s);

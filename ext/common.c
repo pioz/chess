@@ -82,3 +82,26 @@ castling_to_s (short int castling)
   s[cur] = '\0';
   return s;
 }
+
+char*
+en_passant_to_s (short int en_passant)
+{
+  char *s = (char *) malloc (3);
+  if (en_passant == -1)
+    {
+      s[0] = '-';
+      s[1] = '\0';
+    }
+  else
+    {
+      memcpy (s, square_to_coord (en_passant), 2);
+      s[2] = '\0';
+    }
+  return s;
+}
+
+bool
+compare (const void *a, const void *b)
+{
+  return strcmp (*(const char **) a, *(const char **) b);
+}
