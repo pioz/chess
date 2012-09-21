@@ -21,7 +21,7 @@ module Chess
     end
 
     # Creates a new game from a FEN string.
-    # _Warning_: this game do not have history before the FEN placement.
+    # *Warning*: this game do not have history before the FEN placement.
     # May be raise an InvalidFenFormatError.
     def self.load_fen(fen)
       if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|\-)\s([a-h][1-8]|\-)\s(\d+)\s(\d+)$/
@@ -52,23 +52,55 @@ module Chess
       end
     end
     alias :move= :move
+    alias :<< :move
 
     # Make the array of moves.
     def moves=(moves)
       moves.each { |m| move(m) }
     end
 
-    # Return +:white+ if the active player is the white player, +:black+ otherwise.
+    # Returns +:white+ if the active player is the white player, +:black+ otherwise.
     def active_player
       self.board.active_color ? :black : :white
     end
 
-    # Return +:white+ if the inactive player is the white player, +:black+ otherwise.
+    # Returns +:white+ if the inactive player is the white player, +:black+ otherwise.
     def inactive_player
       self.board.active_color ? :white : :black
     end
 
-    # Return the PGN rappresenting the game as string.
+    # Returns the status of the game.
+    # Possible states are:
+    # * +in_progress+:: the game is in progress.
+    # * +white_wins+:: white player checkmate the black king.
+    # * +black_wins+:: black player checkmate the white king.
+    # * +stalemate+:: draw for stalemate
+    # * +insufficient_material+:: draw for insufficient material to checkmate.
+    # * +unknown+:: something went wrong.
+    def status
+      case self.result
+      when '*'
+        return :in_progress
+      when '1-0'
+        return :white_wins
+      when '0-1'
+        return :black_wins
+      when '1/2-1/2'
+        if self.board.stalemate?
+          return :stalemate
+        elsif self.board.insufficient_material?
+          return :insufficient_material
+        end
+      end
+      return :unknown
+    end
+
+    # Returns +true+ if the game is over
+    def over?
+      return self.result != '*'
+    end
+
+    # Returns the PGN rappresenting the game as string.
     def to_pgn
       pgn = Chess::Pgn.new
       pgn.moves = self.moves
