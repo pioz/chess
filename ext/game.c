@@ -114,7 +114,11 @@ apply_move (Game *g, int from, int to, char promote_in)
       else
         strcat (move_done, "+");
     }
-  if (stalemate (new_board, new_board->active_color))
+  // Test insufficient material
+  else if (insufficient_material (new_board))
+    g->result = DRAW;
+  // Test stalemate
+  else if (stalemate (new_board, new_board->active_color))
     g->result = DRAW;
   return TRUE;
 }
