@@ -254,9 +254,10 @@ game_size (VALUE self)
 }
 
 /*
- * call-seq: each { |board| block }
+ * call-seq: each { |board, move, full_move, index| block }
  *
- * Calls +block+ once for each +board+ in self, passing that +board+ as a parameter. Return self.
+ * Calls +block+ once for each +board+ in self, passing that
+ * +board+, +move+, +full_move+ and +index+ as parameters. Return self.
  * If no block is given, the array of game moves is returned instead.
  */
 VALUE
@@ -265,14 +266,12 @@ game_each (VALUE self)
   if (!rb_block_given_p ())
     return game_moves(self);
   int i;
-  Board *board;
   Game *g;
   Data_Get_Struct (self, Game, g);
   for (i = 0; i < g->current; i++)
-    {
-      board = get_board (g, i);
-      rb_yield (Data_Wrap_Struct (board_klass, 0, 0, board));
-    }
+    rb_yield_values (4, Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
+                     rb_str_new2 (g->moves[i]), rb_str_new2 (g->full_moves[i]),
+                     INT2FIX (i));
   return self;
 }
 
