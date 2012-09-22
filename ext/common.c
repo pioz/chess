@@ -94,8 +94,8 @@ en_passant_to_s (short int en_passant)
     }
   else
     {
-      memcpy (s, square_to_coord (en_passant), 2);
-      s[2] = '\0';
+      strcpy (s, square_to_coord (en_passant));
+      //s[2] = '\0';
     }
   return s;
 }

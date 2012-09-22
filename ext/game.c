@@ -179,7 +179,7 @@ set_fen (Game *g, const char *fen)
   int i = 0, j, k, pos, square;
   char *pch;
   char *s = (char *) malloc (strlen (fen));
-  memcpy (s, fen, strlen (fen));
+  strcpy (s, fen);
   // Init board
   memset (board->placement, '\0', 64);
   board->pawns[WHITE]   = 0x0;
@@ -306,8 +306,8 @@ set_fen (Game *g, const char *fen)
   g->boards[g->current] = board;
   g->moves[g->current] = (char *) malloc (11);
   g->full_moves[g->current] = (char *) malloc (11);
-  memcpy (g->moves[g->current], "SET BY FEN", 11);
-  memcpy (g->full_moves[g->current], "SET BY FEN", 11);
+  strcpy (g->moves[g->current], "SET BY FEN");
+  strcpy (g->full_moves[g->current], "SET BY FEN");
   g->current++;
   free (s);
   free (pch);
