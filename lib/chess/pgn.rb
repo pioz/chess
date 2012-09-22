@@ -11,6 +11,8 @@ module Chess
     # Creates a new PGN. If param +filename+, load it from file.
     def initialize(filename = nil)
       self.load(filename) if filename
+      @date = '??'
+      @round = '1'
     end
 
     # Load a PGN from file.
@@ -50,6 +52,15 @@ module Chess
       File.open(filename, 'w') { |f| f.write(self.to_s) }
     end
 
-  end
+    # :nodoc:
+    # Set the date tag.
+    def date=(value)
+      if value.is_a?(Time)
+        @date = value.strftime('%Y.%m.%d')
+      else
+        @data = value
+      end
+    end
 
+  end
 end

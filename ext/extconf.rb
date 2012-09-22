@@ -1,5 +1,3 @@
-# :stopdoc:
-
 ENV['RC_ARCHS'] = '' if RUBY_PLATFORM =~ /darwin/
 
 require 'mkmf'
@@ -29,5 +27,3 @@ LIB_DIRS = [
 #dir_config('chess', INCLUDE_DIRS, LIB_DIRS)
 
 create_makefile('chess/chess')
-
-# :startdoc:

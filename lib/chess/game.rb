@@ -100,12 +100,12 @@ module Chess
       return self.result != '*'
     end
 
-    # Returns the PGN rappresenting the game as string.
-    def to_pgn
+    # Returns the PGN rappresenting the game.
+    def pgn
       pgn = Chess::Pgn.new
       pgn.moves = self.moves
       pgn.result = self.result
-      return pgn.to_s
+      return pgn
     end
 
     private
