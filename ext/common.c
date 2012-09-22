@@ -88,15 +88,9 @@ en_passant_to_s (short int en_passant)
 {
   char *s = (char *) malloc (3);
   if (en_passant == -1)
-    {
-      s[0] = '-';
-      s[1] = '\0';
-    }
+    strcpy (s, "-");
   else
-    {
-      strcpy (s, square_to_coord (en_passant));
-      //s[2] = '\0';
-    }
+    strcpy (s, square_to_coord (en_passant));
   return s;
 }
 
