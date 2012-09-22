@@ -10,7 +10,7 @@ class ChessTest < Test::Unit::TestCase
   ]
 
   FENS.each_with_index do |fen, i|
-    define_method("test_insufficient_material_#{i}") do
+    define_method("test_insufficient_material_by_fen_#{i}") do
       g = Chess::Game.load_fen(fen)
       assert(g.board.insufficient_material?)
     end
@@ -18,7 +18,7 @@ class ChessTest < Test::Unit::TestCase
 
   TestHelper.pgns('insufficient_material').each do |file|
     name = File.basename(file, '.pgn')
-    define_method "test_game_#{name}" do
+    define_method "test_insufficient_material_#{name}" do
       assert_nothing_raised(Chess::IllegalMoveError) do
         pgn = Chess::Pgn.new(file)
         game = Chess::Game.new(pgn.moves)
