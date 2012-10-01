@@ -80,42 +80,6 @@ module Chess
       end
     end
 
-    # # Open a pipe with Gnuchess.
-    # def initialize
-    #   @pipe = IO.popen('gnuchess -x', 'r+')
-    #   @pipe.write("depth 1\n")
-    #   @pipe.write("force\n")
-    # end
-    #
-    # # Return the next move calculated by Gnuchess.
-    # def get
-    #   @pipe.write("go\n")
-    #   match = nil
-    #   while !match
-    #     match = @pipe.gets.match(/My move is : ([a-h][1-8][a-h][1-8])/)
-    #   end
-    #   return match[1]
-    # end
-    #
-    # # Make +moves+ on Gnuchess.
-    # # Raise an IllegalMoveError if a move in +moves+ is illegal.
-    # def set(*moves)
-    #   moves.each do |m|
-    #     @pipe.write(m + "\n")
-    #     match = nil
-    #     while !match
-    #       line = @pipe.gets.strip
-    #       raise Chess::IllegalMoveError if line.include?('Invalid move')
-    #       match = line.match(/\d+\.\s#{m}/)
-    #     end
-    #   end
-    # end
-    #
-    # # Close pipe with Gnuchess.
-    # def close
-    #   @pipe.close
-    # end
-
     private
 
     # Return true if Gnuchess is installed, false otherwise.
