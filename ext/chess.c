@@ -275,7 +275,34 @@ game_each (VALUE self)
   return self;
 }
 
+/*
+ * call-seq: rollback!
+ *
+ * Rollback last move.
+ */
+VALUE
+game_rollback (VALUE self)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  rollback (g);
+  return self;
+}
+
 // Board
+
+/*
+ * call-seq: [square]
+ *
+ * Return the piece in +square+ of the board.
+ */
+VALUE
+board_get_piece_at (VALUE self, VALUE square)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  return CHR2FIX (board->placement[NUM2INT (square)]);
+}
 
 /*
  * call-seq: check?
@@ -456,6 +483,7 @@ Init_chess ()
   rb_define_method (game, "result", game_result, 0);
   rb_define_method (game, "size", game_size, 0);
   rb_define_method (game, "each", game_each, 0);
+  rb_define_method (game, "rollback!", game_rollback, 0);
 
   /*
    * This class rappresents a chess board.
@@ -463,6 +491,7 @@ Init_chess ()
    * This ensures a fast library.
    */
   board_klass = rb_define_class_under (chess, "Board", rb_cObject);
+  rb_define_method (board_klass, "[]", board_get_piece_at, 1);
   rb_define_method (board_klass, "check?", board_king_in_check, 0);
   rb_define_method (board_klass, "checkmate?", board_king_in_checkmate, 0);
   rb_define_method (board_klass, "stalemate?", board_stalemate, 0);

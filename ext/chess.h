@@ -23,10 +23,12 @@ VALUE game_threefold_repetition (VALUE self);
 VALUE game_result (VALUE self);
 VALUE game_size (VALUE self);
 VALUE game_each (VALUE self);
+VALUE game_rollback (VALUE self);
 
 
 // Board
 
+VALUE board_get_piece_at (VALUE self, VALUE square);
 VALUE board_king_in_check (VALUE self);
 VALUE board_king_in_checkmate (VALUE self);
 VALUE board_stalemate (VALUE self);
