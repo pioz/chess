@@ -101,7 +101,7 @@ apply_move (Game *g, int from, int to, char promote_in)
     new_board->halfmove_clock++;
   g->boards[g->current] = new_board;
   g->moves[g->current] = move_done;
-  g->full_moves[g->current] = ft_to_full_move (from, to);
+  g->full_moves[g->current] = ft_to_full_move (from, to, promote_in);
   g->current++;
   // Test check or checkmate of opponent king
   if (king_in_check (new_board, new_board->active_color))

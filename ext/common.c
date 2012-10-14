@@ -36,14 +36,20 @@ square_to_coord (int square)
 }
 
 char*
-ft_to_full_move (int from, int to)
+ft_to_full_move (int from, int to, char promote_in)
 {
-  char *s = (char *) malloc (5);
+  char *s = (char *) malloc (7);
   s[0] = square_to_file (from);
   s[1] = square_to_rank (from);
   s[2] = square_to_file (to);
   s[3] = square_to_rank (to);
   s[4] = '\0';
+  if (promote_in)
+    {
+      s[4] = '=';
+      s[5] = promote_in;
+      s[6] = '\0';
+    }
   return s;
 }
 
