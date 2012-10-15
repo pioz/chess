@@ -138,9 +138,14 @@ rollback (Game *g)
 bool
 threefold_repetition (Game *g)
 {
+  if (g->current < 6) // Minimum moves to get a threefold repetition
+    return FALSE;
   char placement[65];
+  char turn;
   char *fen, *castling, *ep;
-  char* s[g->current];
+  char* s[g->current + 1];
+  s[0] = (char *) malloc (80);
+  strcpy (s[0], "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -");
   int i, j;
   bool found = FALSE;
   for (i = 0; i < g->current; i++)
@@ -149,16 +154,17 @@ threefold_repetition (Game *g)
       for (j = 0; fen[j] != ' '; j++)
         placement[j] = fen[j];
       placement[j] = '\0';
-      s[i] = (char *) malloc (80);
+      s[i+1] = (char *) malloc (80);
+      turn = g->boards[i]->active_color ? 'b' : 'w';
       castling = castling_to_s (g->boards[i]->castling);
       ep = en_passant_to_s (g->boards[i]->en_passant);
-      sprintf (s[i], "%s %s %s", placement, castling, ep);
+      sprintf (s[i+1], "%s %c %s %s", placement, turn, castling, ep);
       free (fen);
       free (castling);
       free (ep);
     }
-  qsort (s, g->current, sizeof (char *), compare);
-  for (i = 0; i < g->current-2; i++)
+  qsort (s, g->current + 1, sizeof (char *), compare);
+  for (i = 0; i < g->current - 1; i++)
     {
       if (strcmp (s[i], s[i+1]) == 0 && strcmp (s[i], s[i+2]) == 0)
         {
@@ -167,8 +173,8 @@ threefold_repetition (Game *g)
         }
       free (s[i]);
     }
+  free (s[g->current]);
   free (s[g->current-1]);
-  free (s[g->current-2]);
   return found;
 }
 
