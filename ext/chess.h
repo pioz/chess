@@ -28,7 +28,7 @@ VALUE game_rollback (VALUE self);
 
 // Board
 
-VALUE board_get_piece_at (VALUE self, VALUE square);
+VALUE board_placement (VALUE self);
 VALUE board_king_in_check (VALUE self);
 VALUE board_king_in_checkmate (VALUE self);
 VALUE board_stalemate (VALUE self);

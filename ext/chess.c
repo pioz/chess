@@ -292,16 +292,39 @@ game_rollback (VALUE self)
 // Board
 
 /*
- * call-seq: [square]
+ * call-seq: placement { |piece, index| block }
  *
- * Return the piece in +square+ of the board.
+ * Calls +block+ once for each square in the board, passing the
+ * +piece+ in the square and the +index+ as parameters. Return self.
+ * If no block is given, the array of pieces is returned instead.
  */
 VALUE
-board_get_piece_at (VALUE self, VALUE square)
+board_placement (VALUE self)
 {
   Board *board;
   Data_Get_Struct (self, Board, board);
-  return CHR2FIX (board->placement[NUM2INT (square)]);
+  int i;
+  char piece[2];
+  piece[1] = '\0';
+  if (!rb_block_given_p ())
+    {
+      VALUE placement = rb_ary_new ();
+      for (i = 0; i < 64; i++)
+        {
+          piece[0] = board->placement[i];
+          rb_ary_push (placement, rb_str_new2 (piece));
+        }
+      return placement;
+    }
+  else
+    {
+      for (i = 0; i < 64; i++)
+        {
+          piece[0] = board->placement[i];
+          rb_yield_values (2, rb_str_new2 (piece), INT2FIX (i));
+        }
+      return self;
+    }
 }
 
 /*
@@ -491,7 +514,7 @@ Init_chess ()
    * This ensures a fast library.
    */
   board_klass = rb_define_class_under (chess, "Board", rb_cObject);
-  rb_define_method (board_klass, "[]", board_get_piece_at, 1);
+  rb_define_method (board_klass, "placement", board_placement, 0);
   rb_define_method (board_klass, "check?", board_king_in_check, 0);
   rb_define_method (board_klass, "checkmate?", board_king_in_checkmate, 0);
   rb_define_method (board_klass, "stalemate?", board_stalemate, 0);
