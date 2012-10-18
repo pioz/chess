@@ -90,8 +90,8 @@
 #define BLACK_SHORT_CASTLING 3
 #define BLACK_LONG_CASTLING 4
 
-#define WHITE_WINS 0
-#define BLACK_WINS 1
+#define WHITE_WON 0
+#define BLACK_WON 1
 #define DRAW 2
 #define IN_PROGRESS 3
 

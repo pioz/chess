@@ -72,8 +72,8 @@ module Chess
     # Returns the status of the game.
     # Possible states are:
     # * +in_progress+:: the game is in progress.
-    # * +white_wins+:: white player checkmate the black king.
-    # * +black_wins+:: black player checkmate the white king.
+    # * +white_won+:: white player checkmate the black king.
+    # * +black_won+:: black player checkmate the white king.
     # * +stalemate+:: draw for stalemate
     # * +insufficient_material+:: draw for insufficient material to checkmate.
     # * +unknown+:: something went wrong.
@@ -82,9 +82,9 @@ module Chess
       when '*'
         return :in_progress
       when '1-0'
-        return :white_wins
+        return :white_won
       when '0-1'
-        return :black_wins
+        return :black_won
       when '1/2-1/2'
         if self.board.stalemate?
           return :stalemate

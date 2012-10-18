@@ -51,10 +51,10 @@ module Chess
             elsif line =~ / : resign/
               break
             elsif line =~ / : 1-0 {White mates}/
-              done = :white_wins
+              done = :white_won
               break
             elsif line =~ / : 0-1 {Black mates}/
-              done = :black_wins
+              done = :black_won
               break
             elsif m = line.match(/1\/2-1\/2 {(.*?)}/)
               case m[1]

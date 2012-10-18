@@ -59,10 +59,10 @@ result_to_s (unsigned short int r)
   char *s = (char *) malloc (8);
   switch (r)
     {
-    case WHITE_WINS:
+    case WHITE_WON:
       strcpy (s, "1-0");
       break;
-    case BLACK_WINS:
+    case BLACK_WON:
       strcpy (s, "0-1");
       break;
     case DRAW:

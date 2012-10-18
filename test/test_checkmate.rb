@@ -10,9 +10,9 @@ class ChessTest < Test::Unit::TestCase
         pgn = Chess::Pgn.new(file)
         game = Chess::Game.new(pgn.moves)
         assert(game.board.checkmate?)
-        if file.include?('white_wins')
+        if file.include?('white_won')
           assert_equal(game.active_player, :black)
-        elsif file.include?('black_wins')
+        elsif file.include?('black_won')
           assert_equal(game.active_player, :white)
         end
       end

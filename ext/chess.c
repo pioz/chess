@@ -225,8 +225,8 @@ game_threefold_repetition (VALUE self)
  *
  * Returns the result of the game:
  * *:: game in progress;
- * 1-0:: white wins;
- * 0-1:: black wins;
+ * 1-0:: white won;
+ * 0-1:: black won;
  * 1/2-1/2:: draw
  */
 VALUE
