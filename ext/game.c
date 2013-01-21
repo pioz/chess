@@ -182,7 +182,7 @@ void
 set_fen (Game *g, const char *fen)
 {
   Board *board = NEW_BOARD;
-  int i = 0, j, k, pos, square;
+  int i = 0, j, k, square;
   char *pch;
   char *s = (char *) malloc (strlen (fen));
   strcpy (s, fen);

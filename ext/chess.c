@@ -18,7 +18,7 @@ VALUE board_klass;
 VALUE
 game_alloc (VALUE class)
 {
-  Game *g = init_game (g);
+  Game *g = init_game ();
   return Data_Wrap_Struct (class, 0, free_game, g);
   // VALUE tdata = Data_Wrap_Struct (class, 0, free_game, g);
   // rb_obj_call_init (tdata, 0, 0);
