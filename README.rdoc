@@ -7,7 +7,7 @@ move generator is written in C as a Ruby extension.
 
 == Requirements
 
-  * Ruby 1.9 or higher
+* Ruby 1.9 or higher
 
 == Installation
 
