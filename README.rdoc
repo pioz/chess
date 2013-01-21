@@ -5,6 +5,10 @@ This library is quite fast because rappresent
 the game situations with bitboards. In addition, the
 move generator is written in C as a Ruby extension.
 
+== Requirements
+
+  * Ruby 1.9 or higher
+
 == Installation
 
     gem install chess
