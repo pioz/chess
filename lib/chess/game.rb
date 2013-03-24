@@ -21,8 +21,8 @@ module Chess
     end
 
     # Creates a new game from a FEN string.
-    # *Warning*: this game do not have history before the FEN placement.
     # May be raise an InvalidFenFormatError.
+    # *Warning*: this game do not have history before the FEN placement.
     def self.load_fen(fen)
       if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|\-)\s([a-h][1-8]|\-)\s(\d+)\s(\d+)$/
         game = Chess::Game.new
@@ -72,9 +72,9 @@ module Chess
     # Returns the status of the game.
     # Possible states are:
     # * +in_progress+:: the game is in progress.
-    # * +white_won+:: white player checkmate the black king.
-    # * +black_won+:: black player checkmate the white king.
-    # * +stalemate+:: draw for stalemate
+    # * +white_won+:: white player has won.
+    # * +black_won+:: black player has won.
+    # * +stalemate+:: draw for stalemate.
     # * +insufficient_material+:: draw for insufficient material to checkmate.
     # * +unknown+:: something went wrong.
     def status
