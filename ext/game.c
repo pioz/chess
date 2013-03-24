@@ -178,6 +178,15 @@ threefold_repetition (Game *g)
   return found;
 }
 
+/*
+ A FEN string is composed of 6 parts separated by " " (space).
+ 1. Piece placement (from white's perspective).
+ 2. Active color. "w" means white moves next, "b" means black.
+ 3. Castling availability. If neither side can castle, this is "-".
+ 4. En passant target square in algebraic notation. If there's no en passant target square, this is "-".
+ 5. Halfmove clock: this is the number of halfmoves since the last pawn advance or capture.
+ 6. Fullmove number: the number of the full move. It starts at 1, and is incremented after black's move.
+*/
 void
 set_fen (Game *g, const char *fen)
 {
