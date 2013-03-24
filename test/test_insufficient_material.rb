@@ -11,8 +11,8 @@ class ChessTest < Test::Unit::TestCase
 
   FENS.each_with_index do |fen, i|
     define_method("test_insufficient_material_by_fen_#{i}") do
-      g = Chess::Game.load_fen(fen)
-      assert(g.board.insufficient_material?)
+      game = Chess::Game.load_fen(fen)
+      assert(game.board.insufficient_material?)
     end
   end
 
@@ -23,6 +23,7 @@ class ChessTest < Test::Unit::TestCase
         pgn = Chess::Pgn.new(file)
         game = Chess::Game.new(pgn.moves)
         assert(game.board.insufficient_material?)
+        assert_equal(game.result, '1/2-1/2')
       end
     end
   end

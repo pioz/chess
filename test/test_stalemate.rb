@@ -9,6 +9,7 @@ class ChessTest < Test::Unit::TestCase
         pgn = Chess::Pgn.new(file)
         game = Chess::Game.new(pgn.moves)
         assert(game.board.stalemate?)
+        assert_equal(game.result, '1/2-1/2')
       end
     end
   end
