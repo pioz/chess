@@ -24,7 +24,7 @@ module Chess
     # May be raise an InvalidFenFormatError.
     # *Warning*: this game do not have history before the FEN placement.
     def self.load_fen(fen)
-      if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|\-)\s([a-h][1-8]|\-)\s(\d+)\s(\d+)$/
+      if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/
         game = Chess::Game.new
         game.set_fen!(fen)
         return game

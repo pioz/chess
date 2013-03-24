@@ -26,7 +26,7 @@ module Chess
       raise Chess::InvalidPgnFormatError.new(filename) if game_index.nil?
       game = data[game_index..-1].strip
       @moves = game.gsub("\n", ' ').split(/\d+\./).collect{|t| t.strip}[1..-1].collect{|t| t.split(' ')}.flatten
-      @moves.delete_at(@moves.size-1) if @moves.last =~ /(0\-1)|(1\-0)|(1\/2)|(1\/2\-1\/2)|(\*)/
+      @moves.delete_at(@moves.size-1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
       return self
     end
 
