@@ -1,17 +1,11 @@
 [Event "Bundesliga 1984/1985"]
 [Site "GER"]
-[Date "1983.??.??"]
+[Date "??"]
+[Round "1"]
 [White "Reefschlaeger, Helmut"]
 [Black "Kindermann, Stefan E S"]
-[Result "1/2"]
-[WhiteELO "2405"]
-[BlackELO "2470"]
-[ECO "A63"]
-[WhiteCountry "FRG"]
-[BlackCountry "FRG"]
-[PlyCount "39"]
+[Result "*"]
 
-1.d4 Nf6 2.c4 e6 3.g3 c5 4.d5 exd5 5.cxd5 d6 6.Nc3 g6 7.Bg2 Bg7 8.Nf3 O-O 9.O-O 
-a6 10.a4 Nbd7 11.Nd2 Nh5 12.Nce4 Ndf6 13.Nxf6+ Qxf6 14.Nc4 Rb8 15.Nb6 Qd8 16.Qb3 
-Re8 17.Re1 Nf6 18.Bf4 Nh5 19.Bd2 Nf6 20.Bf4 1/2
-
+1. d4 Nf6 2. c4 e6 3. g3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. Bg2 Bg7 8. Nf3
+O-O 9. O-O a6 10. a4 Nbd7 11. Nd2 Nh5 12. Nce4 Ndf6 13. Nxf6+ Qxf6 14. Nc4 Rb8
+15. Nb6 Qd8 16. Qb3 Re8 17. Re1 Nf6 18. Bf4 Nh5 19. Bd2 Nf6 20. Bf4 *

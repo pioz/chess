@@ -1,22 +1,13 @@
 [Event "Open"]
 [Site "Bern SUI"]
-[Date "1995.01.??"]
-[Round "4"]
+[Date "??"]
+[Round "1"]
 [White "Ye Jiangchuan"]
 [Black "Matamoros Franco, Carlos S"]
-[Result "1/2"]
-[WhiteELO "2575"]
-[BlackELO "2430"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A08"]
-[WhiteCountry "CHN"]
-[BlackCountry "ECU"]
-[PlyCount "63"]
+[Result "*"]
 
-1.e4 e6 2.d3 d5 3.Nd2 Nf6 4.Ngf3 c5 5.g3 Nc6 6.Bg2 Be7 7.O-O O-O 8.Re1 b5 9.e5 Nd7 
-10.Nf1 a5 11.h4 b4 12.Bf4 Ba6 13.N1h2 a4 14.Ng5 Qe8 15.c4 Nb6 16.cxd5 Nxd5 17.Be4 
-g6 18.Bxd5 exd5 19.Ng4 Nd4 20.Nf3 Qb5 21.Nxd4 cxd4 22.Bg5 Bxg5 23.hxg5 Qxd3 24.Nh6+ 
-Kg7 25.Qc1 Qf3 26.Qd2 Bd3 27.e6 Be4 28.Rxe4 dxe4 29.Qxd4+ f6 30.e7 Rfe8 31.Re1 Rac8 
-32.gxf6+ 1/2
-
+1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. Ngf3 c5 5. g3 Nc6 6. Bg2 Be7 7. O-O O-O 8. Re1
+b5 9. e5 Nd7 10. Nf1 a5 11. h4 b4 12. Bf4 Ba6 13. N1h2 a4 14. Ng5 Qe8 15. c4
+Nb6 16. cxd5 Nxd5 17. Be4 g6 18. Bxd5 exd5 19. Ng4 Nd4 20. Nf3 Qb5 21. Nxd4
+cxd4 22. Bg5 Bxg5 23. hxg5 Qxd3 24. Nh6+ Kg7 25. Qc1 Qf3 26. Qd2 Bd3 27. e6
+Be4 28. Rxe4 dxe4 29. Qxd4+ f6 30. e7 Rfe8 31. Re1 Rac8 32. gxf6+ *

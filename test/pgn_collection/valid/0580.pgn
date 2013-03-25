@@ -1,19 +1,14 @@
 [Event "Open"]
 [Site "Copenhagen DEN"]
-[Date "1991.06.??"]
-[Round "10"]
+[Date "??"]
+[Round "1"]
 [White "Fuglsang, Flemming"]
 [Black "Clausen, Steen"]
-[Result "1/2"]
-[BlackELO "2255"]
-[ECO "A36"]
-[WhiteCountry "DEN"]
-[BlackCountry "DEN"]
-[PlyCount "72"]
+[Result "*"]
 
-1.c4 c5 2.Nc3 Nc6 3.g3 g6 4.Bg2 Bg7 5.d3 a6 6.e4 d6 7.Nge2 Rb8 8.a4 Bg4 9.h3 Bxe2 
-10.Nxe2 e6 11.O-O Nge7 12.Be3 Bxb2 13.Rb1 Bg7 14.d4 cxd4 15.Nxd4 O-O 16.Nb3 Ne5 
-17.Qe2 Qc7 18.Rfc1 Rbc8 19.a5 N7c6 20.c5 d5 21.exd5 exd5 22.Bxd5 Rcd8 23.Bg2 Rfe8 
-24.Rd1 Rxd1+ 25.Rxd1 Qc8 26.Qc2 Nb4 27.Qe4 Nec6 28.Qc4 Qf5 29.Kh2 h5 30.h4 Be5 31.Rd2 
-Bf6 32.Bf4 Kg7 33.Nd4 Nxd4 34.Rxd4 Nc6 35.Rd6 Ne5 36.Bxe5 Rxe5 1/2
-
+1. c4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. d3 a6 6. e4 d6 7. Nge2 Rb8 8. a4
+Bg4 9. h3 Bxe2 10. Nxe2 e6 11. O-O Nge7 12. Be3 Bxb2 13. Rb1 Bg7 14. d4 cxd4
+15. Nxd4 O-O 16. Nb3 Ne5 17. Qe2 Qc7 18. Rfc1 Rbc8 19. a5 N7c6 20. c5 d5 21.
+exd5 exd5 22. Bxd5 Rcd8 23. Bg2 Rfe8 24. Rd1 Rxd1+ 25. Rxd1 Qc8 26. Qc2 Nb4
+27. Qe4 Nec6 28. Qc4 Qf5 29. Kh2 h5 30. h4 Be5 31. Rd2 Bf6 32. Bf4 Kg7 33. Nd4
+Nxd4 34. Rxd4 Nc6 35. Rd6 Ne5 36. Bxe5 Rxe5 *

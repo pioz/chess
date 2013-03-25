@@ -1,19 +1,17 @@
 [Event "-"]
 [Site "Györ"]
-[Date "1924.07.??"]
+[Date "??"]
+[Round "1"]
 [White "Steiner, Endre"]
 [Black "Seitz, Jakob Adolf"]
-[Result "1/2"]
-[ECO "A06"]
-[WhiteCountry "HUN"]
-[BlackCountry "GER"]
-[PlyCount "105"]
+[Result "*"]
 
-1.Nf3 d5 2.g3 e6 3.Bg2 Nf6 4.O-O Be7 5.d3 O-O 6.Nbd2 Nbd7 7.e4 e5 8.Qe2 dxe4 9.dxe4 
-Ne8 10.Nc4 Bf6 11.b3 b6 12.Ba3 Be7 13.Bb2 f6 14.Ne3 Nc5 15.Rfd1 Nd6 16.Nh4 Qe8 17.Nhf5 
-Nxf5 18.Nxf5 Nb7 19.Qc4+ Rf7 20.Bf1 Bf8 21.Qd5 c6 22.Qd2 Bxf5 23.exf5 Kh8 24.Bc4 
-Rc7 25.g4 b5 26.Bf1 Rd8 27.Qe2 a6 28.Bg2 Rcd7 29.Bf3 Rxd1+ 30.Rxd1 Rxd1+ 31.Qxd1 
-Qd8 32.Qxd8 Nxd8 33.Bc3 b4 34.Bd2 Bc5 35.Be2 a5 36.Bc4 g5 37.fxg6 hxg6 38.h4 Kg7 
-39.Kf1 Nb7 40.Be6 Bd4 41.Bd7 c5 42.f4 Nd6 43.fxe5 fxe5 44.Bg5 Ne4 45.Bd8 Nc3 46.Bxa5 
-Nxa2 47.Bc7 Nc3 48.Bc6 Nd1 49.Ke2 Ne3 50.g5 Nxc2 51.Bd8 Ne3 52.Bf6+ Kf7 53.Kf3 1/2
-
+1. Nf3 d5 2. g3 e6 3. Bg2 Nf6 4. O-O Be7 5. d3 O-O 6. Nbd2 Nbd7 7. e4 e5 8.
+Qe2 dxe4 9. dxe4 Ne8 10. Nc4 Bf6 11. b3 b6 12. Ba3 Be7 13. Bb2 f6 14. Ne3 Nc5
+15. Rfd1 Nd6 16. Nh4 Qe8 17. Nhf5 Nxf5 18. Nxf5 Nb7 19. Qc4+ Rf7 20. Bf1 Bf8
+21. Qd5 c6 22. Qd2 Bxf5 23. exf5 Kh8 24. Bc4 Rc7 25. g4 b5 26. Bf1 Rd8 27. Qe2
+a6 28. Bg2 Rcd7 29. Bf3 Rxd1+ 30. Rxd1 Rxd1+ 31. Qxd1 Qd8 32. Qxd8 Nxd8 33.
+Bc3 b4 34. Bd2 Bc5 35. Be2 a5 36. Bc4 g5 37. fxg6 hxg6 38. h4 Kg7 39. Kf1 Nb7
+40. Be6 Bd4 41. Bd7 c5 42. f4 Nd6 43. fxe5 fxe5 44. Bg5 Ne4 45. Bd8 Nc3 46.
+Bxa5 Nxa2 47. Bc7 Nc3 48. Bc6 Nd1 49. Ke2 Ne3 50. g5 Nxc2 51. Bd8 Ne3 52. Bf6+
+Kf7 53. Kf3 *

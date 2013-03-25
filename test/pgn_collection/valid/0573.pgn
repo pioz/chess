@@ -1,17 +1,13 @@
 [Event "?"]
 [Site "kup4"]
-[Date "1994.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Hava{"]
 [Black "Bastijani}"]
-[Result "1/2-1/2"]
+[Result "*"]
 
-1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 e6 
-5.e3 Nbd7 6.Bd3 Bd6 7.O-O O-O 8.e4 dxe4 
-9.Nxe4 Nxe4 10.Bxe4 c5 11.dxc5 Nxc5 12.Bc2 a5 
-13.Qe2 Qe7 14.Be3 b6 15.Rad1 Bb7 16.Nd4 Rad8 
-17.f4 g6 18.Nf3 Qc7 19.Nd4 Qe7 20.Nf3 Nd7 
-21.Kh1 Bc5 22.Bc1 Bxf3 23.Qxf3 Nf6 24.Rde1 h5 
-25.g3 Qd6 26.h3 Bd4 27.Re2 Kg7 28.Kg2 Rh8 
-29.b3 Qc5 30.Rd1 Rd6 31.Rf1  1/2-1/2
-
+1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. Nf3 e6 5. e3 Nbd7 6. Bd3 Bd6 7. O-O O-O 8. e4
+dxe4 9. Nxe4 Nxe4 10. Bxe4 c5 11. dxc5 Nxc5 12. Bc2 a5 13. Qe2 Qe7 14. Be3 b6
+15. Rad1 Bb7 16. Nd4 Rad8 17. f4 g6 18. Nf3 Qc7 19. Nd4 Qe7 20. Nf3 Nd7 21.
+Kh1 Bc5 22. Bc1 Bxf3 23. Qxf3 Nf6 24. Rde1 h5 25. g3 Qd6 26. h3 Bd4 27. Re2
+Kg7 28. Kg2 Rh8 29. b3 Qc5 30. Rd1 Rd6 31. Rf1 *

@@ -1,23 +1,17 @@
 [Event "Open"]
 [Site "Pardubice CZE"]
-[Date "1995.??.??"]
-[Round "6"]
+[Date "??"]
+[Round "1"]
 [White "Valenta, Vit"]
 [Black "Pcola, Pavol"]
-[Result "1/2"]
-[WhiteELO "2285"]
-[BlackELO "2450"]
-[ECO "A39"]
-[WhiteCountry "CZE"]
-[BlackCountry "SVK"]
-[PlyCount "105"]
+[Result "*"]
 
-1.c4 Nf6 2.Nc3 c5 3.g3 Nc6 4.Bg2 g6 5.Nf3 Bg7 6.O-O O-O 7.d4 cxd4 8.Nxd4 Nxd4 9.Qxd4 
-d6 10.Qd2 Rb8 11.Rb1 a6 12.a4 Ne8 13.Rd1 Be6 14.b3 Nc7 15.a5 Qc8 16.Na4 Na8 17.Bb2 
-Bxb2 18.Rxb2 b5 19.axb6 Nxb6 20.Nxb6 Rxb6 21.Qg5 Qc7 22.Bd5 Bxd5 23.Qxd5 Rc6 24.Rc2 
-Rc5 25.Qe4 Rb8 26.Rc3 Re5 27.Qf3 Rf5 28.Qe4 Qa5 29.Re3 Re5 30.Qd4 f6 31.Ra1 Qb6 
-32.Qxb6 Rxb6 33.Rxe5 fxe5 34.Ra3 Kf7 35.e4 Ke6 36.Kf1 Kd7 37.Ke2 Kc7 38.Kd3 Rb8 
-39.f3 a5 40.c5 dxc5 41.Rxa5 Rxb3+ 42.Kc4 Rxf3 43.Kxc5 Rd3 44.Ra7+ Kd8 45.Ra8+ Kd7 
-46.Rh8 h5 47.Rg8 Rd6 48.h3 Kc7 49.g4 hxg4 50.hxg4 Kd7 51.g5 Kc7 52.Re8 Kd7 53.Rg8 
-1/2
-
+1. c4 Nf6 2. Nc3 c5 3. g3 Nc6 4. Bg2 g6 5. Nf3 Bg7 6. O-O O-O 7. d4 cxd4 8.
+Nxd4 Nxd4 9. Qxd4 d6 10. Qd2 Rb8 11. Rb1 a6 12. a4 Ne8 13. Rd1 Be6 14. b3 Nc7
+15. a5 Qc8 16. Na4 Na8 17. Bb2 Bxb2 18. Rxb2 b5 19. axb6 Nxb6 20. Nxb6 Rxb6
+21. Qg5 Qc7 22. Bd5 Bxd5 23. Qxd5 Rc6 24. Rc2 Rc5 25. Qe4 Rb8 26. Rc3 Re5 27.
+Qf3 Rf5 28. Qe4 Qa5 29. Re3 Re5 30. Qd4 f6 31. Ra1 Qb6 32. Qxb6 Rxb6 33. Rxe5
+fxe5 34. Ra3 Kf7 35. e4 Ke6 36. Kf1 Kd7 37. Ke2 Kc7 38. Kd3 Rb8 39. f3 a5 40.
+c5 dxc5 41. Rxa5 Rxb3+ 42. Kc4 Rxf3 43. Kxc5 Rd3 44. Ra7+ Kd8 45. Ra8+ Kd7 46.
+Rh8 h5 47. Rg8 Rd6 48. h3 Kc7 49. g4 hxg4 50. hxg4 Kd7 51. g5 Kc7 52. Re8 Kd7
+53. Rg8 *

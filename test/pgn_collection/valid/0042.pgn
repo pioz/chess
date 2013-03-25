@@ -1,17 +1,13 @@
 [Event "-"]
 [Site "Mar del Plata Open, 31st"]
-[Date "2000.04.19"]
-[Round "6"]
+[Date "??"]
+[Round "1"]
 [White "Fiorito, Fabian"]
 [Black "Ricardi, Pablo"]
-[Result "1/2"]
-[WhiteELO "2459"]
-[BlackELO "2483"]
-[ECO "A08"]
-[PlyCount "58"]
+[Result "*"]
 
-1.Nf3 Nf6 2.g3 g6 3.Bg2 Bg7 4.O-O O-O 5.d3 d5 6.Nbd2 c5 7.e4 Nc6 8.exd5 Nxd5 9.Re1 
-b6 10.Nc4 Bb7 11.c3 Qd7 12.a4 Rad8 13.Qb3 Nc7 14.Rd1 Qc8 15.Qc2 h6 16.Qe2 Rfe8 17.h4 
-e5 18.Nfd2 Ne6 19.h5 g5 20.Ne4 Qc7 21.Ne3 Ne7 22.Ng4 Rf8 23.Nef6+ Bxf6 24.Nxf6+ 
-Kg7 25.Bxb7 Qxb7 26.Qxe5 Nc6 27.Ne8+ Kg8 28.Nf6+ Kg7 29.Ne8+ Kg8 1/2
-
+1. Nf3 Nf6 2. g3 g6 3. Bg2 Bg7 4. O-O O-O 5. d3 d5 6. Nbd2 c5 7. e4 Nc6 8.
+exd5 Nxd5 9. Re1 b6 10. Nc4 Bb7 11. c3 Qd7 12. a4 Rad8 13. Qb3 Nc7 14. Rd1 Qc8
+15. Qc2 h6 16. Qe2 Rfe8 17. h4 e5 18. Nfd2 Ne6 19. h5 g5 20. Ne4 Qc7 21. Ne3
+Ne7 22. Ng4 Rf8 23. Nef6+ Bxf6 24. Nxf6+ Kg7 25. Bxb7 Qxb7 26. Qxe5 Nc6 27.
+Ne8+ Kg8 28. Nf6+ Kg7 29. Ne8+ Kg8 *

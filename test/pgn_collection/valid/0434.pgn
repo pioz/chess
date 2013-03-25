@@ -1,20 +1,11 @@
 [Event "Team tournament"]
 [Site "Cetinje"]
-[Date "1989.??.??"]
+[Date "??"]
 [Round "1"]
 [White "Nikolic, Zivoslav"]
 [Black "Jacimovic, Dragoljub"]
-[Result "1/2"]
-[WhiteELO "2440"]
-[BlackELO "2420"]
-[WhiteTitle "IM"]
-[BlackTitle "IM"]
-[ECO "A04"]
-[WhiteCountry "YUG"]
-[BlackCountry "YUG"]
-[PlyCount "40"]
+[Result "*"]
 
-1.Nf3 c5 2.b3 Nf6 3.Bb2 e6 4.e3 b6 5.d4 Bb7 6.Bd3 Be7 7.O-O O-O 8.Nbd2 cxd4 9.exd4 
-d6 10.c4 Nbd7 11.Re1 Re8 12.a3 Rc8 13.b4 Rc7 14.Qb3 Qa8 15.Bf1 Nf8 16.h3 Ng6 17.Re3 
-Bf8 18.Rae1 Rd8 19.Nb1 a6 20.Nc3 d5 1/2
-
+1. Nf3 c5 2. b3 Nf6 3. Bb2 e6 4. e3 b6 5. d4 Bb7 6. Bd3 Be7 7. O-O O-O 8. Nbd2
+cxd4 9. exd4 d6 10. c4 Nbd7 11. Re1 Re8 12. a3 Rc8 13. b4 Rc7 14. Qb3 Qa8 15.
+Bf1 Nf8 16. h3 Ng6 17. Re3 Bf8 18. Rae1 Rd8 19. Nb1 a6 20. Nc3 d5 *

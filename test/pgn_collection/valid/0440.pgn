@@ -1,24 +1,21 @@
 [Event "Dubai Open 2002"]
 [Site "Dubai"]
-[Date "2002.04.19"]
-[Round "6"]
+[Date "??"]
+[Round "1"]
 [White "Mamedjarova, Zeinab"]
 [Black "Hussan, Mohamed Seif"]
-[Result "1/2"]
-[WhiteELO "2312"]
-[BlackELO "2152"]
-[ECO "A43"]
-[PlyCount "154"]
+[Result "*"]
 
-1.d4 c5 2.d5 d6 3.Nc3 g6 4.e4 Bg7 5.Nf3 Nf6 6.Be2 O-O 7.Nd2 Na6 8.Nc4 Nc7 9.a4 Bd7 
-10.O-O b5 11.axb5 Nxb5 12.Nxb5 Bxb5 13.f3 Bxc4 14.Bxc4 Nd7 15.c3 Qc7 16.Bg5 Rfb8 
-17.Qd2 a5 18.h4 Nf6 19.Be3 Rb7 20.g4 Rab8 21.Ra2 Kh8 22.h5 gxh5 23.g5 Nd7 24.Rf2 
-Ne5 25.Be2 Qd7 26.Rh2 f6 27.Rxh5 fxg5 28.Bxg5 Qe8 29.f4 Nf7 30.Bh4 a4 31.Bd1 Nh6 
-32.Bf2 Qg6+ 33.Rg5 Qxe4 34.Bc2 Qf3 35.Rg3 Qh5 36.Qd3 Ng8 37.Rh3 Qg4+ 38.Kh1 Nf6 
-39.Rxh7+ Kg8 40.Rh4 Qc8 41.Qe2 Rxb2 42.Rxb2 Rxb2 43.Bh7+ Nxh7 44.Qxb2 Nf6 45.Qa2 
-Qf5 46.Qxa4 Qxd5+ 47.Kg1 Kf7 48.Rh3 Ne4 49.Be1 Qf5 50.Qc4+ d5 51.Qd3 Qe6 52.Qf3 
-Nf6 53.Bf2 Ne4 54.Be1 Nf6 55.Kf1 Qa6+ 56.Qd3 Qe6 57.Rg3 Ne4 58.Rg2 Qf5 59.Qf3 Bh6 
-60.Rg4 e5 61.Qh3 Nd6 62.Bd2 Bg7 63.Qg2 Qb1+ 64.Be1 Qd3+ 65.Kg1 Nf5 66.Qh2 Ne3 67.Qh3 
-Qe2 68.Rxg7+ Kxg7 69.Qd7+ Kf8 70.Qd6+ Kf7 71.Qd7+ Kf6 72.fxe5+ Kxe5 73.Qe7+ Kf4 
-74.Qd6+ Kf5 75.Qd7+ Kf4 76.Qd6+ Kf5 77.Qd7+ Kf4 1/2
-
+1. d4 c5 2. d5 d6 3. Nc3 g6 4. e4 Bg7 5. Nf3 Nf6 6. Be2 O-O 7. Nd2 Na6 8. Nc4
+Nc7 9. a4 Bd7 10. O-O b5 11. axb5 Nxb5 12. Nxb5 Bxb5 13. f3 Bxc4 14. Bxc4 Nd7
+15. c3 Qc7 16. Bg5 Rfb8 17. Qd2 a5 18. h4 Nf6 19. Be3 Rb7 20. g4 Rab8 21. Ra2
+Kh8 22. h5 gxh5 23. g5 Nd7 24. Rf2 Ne5 25. Be2 Qd7 26. Rh2 f6 27. Rxh5 fxg5
+28. Bxg5 Qe8 29. f4 Nf7 30. Bh4 a4 31. Bd1 Nh6 32. Bf2 Qg6+ 33. Rg5 Qxe4 34.
+Bc2 Qf3 35. Rg3 Qh5 36. Qd3 Ng8 37. Rh3 Qg4+ 38. Kh1 Nf6 39. Rxh7+ Kg8 40. Rh4
+Qc8 41. Qe2 Rxb2 42. Rxb2 Rxb2 43. Bh7+ Nxh7 44. Qxb2 Nf6 45. Qa2 Qf5 46. Qxa4
+Qxd5+ 47. Kg1 Kf7 48. Rh3 Ne4 49. Be1 Qf5 50. Qc4+ d5 51. Qd3 Qe6 52. Qf3 Nf6
+53. Bf2 Ne4 54. Be1 Nf6 55. Kf1 Qa6+ 56. Qd3 Qe6 57. Rg3 Ne4 58. Rg2 Qf5 59.
+Qf3 Bh6 60. Rg4 e5 61. Qh3 Nd6 62. Bd2 Bg7 63. Qg2 Qb1+ 64. Be1 Qd3+ 65. Kg1
+Nf5 66. Qh2 Ne3 67. Qh3 Qe2 68. Rxg7+ Kxg7 69. Qd7+ Kf8 70. Qd6+ Kf7 71. Qd7+
+Kf6 72. fxe5+ Kxe5 73. Qe7+ Kf4 74. Qd6+ Kf5 75. Qd7+ Kf4 76. Qd6+ Kf5 77.
+Qd7+ Kf4 *

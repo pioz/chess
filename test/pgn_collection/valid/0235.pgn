@@ -1,23 +1,16 @@
 [Event "01"]
 [Site "Madrid Cat.16"]
-[Date "1994.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Illescas Cordoba Miguel"]
 [Black "Bareev Evgeny"]
-[Result "1/2-1/2"]
-[ECO "A29/01"]
+[Result "*"]
 
-1.c4 Nf6 2.Nc3 e5 3.Nf3 Nc6 4.g3 Bc5 
-5.d3 O-O 6.Bg2 d6 7.O-O a5 8.Bg5 h6 
-9.Bxf6 Qxf6 10.Ne4 Qe7 11.Nxc5 dxc5 12.Nd2 Ra6 
-13.Ne4 f5 14.Nc3 f4 15.e3 g5 16.Qh5 Bf5 
-17.Be4 Kg7 18.Nd5 Qd7 19.Bxf5 Rxf5 20.exf4 exf4 
-21.Rae1 Ra8 22.Re4 fxg3 23.hxg3 Raf8 24.f4 R5f7 
-25.Rfe1 Nd4 26.Kg2 Qf5 27.g4 Qg6 28.Qxg6+ Kxg6 
-29.f5 Kg7 30.Re7 c6 31.Nc7 h5 32.gxh5 Kh6 
-33.Rxf7 Rxf7 34.Ne6 Rxf5 35.Nxd4 cxd4 36.Re7 Kxh5 
-37.Kg3 b5 38.Rh7+ Kg6 39.Rc7 Rf6 40.cxb5 cxb5 
-41.Rc5 Rf5 42.Rc6+ Kh5 43.Rd6 Rc5 44.b4 Rc3 
-45.Rxd4 a4 46.Rd8 Ra3 47.Rd5 Rc3 48.Rd8 Ra3 
-49.Rd5 Rxa2 50.Rxb5 Ra3 51.Ra5  1/2-1/2
-
+1. c4 Nf6 2. Nc3 e5 3. Nf3 Nc6 4. g3 Bc5 5. d3 O-O 6. Bg2 d6 7. O-O a5 8. Bg5
+h6 9. Bxf6 Qxf6 10. Ne4 Qe7 11. Nxc5 dxc5 12. Nd2 Ra6 13. Ne4 f5 14. Nc3 f4
+15. e3 g5 16. Qh5 Bf5 17. Be4 Kg7 18. Nd5 Qd7 19. Bxf5 Rxf5 20. exf4 exf4 21.
+Rae1 Ra8 22. Re4 fxg3 23. hxg3 Raf8 24. f4 R5f7 25. Rfe1 Nd4 26. Kg2 Qf5 27.
+g4 Qg6 28. Qxg6+ Kxg6 29. f5 Kg7 30. Re7 c6 31. Nc7 h5 32. gxh5 Kh6 33. Rxf7
+Rxf7 34. Ne6 Rxf5 35. Nxd4 cxd4 36. Re7 Kxh5 37. Kg3 b5 38. Rh7+ Kg6 39. Rc7
+Rf6 40. cxb5 cxb5 41. Rc5 Rf5 42. Rc6+ Kh5 43. Rd6 Rc5 44. b4 Rc3 45. Rxd4 a4
+46. Rd8 Ra3 47. Rd5 Rc3 48. Rd8 Ra3 49. Rd5 Rxa2 50. Rxb5 Ra3 51. Ra5 *

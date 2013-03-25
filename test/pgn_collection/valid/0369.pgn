@@ -1,25 +1,17 @@
 [Event "Team tournament"]
 [Site "Oropesa del Mar ESP"]
-[Date "1996.10.04"]
+[Date "??"]
 [Round "1"]
 [White "Oms Pallise, Josep"]
 [Black "Lopez Colon, Francisco"]
-[Result "1/2"]
-[WhiteELO "2395"]
-[BlackELO "2250"]
-[WhiteTitle "FM"]
-[BlackTitle "FM"]
-[ECO "A37"]
-[WhiteCountry "ESP"]
-[BlackCountry "ESP"]
-[PlyCount "111"]
+[Result "*"]
 
-1.Nf3 g6 2.c4 Bg7 3.Nc3 c5 4.g3 Nc6 5.Bg2 e5 6.a3 a5 7.d4 Nxd4 8.Nxd4 cxd4 9.Nb5 
-Qb6 10.e3 d6 11.exd4 exd4 12.Bf4 Be6 13.Nxd6+ Kf8 14.O-O Ne7 15.c5 Qxc5 16.Nxb7 
-Qb6 17.Bd6 Rc8 18.b4 d3 19.bxa5 Qd4 20.Rb1 Bf6 21.Bf4 Nd5 22.Bh6+ Ke7 23.Qf3 g5 
-24.Rbd1 d2 25.h4 Rhg8 26.hxg5 Bxg5 27.Qh5 Bxh6 28.Qxh6 Rc2 29.a6 Rxg3 30.a7 Rxa3 
-31.Qxh7 Rca2 32.Qg8 Nc3 33.Qg5+ Kf8 34.Qh6+ Qg7 35.Qf4 Nxd1 36.Qb8+ Bc8 37.Qxc8+ 
-Ke7 38.Qd8+ Ke6 39.Qd6+ Kf5 40.Qd5+ Qe5 41.Nd6+ Kf6 42.Ne4+ Kf5 43.Ng3+ Kf6 44.Ne4+ 
-Kf5 45.Qxf7+ Kg4 46.Bf3+ Rxf3 47.Qg6+ Kf4 48.Ng3 Qg5 49.Qd6+ Kg4 50.Qe6+ Kf4 51.Rxd1 
-Rxg3+ 52.fxg3+ Qxg3+ 53.Kh1 Qf3+ 54.Kh2 Qxd1 55.Qf6+ Kg4 56.Qd4+ 1/2
-
+1. Nf3 g6 2. c4 Bg7 3. Nc3 c5 4. g3 Nc6 5. Bg2 e5 6. a3 a5 7. d4 Nxd4 8. Nxd4
+cxd4 9. Nb5 Qb6 10. e3 d6 11. exd4 exd4 12. Bf4 Be6 13. Nxd6+ Kf8 14. O-O Ne7
+15. c5 Qxc5 16. Nxb7 Qb6 17. Bd6 Rc8 18. b4 d3 19. bxa5 Qd4 20. Rb1 Bf6 21.
+Bf4 Nd5 22. Bh6+ Ke7 23. Qf3 g5 24. Rbd1 d2 25. h4 Rhg8 26. hxg5 Bxg5 27. Qh5
+Bxh6 28. Qxh6 Rc2 29. a6 Rxg3 30. a7 Rxa3 31. Qxh7 Rca2 32. Qg8 Nc3 33. Qg5+
+Kf8 34. Qh6+ Qg7 35. Qf4 Nxd1 36. Qb8+ Bc8 37. Qxc8+ Ke7 38. Qd8+ Ke6 39. Qd6+
+Kf5 40. Qd5+ Qe5 41. Nd6+ Kf6 42. Ne4+ Kf5 43. Ng3+ Kf6 44. Ne4+ Kf5 45. Qxf7+
+Kg4 46. Bf3+ Rxf3 47. Qg6+ Kf4 48. Ng3 Qg5 49. Qd6+ Kg4 50. Qe6+ Kf4 51. Rxd1
+Rxg3+ 52. fxg3+ Qxg3+ 53. Kh1 Qf3+ 54. Kh2 Qxd1 55. Qf6+ Kg4 56. Qd4+ *

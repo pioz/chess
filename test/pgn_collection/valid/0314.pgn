@@ -1,21 +1,18 @@
 [Event "?"]
 [Site "cr CIF-GB"]
-[Date "1990.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Sicker"]
 [Black "Woodland"]
-[Result "1/2-1/2"]
-[ECO "B22"]
+[Result "*"]
 
-1. e4 c5 2. c3 d5 3. exd5 Qxd5 4. d4 cxd4 5. cxd4 Nc6 6. Nc3 Qxd4 7. Be3
-Qxd1+ 8. Rxd1 Bd7 9. Nb5 Rc8 10. Nxa7 Nxa7 11. Bxa7 e5 12. a3 Bc5 
-13. Bxc5 Rxc5 14. Bd3 Nf6 15. Ne2 e4 16. Bb1 Bg4 17. h3 Bxe2 18. Kxe2 
-O-O 19. Rd2 Re8 20. Rhd1 e3 21. fxe3 Rce5 22. Rd3 g6 23. Ba2 R8e7 24. b4
-Kg7 25. Bc4 Ne4 26. Bd5 Nf6 27. Bf3 h5 28. Kf2 g5 29. g4 h4 30. Rc1 Kg6 
-31. Rc4 R5e6 32. Rdc3 Ne8 33. Bd1 Nd6 34. Bc2+ Kg7 35. Rc5 f6 36. Bf5 
-Ne4+ 37. Bxe4 Rxe4 38. R5c4 R4e5 39. Kf3 Kg6 40. e4 Kf7 41. Rd4 Ke6 
-42. Ke3 Kf7 43. Kd3 b5 44. Rc6 R5e6 45. Rxe6 Kxe6 46. Rd8 Ra7 47. Rb8 
-Rxa3+ 48. Kd4 Rxh3 49. Rb6+ Kf7 50. Rxb5 Rg3 51. Rf5 Rxg4 52. Rf1 h3 
-53. b5 h2 54. Rh1 Rg2 55. b6 Rb2 56. b7 Rxb7 57. Rxh2 Ke6 58. Ra2 Rb4+ 
-59. Ke3 Rb5 60. Ra7 Rb3+ 61. Kd4 Rg3 62. Ra6+ Kf7 63. e5 1/2-1/2
-
+1. e4 c5 2. c3 d5 3. exd5 Qxd5 4. d4 cxd4 5. cxd4 Nc6 6. Nc3 Qxd4 7. Be3 Qxd1+
+8. Rxd1 Bd7 9. Nb5 Rc8 10. Nxa7 Nxa7 11. Bxa7 e5 12. a3 Bc5 13. Bxc5 Rxc5 14.
+Bd3 Nf6 15. Ne2 e4 16. Bb1 Bg4 17. h3 Bxe2 18. Kxe2 O-O 19. Rd2 Re8 20. Rhd1
+e3 21. fxe3 Rce5 22. Rd3 g6 23. Ba2 R8e7 24. b4 Kg7 25. Bc4 Ne4 26. Bd5 Nf6
+27. Bf3 h5 28. Kf2 g5 29. g4 h4 30. Rc1 Kg6 31. Rc4 R5e6 32. Rdc3 Ne8 33. Bd1
+Nd6 34. Bc2+ Kg7 35. Rc5 f6 36. Bf5 Ne4+ 37. Bxe4 Rxe4 38. R5c4 R4e5 39. Kf3
+Kg6 40. e4 Kf7 41. Rd4 Ke6 42. Ke3 Kf7 43. Kd3 b5 44. Rc6 R5e6 45. Rxe6 Kxe6
+46. Rd8 Ra7 47. Rb8 Rxa3+ 48. Kd4 Rxh3 49. Rb6+ Kf7 50. Rxb5 Rg3 51. Rf5 Rxg4
+52. Rf1 h3 53. b5 h2 54. Rh1 Rg2 55. b6 Rb2 56. b7 Rxb7 57. Rxh2 Ke6 58. Ra2
+Rb4+ 59. Ke3 Rb5 60. Ra7 Rb3+ 61. Kd4 Rg3 62. Ra6+ Kf7 63. e5 *

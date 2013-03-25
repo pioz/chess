@@ -1,21 +1,18 @@
 [Event "DEN ch"]
 [Site "Aarhus DEN"]
-[Date "1958.??.??"]
+[Date "??"]
 [Round "1"]
 [White "Nielsen, Ha"]
 [Black "Pedersen, Ei"]
-[Result "1/2"]
-[ECO "A70"]
-[WhiteCountry "DEN"]
-[BlackCountry "DEN"]
-[PlyCount "118"]
+[Result "*"]
 
-1.d4 Nf6 2.c4 e6 3.Nc3 c5 4.d5 exd5 5.cxd5 d6 6.e4 g6 7.Nf3 Bg7 8.Nd2 O-O 9.Bd3 
-a6 10.a4 Nbd7 11.O-O Ne5 12.Be2 Qc7 13.f4 Ned7 14.Bf3 Rb8 15.Qe2 Ne8 16.Kh1 b6 17.Ra3 
-Qd8 18.Nc4 Qe7 19.Re1 f6 20.Rb3 Nc7 21.f5 b5 22.Na5 Ne5 23.Bf4 Bd7 24.Bxe5 fxe5 
-25.fxg6 b4 26.gxh7+ Kh8 27.Nd1 Bxa4 28.Rd3 Bb5 29.Nc6 Bxc6 30.dxc6 Ne6 31.Ne3 Nf4 
-32.Nd5 Nxd5 33.Rxd5 Rb6 34.Ra1 Ra8 35.Bg4 Rxc6 36.Bf5 c4 37.Rb5 c3 38.Rxb4 d5 39.bxc3 
-Rxc3 40.Rba4 Qc5 41.g4 Rc2 42.Qd3 Rc1+ 43.Rxc1 Qxc1+ 44.Kg2 Rb8 45.Ra2 dxe4 46.Bxe4 
-Rb2+ 47.Rxb2 Qxb2+ 48.Kf3 Qd4 49.Qb3 Qd8 50.Kg3 Qf8 51.Kg2 Qd8 52.Qa2 Bh6 53.Kf3 
-Qd1+ 54.Qe2 Qxe2+ 55.Kxe2 Bg5 56.Kd3 a5 57.Kc4 Bf4 58.h4 Bg3 59.h5 Bf4 1/2
-
+1. d4 Nf6 2. c4 e6 3. Nc3 c5 4. d5 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7 8. Nd2
+O-O 9. Bd3 a6 10. a4 Nbd7 11. O-O Ne5 12. Be2 Qc7 13. f4 Ned7 14. Bf3 Rb8 15.
+Qe2 Ne8 16. Kh1 b6 17. Ra3 Qd8 18. Nc4 Qe7 19. Re1 f6 20. Rb3 Nc7 21. f5 b5
+22. Na5 Ne5 23. Bf4 Bd7 24. Bxe5 fxe5 25. fxg6 b4 26. gxh7+ Kh8 27. Nd1 Bxa4
+28. Rd3 Bb5 29. Nc6 Bxc6 30. dxc6 Ne6 31. Ne3 Nf4 32. Nd5 Nxd5 33. Rxd5 Rb6
+34. Ra1 Ra8 35. Bg4 Rxc6 36. Bf5 c4 37. Rb5 c3 38. Rxb4 d5 39. bxc3 Rxc3 40.
+Rba4 Qc5 41. g4 Rc2 42. Qd3 Rc1+ 43. Rxc1 Qxc1+ 44. Kg2 Rb8 45. Ra2 dxe4 46.
+Bxe4 Rb2+ 47. Rxb2 Qxb2+ 48. Kf3 Qd4 49. Qb3 Qd8 50. Kg3 Qf8 51. Kg2 Qd8 52.
+Qa2 Bh6 53. Kf3 Qd1+ 54. Qe2 Qxe2+ 55. Kxe2 Bg5 56. Kd3 a5 57. Kc4 Bf4 58. h4
+Bg3 59. h5 Bf4 *

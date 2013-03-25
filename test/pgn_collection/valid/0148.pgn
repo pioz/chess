@@ -1,20 +1,15 @@
 [Event "Open"]
 [Site "Donau"]
-[Date "1991.??.??"]
-[Round "2"]
+[Date "??"]
+[Round "1"]
 [White "Liedl, W"]
 [Black "Sommerbauer, Norbert"]
-[Result "1/2"]
-[BlackELO "2305"]
-[ECO "A43"]
-[WhiteCountry "AUT"]
-[BlackCountry "AUT"]
-[PlyCount "89"]
+[Result "*"]
 
-1.d4 Nf6 2.c4 c5 3.d5 a6 4.a4 e5 5.Nc3 d6 6.e4 Be7 7.g3 O-O 8.Bg2 Ne8 9.Nge2 f5 
-10.exf5 Bxf5 11.O-O Nd7 12.h3 Bg5 13.g4 Bg6 14.f4 exf4 15.Nxf4 Bxf4 16.Bxf4 Ne5 
-17.Bxe5 Rxf1+ 18.Qxf1 dxe5 19.Be4 Nd6 20.Bxg6 hxg6 21.Qe2 Qh4 22.Kg2 Rf8 23.b3 e4 
-24.Rf1 Rxf1 25.Qxf1 Qg5 26.Qe2 Qf4 27.Nd1 b6 28.Qe3 Qe5 29.Nc3 Kh7 30.Ne2 Nf7 31.Qf4 
-Qe7 32.Ng3 e3 33.Kf3 Ng5+ 34.Ke2 Nxh3 35.Qxe3 Qd6 36.Kf3 Qf6+ 37.Kg2 Nf4+ 38.Kg1 
-Qg5 39.Qf3 Qe5 40.Ne4 g5 41.Kh1 Kg6 42.Nf2 Qe1+ 43.Kh2 Kf7 44.Qg3 Kf6 45.Qf3 1/2
-
+1. d4 Nf6 2. c4 c5 3. d5 a6 4. a4 e5 5. Nc3 d6 6. e4 Be7 7. g3 O-O 8. Bg2 Ne8
+9. Nge2 f5 10. exf5 Bxf5 11. O-O Nd7 12. h3 Bg5 13. g4 Bg6 14. f4 exf4 15.
+Nxf4 Bxf4 16. Bxf4 Ne5 17. Bxe5 Rxf1+ 18. Qxf1 dxe5 19. Be4 Nd6 20. Bxg6 hxg6
+21. Qe2 Qh4 22. Kg2 Rf8 23. b3 e4 24. Rf1 Rxf1 25. Qxf1 Qg5 26. Qe2 Qf4 27.
+Nd1 b6 28. Qe3 Qe5 29. Nc3 Kh7 30. Ne2 Nf7 31. Qf4 Qe7 32. Ng3 e3 33. Kf3 Ng5+
+34. Ke2 Nxh3 35. Qxe3 Qd6 36. Kf3 Qf6+ 37. Kg2 Nf4+ 38. Kg1 Qg5 39. Qf3 Qe5
+40. Ne4 g5 41. Kh1 Kg6 42. Nf2 Qe1+ 43. Kh2 Kf7 44. Qg3 Kf6 45. Qf3 *

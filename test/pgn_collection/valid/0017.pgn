@@ -1,20 +1,13 @@
 [Event "Olympiad"]
 [Site "Tel Aviv ISR"]
-[Date "1964.10.??"]
-[Round "7"]
+[Date "??"]
+[Round "1"]
 [White "Eliskases, Erich G"]
 [Black "Unzicker, Wolfgang"]
-[Result "1/2"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A13"]
-[WhiteCountry "ARG"]
-[BlackCountry "FRG"]
-[PlyCount "59"]
+[Result "*"]
 
-1.c4 Nf6 2.Nf3 e6 3.g3 d5 4.Bg2 dxc4 5.Qa4+ Nbd7 6.Qxc4 a6 7.Qc2 Rb8 8.O-O Be7 9.d4 
-b5 10.Bg5 Bb7 11.Nbd2 O-O 12.Rad1 c5 13.dxc5 Nxc5 14.Nb3 Ncd7 15.Ne5 Rc8 16.Qb1 
-Bxg2 17.Kxg2 Rc7 18.Kg1 Nd5 19.Bxe7 Qxe7 20.Nxd7 Rxd7 21.Rc1 Nb6 22.Rc6 Rd6 23.Rxd6 
-Qxd6 24.Rd1 Qe5 25.Nd4 g6 26.e3 Rc8 27.Rc1 Rc5 28.Rxc5 Qxc5 29.Qc2 Qxc2 30.Nxc2 
-1/2
-
+1. c4 Nf6 2. Nf3 e6 3. g3 d5 4. Bg2 dxc4 5. Qa4+ Nbd7 6. Qxc4 a6 7. Qc2 Rb8 8.
+O-O Be7 9. d4 b5 10. Bg5 Bb7 11. Nbd2 O-O 12. Rad1 c5 13. dxc5 Nxc5 14. Nb3
+Ncd7 15. Ne5 Rc8 16. Qb1 Bxg2 17. Kxg2 Rc7 18. Kg1 Nd5 19. Bxe7 Qxe7 20. Nxd7
+Rxd7 21. Rc1 Nb6 22. Rc6 Rd6 23. Rxd6 Qxd6 24. Rd1 Qe5 25. Nd4 g6 26. e3 Rc8
+27. Rc1 Rc5 28. Rxc5 Qxc5 29. Qc2 Qxc2 30. Nxc2 *

@@ -1,16 +1,12 @@
 [Event "?"]
 [Site "Bugojno"]
-[Date "1978.??.??"]
-[Round "13"]
+[Date "??"]
+[Round "1"]
 [White "Vukic Milan"]
 [Black "Timman Jan H (NED)"]
-[Result "1/2-1/2"]
-[ECO "D11/05"]
+[Result "*"]
 
-1.Nf3 d5 2.g3 Bg4 3.Bg2 Nd7 4.c4 e6 
-5.b3 Ngf6 6.Bb2 Bd6 7.O-O c6 8.d4 O-O 
-9.Ne5 Bf5 10.Nd3 Qe7 11.Nd2 Bxd3 12.exd3 Ba3 
-13.Bc3 Bb4 14.Bb2 Ba3 15.Bc3 a5 16.Nb1 Bd6 
-17.a3 b6 18.Re1 Rfc8 19.Qd2 Qf8 20.Qb2 Ra7 
-21.Nd2 Rca8  1/2-1/2
-
+1. Nf3 d5 2. g3 Bg4 3. Bg2 Nd7 4. c4 e6 5. b3 Ngf6 6. Bb2 Bd6 7. O-O c6 8. d4
+O-O 9. Ne5 Bf5 10. Nd3 Qe7 11. Nd2 Bxd3 12. exd3 Ba3 13. Bc3 Bb4 14. Bb2 Ba3
+15. Bc3 a5 16. Nb1 Bd6 17. a3 b6 18. Re1 Rfc8 19. Qd2 Qf8 20. Qb2 Ra7 21. Nd2
+Rca8 *

@@ -1,15 +1,11 @@
 [Event "Balatontourist Open"]
 [Site "Budapest HUN"]
-[Date "2000.06.17"]
-[Round "3"]
+[Date "??"]
+[Round "1"]
 [White "D Albini, G"]
 [Black "Mullajumaa, Taher"]
-[Result "1/2"]
-[WhiteELO "2179"]
-[ECO "A36"]
-[PlyCount "36"]
+[Result "*"]
 
-1.e4 c5 2.c4 Nc6 3.Nc3 g6 4.g3 Bg7 5.Bg2 e6 6.Nge2 Nge7 7.O-O O-O 8.d3 a6 9.f4 d6 
-10.Be3 Qc7 11.Rb1 Rb8 12.Qd2 b5 13.b3 Bd7 14.Rbc1 b4 15.Nd1 Qb6 16.g4 a5 17.Ng3 
-a4 18.f5 f6 1/2
-
+1. e4 c5 2. c4 Nc6 3. Nc3 g6 4. g3 Bg7 5. Bg2 e6 6. Nge2 Nge7 7. O-O O-O 8. d3
+a6 9. f4 d6 10. Be3 Qc7 11. Rb1 Rb8 12. Qd2 b5 13. b3 Bd7 14. Rbc1 b4 15. Nd1
+Qb6 16. g4 a5 17. Ng3 a4 18. f5 f6 *

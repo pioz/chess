@@ -1,15 +1,13 @@
 [Event "?"]
 [Site "Banjaluka"]
-[Date "1981.??.??"]
-[Round "6"]
+[Date "??"]
+[Round "1"]
 [White "Sax,G"]
 [Black "Tseshkovsky,Vitali"]
-[Result "1/2-1/2"]
-[ECO "C41"]
+[Result "*"]
 
-1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Qxd4 Nf6 5. Bg5 Be7 6. Nc3 O-O 7. O-O-O
-Nc6 8. Qd2 a6 9. Kb1 b5 10. Bd3 Ne5 11. Nxe5 dxe5 12. f4 c6 13. fxe5 Ng4
-14. Bf4 Bc5 15. Be2 Qe7 16. Bxg4 Bxg4 17. Rdg1 a5 18. Nd1 b4 19. Ne3 
-Bxe3 20. Qxe3 a4 21. Qg3 Bh5 22. Qg5 Qxg5 23. Bxg5 Rfe8 24. Bf4 Bg6 
-25. Re1 f6 26. exf6 gxf6 27. b3 Bxe4 28. Bd6 f5 29. Re2 1/2-1/2
-
+1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Qxd4 Nf6 5. Bg5 Be7 6. Nc3 O-O 7. O-O-O Nc6
+8. Qd2 a6 9. Kb1 b5 10. Bd3 Ne5 11. Nxe5 dxe5 12. f4 c6 13. fxe5 Ng4 14. Bf4
+Bc5 15. Be2 Qe7 16. Bxg4 Bxg4 17. Rdg1 a5 18. Nd1 b4 19. Ne3 Bxe3 20. Qxe3 a4
+21. Qg3 Bh5 22. Qg5 Qxg5 23. Bxg5 Rfe8 24. Bf4 Bg6 25. Re1 f6 26. exf6 gxf6
+27. b3 Bxe4 28. Bd6 f5 29. Re2 *

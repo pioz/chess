@@ -1,21 +1,16 @@
 [Event "?"]
 [Site "Amsterdam IBM"]
-[Date "1978.??.??"]
-[Round "5"]
+[Date "??"]
+[Round "1"]
 [White "Romanishin, O."]
 [Black "Ree, H."]
-[Result "1/2-1/2"]
-[ECO "C12"]
-[WhiteElo "2610"]
-[BlackElo "2500"]
+[Result "*"]
 
-1. e4 e6 2. Nc3 d5 3. d4 Nf6 4. Bg5 Bb4 5. e5 h6 6. Bd2 Bxc3 7. bxc3 
-Ne4 8. Bc1 Nxc3 9. Qg4 g6 10. Qh3 Na4 11. Nf3 c5 12. dxc5 Nxc5 13. Be2 
-Qa5+ 14. Bd2 Qa4 15. O-O b6 16. Rfc1 Ba6 17. c4 Bxc4 18. Bxc4 dxc4 19. 
-Ng5 Nc6 20. Qf3 hxg5 21. Rxc4 Qxc4 22. Qxc6+ Kf8 23. Qxa8+ Kg7 24. Qf3 
-Qd4 25. Bc3 Qf4 26. Qxf4 gxf4 27. Rd1 g5 28. f3 Rc8 29. Bb4 Kg6 30. g4 
-fxg3 31. hxg3 Rc7 32. g4 Rd7 33. Rxd7 Nxd7 34. Bc3 f6 35. exf6 Nxf6 
-36. Kf2 Nd5 37. Bd4 Nb4 38. a3 Nc6 39. Bc3 b5 40. Ke3 a5 41. Ke4 b4 
-42. axb4 axb4 43. Bb2 Ne7 44. Ke5 Kf7 45. Kd4 Ng6 46. Bc1 Kf6 47. Bb2 
-e5+ 48. Kd5 b3 49. Ba1 Nf4+ 50. Ke4 Ng6 51. Kd5 Ne7+ 52. Kd6 1/2-1/2
-
+1. e4 e6 2. Nc3 d5 3. d4 Nf6 4. Bg5 Bb4 5. e5 h6 6. Bd2 Bxc3 7. bxc3 Ne4 8.
+Bc1 Nxc3 9. Qg4 g6 10. Qh3 Na4 11. Nf3 c5 12. dxc5 Nxc5 13. Be2 Qa5+ 14. Bd2
+Qa4 15. O-O b6 16. Rfc1 Ba6 17. c4 Bxc4 18. Bxc4 dxc4 19. Ng5 Nc6 20. Qf3 hxg5
+21. Rxc4 Qxc4 22. Qxc6+ Kf8 23. Qxa8+ Kg7 24. Qf3 Qd4 25. Bc3 Qf4 26. Qxf4
+gxf4 27. Rd1 g5 28. f3 Rc8 29. Bb4 Kg6 30. g4 fxg3 31. hxg3 Rc7 32. g4 Rd7 33.
+Rxd7 Nxd7 34. Bc3 f6 35. exf6 Nxf6 36. Kf2 Nd5 37. Bd4 Nb4 38. a3 Nc6 39. Bc3
+b5 40. Ke3 a5 41. Ke4 b4 42. axb4 axb4 43. Bb2 Ne7 44. Ke5 Kf7 45. Kd4 Ng6 46.
+Bc1 Kf6 47. Bb2 e5+ 48. Kd5 b3 49. Ba1 Nf4+ 50. Ke4 Ng6 51. Kd5 Ne7+ 52. Kd6 *

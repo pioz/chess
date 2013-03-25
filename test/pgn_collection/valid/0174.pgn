@@ -1,24 +1,16 @@
 [Event "-"]
 [Site "Tbilisi GEO"]
-[Date "1986.10.??"]
-[Round "5"]
+[Date "??"]
+[Round "1"]
 [White "Ubilava, Elizbar E"]
 [Black "Malaniuk, Vladimir P"]
-[Result "1/2"]
-[WhiteELO "2515"]
-[BlackELO "2535"]
-[WhiteTitle "IM"]
-[BlackTitle "IM"]
-[ECO "A87"]
-[WhiteCountry "URS"]
-[BlackCountry "URS"]
-[PlyCount "93"]
+[Result "*"]
 
-1.Nf3 f5 2.d4 Nf6 3.g3 g6 4.Bg2 Bg7 5.O-O O-O 6.c4 d6 7.Nc3 Qe8 8.Qb3 Na6 9.Bg5 
-c5 10.Bxf6 Bxf6 11.Rad1 Bg7 12.e3 Kh8 13.Rd2 h6 14.Re1 Qf7 15.Nb5 g5 16.Kh1 Be6 
-17.d5 Bd7 18.e4 fxe4 19.Rxe4 Bf6 20.Ng1 Bf5 21.Re1 Rfc8 22.Be4 Bd7 23.Ne2 Nc7 24.Nxc7 
-Rxc7 25.Nc3 Qg7 26.Nd1 Rf8 27.Ne3 Bd4 28.Kg2 b6 29.f3 h5 30.Nd1 Rcc8 31.Nc3 Be5 
-32.Nb5 Bxb5 33.Qxb5 Rc7 34.Rde2 Qf6 35.Qb3 e6 36.dxe6 Qxe6 37.Bd5 Qf6 38.Re4 Rh7 
-39.Kh1 h4 40.gxh4 Bf4 41.Re6 Qg7 42.Qc2 Rxh4 43.R1e2 Qd7 44.Qg6 Qh7 45.Qxh7+ Rxh7 
-46.Re8 Rxe8 47.Rxe8+ 1/2
-
+1. Nf3 f5 2. d4 Nf6 3. g3 g6 4. Bg2 Bg7 5. O-O O-O 6. c4 d6 7. Nc3 Qe8 8. Qb3
+Na6 9. Bg5 c5 10. Bxf6 Bxf6 11. Rad1 Bg7 12. e3 Kh8 13. Rd2 h6 14. Re1 Qf7 15.
+Nb5 g5 16. Kh1 Be6 17. d5 Bd7 18. e4 fxe4 19. Rxe4 Bf6 20. Ng1 Bf5 21. Re1
+Rfc8 22. Be4 Bd7 23. Ne2 Nc7 24. Nxc7 Rxc7 25. Nc3 Qg7 26. Nd1 Rf8 27. Ne3 Bd4
+28. Kg2 b6 29. f3 h5 30. Nd1 Rcc8 31. Nc3 Be5 32. Nb5 Bxb5 33. Qxb5 Rc7 34.
+Rde2 Qf6 35. Qb3 e6 36. dxe6 Qxe6 37. Bd5 Qf6 38. Re4 Rh7 39. Kh1 h4 40. gxh4
+Bf4 41. Re6 Qg7 42. Qc2 Rxh4 43. R1e2 Qd7 44. Qg6 Qh7 45. Qxh7+ Rxh7 46. Re8
+Rxe8 47. Rxe8+ *

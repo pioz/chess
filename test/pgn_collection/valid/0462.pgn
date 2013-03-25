@@ -1,25 +1,17 @@
 [Event "Ch World (cadets)"]
 [Site "Sao Lourenco (Brazil)"]
-[Date "1995.??.??"]
-[Round "2"]
+[Date "??"]
+[Round "1"]
 [White "Schrevens Birger"]
 [Black "Elias Moises"]
-[Result "1/2-1/2"]
-[ECO "C47/05"]
+[Result "*"]
 
-1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 
-5.Nc3 Bc5 6.Be3 Nxd4 7.Bxd4 Bxd4 8.Qxd4 d6 
-9.Bd3 O-O 10.O-O Re8 11.Rae1 c5 12.Qe3 Be6 
-13.b3 Qa5 14.Qd2 d5 15.e5 Nd7 16.f4 d4 
-17.Ne4 Qxd2 18.Nxd2 f6 19.f5 Bd5 20.e6 Ne5 
-21.Be4 Bxe4 22.Nxe4 b6 23.Rd1 Rad8 24.h3 h5 
-25.Rf4 d3 26.cxd3 Rxd3 27.Rxd3 Nxd3 28.Rf3 Ne5 
-29.Rg3 Rd8 30.Nxf6+ Kf8 31.Nxh5 Rd1+ 32.Kh2 Rf1 
-33.Nxg7 Nc6 34.Nh5 Rxf5 35.Rf3 Rxf3 36.gxf3 Nd4 
-37.Nf4 Nxf3+ 38.Kg3 Nd4 39.Ng6+ Kg7 40.e7 Kf7 
-41.Kf4 Nc6 42.h4 Nxe7 43.Nxe7 Kxe7 44.Ke5 Kf7 
-45.Kd5 Kg6 46.Kc4 a6 47.b4 cxb4 48.Kxb4 Kh5 
-49.Kc4 Kxh4 50.Kd5 Kg5 51.Kc6 b5 52.Kb6 Kf6 
-53.Kxa6 b4 54.Kb5 Ke7 55.Kxb4 Kd8 56.Kb5 Kc8 
-57.Kb6 Kb8  1/2-1/2
-
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Bc5 6. Be3 Nxd4 7. Bxd4 Bxd4
+8. Qxd4 d6 9. Bd3 O-O 10. O-O Re8 11. Rae1 c5 12. Qe3 Be6 13. b3 Qa5 14. Qd2
+d5 15. e5 Nd7 16. f4 d4 17. Ne4 Qxd2 18. Nxd2 f6 19. f5 Bd5 20. e6 Ne5 21. Be4
+Bxe4 22. Nxe4 b6 23. Rd1 Rad8 24. h3 h5 25. Rf4 d3 26. cxd3 Rxd3 27. Rxd3 Nxd3
+28. Rf3 Ne5 29. Rg3 Rd8 30. Nxf6+ Kf8 31. Nxh5 Rd1+ 32. Kh2 Rf1 33. Nxg7 Nc6
+34. Nh5 Rxf5 35. Rf3 Rxf3 36. gxf3 Nd4 37. Nf4 Nxf3+ 38. Kg3 Nd4 39. Ng6+ Kg7
+40. e7 Kf7 41. Kf4 Nc6 42. h4 Nxe7 43. Nxe7 Kxe7 44. Ke5 Kf7 45. Kd5 Kg6 46.
+Kc4 a6 47. b4 cxb4 48. Kxb4 Kh5 49. Kc4 Kxh4 50. Kd5 Kg5 51. Kc6 b5 52. Kb6
+Kf6 53. Kxa6 b4 54. Kb5 Ke7 55. Kxb4 Kd8 56. Kb5 Kc8 57. Kb6 Kb8 *

@@ -1,27 +1,19 @@
 [Event "Bah"]
 [Site "Budapest"]
-[Date "1950.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Sthlberg Gideon"]
 [Black "Najdorf Miguel"]
-[Result "1/2-1/2"]
-[ECO "E69/18"]
+[Result "*"]
 
-1.Nf3 Nf6 2.c4 g6 3.g3 Bg7 4.Bg2 O-O 
-5.O-O d6 6.d4 Nbd7 7.Nc3 e5 8.e4 exd4 
-9.Nxd4 Re8 10.Re1 c6 11.h3 a5 12.Be3 Nc5 
-13.Qc2 Nfd7 14.Rad1 a4 15.f4 Qa5 16.Bf2 Nb6 
-17.Nb1 Na6 18.Nd2 Nd7 19.a3 Nac5 20.N2f3 Qc7 
-21.Kh2 b6 22.e5 dxe5 23.Nxc6 Bb7 24.Nfxe5 Nxe5 
-25.Nxe5 Bxg2 26.Bxc5 Bb7 27.Bd6 Qc8 28.Qf2 f6 
-29.Ng4 Qxc4 30.Ne3 Qb3 31.Bb4 Rad8 32.Rxd8 Rxd8 
-33.Bc3 Qb5 34.f5 Qc6 35.Nc2 Bf8 36.Nd4 Qd5 
-37.Ne6 Rc8 38.fxg6 hxg6 39.Nf4 Qf5 40.Qxb6 Bc6 
-41.Qd4 Bg7 42.g4 Qc2+ 43.Re2 Qb1 44.Ng2 Qf1 
-45.Qf2 Qxf2 46.Rxf2 Be4 47.Nf4 Bf8 48.Bxf6 Bd6 
-49.Kg3 Rc2 50.Rxc2 Bxc2 51.Kf3 Bxf4 52.Kxf4 Bb3 
-53.Kg5 Kf7 54.Bc3 Bc4 55.h4 Be2 56.Bd4 Bd1 
-57.Be5 Be2 58.Bc3 Bd1 59.Bd4 Be2 60.b4 axb3 
-61.a4 Ke6 62.a5 Kd7 63.a6 Kc7 64.h5 gxh5 
-65.gxh5 Bxh5 66.Kxh5 b2 67.Bxb2 Kb6  1/2-1/2
-
+1. Nf3 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 O-O 5. O-O d6 6. d4 Nbd7 7. Nc3 e5 8. e4
+exd4 9. Nxd4 Re8 10. Re1 c6 11. h3 a5 12. Be3 Nc5 13. Qc2 Nfd7 14. Rad1 a4 15.
+f4 Qa5 16. Bf2 Nb6 17. Nb1 Na6 18. Nd2 Nd7 19. a3 Nac5 20. N2f3 Qc7 21. Kh2 b6
+22. e5 dxe5 23. Nxc6 Bb7 24. Nfxe5 Nxe5 25. Nxe5 Bxg2 26. Bxc5 Bb7 27. Bd6 Qc8
+28. Qf2 f6 29. Ng4 Qxc4 30. Ne3 Qb3 31. Bb4 Rad8 32. Rxd8 Rxd8 33. Bc3 Qb5 34.
+f5 Qc6 35. Nc2 Bf8 36. Nd4 Qd5 37. Ne6 Rc8 38. fxg6 hxg6 39. Nf4 Qf5 40. Qxb6
+Bc6 41. Qd4 Bg7 42. g4 Qc2+ 43. Re2 Qb1 44. Ng2 Qf1 45. Qf2 Qxf2 46. Rxf2 Be4
+47. Nf4 Bf8 48. Bxf6 Bd6 49. Kg3 Rc2 50. Rxc2 Bxc2 51. Kf3 Bxf4 52. Kxf4 Bb3
+53. Kg5 Kf7 54. Bc3 Bc4 55. h4 Be2 56. Bd4 Bd1 57. Be5 Be2 58. Bc3 Bd1 59. Bd4
+Be2 60. b4 axb3 61. a4 Ke6 62. a5 Kd7 63. a6 Kc7 64. h5 gxh5 65. gxh5 Bxh5 66.
+Kxh5 b2 67. Bxb2 Kb6 *

@@ -1,23 +1,15 @@
 [Event "UB"]
 [Site "Copenhagen DEN"]
-[Date "1991.06.??"]
-[Round "8"]
+[Date "??"]
+[Round "1"]
 [White "Schmidt, Wlodzimierz"]
 [Black "Vyzmanavin, Alexey B"]
-[Result "1/2"]
-[WhiteELO "2460"]
-[BlackELO "2590"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A81"]
-[WhiteCountry "POL"]
-[BlackCountry "URS"]
-[PlyCount "88"]
+[Result "*"]
 
-1.Nf3 f5 2.d4 Nf6 3.g3 g6 4.b3 Bg7 5.Bb2 O-O 6.Bg2 d6 7.O-O Qe8 8.c4 Na6 9.d5 Bd7 
-10.Nc3 c6 11.Rb1 Rc8 12.Nd4 Nc7 13.e3 c5 14.Nc2 b5 15.Qd3 Rb8 16.Ba1 b4 17.Ne2 g5 
-18.f4 h6 19.Ne1 Qg6 20.Nf3 Ne4 21.Bxg7 Kxg7 22.Nd2 Nxd2 23.Qxd2 Ne8 24.e4 fxe4 25.fxg5 
-Qxg5 26.Qxg5+ hxg5 27.Rxf8 Kxf8 28.Bxe4 Nf6 29.Rf1 Kg7 30.Bf5 g4 31.Bxd7 Nxd7 32.Nf4 
-Ne5 33.Kg2 a5 34.Ne6+ Kg6 35.h3 gxh3+ 36.Kxh3 a4 37.g4 axb3 38.axb3 Ra8 39.Kh4 Ra3 
-40.Nf8+ Kg7 41.Ne6+ Kh7 42.Rf5 Rxb3 43.Rh5+ Kg6 44.Rg5+ Kh6 1/2
-
+1. Nf3 f5 2. d4 Nf6 3. g3 g6 4. b3 Bg7 5. Bb2 O-O 6. Bg2 d6 7. O-O Qe8 8. c4
+Na6 9. d5 Bd7 10. Nc3 c6 11. Rb1 Rc8 12. Nd4 Nc7 13. e3 c5 14. Nc2 b5 15. Qd3
+Rb8 16. Ba1 b4 17. Ne2 g5 18. f4 h6 19. Ne1 Qg6 20. Nf3 Ne4 21. Bxg7 Kxg7 22.
+Nd2 Nxd2 23. Qxd2 Ne8 24. e4 fxe4 25. fxg5 Qxg5 26. Qxg5+ hxg5 27. Rxf8 Kxf8
+28. Bxe4 Nf6 29. Rf1 Kg7 30. Bf5 g4 31. Bxd7 Nxd7 32. Nf4 Ne5 33. Kg2 a5 34.
+Ne6+ Kg6 35. h3 gxh3+ 36. Kxh3 a4 37. g4 axb3 38. axb3 Ra8 39. Kh4 Ra3 40.
+Nf8+ Kg7 41. Ne6+ Kh7 42. Rf5 Rxb3 43. Rh5+ Kg6 44. Rg5+ Kh6 *

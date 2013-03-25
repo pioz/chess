@@ -1,23 +1,17 @@
 [Event "It (cat.21)"]
 [Site "Linares (Spain)"]
-[Date "1998.??.??"]
-[Round "13"]
+[Date "??"]
+[Round "1"]
 [White "Kasparov Gary (RUS)"]
 [Black "Kramnik Vladimir (RUS)"]
-[Result "1/2-1/2"]
-[ECO "E32/09"]
+[Result "*"]
 
-1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2 O-O 
-5.a3 Bxc3+ 6.Qxc3 b6 7.Nf3 Bb7 8.Bg5 d6 
-9.Nd2 Nbd7 10.f3 h6 11.Bh4 Rc8 12.e4 c5 
-13.Bd3 d5 14.exd5 exd5 15.O-O cxd4 16.Qxd4 Nc5 
-17.Bxf6 Qxf6 18.Qxf6 gxf6 19.Bf5 Rcd8 20.Rfe1 Ba6 
-21.Rac1 dxc4 22.Nxc4 Nb3 23.Rc3 Nd4 24.Bh3 Rfe8 
-25.Kf2 Rxe1 26.Kxe1 Re8+ 27.Kd2 Ne2 28.Re3 Rd8+ 
-29.Kxe2 Bxc4+ 30.Ke1 Kf8 31.Bf5 Re8 32.Rxe8+ Kxe8 
-33.Kd2 Ke7 34.Ke3 Bd5 35.Kd4 Kd6 36.Be4 Be6 
-37.Bd3 Bc8 38.Bc4 Ke7 39.Ke4 Bb7+ 40.Bd5 Bc8 
-41.Kd4 Bd7 42.Kc4 Be8 43.b4 Bd7 44.f4 f5 
-45.Bf3 Kd6 46.Bh5 f6 47.Bd1 Bc6 48.g3 Bd7 
-49.Bc2 Ke6 50.a4 Kd6 51.a5 Ke6 52.Kd4  1/2-1/2
-
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Nf3 Bb7 8.
+Bg5 d6 9. Nd2 Nbd7 10. f3 h6 11. Bh4 Rc8 12. e4 c5 13. Bd3 d5 14. exd5 exd5
+15. O-O cxd4 16. Qxd4 Nc5 17. Bxf6 Qxf6 18. Qxf6 gxf6 19. Bf5 Rcd8 20. Rfe1
+Ba6 21. Rac1 dxc4 22. Nxc4 Nb3 23. Rc3 Nd4 24. Bh3 Rfe8 25. Kf2 Rxe1 26. Kxe1
+Re8+ 27. Kd2 Ne2 28. Re3 Rd8+ 29. Kxe2 Bxc4+ 30. Ke1 Kf8 31. Bf5 Re8 32. Rxe8+
+Kxe8 33. Kd2 Ke7 34. Ke3 Bd5 35. Kd4 Kd6 36. Be4 Be6 37. Bd3 Bc8 38. Bc4 Ke7
+39. Ke4 Bb7+ 40. Bd5 Bc8 41. Kd4 Bd7 42. Kc4 Be8 43. b4 Bd7 44. f4 f5 45. Bf3
+Kd6 46. Bh5 f6 47. Bd1 Bc6 48. g3 Bd7 49. Bc2 Ke6 50. a4 Kd6 51. a5 Ke6 52.
+Kd4 *

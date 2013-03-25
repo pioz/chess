@@ -1,17 +1,13 @@
 [Event "etch"]
 [Site "(m) Pula (Croatia) (4)"]
-[Date "1997.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Ftacnik Lubomir"]
 [Black "Timman Jan H (NED)"]
-[Result "1/2-1/2"]
-[ECO "E15/04"]
+[Result "*"]
 
-1.d4 Nf6 2.Nf3 e6 3.c4 b6 4.g3 Ba6 
-5.Nbd2 Bb4 6.Qc2 Bb7 7.Bg2 Be4 8.Qb3 Bxd2+ 
-9.Bxd2 O-O 10.O-O d6 11.Bg5 Nbd7 12.Qe3 Qe8 
-13.Rfc1 Bb7 14.Bxf6 Nxf6 15.h3 Nd7 16.Rc3 h6 
-17.Ne5 Bxg2 18.Nxd7 Qxd7 19.Kxg2 a5 20.Rd1 Rfe8 
-21.Rd2 Qa4 22.Qd3 e5 23.dxe5 Rxe5 24.b3 Qb4 
-25.a4 Rae8 26.e3 R8e6 27.Qc2 Qc5  1/2-1/2
-
+1. d4 Nf6 2. Nf3 e6 3. c4 b6 4. g3 Ba6 5. Nbd2 Bb4 6. Qc2 Bb7 7. Bg2 Be4 8.
+Qb3 Bxd2+ 9. Bxd2 O-O 10. O-O d6 11. Bg5 Nbd7 12. Qe3 Qe8 13. Rfc1 Bb7 14.
+Bxf6 Nxf6 15. h3 Nd7 16. Rc3 h6 17. Ne5 Bxg2 18. Nxd7 Qxd7 19. Kxg2 a5 20. Rd1
+Rfe8 21. Rd2 Qa4 22. Qd3 e5 23. dxe5 Rxe5 24. b3 Qb4 25. a4 Rae8 26. e3 R8e6
+27. Qc2 Qc5 *

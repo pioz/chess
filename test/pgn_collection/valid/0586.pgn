@@ -1,20 +1,15 @@
 [Event "Bundesliga 1988/1989"]
 [Site "GER"]
-[Date "1988.??.??"]
+[Date "??"]
+[Round "1"]
 [White "Pichler, Juergen"]
 [Black "Fries Nielsen, Jens Ove"]
-[Result "1/2"]
-[WhiteELO "2325"]
-[BlackELO "2385"]
-[ECO "A46"]
-[WhiteCountry "FRG"]
-[BlackCountry "DEN"]
-[PlyCount "88"]
+[Result "*"]
 
-1.d4 Nf6 2.Nf3 d6 3.Bg5 Nbd7 4.Nbd2 c5 5.e3 e6 6.Bd3 Be7 7.Qe2 cxd4 8.exd4 Nd5 9.Bxe7 
-Qxe7 10.O-O Nf4 11.Qe3 Nxd3 12.Qxd3 O-O 13.Rfe1 b6 14.Ne4 Bb7 15.Qa3 Bxe4 16.Rxe4 
-Nf6 17.Re2 Rfc8 18.Qd3 Qb7 19.Ng5 Qc6 20.c3 b5 21.Ne4 Nxe4 22.Rxe4 Qd5 23.Rh4 h6 
-24.Qg3 b4 25.Rg4 g5 26.Qd3 bxc3 27.bxc3 Qc4 28.Qd1 Qxc3 29.h4 Qc2 30.hxg5 Qxd1+ 
-31.Rxd1 h5 32.Rf4 Rc2 33.d5 e5 34.Rf6 Rd8 35.Rb1 Rc7 36.Rb4 Kg7 37.Ra4 Rdd7 38.Ra6 
-Rc2 39.f3 Rd2 40.Rfxd6 Rxd6 41.Rxd6 Rxa2 42.Rd7 Kg6 43.Re7 Kxg5 44.Rxf7 Rd2 1/2
-
+1. d4 Nf6 2. Nf3 d6 3. Bg5 Nbd7 4. Nbd2 c5 5. e3 e6 6. Bd3 Be7 7. Qe2 cxd4 8.
+exd4 Nd5 9. Bxe7 Qxe7 10. O-O Nf4 11. Qe3 Nxd3 12. Qxd3 O-O 13. Rfe1 b6 14.
+Ne4 Bb7 15. Qa3 Bxe4 16. Rxe4 Nf6 17. Re2 Rfc8 18. Qd3 Qb7 19. Ng5 Qc6 20. c3
+b5 21. Ne4 Nxe4 22. Rxe4 Qd5 23. Rh4 h6 24. Qg3 b4 25. Rg4 g5 26. Qd3 bxc3 27.
+bxc3 Qc4 28. Qd1 Qxc3 29. h4 Qc2 30. hxg5 Qxd1+ 31. Rxd1 h5 32. Rf4 Rc2 33. d5
+e5 34. Rf6 Rd8 35. Rb1 Rc7 36. Rb4 Kg7 37. Ra4 Rdd7 38. Ra6 Rc2 39. f3 Rd2 40.
+Rfxd6 Rxd6 41. Rxd6 Rxa2 42. Rd7 Kg6 43. Re7 Kxg5 44. Rxf7 Rd2 *

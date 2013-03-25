@@ -1,17 +1,12 @@
 [Event "Bundesliga 1988/1989"]
 [Site "GER"]
-[Date "1988.??.??"]
+[Date "??"]
+[Round "1"]
 [White "Reinartz, G"]
 [Black "Van der Veen, H"]
-[Result "1/2"]
-[WhiteELO "2245"]
-[BlackELO "2235"]
-[ECO "A73"]
-[WhiteCountry "FRG"]
-[BlackCountry "NED"]
-[PlyCount "41"]
+[Result "*"]
 
-1.d4 Nf6 2.Nf3 c5 3.d5 e6 4.c4 exd5 5.cxd5 d6 6.Nc3 g6 7.e4 Bg7 8.Be2 Bg4 9.O-O 
-O-O 10.Re1 a6 11.a4 Re8 12.h3 Bxf3 13.Bxf3 Nbd7 14.a5 Rb8 15.Ra2 Qc7 16.Be3 b5 17.axb6 
-Rxb6 18.Qc2 Reb8 19.Rb1 Ne8 20.Nd1 Qb7 21.Qa4 1/2
-
+1. d4 Nf6 2. Nf3 c5 3. d5 e6 4. c4 exd5 5. cxd5 d6 6. Nc3 g6 7. e4 Bg7 8. Be2
+Bg4 9. O-O O-O 10. Re1 a6 11. a4 Re8 12. h3 Bxf3 13. Bxf3 Nbd7 14. a5 Rb8 15.
+Ra2 Qc7 16. Be3 b5 17. axb6 Rxb6 18. Qc2 Reb8 19. Rb1 Ne8 20. Nd1 Qb7 21. Qa4
+*

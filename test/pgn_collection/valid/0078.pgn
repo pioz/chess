@@ -1,22 +1,14 @@
 [Event "Open"]
 [Site "Mondariz"]
-[Date "1994.06.??"]
-[Round "3"]
+[Date "??"]
+[Round "1"]
 [White "Giorgadze, Giorgi"]
 [Black "Dimitrov, Vladimir"]
-[Result "1/2"]
-[WhiteELO "2565"]
-[BlackELO "2475"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A15"]
-[WhiteCountry "GEO"]
-[BlackCountry "BUL"]
-[PlyCount "72"]
+[Result "*"]
 
-1.Nf3 Nf6 2.b3 g6 3.Bb2 Bg7 4.g3 O-O 5.Bg2 d6 6.c4 e5 7.O-O Nbd7 8.Nc3 Re8 9.d4 
-exd4 10.Nxd4 Nc5 11.Qc2 c6 12.Rad1 a5 13.Bc1 Qe7 14.Bf4 Nfe4 15.Nxe4 Nxe4 16.f3 
-Ng5 17.Bc1 h5 18.e4 h4 19.Qd2 Nh7 20.Ne2 h3 21.Bh1 d5 22.cxd5 cxd5 23.Qxd5 Be6 24.Qb5 
-Qb4 25.Qxb4 axb4 26.Rd2 Rec8 27.f4 Bf8 28.Rfd1 Bc5+ 29.Kf1 Nf6 30.f5 gxf5 31.exf5 
-Bxf5 32.Bxb7 Ng4 33.Bxa8 Nxh2+ 34.Ke1 Rxa8 35.Rd8+ Kh7 36.Rxa8 Nf3+ 1/2
-
+1. Nf3 Nf6 2. b3 g6 3. Bb2 Bg7 4. g3 O-O 5. Bg2 d6 6. c4 e5 7. O-O Nbd7 8. Nc3
+Re8 9. d4 exd4 10. Nxd4 Nc5 11. Qc2 c6 12. Rad1 a5 13. Bc1 Qe7 14. Bf4 Nfe4
+15. Nxe4 Nxe4 16. f3 Ng5 17. Bc1 h5 18. e4 h4 19. Qd2 Nh7 20. Ne2 h3 21. Bh1
+d5 22. cxd5 cxd5 23. Qxd5 Be6 24. Qb5 Qb4 25. Qxb4 axb4 26. Rd2 Rec8 27. f4
+Bf8 28. Rfd1 Bc5+ 29. Kf1 Nf6 30. f5 gxf5 31. exf5 Bxf5 32. Bxb7 Ng4 33. Bxa8
+Nxh2+ 34. Ke1 Rxa8 35. Rd8+ Kh7 36. Rxa8 Nf3+ *

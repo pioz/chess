@@ -1,13 +1,11 @@
 [Event "?"]
 [Site "Novi Sad"]
-[Date "1990.??.??"]
-[Round "06"]
+[Date "??"]
+[Round "1"]
 [White "Van der Wiel, John"]
 [Black "Sznapik, Aleksander"]
-[Result "1/2-1/2"]
-[ECO "B06"]
+[Result "*"]
 
-1. e4 g6 2. d4 Bg7 3. Nc3 d5 4. exd5 Nf6 5. Bc4 Nbd7 6. Nf3 Nb6 7. Bb3 
-a5 8. a3 a4 9. Ba2 Nbxd5 10. Nxd5 Nxd5 11. O-O O-O 12. h3 c6 13. Re1 b5 
-14. Bg5 Be6 15. Bxd5 Qxd5 16. Bxe7 Rfe8 1/2-1/2
-
+1. e4 g6 2. d4 Bg7 3. Nc3 d5 4. exd5 Nf6 5. Bc4 Nbd7 6. Nf3 Nb6 7. Bb3 a5 8.
+a3 a4 9. Ba2 Nbxd5 10. Nxd5 Nxd5 11. O-O O-O 12. h3 c6 13. Re1 b5 14. Bg5 Be6
+15. Bxd5 Qxd5 16. Bxe7 Rfe8 *

@@ -1,14 +1,12 @@
 [Event "?"]
 [Site "Ol"]
-[Date "1986.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Yilmaz Turham"]
 [Black "Morovic Fernandez Ivan"]
-[Result "1/2-1/2"]
-[ECO "C15"]
+[Result "*"]
 
-1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Qg4 Nf6 5.Qxg7 Rg8 6.Qh6 Rg6 7.Qe3 c5 8.Bd2 
-Nc6 9.Nf3 cxd4 10.Nxd4 Ng4 11.Qd3 Bc5 12.Nxc6 Bxf2+ 13.Kd1 bxc6 14.Kc1 
-Bb6 15.Nd1 Qf6 16.Be2 Ne5 17.Qh3 Qg7 18.Re1 d4 19.a4 Rxg2 20.Ra3 Bd8 
-21.Kb1 Be7 22.Rb3 d3 1/2-1/2
-
+1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. Qg4 Nf6 5. Qxg7 Rg8 6. Qh6 Rg6 7. Qe3 c5 8.
+Bd2 Nc6 9. Nf3 cxd4 10. Nxd4 Ng4 11. Qd3 Bc5 12. Nxc6 Bxf2+ 13. Kd1 bxc6 14.
+Kc1 Bb6 15. Nd1 Qf6 16. Be2 Ne5 17. Qh3 Qg7 18. Re1 d4 19. a4 Rxg2 20. Ra3 Bd8
+21. Kb1 Be7 22. Rb3 d3 *

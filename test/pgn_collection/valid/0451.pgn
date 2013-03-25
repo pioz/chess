@@ -1,14 +1,11 @@
 [Event "?"]
 [Site "Kecskemet"]
-[Date "1966.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Hort Vlastimil"]
 [Black "Bilek Istvan"]
-[Result "1/2-1/2"]
-[ECO "A57/05"]
+[Result "*"]
 
-1.d4 Nf6 2.Nf3 c5 3.d5 b5 4.c4 bxc4 
-5.Nc3 d6 6.e4 g6 7.Bxc4 Bg7 8.O-O O-O 
-9.Re1 Bg4 10.h3 Bxf3 11.Qxf3 Nbd7 12.Qe2 Rb8 
-13.Rb1 Ne8 14.Bd2 Nc7 15.Nb5 Nxb5 16.Bxb5  1/2-1/2
-
+1. d4 Nf6 2. Nf3 c5 3. d5 b5 4. c4 bxc4 5. Nc3 d6 6. e4 g6 7. Bxc4 Bg7 8. O-O
+O-O 9. Re1 Bg4 10. h3 Bxf3 11. Qxf3 Nbd7 12. Qe2 Rb8 13. Rb1 Ne8 14. Bd2 Nc7
+15. Nb5 Nxb5 16. Bxb5 *

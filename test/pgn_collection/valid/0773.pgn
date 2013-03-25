@@ -1,24 +1,18 @@
 [Event "-"]
 [Site "Havana CUB"]
-[Date "1951.??.??"]
-[Round "12"]
+[Date "??"]
+[Round "1"]
 [White "Pomar Salamanca, Arturo"]
 [Black "Steiner, Hermann"]
-[Result "1/2"]
-[WhiteTitle "IM"]
-[BlackTitle "IM"]
-[ECO "A84"]
-[WhiteCountry "ESP"]
-[BlackCountry "USA"]
-[PlyCount "120"]
+[Result "*"]
 
-1.d4 d5 2.c4 e6 3.Nc3 c6 4.e3 f5 5.Qc2 Bd6 6.Bd3 Nh6 7.Nge2 O-O 8.Bd2 a5 9.f3 Kh8 
-10.e4 fxe4 11.fxe4 dxc4 12.Bxc4 Ng4 13.e5 Bb4 14.a3 Bxc3 15.Qxc3 c5 16.Qg3 Nf2 17.O-O 
-Ne4 18.Qe3 Nxd2 19.Qxd2 Nc6 20.Rxf8+ Qxf8 21.Rf1 Qe7 22.Qg5 Bd7 23.Qxe7 Nxe7 24.Rf7 
-Re8 25.dxc5 Kg8 26.Rf3 Ng6 27.Re3 Rc8 28.b4 axb4 29.axb4 b6 30.Ba6 Rb8 31.Bd3 bxc5 
-32.Bxg6 hxg6 33.bxc5 Rb4 34.Rd3 Bb5 35.Rd8+ Kf7 36.Nd4 Ba4 37.Rd6 Rc4 38.c6 Rc5 
-39.Nxe6 Rxe5 40.c7 Re1+ 41.Kf2 Rc1 42.Ng5+ Ke7 43.Rxg6 Kf8 44.Ra6 Bd7 45.Ra7 Ke7 
-46.h4 Bc8 47.Kf3 Kd7 48.Kg4 Ke7+ 49.Kh5 Rc6 50.Nf3 Kf6 51.Ra4 Rc5+ 52.Ng5 Rxc7 53.Rf4+ 
-Bf5 54.g4 g6+ 55.Kh6 Ke5 56.gxf5 Kxf4 57.Kxg6 Kg4 58.Ne6 Rc1 59.h5 Rh1 60.Ng7 Kf4 
-1/2
-
+1. d4 d5 2. c4 e6 3. Nc3 c6 4. e3 f5 5. Qc2 Bd6 6. Bd3 Nh6 7. Nge2 O-O 8. Bd2
+a5 9. f3 Kh8 10. e4 fxe4 11. fxe4 dxc4 12. Bxc4 Ng4 13. e5 Bb4 14. a3 Bxc3 15.
+Qxc3 c5 16. Qg3 Nf2 17. O-O Ne4 18. Qe3 Nxd2 19. Qxd2 Nc6 20. Rxf8+ Qxf8 21.
+Rf1 Qe7 22. Qg5 Bd7 23. Qxe7 Nxe7 24. Rf7 Re8 25. dxc5 Kg8 26. Rf3 Ng6 27. Re3
+Rc8 28. b4 axb4 29. axb4 b6 30. Ba6 Rb8 31. Bd3 bxc5 32. Bxg6 hxg6 33. bxc5
+Rb4 34. Rd3 Bb5 35. Rd8+ Kf7 36. Nd4 Ba4 37. Rd6 Rc4 38. c6 Rc5 39. Nxe6 Rxe5
+40. c7 Re1+ 41. Kf2 Rc1 42. Ng5+ Ke7 43. Rxg6 Kf8 44. Ra6 Bd7 45. Ra7 Ke7 46.
+h4 Bc8 47. Kf3 Kd7 48. Kg4 Ke7+ 49. Kh5 Rc6 50. Nf3 Kf6 51. Ra4 Rc5+ 52. Ng5
+Rxc7 53. Rf4+ Bf5 54. g4 g6+ 55. Kh6 Ke5 56. gxf5 Kxf4 57. Kxg6 Kg4 58. Ne6
+Rc1 59. h5 Rh1 60. Ng7 Kf4 *

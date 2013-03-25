@@ -1,18 +1,13 @@
 [Event "?"]
 [Site "Sochi"]
-[Date "1976.??.??"]
-[Round "2"]
+[Date "??"]
+[Round "1"]
 [White "Zakharov,A"]
 [Black "Geller,E"]
-[Result "1/2-1/2"]
-[ECO "C93/05"]
+[Result "*"]
 
-1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 
-5.O-O Be7 6.Re1 b5 7.Bb3 O-O 8.c3 d6 
-9.h3 h6 10.d4 Re8 11.Be3 Bf8 12.Nbd2 Bd7 
-13.Qb1 Rb8 14.a3 a5 15.d5 Ne7 16.a4 b4 
-17.Qc2 c6 18.dxc6 Bxc6 19.Nh2 Qc7 20.f3 bxc3 
-21.bxc3 Red8 22.Ng4 Nxg4 23.hxg4 Be8 24.Rac1 d5 
-25.Qa2 Qc6 26.Bf2 Rb7 27.exd5 Nxd5 28.Nc4 Qc7 
-29.Rxe5 Rdb8 30.Rxd5 Rxb3 31.Nxa5  1/2-1/2
-
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3
+d6 9. h3 h6 10. d4 Re8 11. Be3 Bf8 12. Nbd2 Bd7 13. Qb1 Rb8 14. a3 a5 15. d5
+Ne7 16. a4 b4 17. Qc2 c6 18. dxc6 Bxc6 19. Nh2 Qc7 20. f3 bxc3 21. bxc3 Red8
+22. Ng4 Nxg4 23. hxg4 Be8 24. Rac1 d5 25. Qa2 Qc6 26. Bf2 Rb7 27. exd5 Nxd5
+28. Nc4 Qc7 29. Rxe5 Rdb8 30. Rxd5 Rxb3 31. Nxa5 *

@@ -1,17 +1,14 @@
 [Event "?"]
 [Site "corr 8.DDR-FSM/2 L"]
-[Date "1974.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Weinitschke G"]
 [Black "Grassmehl G"]
-[Result "1/2-1/2"]
-[ECO "B05"]
+[Result "*"]
 
-1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 Bg4 5. Be2 Nc6 6. O-O e6 7. c4 Nb6 
-8. exd6 cxd6 9. b3 Be7 10. Nbd2 d5 11. c5 Nd7 12. h3 Bh5 13. Bb2 Bf6 
-14. Qc1 O-O 15. a3 e5 16. dxe5 Ndxe5 17. Nxe5 Bxe2 18. Nxc6 bxc6 19. 
-Re1 Re8 20. Nf1 Bxb2 21. Qxb2 Bxf1 22. Kxf1 Qd7 23. Qd4 f6 24. b4 a6 
-25. Rad1 Qf5 26. Rxe8+ Rxe8 27. Qd3 Qxd3+ 28. Rxd3 Re4 29. Rb3 Kf7 30. 
-a4 Ke6 31. b5 axb5 32. axb5 cxb5 33. Rxb5 h5 34. Rb8 Rc4 35. Rc8 g5 
-36. Ke2 Rc2+ 37. Kf3 Rc3+ 38. Ke2 Ke5 39. Kd2 1/2-1/2
-
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 Bg4 5. Be2 Nc6 6. O-O e6 7. c4 Nb6 8. exd6
+cxd6 9. b3 Be7 10. Nbd2 d5 11. c5 Nd7 12. h3 Bh5 13. Bb2 Bf6 14. Qc1 O-O 15.
+a3 e5 16. dxe5 Ndxe5 17. Nxe5 Bxe2 18. Nxc6 bxc6 19. Re1 Re8 20. Nf1 Bxb2 21.
+Qxb2 Bxf1 22. Kxf1 Qd7 23. Qd4 f6 24. b4 a6 25. Rad1 Qf5 26. Rxe8+ Rxe8 27.
+Qd3 Qxd3+ 28. Rxd3 Re4 29. Rb3 Kf7 30. a4 Ke6 31. b5 axb5 32. axb5 cxb5 33.
+Rxb5 h5 34. Rb8 Rc4 35. Rc8 g5 36. Ke2 Rc2+ 37. Kf3 Rc3+ 38. Ke2 Ke5 39. Kd2 *

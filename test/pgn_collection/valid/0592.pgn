@@ -1,21 +1,15 @@
 [Event "8"]
 [Site "Bugojno"]
-[Date "1980.??.??"]
-[Round "?"]
+[Date "??"]
+[Round "1"]
 [White "Ljubojevic Ljubomir (YUG)"]
 [Black "Timman J"]
-[Result "1/2-1/2"]
-[ECO "B09/17"]
+[Result "*"]
 
-1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 Bg7 
-5.Nf3 O-O 6.e5 dxe5 7.dxe5 Qxd1+ 8.Kxd1 Nh5 
-9.Bc4 Bg4 10.Ne2 Bxf3 11.gxf3 Nc6 12.c3 Rad8+ 
-13.Kc2 Bh6 14.b4 e6 15.Rg1 Kh8 16.Rg4 Ne7 
-17.Ng3 Nxg3 18.hxg3 Nf5 19.Bd3 Bg7 20.Bxf5 exf5 
-21.Rh4 f6 22.exf6 Rxf6 23.Rh2 Kg8 24.Rd2 Re8 
-25.Bb2 Rfe6 26.Rad1 Kf7 27.a4 h5 28.Rd3 Re2+ 
-29.R1d2 Bh6 30.Rd7+ R8e7 31.Rxe2 Rxd7 32.Bc1 a6 
-33.Be3 Bg7 34.Rg2 Bf6 35.Rh2 Rd6 36.Bd2 b5 
-37.axb5 axb5 38.g4 fxg4 39.fxg4 hxg4 40.Rg2 Ke6 
-41.Rxg4 Kf5  1/2-1/2
-
+1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4 Bg7 5. Nf3 O-O 6. e5 dxe5 7. dxe5 Qxd1+ 8.
+Kxd1 Nh5 9. Bc4 Bg4 10. Ne2 Bxf3 11. gxf3 Nc6 12. c3 Rad8+ 13. Kc2 Bh6 14. b4
+e6 15. Rg1 Kh8 16. Rg4 Ne7 17. Ng3 Nxg3 18. hxg3 Nf5 19. Bd3 Bg7 20. Bxf5 exf5
+21. Rh4 f6 22. exf6 Rxf6 23. Rh2 Kg8 24. Rd2 Re8 25. Bb2 Rfe6 26. Rad1 Kf7 27.
+a4 h5 28. Rd3 Re2+ 29. R1d2 Bh6 30. Rd7+ R8e7 31. Rxe2 Rxd7 32. Bc1 a6 33. Be3
+Bg7 34. Rg2 Bf6 35. Rh2 Rd6 36. Bd2 b5 37. axb5 axb5 38. g4 fxg4 39. fxg4 hxg4
+40. Rg2 Ke6 41. Rxg4 Kf5 *

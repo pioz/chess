@@ -1,20 +1,12 @@
 [Event "-"]
 [Site "Sochi RUS"]
-[Date "1973.07.??"]
-[Round "13"]
+[Date "??"]
+[Round "1"]
 [White "Spassky, Boris V"]
 [Black "Rashkovsky, Nukhim N"]
-[Result "1/2"]
-[WhiteELO "2655"]
-[BlackELO "2485"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A67"]
-[WhiteCountry "URS"]
-[BlackCountry "URS"]
-[PlyCount "43"]
+[Result "*"]
 
-1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.f4 Bg7 8.Bb5+ Nfd7 9.Bd3 
-O-O 10.Nf3 Na6 11.O-O Nb4 12.Bb1 Rb8 13.a3 Na6 14.a4 Nb4 15.Kh1 a6 16.a5 b5 17.axb6 
-Qxb6 18.Be3 Re8 19.f5 Qc7 20.Qd2 Rb7 21.g4 Ne5 22.Nxe5 1/2
-
+1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Bb5+
+Nfd7 9. Bd3 O-O 10. Nf3 Na6 11. O-O Nb4 12. Bb1 Rb8 13. a3 Na6 14. a4 Nb4 15.
+Kh1 a6 16. a5 b5 17. axb6 Qxb6 18. Be3 Re8 19. f5 Qc7 20. Qd2 Rb7 21. g4 Ne5
+22. Nxe5 *

@@ -1,18 +1,12 @@
 [Event "European team ch"]
 [Site "Hamburg GER"]
-[Date "1965.05.??"]
-[Round "3"]
+[Date "??"]
+[Round "1"]
 [White "Damjanovic, Mato"]
 [Black "Taimanov, Mark E"]
-[Result "1/2"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A10"]
-[WhiteCountry "YUG"]
-[BlackCountry "URS"]
-[PlyCount "41"]
+[Result "*"]
 
-1.c4 g6 2.Nc3 Bg7 3.g3 Nc6 4.Bg2 d6 5.d3 Bd7 6.e4 Qc8 7.Nge2 Bh3 8.Bxh3 Qxh3 9.Nf4 
-Qd7 10.h4 h5 11.Be3 Nd4 12.Bxd4 Bxd4 13.Nfe2 Bg7 14.d4 Nf6 15.Qd3 c5 16.dxc5 dxc5 
-17.Qxd7+ Nxd7 18.f4 Nb6 19.b3 O-O-O 20.Rd1 Rxd1+ 21.Kxd1 1/2
-
+1. c4 g6 2. Nc3 Bg7 3. g3 Nc6 4. Bg2 d6 5. d3 Bd7 6. e4 Qc8 7. Nge2 Bh3 8.
+Bxh3 Qxh3 9. Nf4 Qd7 10. h4 h5 11. Be3 Nd4 12. Bxd4 Bxd4 13. Nfe2 Bg7 14. d4
+Nf6 15. Qd3 c5 16. dxc5 dxc5 17. Qxd7+ Nxd7 18. f4 Nb6 19. b3 O-O-O 20. Rd1
+Rxd1+ 21. Kxd1 *

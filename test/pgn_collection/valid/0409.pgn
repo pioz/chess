@@ -1,23 +1,15 @@
 [Event "YUG tt"]
 [Site "Cetinje"]
-[Date "1993.07.??"]
-[Round "2"]
+[Date "??"]
+[Round "1"]
 [White "Makarov, Marat"]
 [Black "Todorcevic, Miodrag"]
-[Result "1/2"]
-[WhiteELO "2540"]
-[BlackELO "2480"]
-[WhiteTitle "IGM"]
-[BlackTitle "IGM"]
-[ECO "A41"]
-[WhiteCountry "RUS"]
-[BlackCountry "YUG"]
-[PlyCount "79"]
+[Result "*"]
 
-1.Nf3 g6 2.d4 Bg7 3.c4 d6 4.g3 Nd7 5.Bg2 e5 6.Nc3 Ne7 7.O-O O-O 8.e4 exd4 9.Nxd4 
-Nc6 10.Nxc6 bxc6 11.f4 Ba6 12.Re1 Bxc4 13.Qa4 Be6 14.Qxc6 Nc5 15.Qb5 Rb8 16.Qe2 
-Bc8 17.Be3 Ba6 18.Qd2 Nd3 19.Reb1 c5 20.b3 Re8 21.Nd5 Nb4 22.Nxb4 cxb4 23.Bd4 Bxd4+ 
-24.Qxd4 Qb6 25.Rd1 Re6 26.Rac1 Qxd4+ 27.Rxd4 Rb6 28.Rc7 Bb7 29.Rd7 Kf8 30.Rd8+ Re8 
-31.R4xd6 Rxd6 32.Rxd6 Bxe4 33.Bxe4 Rxe4 34.Kf2 Re7 35.Rd8+ Kg7 36.Rb8 Rc7 37.Rxb4 
-Rc2+ 38.Kf3 Rxa2 39.Ra4 Rb2 40.Rxa7 1/2
-
+1. Nf3 g6 2. d4 Bg7 3. c4 d6 4. g3 Nd7 5. Bg2 e5 6. Nc3 Ne7 7. O-O O-O 8. e4
+exd4 9. Nxd4 Nc6 10. Nxc6 bxc6 11. f4 Ba6 12. Re1 Bxc4 13. Qa4 Be6 14. Qxc6
+Nc5 15. Qb5 Rb8 16. Qe2 Bc8 17. Be3 Ba6 18. Qd2 Nd3 19. Reb1 c5 20. b3 Re8 21.
+Nd5 Nb4 22. Nxb4 cxb4 23. Bd4 Bxd4+ 24. Qxd4 Qb6 25. Rd1 Re6 26. Rac1 Qxd4+
+27. Rxd4 Rb6 28. Rc7 Bb7 29. Rd7 Kf8 30. Rd8+ Re8 31. R4xd6 Rxd6 32. Rxd6 Bxe4
+33. Bxe4 Rxe4 34. Kf2 Re7 35. Rd8+ Kg7 36. Rb8 Rc7 37. Rxb4 Rc2+ 38. Kf3 Rxa2
+39. Ra4 Rb2 40. Rxa7 *

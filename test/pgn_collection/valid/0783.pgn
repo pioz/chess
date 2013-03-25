@@ -1,21 +1,15 @@
 [Event "Olympiad"]
 [Site "Dubai UAE"]
-[Date "1986.10.??"]
-[Round "5"]
+[Date "??"]
+[Round "1"]
 [White "Cifuentes Parada, Roberto"]
 [Black "Ftacnik, Lubomir"]
-[Result "1/2"]
-[WhiteELO "2450"]
-[BlackELO "2555"]
-[ECO "A40"]
-[WhiteCountry "CHI"]
-[BlackCountry "CSR"]
-[PlyCount "81"]
+[Result "*"]
 
-1.d4 g6 2.c3 Bg7 3.Bg5 d6 4.e4 h6 5.Bh4 Nf6 6.Nd2 e5 7.Ngf3 Qe7 8.Bd3 O-O 9.O-O 
-Nbd7 10.Re1 Rd8 11.Bf1 Nf8 12.Qc2 Bg4 13.h3 Bxf3 14.Nxf3 g5 15.Bg3 Ng6 16.dxe5 dxe5 
-17.Nd2 g4 18.hxg4 Nxg4 19.Be2 h5 20.Bxg4 hxg4 21.Nf1 Qg5 22.Rad1 Nf4 23.Rxd8+ Rxd8 
-24.Rd1 Rxd1 25.Qxd1 Qg6 26.Ne3 Qxe4 27.Qxg4 Qb1+ 28.Kh2 Qh7+ 29.Bh4 Ng6 30.Nf5 Bf6 
-31.g3 Kh8 32.Kh3 Bxh4 33.Nxh4 Nxh4 34.Qxh4 Kg7 35.Qxh7+ Kxh7 36.Kg4 Kg6 37.Kf3 Kf5 
-38.Ke3 c5 39.f3 Kf6 40.Kd3 b5 41.b3 1/2
-
+1. d4 g6 2. c3 Bg7 3. Bg5 d6 4. e4 h6 5. Bh4 Nf6 6. Nd2 e5 7. Ngf3 Qe7 8. Bd3
+O-O 9. O-O Nbd7 10. Re1 Rd8 11. Bf1 Nf8 12. Qc2 Bg4 13. h3 Bxf3 14. Nxf3 g5
+15. Bg3 Ng6 16. dxe5 dxe5 17. Nd2 g4 18. hxg4 Nxg4 19. Be2 h5 20. Bxg4 hxg4
+21. Nf1 Qg5 22. Rad1 Nf4 23. Rxd8+ Rxd8 24. Rd1 Rxd1 25. Qxd1 Qg6 26. Ne3 Qxe4
+27. Qxg4 Qb1+ 28. Kh2 Qh7+ 29. Bh4 Ng6 30. Nf5 Bf6 31. g3 Kh8 32. Kh3 Bxh4 33.
+Nxh4 Nxh4 34. Qxh4 Kg7 35. Qxh7+ Kxh7 36. Kg4 Kg6 37. Kf3 Kf5 38. Ke3 c5 39.
+f3 Kf6 40. Kd3 b5 41. b3 *

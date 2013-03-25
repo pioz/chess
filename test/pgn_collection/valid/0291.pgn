@@ -1,20 +1,14 @@
 [Event "URS ch women"]
 [Site "Tbilisi GEO"]
-[Date "1978.??.??"]
-[Round "5"]
+[Date "??"]
+[Round "1"]
 [White "Litinskaya, Marta I"]
 [Black "Grinfeld, Alla B"]
-[Result "1/2"]
-[WhiteELO "2265"]
-[BlackELO "2215"]
-[ECO "A93"]
-[WhiteCountry "URS"]
-[BlackCountry "URS"]
-[PlyCount "70"]
+[Result "*"]
 
-1.d4 e6 2.c4 f5 3.Nf3 Nf6 4.g3 d5 5.Bg2 Be7 6.O-O O-O 7.b3 Ne4 8.Ba3 c5 9.cxd5 exd5 
-10.dxc5 Nc6 11.Bb2 Bxc5 12.Nc3 Be6 13.Nb5 f4 14.Nbd4 Bc8 15.Rc1 Qb6 16.gxf4 Rxf4 
-17.e3 Rf8 18.Nxc6 bxc6 19.Bd4 Bg4 20.Bxc5 Nxc5 21.Qd4 Bxf3 22.Rxc5 Bxg2 23.Kxg2 
-Rae8 24.Rfc1 Re4 25.Qb2 Rg4+ 26.Kh1 Qb4 27.Qe5 Rxf2 28.Qe6+ Kf8 29.Rxd5 Qe4+ 30.Qxe4 
-Rxe4 31.Kg1 Rxa2 32.Rxc6 Rxe3 33.Rf5+ Ke7 34.Rf2 Rxf2 35.Kxf2 Rxb3 1/2
-
+1. d4 e6 2. c4 f5 3. Nf3 Nf6 4. g3 d5 5. Bg2 Be7 6. O-O O-O 7. b3 Ne4 8. Ba3
+c5 9. cxd5 exd5 10. dxc5 Nc6 11. Bb2 Bxc5 12. Nc3 Be6 13. Nb5 f4 14. Nbd4 Bc8
+15. Rc1 Qb6 16. gxf4 Rxf4 17. e3 Rf8 18. Nxc6 bxc6 19. Bd4 Bg4 20. Bxc5 Nxc5
+21. Qd4 Bxf3 22. Rxc5 Bxg2 23. Kxg2 Rae8 24. Rfc1 Re4 25. Qb2 Rg4+ 26. Kh1 Qb4
+27. Qe5 Rxf2 28. Qe6+ Kf8 29. Rxd5 Qe4+ 30. Qxe4 Rxe4 31. Kg1 Rxa2 32. Rxc6
+Rxe3 33. Rf5+ Ke7 34. Rf2 Rxf2 35. Kxf2 Rxb3 *

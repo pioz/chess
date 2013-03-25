@@ -1,22 +1,16 @@
 [Event "Open"]
 [Site "Naestved DEN"]
-[Date "1988.06.??"]
-[Round "2"]
+[Date "??"]
+[Round "1"]
 [White "Jakobsen, Ole"]
 [Black "Barbero, Gerardo F"]
-[Result "1/2"]
-[WhiteELO "2385"]
-[BlackELO "2505"]
-[ECO "A90"]
-[WhiteCountry "DEN"]
-[BlackCountry "ARG"]
-[PlyCount "96"]
+[Result "*"]
 
-1.c4 f5 2.d4 Nf6 3.g3 e6 4.Bg2 Bb4+ 5.Nd2 O-O 6.Nf3 d6 7.O-O Bxd2 8.Bxd2 Qe7 9.Bc3
-Ne4 10.Qc2 Nd7 11.Rfd1 Nxc3 12.Qxc3 e5 13.dxe5 dxe5 14.b4 e4 15.Nd4 f4 16.Nc2 Nf6
-17.gxf4 Bg4 18.Qe3 Rae8 19.Rd4 c5 20.bxc5 Qxc5 21.Rb1 b6 22.h3 Bc8 23.Qd2 Qh5 24.Qe3
-Qh6 25.Rd6 Re6 26.Rxe6 Bxe6 27.f5 Bxc4 28.Qxh6 gxh6 29.Nd4 Rc8 30.Rc1 Rc5 31.a3
-Ba6 32.Rxc5 bxc5 33.Ne6 c4 34.Kf1 c3 35.Ke1 Bb7 36.Nd4 Kf8 37.e3 Ba6 38.Kd1 Bd3
-39.Ne6+ Ke7 40.Nc5 Kd6 41.Nxd3 exd3 42.Bf1 d2 43.Bd3 h5 44.Ke2 Kc5 45.Bc2 Kc4 46.e4
-Kd4 47.f3 h4 48.f4 a5 1/2
-
+1. c4 f5 2. d4 Nf6 3. g3 e6 4. Bg2 Bb4+ 5. Nd2 O-O 6. Nf3 d6 7. O-O Bxd2 8.
+Bxd2 Qe7 9. Bc3 Ne4 10. Qc2 Nd7 11. Rfd1 Nxc3 12. Qxc3 e5 13. dxe5 dxe5 14. b4
+e4 15. Nd4 f4 16. Nc2 Nf6 17. gxf4 Bg4 18. Qe3 Rae8 19. Rd4 c5 20. bxc5 Qxc5
+21. Rb1 b6 22. h3 Bc8 23. Qd2 Qh5 24. Qe3 Qh6 25. Rd6 Re6 26. Rxe6 Bxe6 27. f5
+Bxc4 28. Qxh6 gxh6 29. Nd4 Rc8 30. Rc1 Rc5 31. a3 Ba6 32. Rxc5 bxc5 33. Ne6 c4
+34. Kf1 c3 35. Ke1 Bb7 36. Nd4 Kf8 37. e3 Ba6 38. Kd1 Bd3 39. Ne6+ Ke7 40. Nc5
+Kd6 41. Nxd3 exd3 42. Bf1 d2 43. Bd3 h5 44. Ke2 Kc5 45. Bc2 Kc4 46. e4 Kd4 47.
+f3 h4 48. f4 a5 *

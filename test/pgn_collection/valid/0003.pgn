@@ -1,19 +1,13 @@
 [Event "OHRA"]
 [Site "Amsterdam NED"]
-[Date "1984.06.??"]
-[Round "9"]
+[Date "??"]
+[Round "1"]
 [White "Eising, Johannes"]
 [Black "De Wit, Johannes S"]
-[Result "1/2"]
-[WhiteELO "2355"]
-[BlackELO "2395"]
-[ECO "A30"]
-[WhiteCountry "FRG"]
-[BlackCountry "NED"]
-[PlyCount "54"]
+[Result "*"]
 
-1.c4 Nf6 2.Nf3 c5 3.g3 Nc6 4.Bg2 d5 5.O-O dxc4 6.Qa4 Bd7 7.Qxc4 e6 8.Nc3 Rc8 9.d4 
-b5 10.Qd3 c4 11.Qd1 b4 12.Na4 Be7 13.Bg5 O-O 14.e3 Na5 15.Re1 Qe8 16.Nc5 Bxc5 17.Bxf6 
-Ba4 18.b3 cxb3 19.axb3 Nxb3 20.Rxa4 Qxa4 21.Ne5 Qa1 22.Qe2 Qc3 23.Rd1 gxf6 24.Qg4+ 
-Kh8 25.Qh4 fxe5 26.Qf6+ Kg8 27.Qg5+ Kh8 1/2
-
+1. c4 Nf6 2. Nf3 c5 3. g3 Nc6 4. Bg2 d5 5. O-O dxc4 6. Qa4 Bd7 7. Qxc4 e6 8.
+Nc3 Rc8 9. d4 b5 10. Qd3 c4 11. Qd1 b4 12. Na4 Be7 13. Bg5 O-O 14. e3 Na5 15.
+Re1 Qe8 16. Nc5 Bxc5 17. Bxf6 Ba4 18. b3 cxb3 19. axb3 Nxb3 20. Rxa4 Qxa4 21.
+Ne5 Qa1 22. Qe2 Qc3 23. Rd1 gxf6 24. Qg4+ Kh8 25. Qh4 fxe5 26. Qf6+ Kg8 27.
+Qg5+ Kh8 *
