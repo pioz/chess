@@ -22,6 +22,7 @@ module Chess
       TAGS.each do |t|
         instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size+3..-3])
       end
+      @result = '1/2-1/2' if @result == '1/2'
       game_index = data.index(/^1\./)
       raise Chess::InvalidPgnFormatError.new(filename) if game_index.nil?
       game = data[game_index..-1].strip

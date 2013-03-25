@@ -100,7 +100,7 @@ en_passant_to_s (short int en_passant)
   return s;
 }
 
-bool
+int
 compare (const void *a, const void *b)
 {
   return strcmp (*(const char **) a, *(const char **) b);

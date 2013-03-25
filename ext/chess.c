@@ -83,8 +83,8 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
  * Make a move. This add a new Board in the Game.
  *
  * Parameters are:
- * +from+:: The 2 character string representing the starting square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +to+:: The 2 character string representing the ending square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
+ * +from+:: the 2 character string representing the starting square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
+ * +to+:: the 2 character string representing the ending square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
  * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored.
  * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
  */
@@ -120,8 +120,8 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
  *      +-------------------------
  *         a  b  c  d  e  f  g  h
  * Parameters are:
- * +from+:: The integer representing the starting square of the moving piece.
- * +to+:: The integer representing the ending square of the moving piece.
+ * +from+:: the integer representing the starting square of the moving piece.
+ * +to+:: the integer representing the ending square of the moving piece.
  * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored.
  * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
  */
@@ -138,6 +138,45 @@ game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
     return rb_str_new2 (current_move (g));
   else
     rb_raise (illegal_move_error, "Illegal move");
+}
+
+/*
+ * call-seq: resign(color)
+ *
+ * The game result is set to '1-0' if +color+ is "black", otherwise is set to '0-1' if color is "white".
+ *
+ * Parameters are:
+ * +color+:: the color of the player who resigns the game; it can be +:white+ or +:black+.
+ */
+VALUE
+game_resign (VALUE self, VALUE color)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  const char *c;
+  if (TYPE (color) == T_SYMBOL)
+    c = rb_id2name (SYM2ID (color));
+  else
+    c = StringValuePtr (color);
+  if (strcmp (c, "black") == 0)
+    g->result = WHITE_WON;
+  else if (strcmp (c, "white") == 0)
+    g->result = BLACK_WON;
+  return Qnil;
+}
+
+/*
+ * call-seq: draw
+ *
+ * The game result is set to draw.
+ */
+VALUE
+game_draw (VALUE self)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  g->result = DRAW;
+  return Qnil;
 }
 
 /*
@@ -498,6 +537,8 @@ Init_chess ()
   rb_define_method (game, "move", game_move, 4);
   rb_define_method (game, "move2", game_move2, 3);
   rb_define_method (game, "move3", game_move3, 3);
+  rb_define_method (game, "resign", game_resign, 1);
+  rb_define_method (game, "draw", game_draw, 0);
   rb_define_method (game, "[]", game_boards, 1);
   rb_define_method (game, "board", game_last_board, 0);
   rb_define_method (game, "moves", game_moves, 0);

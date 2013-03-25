@@ -95,7 +95,7 @@
 #define DRAW 2
 #define IN_PROGRESS 3
 
-typedef int bool;
+typedef unsigned short bool;
 
 char square_to_file (int square);
 char square_to_rank (int square);
@@ -105,6 +105,6 @@ char* ft_to_full_move (int from, int to, char promote_in);
 char* result_to_s (unsigned short int r);
 char* castling_to_s (short int castling);
 char* en_passant_to_s (short int en_passant);
-bool compare (const void * a, const void * b);
+int compare (const void *a, const void *b);
 
 #endif

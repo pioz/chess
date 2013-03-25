@@ -17,6 +17,19 @@ module Chess
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new
       pgn.moves.each { |m| game.move(m) }
+      if !game.over?
+        case pgn.result
+        when '1-0'
+          game.resign(:black)
+        when '0-1'
+          game.resign(:white)
+        when '1/2-1/2'
+          if game.board.insufficient_material? || game.board.stalemate? ||
+            game.threefold_repetition? || game.board.fifty_rule_move?
+            game.draw
+          end
+        end
+      end
       return game
     end
 
@@ -72,24 +85,40 @@ module Chess
     # Returns the status of the game.
     # Possible states are:
     # * +in_progress+:: the game is in progress.
-    # * +white_won+:: white player has won.
-    # * +black_won+:: black player has won.
+    # * +white_won+:: white player has won with a checkmate.
+    # * +black_won+:: black player has won with a checkmate.
+    # * +white_won_resign+:: white player has won for resign.
+    # * +black_won_resign+:: black player has won for resign.
     # * +stalemate+:: draw for stalemate.
     # * +insufficient_material+:: draw for insufficient material to checkmate.
+    # * +fifty_rule_move+:: draw for fifty rule move.
+    # * +threefold_repetition+:: draw for threefold_repetition.
     # * +unknown+:: something went wrong.
     def status
       case self.result
       when '*'
         return :in_progress
       when '1-0'
-        return :white_won
+        if self.board.checkmate?
+          return :white_won
+        else
+          return :white_won_resign
+        end
       when '0-1'
-        return :black_won
+        if self.board.checkmate?
+          return :black_won
+        else
+          return :black_won_resign
+        end
       when '1/2-1/2'
         if self.board.stalemate?
           return :stalemate
         elsif self.board.insufficient_material?
           return :insufficient_material
+        elsif self.board.fifty_rule_move?
+          return :fifty_rule_move
+        elsif self.threefold_repetition?
+          return :threefold_repetition
         end
       end
       return :unknown

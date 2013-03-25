@@ -15,6 +15,8 @@ VALUE game_set_fen (VALUE self, VALUE fen);
 VALUE game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coord, VALUE rb_promote_in);
 VALUE game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in);
 VALUE game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in);
+VALUE game_resign (VALUE self, VALUE color);
+VALUE game_draw (VALUE self);
 VALUE game_boards (VALUE self, VALUE index);
 VALUE game_board (VALUE self);
 VALUE game_moves (VALUE self);
