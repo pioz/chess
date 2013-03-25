@@ -14,12 +14,13 @@ class ChessTest < Test::Unit::TestCase
           assert_equal(m, mm)
           assert(game.board.check?) if m =~ /\+$/
           assert(game.board.checkmate?) if m =~ /\#$/
-          if pgn.result =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
-            assert_equal(pgn.result, game.result)
-          end
         end
       end
     end
+    define_method "test_pgn_result_#{name}" do
+      pgn = Chess::Pgn.new(file)
+      game = Chess::Game.load_pgn(file)
+      assert_equal(pgn.result, game.result)
+    end
   end
-
 end
