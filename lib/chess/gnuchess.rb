@@ -10,11 +10,9 @@ module Chess
   #    puts g
   module Gnuchess
 
-    # Make a move using Gnuchess engine. This add a new Board in the Game.
     # Return the next move calculated by Gnuchess.
     # Gnuchess must be installed!
     def gnuchess_move
-      moves = []
       pipe = IO.popen('gnuchess -x', 'r+')
       begin
         pipe.puts('depth 1')
