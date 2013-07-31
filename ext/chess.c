@@ -199,10 +199,10 @@ game_boards (VALUE self, VALUE index)
 /*
  * call-seq: current
  *
- * Returns the current Board of the Game.
+ * Returns the current Board of the Game (the current chess position of the game).
  */
 VALUE
-game_last_board (VALUE self)
+game_current_board (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
@@ -326,6 +326,23 @@ game_rollback (VALUE self)
   Data_Get_Struct (self, Game, g);
   rollback (g);
   return self;
+}
+
+/*
+ * call-seq: to_s
+ *
+ * Current board to string.
+ */
+VALUE
+game_to_s (VALUE self)
+{
+  Game *g;
+  Data_Get_Struct (self, Game, g);
+  Board *b = get_board (g, g->current-1);
+  char *s = print_board (b);
+  VALUE rb_s = rb_str_new2 (s);
+  free (s);
+  return rb_s;
 }
 
 // Board
@@ -540,7 +557,7 @@ Init_chess ()
   rb_define_method (game, "resign", game_resign, 1);
   rb_define_method (game, "draw", game_draw, 0);
   rb_define_method (game, "[]", game_boards, 1);
-  rb_define_method (game, "board", game_last_board, 0);
+  rb_define_method (game, "current", game_current_board, 0);
   rb_define_method (game, "moves", game_moves, 0);
   rb_define_method (game, "full_moves", game_full_moves, 0);
   rb_define_method (game, "threefold_repetition?", game_threefold_repetition, 0);
@@ -548,6 +565,8 @@ Init_chess ()
   rb_define_method (game, "size", game_size, 0);
   rb_define_method (game, "each", game_each, 0);
   rb_define_method (game, "rollback!", game_rollback, 0);
+  rb_define_method (game, "to_s", game_to_s, 0);
+  rb_define_alias (game, "board", "current");
 
   /*
    * This class rappresents a chess board.

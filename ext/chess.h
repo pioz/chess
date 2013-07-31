@@ -18,7 +18,7 @@ VALUE game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in);
 VALUE game_resign (VALUE self, VALUE color);
 VALUE game_draw (VALUE self);
 VALUE game_boards (VALUE self, VALUE index);
-VALUE game_board (VALUE self);
+VALUE game_current_board (VALUE self);
 VALUE game_moves (VALUE self);
 VALUE game_full_moves (VALUE self);
 VALUE game_threefold_repetition (VALUE self);
@@ -26,7 +26,7 @@ VALUE game_result (VALUE self);
 VALUE game_size (VALUE self);
 VALUE game_each (VALUE self);
 VALUE game_rollback (VALUE self);
-
+VALUE game_to_s (VALUE self);
 
 // Board
 
