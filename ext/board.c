@@ -408,10 +408,7 @@ try_move (Board *board, int from, int to, char promote_in, Board *new_board, cha
   if (require_a_promotion (new_board))
     {
       if (!promote (new_board, to, promote_in))
-        {
-          free (new_board);
-          return 0;
-        }
+        return FALSE;
     }
   else
     promote_in = 0;
