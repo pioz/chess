@@ -140,28 +140,28 @@ module Chess
     private
 
     # Expand the short algebraic chess notation string +m+ in a hash like this:
-    #     Ngxe2 ==> { :name => 'N', :dis => 'g', :from => nil, :to => 'e2', :promotion => '' }
+    #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: '' }
     def expand_move(m)
-      if match = m.match(/^(R|N|B|Q|K)?([a-h]?[1-8]?)(?:x)?([a-h][1-8])(?:=?(R|N|B|Q))?(?:ep)?(?:\+|\#)?$/)
+      if match = m.match(/^([RNBQK])?([a-h]?[1-8]?)(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/)
         expand = {
-          :name => match[1] || 'P',    # Piece name (P|R|N|B|Q|K)
-          :dis => match[2],            # Disambiguating move
-          :to => match[3],             # Move to
-          :promotion => match[4].to_s, # Promote with
+          name: match[1] || 'P',    # Piece name [RNBQK]
+          dis: match[2],            # Disambiguating move
+          to: match[3],             # Move to
+          promotion: match[4].to_s, # Promote with
         }
         expand[:from] = match[2] if match[2] && match[2].size == 2
         return expand
-      elsif m =~ /^(0|O)-(0|O)(\+|\#)?$/
+      elsif m =~ /^([0O])-([0O])([\+#])?$/
         if self.board.active_color # black king short castling
-          return { :name => 'K', :dis => '', :from => 'e8', :to => 'g8', :promotion => '' }
+          return { name: 'K', dis: '', from: 'e8', to: 'g8', promotion: '' }
         else # white king short castling
-          return { :name => 'K', :dis => '', :from => 'e1', :to => 'g1', :promotion => '' }
+          return { name: 'K', dis: '', from: 'e1', to: 'g1', promotion: '' }
         end
-      elsif m =~ /^(0|O)-(0|O)-(0|O)(\+|\#)?$/
+      elsif m =~ /^([0O])-([0O])-([0O])([\+#])?$/
         if self.board.active_color # black king long castling
-          return { :name => 'K', :dis => '', :from => 'e8', :to => 'c8', :promotion => '' }
+          return { name: 'K', dis: '', from: 'e8', to: 'c8', promotion: '' }
         else # white king long castling
-          return { :name => 'K', :dis => '', :from => 'e1', :to => 'c1', :promotion => '' }
+          return { name: 'K', dis: '', from: 'e1', to: 'c1', promotion: '' }
         end
       end
       raise BadNotationError.new(m)
