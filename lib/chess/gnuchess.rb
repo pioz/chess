@@ -1,11 +1,12 @@
 module Chess
 
   # Use Gnuchess to I.A. <em>(Only a draft)</em>
-  # To use this module, extend a game object with Chess::Gnuchess
+  # To use this module, extend a game object with Chess::Gnuchess.
+  # Gnuchess binary have to be installed.
   #
   #    g = Chess::Game.new
   #    g.extend Chess::Gnuchess
-  #    g.gnuchess_move
+  #    g.gnuchess_move!
   #    puts g
   module Gnuchess
 
@@ -13,23 +14,43 @@ module Chess
     # Return the next move calculated by Gnuchess.
     # Gnuchess must be installed!
     def gnuchess_move
+      moves = []
       pipe = IO.popen('gnuchess -x', 'r+')
       begin
-        pipe.write("depth 1\n")
-        pipe.write("force\n")
+        pipe.puts('depth 1')
+        pipe.puts('manual')
         self.full_moves.each do |m|
-          pipe.write(m + "\n")
+          pipe.puts(m)
         end
-        pipe.write("go\n")
+        pipe.puts('go')
         while line = pipe.gets
           raise IllegalMoveError if line.include?('Invalid move')
-          match = line.match(/My move is : ([a-h][1-8][a-h][1-8])/)
-          return self.move(match[1]) if match
+          match = line.match(/My move is : ([a-h][1-8][a-h][1-8][rkbq]?)/)
+          return match[1] if match
         end
       ensure
-        pipe.write("quit\n")
+        pipe.puts('quit')
         pipe.close
       end
+      return moves
+    end
+
+    # Make a move using Gnuchess engine. This add a new Board in the Game.
+    # Return the next move calculated by Gnuchess.
+    # Gnuchess must be installed!
+    def gnuchess_move!
+      next_move = self.gnuchess_move
+      self.move(next_move) if next_move
+    end
+
+    # :nodoc:
+    def self.included(mod)
+      raise_if_gnuchess_is_not_installed
+    end
+
+    # :nodoc:
+    def self.extended(mod)
+      raise_if_gnuchess_is_not_installed
     end
 
     # :nodoc:
@@ -87,6 +108,14 @@ module Chess
       system('which gnuchess >& /dev/null')
       $?.exitstatus == 0
     end
+
+    # Raise an exception if Gnuchess is not installed
+    def self.raise_if_gnuchess_is_not_installed
+      unless gnuchess_installed?
+        raise 'You need to install Gnuchess to use the module Chess::Gnuchess.'
+      end
+    end
+
   end
 
 end
