@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChessTest < Test::Unit::TestCase
+class ChessTest < Minitest::Test
   FENS = [
     '8/k7/8/7B/6b1/7B/6b1/4K3 w - - 0 1',
     '8/2k5/8/1B6/4b3/8/2K5/5B2 w - - 0 1',
@@ -19,12 +19,10 @@ class ChessTest < Test::Unit::TestCase
   TestHelper.pgns('insufficient_material').each do |file|
     name = File.basename(file, '.pgn')
     define_method "test_insufficient_material_#{name}" do
-      assert_nothing_raised(Chess::IllegalMoveError) do
-        pgn = Chess::Pgn.new(file)
-        game = Chess::Game.new(pgn.moves)
-        assert(game.board.insufficient_material?)
-        assert_equal(game.result, '1/2-1/2')
-      end
+      pgn = Chess::Pgn.new(file)
+      game = Chess::Game.new(pgn.moves)
+      assert(game.board.insufficient_material?)
+      assert_equal(game.result, '1/2-1/2')
     end
   end
 

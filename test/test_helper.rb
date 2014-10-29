@@ -1,5 +1,5 @@
 require 'chess'
-require 'test/unit'
+require 'minitest/autorun'
 
 module TestHelper
 
