@@ -53,7 +53,7 @@ set_occupied (Board *board)
 char*
 print_board (Board *board)
 {
-  char *s = (char *) malloc (250);
+  char *s = (char *) malloc (251);
   int si = 0;
   int i, j;
   for (i = 7; i >= 0; i--) // rank => top to bottom
