@@ -31,6 +31,7 @@ VALUE game_to_s (VALUE self);
 // Board
 
 VALUE board_placement (VALUE self);
+VALUE board_get_piece (VALUE self, VALUE square);
 VALUE board_king_in_check (VALUE self);
 VALUE board_king_in_checkmate (VALUE self);
 VALUE board_stalemate (VALUE self);

@@ -384,6 +384,44 @@ board_placement (VALUE self)
 }
 
 /*
+ * call-seq: [square]
+ *
+ * Returns the piece on the +square+ of the chessboard. If there is no piece or
+ * the square is not valid return the blank string.
+ *
+ * Each square on the chessboard is represented by an integer according to the following scheme:
+ *    8 | 56 57 58 59 60 61 62 63
+ *    7 | 48 49 50 51 52 53 54 55
+ *    6 | 40 41 42 43 44 45 46 47
+ *    5 | 32 33 34 35 36 37 38 39
+ *    4 | 24 25 26 27 28 29 30 31
+ *    3 | 16 17 18 19 20 21 22 23
+ *    2 |  8  9 10 11 12 13 14 15
+ *    1 |  0  1  2  3  4  5  6  7
+ *      +-------------------------
+ *         a  b  c  d  e  f  g  h
+ *
+ * Parameters are:
+ * +square+:: the square of the board. Can be a fixnum between 0 and 63 or a
+ * string like 'a2', 'c5'... The string must be downcase.
+ */
+VALUE
+board_get_piece (VALUE self, VALUE square)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  int i;
+  char piece[2];
+  piece[1] = '\0';
+  if (TYPE (square) == T_STRING)
+    i = coord_to_square (StringValuePtr (square));
+  else
+    i = FIX2INT (square);
+  piece[0] = board->placement[i];
+  return rb_str_new2 (piece);
+}
+
+/*
  * call-seq: check?
  *
  * Returns +true+ if the king of the color that has the turn is in check, +false+ otherwise.
@@ -575,6 +613,7 @@ Init_chess ()
    */
   board_klass = rb_define_class_under (chess, "Board", rb_cObject);
   rb_define_method (board_klass, "placement", board_placement, 0);
+  rb_define_method (board_klass, "[]", board_get_piece, 1);
   rb_define_method (board_klass, "check?", board_king_in_check, 0);
   rb_define_method (board_klass, "checkmate?", board_king_in_checkmate, 0);
   rb_define_method (board_klass, "stalemate?", board_stalemate, 0);
