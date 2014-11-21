@@ -324,6 +324,14 @@ set_fen (Game *g, const char *fen)
   strcpy (g->moves[g->current], "SET BY FEN");
   strcpy (g->full_moves[g->current], "SET BY FEN");
   g->current++;
+
+  // check result
+  if (king_in_checkmate (board, board->active_color))
+    g->result = board->active_color;
+  else
+    if (stalemate (board, board->active_color) || insufficient_material (board))
+      g->result = DRAW;
+
   free (s);
   free (pch);
 }
