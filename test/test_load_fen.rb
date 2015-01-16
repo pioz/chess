@@ -11,6 +11,15 @@ class ChessTest < Minitest::Test
     assert_equal :in_progress, g.status
   end
 
+  def test_fen_white_won
+    g = Chess::Game.load_fen('rnbqkbnr/1ppp1Qpp/8/p3p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 1 3')
+    assert_equal 'Q', g.board['f7']
+    assert_equal 'p', g.board['e5']
+    assert_equal 'P', g.board[28]
+    assert_equal '1-0', g.result
+    assert_equal :white_won, g.status
+  end
+
   def test_fen_black_won
     g = Chess::Game.load_fen('rnb1kbnr/pppp1ppp/4p3/8/5PPq/8/PPPPP2P/RNBQKBNR w KQkq - 1 3')
     assert_equal 'q', g.board['h4']
