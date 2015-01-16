@@ -327,12 +327,7 @@ set_fen (Game *g, const char *fen)
 
   // check result
   if (king_in_checkmate (board, board->active_color))
-    {
-      if (board->active_color)
-        g->result = WHITE_WON;
-      else
-        g->result = BLACK_WON;
-    }
+    g->result = !board->active_color;
   else
     if (stalemate (board, board->active_color) || insufficient_material (board))
       g->result = DRAW;
