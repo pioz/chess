@@ -11,13 +11,13 @@ class ChessTest < Minitest::Test
     assert_equal :in_progress, g.status
   end
 
-  def test_fen_white_won
+  def test_fen_black_won
     g = Chess::Game.load_fen('rnb1kbnr/pppp1ppp/4p3/8/5PPq/8/PPPPP2P/RNBQKBNR w KQkq - 1 3')
     assert_equal 'q', g.board['h4']
     assert_equal 'P', g.board['f4']
     assert_equal 'p', g.board[44]
-    assert_equal '1-0', g.result
-    assert_equal :white_won, g.status
+    assert_equal '0-1', g.result
+    assert_equal :black_won, g.status
   end
 
   def test_fen_stalemate
