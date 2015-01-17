@@ -117,4 +117,3 @@ module Chess
   end
 
 end
-

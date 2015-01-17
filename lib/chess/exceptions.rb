@@ -28,4 +28,3 @@ module Chess
   end
 
 end
-
