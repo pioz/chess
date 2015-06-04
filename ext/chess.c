@@ -55,7 +55,7 @@ game_set_fen (VALUE self, VALUE fen)
  *                    3. both the rank and file (if neither alone is sufficient to identify the piece—which occurs only in rare cases where one or more pawns have promoted, resulting in a player having three or more identical pieces able to reach the same square).
  *                    Keep blank if no needed.
  * +to_coord+:: the square where the moving piece will <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
  * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE
@@ -85,7 +85,7 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
  * Parameters are:
  * +from+:: the 2 character string representing the starting square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
  * +to+:: the 2 character string representing the ending square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
  * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE
@@ -122,7 +122,7 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
  * Parameters are:
  * +from+:: the integer representing the starting square of the moving piece.
  * +to+:: the integer representing the ending square of the moving piece.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
  * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE

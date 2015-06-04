@@ -179,9 +179,17 @@ bool
 promote (Board *board, int square, char promote_in)
 {
   if (board->active_color)
-    promote_in = tolower (promote_in);
+    {
+      promote_in = tolower (promote_in);
+      if (promote_in != 'r' && promote_in != 'n' && promote_in != 'b')
+        promote_in = 'q';
+    }
   else
-    promote_in = toupper (promote_in);
+    {
+      promote_in = toupper (promote_in);
+      if (promote_in != 'R' && promote_in != 'N' && promote_in != 'B')
+        promote_in = 'Q';
+    }
   *(get_bitboard (board, square)) ^= 1ULL << square;
   bboard *bb = get_piece_bitboard (board, promote_in);
   if (!bb) return FALSE;
