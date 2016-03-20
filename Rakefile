@@ -14,5 +14,6 @@ require 'rake/testtask'
 task :default => :test
 Rake::TestTask.new do |test|
   test.libs << 'test'
+  test.warning = false
   test.test_files = FileList["test/test_#{ENV['T'] || '*'}.rb"]
 end
