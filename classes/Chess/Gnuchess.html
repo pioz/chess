@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Chess::Gnuchess</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Chess::Gnuchess 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/chess/gnuchess_rb.html">lib/chess/gnuchess.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Use <a href="Gnuchess.html">Gnuchess</a> to I.A. <em>(Only a draft)</em> To
+use this module, extend a game object with <a
+href="Gnuchess.html">Chess::Gnuchess</a>. <a
+href="Gnuchess.html">Gnuchess</a> binary have to be installed.</p>
+
+<pre><code>g = Chess::Game.new
+g.extend Chess::Gnuchess
+g.gnuchess_move!
+puts g
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-gnuchess_move">gnuchess_move</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-gnuchess_move-21">gnuchess_move!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-gnuchess_move">
+            
+              <b>gnuchess_move</b>()
+            
+            <a href="../../classes/Chess/Gnuchess.html#method-i-gnuchess_move" name="method-i-gnuchess_move" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the next move calculated by <a href="Gnuchess.html">Gnuchess</a>. <a
+href="Gnuchess.html">Gnuchess</a> must be installed!</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gnuchess_move_source')" id="l_method-i-gnuchess_move_source">show</a>
+                
+              </p>
+              <div id="method-i-gnuchess_move_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/chess/gnuchess.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gnuchess_move</span>
+  <span class="ruby-identifier">pipe</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-string">&#39;gnuchess -x&#39;</span>, <span class="ruby-string">&#39;r+&#39;</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-string">&#39;depth 1&#39;</span>)
+    <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-string">&#39;manual&#39;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">coord_moves</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-string">&#39;go&#39;</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">gets</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">IllegalMoveError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;Invalid move&#39;</span>)
+      <span class="ruby-identifier">match</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/My move is : ([a-h][1-8][a-h][1-8][rkbq]?)/</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">match</span>[<span class="ruby-number">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-string">&#39;quit&#39;</span>)
+    <span class="ruby-identifier">pipe</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">moves</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-gnuchess_move-21">
+            
+              <b>gnuchess_move!</b>()
+            
+            <a href="../../classes/Chess/Gnuchess.html#method-i-gnuchess_move-21" name="method-i-gnuchess_move-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Make a move using <a href="Gnuchess.html">Gnuchess</a> engine. This add a
+new <a href="Board.html">Board</a> in the <a href="Game.html">Game</a>.
+Return the next move calculated by <a href="Gnuchess.html">Gnuchess</a>. <a
+href="Gnuchess.html">Gnuchess</a> must be installed!</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gnuchess_move-21_source')" id="l_method-i-gnuchess_move-21_source">show</a>
+                
+              </p>
+              <div id="method-i-gnuchess_move-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/chess/gnuchess.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gnuchess_move!</span>
+  <span class="ruby-identifier">next_move</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gnuchess_move</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">move</span>(<span class="ruby-identifier">next_move</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">next_move</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
