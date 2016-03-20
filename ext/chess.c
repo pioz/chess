@@ -31,7 +31,8 @@ game_alloc (VALUE class)
  * Set the game position with a FEN string.
  *
  * Parameters are:
- * +fen+:: the FEN (Forsyth–Edwards Notation) string notation used to set the game position.
+ * +fen+:: the FEN (Forsyth–Edwards Notation) string notation used to set the
+ *         game position.
  */
 VALUE
 game_set_fen (VALUE self, VALUE fen)
@@ -49,14 +50,26 @@ game_set_fen (VALUE self, VALUE fen)
  *
  * Parameters are:
  * +piece+:: the character of the moving piece <em>('P', 'R', 'N', 'B', 'Q', 'K')</em>.
- * +disambiguating+:: when two (or more) identical pieces can move to the same square, the moving piece is uniquely identified by specifying the piece's letter, followed by (in descending order of preference):
- *                    1. the file of departure (if they differ); or
- *                    2. the rank of departure (if the files are the same but the ranks differ); or
- *                    3. both the rank and file (if neither alone is sufficient to identify the piece—which occurs only in rare cases where one or more pawns have promoted, resulting in a player having three or more identical pieces able to reach the same square).
+ * +disambiguating+:: when two (or more) identical pieces can move to the same
+ *                    square, the moving piece is uniquely identified by
+ *                    specifying the piece's letter, followed by (in descending
+ *                    order of preference):
+ *                    * the file of departure (if they differ); or
+ *                    * the rank of departure (if the files are the same but
+ *                      the ranks differ); or
+ *                    * both the rank and file (if neither alone is
+ *                      sufficient to identify the piece—which occurs only in
+ *                      rare cases where one or more pawns have promoted,
+ *                      resulting in a player having three or more identical
+ *                      pieces able to reach the same square).
  *                    Keep blank if no needed.
  * +to_coord+:: the square where the moving piece will <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
- * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
+ *                If no promotion occured, this param will be ignored. If no
+ *                value is passed, 'Q' is the default.
+ *
+ * This method returns a string that represents the short algebraic chess
+ * notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE
 game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coord, VALUE rb_promote_in)
@@ -83,10 +96,16 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
  * Make a move. This add a new Board in the Game.
  *
  * Parameters are:
- * +from+:: the 2 character string representing the starting square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +to+:: the 2 character string representing the ending square of the moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
- * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
+ * +from+:: the 2 character string representing the starting square of the
+ *          moving piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
+ * +to+:: the 2 character string representing the ending square of the moving
+ *        piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
+ *                If no promotion occured, this param will be ignored. If no
+ *                value is passed, 'Q' is the default.
+ *
+ * This method returns a string that represents the short algebraic chess
+ * notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE
 game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
@@ -108,7 +127,8 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
  *
  * Make a move. This add a new Board in the Game.
  *
- * Each square on the chessboard is represented by an integer according to the following scheme:
+ * Each square on the chessboard is represented by an integer according to the
+ * following scheme:
  *    8 | 56 57 58 59 60 61 62 63
  *    7 | 48 49 50 51 52 53 54 55
  *    6 | 40 41 42 43 44 45 46 47
@@ -119,11 +139,16 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
  *    1 |  0  1  2  3  4  5  6  7
  *      +-------------------------
  *         a  b  c  d  e  f  g  h
+ *
  * Parameters are:
  * +from+:: the integer representing the starting square of the moving piece.
  * +to+:: the integer representing the ending square of the moving piece.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>. If no promotion occured, this param will be ignored. If no value is passed, 'Q' is the default.
- * This method returns a string that represents the short algebraic chess notation of the move or raise an IllegalMoveError if the move is illegal.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
+ *                If no promotion occured, this param will be ignored. If no
+ *                value is passed, 'Q' is the default.
+ *
+ * This method returns a string that represents the short algebraic chess
+ * notation of the move or raise an IllegalMoveError if the move is illegal.
  */
 VALUE
 game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
@@ -143,10 +168,12 @@ game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
 /*
  * call-seq: resign(color)
  *
- * The game result is set to '1-0' if +color+ is "black", otherwise is set to '0-1' if color is "white".
+ * The game result is set to '1-0' if +color+ is "black", otherwise is set to
+ * '0-1' if color is "white".
  *
  * Parameters are:
- * +color+:: the color of the player who resigns the game; it can be +:white+ or +:black+.
+ * +color+:: the color of the player who resigns the game; it can be +:white+ or
+ *           +:black+.
  */
 VALUE
 game_resign (VALUE self, VALUE color)
@@ -182,7 +209,8 @@ game_draw (VALUE self)
 /*
  * call-seq: [n]
  *
- * Returns the +n+-th Board of the Game or +nil+ if the +n+-th Board does not exist.
+ * Returns the +n+-th Board of the Game or +nil+ if the +n+-th Board does not
+ * exist.
  */
 VALUE
 game_boards (VALUE self, VALUE index)
@@ -199,7 +227,8 @@ game_boards (VALUE self, VALUE index)
 /*
  * call-seq: current
  *
- * Returns the current Board of the Game (the current chess position of the game).
+ * Returns the current Board of the Game (the current chess position of the
+ * game).
  */
 VALUE
 game_current_board (VALUE self)
@@ -246,7 +275,8 @@ game_full_moves (VALUE self)
 /*
  * call-seq: threefold_repetition?
  *
- * Returns +true+ if a player can claim draw by the threefold repetition rule, +false+ otherwise.
+ * Returns +true+ if a player can claim draw by the threefold repetition rule,
+ * +false+ otherwise.
  */
 VALUE
 game_threefold_repetition (VALUE self)
@@ -389,7 +419,8 @@ board_placement (VALUE self)
  * Returns the piece on the +square+ of the chessboard. If there is no piece or
  * the square is not valid return the blank string.
  *
- * Each square on the chessboard is represented by an integer according to the following scheme:
+ * Each square on the chessboard is represented by an integer according to the
+ * following scheme:
  *    8 | 56 57 58 59 60 61 62 63
  *    7 | 48 49 50 51 52 53 54 55
  *    6 | 40 41 42 43 44 45 46 47
@@ -424,7 +455,8 @@ board_get_piece (VALUE self, VALUE square)
 /*
  * call-seq: check?
  *
- * Returns +true+ if the king of the color that has the turn is in check, +false+ otherwise.
+ * Returns +true+ if the king of the color that has the turn is in check,
+ * +false+ otherwise.
  */
 VALUE
 board_king_in_check (VALUE self)
@@ -440,7 +472,8 @@ board_king_in_check (VALUE self)
 /*
  * call-seq: checkmate?
  *
- * Returns +true+ if the king of the color that has the turn is in checkmate, +false+ otherwise.
+ * Returns +true+ if the king of the color that has the turn is in checkmate,
+ * +false+ otherwise.
  */
 VALUE
 board_king_in_checkmate (VALUE self)
@@ -456,7 +489,8 @@ board_king_in_checkmate (VALUE self)
 /*
  * call-seq: stalemate?
  *
- * Returns +true+ if the pieces of the color that has the turn are in stalemate, +false+ otherwise.
+ * Returns +true+ if the pieces of the color that has the turn are in stalemate,
+ * +false+ otherwise.
  */
 VALUE
 board_stalemate (VALUE self)
@@ -472,7 +506,8 @@ board_stalemate (VALUE self)
 /*
  * call-seq: insufficient_material?
  *
- * Returns +true+ if the board has insufficient material to checkmate, +false+ otherwise.
+ * Returns +true+ if the board has insufficient material to checkmate, +false+
+ * otherwise.
  */
 VALUE
 board_insufficient_material (VALUE self)
@@ -488,7 +523,8 @@ board_insufficient_material (VALUE self)
 /*
  * call-seq: fifty_move_rule?
  *
- * Returns +true+ if a player can claim draw by the fifty-move rule, +false+ otherwise.
+ * Returns +true+ if a player can claim draw by the fifty-move rule, +false+
+ * otherwise.
  */
 VALUE
 board_fifty_move_rule (VALUE self)
@@ -520,7 +556,9 @@ board_active_color (VALUE self)
 /*
  * call-seq: halfmove_clock
  *
- * Returns the halfmove clock that is the number of halfmoves since the last pawn advance or capture. This is used to determine if a draw can be claimed under the fifty-move rule.
+ * Returns the halfmove clock that is the number of halfmoves since the last
+ * pawn advance or capture. This is used to determine if a draw can be claimed
+ * under the fifty-move rule.
  */
 VALUE
 board_halfmove_clock (VALUE self)
@@ -533,7 +571,8 @@ board_halfmove_clock (VALUE self)
 /*
  * call-seq: fullmove_number
  *
- * Returns the fullmove number: the number of the full move. It starts at 1, and is incremented after black's move.
+ * Returns the fullmove number: the number of the full move. It starts at 1, and
+ * is incremented after black's move.
  */
 VALUE
 board_fullmove_number (VALUE self)
@@ -608,7 +647,9 @@ Init_chess ()
 
   /*
    * This class rappresents a chess board.
-   * The rappresentation of the board use _bitboards_ where each bit represents a game position or state, designed for optimization of speed and/or memory or disk use in mass calculations.
+   * The rappresentation of the board use _bitboards_ where each bit represents
+   * a game position or state, designed for optimization of speed and/or memory
+   * or disk use in mass calculations.
    * This ensures a fast library.
    */
   board_klass = rb_define_class_under (chess, "Board", rb_cObject);

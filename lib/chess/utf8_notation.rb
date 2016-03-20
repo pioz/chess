@@ -7,6 +7,7 @@ module Chess
   #      => true
   #     :002 > 'Qf7#'.to_utf8
   #      => '♕f7#'
+  #
   # To use this utility explicit require is needed:
   # <tt>require 'chess/utf8_notation'</tt>
   module UTF8Notation

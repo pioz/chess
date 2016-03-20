@@ -1,6 +1,7 @@
 module Chess
 
-  # This exception will be raised when an invalid short algebraic chess notation string is passed to the Game#move function.
+  # This exception will be raised when an invalid short algebraic chess notation
+  # string is passed to the Game#move function.
   class BadNotationError < StandardError
     # :nodoc:
     # Create a new exception.

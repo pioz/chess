@@ -6,12 +6,14 @@ module Chess
   class Game < CGame
 
     # Create a new game. If an array of moves is provided, the moves will be performed.
+    #
     # May be raise an IllegalMoveError or BadNotationError.
     def initialize(moves = [])
       moves.each { |m| move(m) }
     end
 
     # Creates a new game from a file in PGN format.
+    #
     # May be raise an InvalidPgnFormatError or IllegalMoveError or BadNotationError.
     def self.load_pgn(file)
       pgn = Chess::Pgn.new(file)
@@ -34,7 +36,9 @@ module Chess
     end
 
     # Creates a new game from a FEN string.
+    #
     # May be raise an InvalidFenFormatError.
+    #
     # *Warning*: this game do not have history before the FEN placement.
     def self.load_fen(fen)
       if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/
@@ -47,11 +51,18 @@ module Chess
     end
 
     # Make a move. This add a new Board in the Storyboard.
-    # The parameter +m+ represents the short algebraic chess notation string of the move.
-    # +m+ can be <em>from_square</em> plus <em>to_square</em> <em>('e2e4', ..., 'b1c3')</em>.
-    # This method returns a string that represents the short algebraic chess notation of the move.
+    #
+    # Parameters are:
+    # +m+:: represents the short algebraic chess notation string of the move.
+    #       +m+ can be <em>from_square</em> plus <em>to_square</em>
+    #       <em>('e2e4', ..., 'b1c3')</em> (coordinate chess notation).
+    #
+    # This method returns a string that represents the short algebraic chess
+    # notation of the move.
+    #
     # Raise an IllegalMoveError if the move is illegal.
-    # Raise an BadNotationError if the short algebraic chess notation is malformed.
+    # Raise an BadNotationError if the short algebraic chess notation is
+    # malformed.
     def move(m)
       begin
         expand = expand_move(m)
@@ -83,6 +94,7 @@ module Chess
     end
 
     # Returns the status of the game.
+    #
     # Possible states are:
     # * +in_progress+:: the game is in progress.
     # * +white_won+:: white player has won with a checkmate.
@@ -140,6 +152,7 @@ module Chess
     private
 
     # Expand the short algebraic chess notation string +m+ in a hash like this:
+    #
     #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: '' }
     def expand_move(m)
       if match = m.match(/^([RNBQK])?([a-h]?[1-8]?)(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/)
