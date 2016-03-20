@@ -1,6 +1,5 @@
 *.gem
 .bundle
-doc
 ext/chess
 ext/Makefile
 ext/*.bundle
