@@ -128,6 +128,7 @@ rollback (Game *g)
 {
   if (g->current > 0)
     {
+      g->result = IN_PROGRESS;
       g->current--;
       free (g->boards[g->current]);
       free (g->moves[g->current]);

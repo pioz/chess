@@ -72,7 +72,7 @@ module Chess
           super(expand[:name], expand[:dis], expand[:to], expand[:promotion])
         end
       rescue IllegalMoveError => e
-        raise IllegalMoveError.new("Illegal move '#{m}'\n#{self.to_s}")
+        raise IllegalMoveError.new("Illegal move '#{m}'\n#{self.active_player} turn\n#{self.to_s}")
       end
     end
     alias :move= :move

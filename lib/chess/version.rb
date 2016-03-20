@@ -1,5 +1,5 @@
 # The Chess library module.
 module Chess
   # The library version.
-  VERSION = '0.0.9'
+  VERSION = '0.0.10'
 end
