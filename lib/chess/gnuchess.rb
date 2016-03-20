@@ -17,7 +17,7 @@ module Chess
       begin
         pipe.puts('depth 1')
         pipe.puts('manual')
-        self.full_moves.each do |m|
+        self.coord_moves.each do |m|
           pipe.puts(m)
         end
         pipe.puts('go')

@@ -19,7 +19,7 @@ typedef struct
 {
   Board* boards[BUFFER_SIZE];
   char* moves[BUFFER_SIZE];
-  char* full_moves[BUFFER_SIZE];
+  char* coord_moves[BUFFER_SIZE];
   int current;
   unsigned short result;
 } Game;

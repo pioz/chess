@@ -256,20 +256,27 @@ game_moves (VALUE self)
 }
 
 /*
- * call-seq: full_moves
+ * call-seq: coord_moves
  *
- * Returns the array with all full moves done <em>(es: b1c3)</em>.
+ * Returns the array with all moves done in coordinate chess notation <em>(es: b1c3)</em>.
  */
 VALUE
-game_full_moves (VALUE self)
+game_coord_moves (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
   int i;
   VALUE moves = rb_ary_new ();
   for (i = 0; i < g->current; i++)
-    rb_ary_push (moves, rb_str_new2 (g->full_moves[i]));
+    rb_ary_push (moves, rb_str_new2 (g->coord_moves[i]));
   return moves;
+}
+
+VALUE
+game_full_moves (VALUE self)
+{
+  printf ("DEPRECATION WARNING: `full_moves` is deprecated and will be removed, please use `coord_moves` to get the array with all moves done in coordinate chess notation.\n");
+  return game_coord_moves (self);
 }
 
 /*
@@ -339,7 +346,7 @@ game_each (VALUE self)
   Data_Get_Struct (self, Game, g);
   for (i = 0; i < g->current; i++)
     rb_yield_values (4, Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
-                     rb_str_new2 (g->moves[i]), rb_str_new2 (g->full_moves[i]),
+                     rb_str_new2 (g->moves[i]), rb_str_new2 (g->coord_moves[i]),
                      INT2FIX (i));
   return self;
 }
@@ -636,6 +643,7 @@ Init_chess ()
   rb_define_method (game, "[]", game_boards, 1);
   rb_define_method (game, "current", game_current_board, 0);
   rb_define_method (game, "moves", game_moves, 0);
+  rb_define_method (game, "coord_moves", game_coord_moves, 0);
   rb_define_method (game, "full_moves", game_full_moves, 0);
   rb_define_method (game, "threefold_repetition?", game_threefold_repetition, 0);
   rb_define_method (game, "result", game_result, 0);

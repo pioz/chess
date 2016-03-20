@@ -101,7 +101,7 @@ char square_to_file (int square);
 char square_to_rank (int square);
 int coord_to_square (const char *coord);
 char* square_to_coord (int square);
-char* ft_to_full_move (int from, int to, char promote_in);
+char* ft_to_coord_move (int from, int to, char promote_in);
 char* result_to_s (unsigned short int r);
 char* castling_to_s (short int castling);
 char* en_passant_to_s (short int en_passant);

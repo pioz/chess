@@ -34,7 +34,7 @@ free_game (Game *g)
     {
       free (g->boards[i]);
       free (g->moves[i]);
-      free (g->full_moves[i]);
+      free (g->coord_moves[i]);
     }
   free (g);
 }
@@ -69,7 +69,7 @@ char*
 current_full_move (Game *g)
 {
   if (g->current > 0)
-    return g->full_moves[g->current-1];
+    return g->coord_moves[g->current-1];
   return 0;
 }
 
@@ -101,7 +101,7 @@ apply_move (Game *g, int from, int to, char promote_in)
     new_board->halfmove_clock++;
   g->boards[g->current] = new_board;
   g->moves[g->current] = move_done;
-  g->full_moves[g->current] = ft_to_full_move (from, to, promote_in);
+  g->coord_moves[g->current] = ft_to_coord_move (from, to, promote_in);
   g->current++;
   // Test check or checkmate of opponent king
   if (king_in_check (new_board, new_board->active_color))
@@ -132,7 +132,7 @@ rollback (Game *g)
       g->current--;
       free (g->boards[g->current]);
       free (g->moves[g->current]);
-      free (g->full_moves[g->current]);
+      free (g->coord_moves[g->current]);
     }
 }
 
@@ -321,9 +321,9 @@ set_fen (Game *g, const char *fen)
   set_occupied (board);
   g->boards[g->current] = board;
   g->moves[g->current] = (char *) malloc (11);
-  g->full_moves[g->current] = (char *) malloc (11);
+  g->coord_moves[g->current] = (char *) malloc (11);
   strcpy (g->moves[g->current], "SET BY FEN");
-  strcpy (g->full_moves[g->current], "SET BY FEN");
+  strcpy (g->coord_moves[g->current], "SET BY FEN");
   g->current++;
 
   // check result

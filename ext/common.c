@@ -36,7 +36,7 @@ square_to_coord (int square)
 }
 
 char*
-ft_to_full_move (int from, int to, char promote_in)
+ft_to_coord_move (int from, int to, char promote_in)
 {
   char *s = (char *) malloc (7);
   s[0] = square_to_file (from);
