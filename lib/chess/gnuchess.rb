@@ -103,7 +103,7 @@ module Chess
 
     # Return true if Gnuchess is installed, false otherwise.
     def self.gnuchess_installed?
-      system('which gnuchess >& /dev/null')
+      system('which gnuchess > /dev/null 2>&1')
       $?.exitstatus == 0
     end
 
