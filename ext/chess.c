@@ -272,6 +272,9 @@ game_coord_moves (VALUE self)
   return moves;
 }
 
+/*
+ * :nodoc:
+ */
 VALUE
 game_full_moves (VALUE self)
 {
@@ -330,10 +333,10 @@ game_size (VALUE self)
 }
 
 /*
- * call-seq: each { |board, move, full_move, index| block }
+ * call-seq: each { |board, move, coord_move, index| block }
  *
  * Calls +block+ once for each +board+ in self, passing that
- * +board+, +move+, +full_move+ and +index+ as parameters. Return self.
+ * +board+, +move+, +coord_move+ and +index+ as parameters. Return self.
  * If no block is given, the array of game moves is returned instead.
  */
 VALUE
