@@ -19,4 +19,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.extensions    = ['ext/extconf.rb']
   s.require_paths = ['lib']
+
+  s.add_development_dependency 'bundler', '~> 1.14'
+  s.add_development_dependency 'rake', '~> 12.0'
+  s.add_development_dependency 'minitest', '~> 5.10'
+  s.add_development_dependency 'rdoc', '~> 5.1'
 end
