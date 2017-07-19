@@ -40,5 +40,5 @@ or fork the project and send a pull request.
 
 == Copyright
 
-Copyright (c) 2015 {Enrico Pilotto (@pioz)}[https://github.com/pioz].
+Copyright (c) 2017 {Enrico Pilotto (@pioz)}[https://github.com/pioz].
 See {LICENSE}[https://github.com/pioz/chess/blob/master/LICENSE] for details.
