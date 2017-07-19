@@ -6,7 +6,7 @@ module Chess
     # Array that include PGN standard tags.
     TAGS = %w(event site date round white black result)
 
-    attr_accessor *(TAGS + [:moves])
+    attr_accessor(*(TAGS + [:moves]))
 
     # Creates a new PGN. If param +filename+, load it from file.
     def initialize(filename = nil)
@@ -54,6 +54,9 @@ module Chess
     end
 
     # :nodoc:
+    alias :old_date= :date=
+
+    # :nodoc:
     # Set the date tag.
     def date=(value)
       if value.is_a?(Time)
@@ -62,6 +65,7 @@ module Chess
         @data = value
       end
     end
+
 
   end
 end
