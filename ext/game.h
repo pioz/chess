@@ -33,7 +33,7 @@ void free_game (Game *g);
 Board* current_board (Game *g);
 Board* get_board (Game *g, int index);
 char* current_move (Game *g);
-char* current_full_move (Game *g);
+char* current_coord_move (Game *g);
 bool apply_move (Game *g, int from, int to, char promote_in);
 void rollback (Game *g);
 bool threefold_repetition (Game *g);

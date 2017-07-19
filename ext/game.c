@@ -66,7 +66,7 @@ current_move (Game *g)
 }
 
 char*
-current_full_move (Game *g)
+current_coord_move (Game *g)
 {
   if (g->current > 0)
     return g->coord_moves[g->current-1];
