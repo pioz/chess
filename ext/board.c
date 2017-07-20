@@ -242,7 +242,7 @@ king_in_checkmate (Board *board, int color)
   // Test if attack can be shielded
   bboard slide = EMPTY_BOARD;
   int i;
-  for (int i = 0; i < 8; i++)
+  for (i = 0; i < 8; i++)
     {
       slide = sliding_attacks (1ULL << attacker, FULL_BOARD, i);
       if (slide & 1ULL << king_square)

@@ -1,15 +1,15 @@
-Wed, 19 Jul 2017 17:57:58 +0200
-README.rdoc	Wed, 19 Jul 2017 16:55:54 +0200
-lib/chess.rb	Wed, 19 Jul 2017 16:55:54 +0200
-lib/chess/exceptions.rb	Wed, 19 Jul 2017 16:55:54 +0200
-lib/chess/game.rb	Wed, 19 Jul 2017 17:27:50 +0200
-lib/chess/gnuchess.rb	Wed, 19 Jul 2017 16:55:54 +0200
-lib/chess/pgn.rb	Wed, 19 Jul 2017 17:38:47 +0200
-lib/chess/utf8_notation.rb	Wed, 19 Jul 2017 16:55:54 +0200
-lib/chess/version.rb	Wed, 19 Jul 2017 16:55:54 +0200
-ext/bitboard.c	Wed, 19 Jul 2017 16:55:54 +0200
-ext/board.c	Wed, 19 Jul 2017 16:55:54 +0200
-ext/chess.c	Wed, 19 Jul 2017 17:57:47 +0200
-ext/common.c	Wed, 19 Jul 2017 16:55:54 +0200
-ext/game.c	Wed, 19 Jul 2017 17:57:08 +0200
-ext/special.c	Wed, 19 Jul 2017 16:55:54 +0200
+Thu, 20 Jul 2017 15:24:00 +0200
+README.rdoc	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/exceptions.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/game.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/gnuchess.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/pgn.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/utf8_notation.rb	Thu, 20 Jul 2017 14:48:45 +0200
+lib/chess/version.rb	Thu, 20 Jul 2017 14:48:45 +0200
+ext/bitboard.c	Thu, 20 Jul 2017 15:18:42 +0200
+ext/board.c	Thu, 20 Jul 2017 15:21:27 +0200
+ext/chess.c	Thu, 20 Jul 2017 15:14:18 +0200
+ext/common.c	Thu, 20 Jul 2017 14:48:45 +0200
+ext/game.c	Thu, 20 Jul 2017 15:22:45 +0200
+ext/special.c	Thu, 20 Jul 2017 14:48:45 +0200
