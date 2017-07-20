@@ -248,9 +248,8 @@ game_moves (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
-  int i;
   VALUE moves = rb_ary_new ();
-  for (i = 0; i < g->current; i++)
+  for (int i = 0; i < g->current; i++)
     rb_ary_push (moves, rb_str_new2 (g->moves[i]));
   return moves;
 }
@@ -265,9 +264,8 @@ game_coord_moves (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
-  int i;
   VALUE moves = rb_ary_new ();
-  for (i = 0; i < g->current; i++)
+  for (int i = 0; i < g->current; i++)
     rb_ary_push (moves, rb_str_new2 (g->coord_moves[i]));
   return moves;
 }
@@ -344,12 +342,13 @@ game_each (VALUE self)
 {
   if (!rb_block_given_p ())
     return game_moves(self);
-  int i;
   Game *g;
   Data_Get_Struct (self, Game, g);
-  for (i = 0; i < g->current; i++)
-    rb_yield_values (4, Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
-                     rb_str_new2 (g->moves[i]), rb_str_new2 (g->coord_moves[i]),
+  for (int i = 0; i < g->current; i++)
+    rb_yield_values (4,
+                     Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
+                     rb_str_new2 (g->moves[i]),
+                     rb_str_new2 (g->coord_moves[i]),
                      INT2FIX (i));
   return self;
 }
@@ -399,25 +398,22 @@ board_placement (VALUE self)
 {
   Board *board;
   Data_Get_Struct (self, Board, board);
-  int i;
-  char piece[2];
-  piece[1] = '\0';
   if (!rb_block_given_p ())
     {
       VALUE placement = rb_ary_new ();
-      for (i = 0; i < 64; i++)
+      for (int i = 0; i < 64; i++)
         {
-          piece[0] = board->placement[i];
-          rb_ary_push (placement, rb_str_new2 (piece));
+          char piece = board->placement[i];
+          rb_ary_push (placement, rb_str_new (&piece, 1));
         }
       return placement;
     }
   else
     {
-      for (i = 0; i < 64; i++)
+      for (int i = 0; i < 64; i++)
         {
-          piece[0] = board->placement[i];
-          rb_yield_values (2, rb_str_new2 (piece), INT2FIX (i));
+          char piece = board->placement[i];
+          rb_yield_values (2, rb_str_new (&piece, 1), INT2FIX (i));
         }
       return self;
     }
@@ -452,14 +448,12 @@ board_get_piece (VALUE self, VALUE square)
   Board *board;
   Data_Get_Struct (self, Board, board);
   int i;
-  char piece[2];
-  piece[1] = '\0';
   if (TYPE (square) == T_STRING)
     i = coord_to_square (StringValuePtr (square));
   else
     i = FIX2INT (square);
-  piece[0] = board->placement[i];
-  return rb_str_new2 (piece);
+  char piece = board->placement[i];
+  return rb_str_new (&piece, 1);
 }
 
 /*
