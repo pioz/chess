@@ -55,12 +55,11 @@ print_board (Board *board)
 {
   char *s = (char *) malloc (251);
   int si = 0;
-  int i, j;
-  for (i = 7; i >= 0; i--) // rank => top to bottom
+  for (int i = 7; i >= 0; i--) // rank => top to bottom
     {
       sprintf (&s[si], "\e[37m%d\e[0m ", i + 1);
       si += 11;
-      for (j = 0; j < 8; j++) // file => left to right
+      for (int j = 0; j < 8; j++) // file => left to right
         {
           char piece = board->placement[8 * i + j];
           sprintf (&s[si], "%c ", piece == 0 ? '.' : piece);
@@ -145,11 +144,10 @@ xray (Board *board, int from, bool only_attack)
 bboard
 all_xray (Board *board, int color, bool only_attack)
 {
-  int i, piece_color;
   bboard x = EMPTY_BOARD; // xray for all pieces
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
-      piece_color = get_color (board, i);
+      int piece_color = get_color (board, i);
       // Calculate xray for pieces of color [c]
       if (piece_color == color)
         x |= xray (board, i, only_attack);
@@ -180,10 +178,10 @@ remove_piece (Board *board, int square, Board *new_board)
 int
 same_pieces_that_can_capture_a_square (Board *board, int color, int square, int *pieces, char piece_filter)
 {
-  int i, index = 0;
+  int index = 0;
   char p;
   Board new_board;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     if (get_color (board, i) == color)
       {
         p = board->placement[i];
@@ -244,7 +242,7 @@ king_in_checkmate (Board *board, int color)
   // Test if attack can be shielded
   bboard slide = EMPTY_BOARD;
   int i;
-  for (i = 0; i < 8; i++)
+  for (int i = 0; i < 8; i++)
     {
       slide = sliding_attacks (1ULL << attacker, FULL_BOARD, i);
       if (slide & 1ULL << king_square)
@@ -268,11 +266,10 @@ king_in_checkmate (Board *board, int color)
 bool
 stalemate (Board *board, int color)
 {
-  int i, j;
   int s[64];
   int n;
   Board new_board;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     if (get_color (board, i) == color)
       {
         bboard b = xray (board, i, FALSE) & ~board->pieces[color];
@@ -280,7 +277,7 @@ stalemate (Board *board, int color)
         if (b)
           {
             squares (b, s, &n);
-            for (j = 0; j < n; j++)
+            for (int j = 0; j < n; j++)
               if (try_move (board, i, s[j], 'Q', &new_board, 0, 0))
                 return FALSE;
           }
@@ -342,15 +339,15 @@ pseudo_legal_move (Board *board, int from, int to)
 void
 get_coord (Board *board, char piece, const char *disambiguating, const char *to_coord, char promote_in, int *from, int *to)
 {
-  int i, c, count = 0;
+  int count = 0;
   char file, rank;
   bboard x;
   *to = coord_to_square (to_coord);
   if (!piece)
     piece = 'P';
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
-      c = get_color (board, i);
+      int c = get_color (board, i);
       if (c == board->active_color && piece == toupper (board->placement[i]))
         {
           x = xray (board, i, FALSE) & ~board->pieces[c];
@@ -514,11 +511,11 @@ to_fen (Board *board)
 {
   // 1. Placement
   char placement[65];
-  int i, j, cur = 0;
+  int cur = 0;
   char p, pp = '-';
-  for (i = 7; i >= 0; i--)
+  for (int i = 7; i >= 0; i--)
     {
-      for (j = 0; j < 8; j++)
+      for (int j = 0; j < 8; j++)
         {
           p = board->placement[j+i*8];
           if (p == '\0' && p == pp)

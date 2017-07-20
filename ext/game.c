@@ -29,8 +29,7 @@ init_game ()
 void
 free_game (Game *g)
 {
-  int i;
-  for (i = 0; i < g->current; i++)
+  for (int i = 0; i < g->current; i++)
     {
       free (g->boards[i]);
       free (g->moves[i]);
@@ -147,8 +146,8 @@ threefold_repetition (Game *g)
   char* s[g->current + 1];
   s[0] = (char *) malloc (80);
   strcpy (s[0], "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -");
-  int i, j;
   bool found = FALSE;
+  int i, j;
   for (i = 0; i < g->current; i++)
     {
       fen = to_fen (g->boards[i]);
@@ -344,9 +343,9 @@ main ()
 {
   // Valgrind run
   init_chess_library ();
-  int i, from, to;
+  int from, to;
 
-  for (i = 0; i < 1000; i++)
+  for (int i = 0; i < 1000; i++)
     {
       Game *g = init_game ();
       Board *board;

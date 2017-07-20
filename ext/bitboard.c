@@ -94,9 +94,8 @@ square2 (bboard b)
 void
 squares (bboard b, int *array, int *n)
 {
-  int i;
   *n = 0;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     if (b & 1ULL << i)
       {
         array[*n] = i;
@@ -130,10 +129,9 @@ get2 (bboard b, int file, int rank)
 void
 print_bitboard (bboard b)
 {
-  int i, j;
-  for (i = 7; i >= 0; i--) // rank => top to bottom
+  for (int i = 7; i >= 0; i--) // rank => top to bottom
     {
-      for (j = 0; j < 8; j++) // file => left to right
+      for (int j = 0; j < 8; j++) // file => left to right
         printf ("%d ", get2 (b, j, i) ? 1 : 0);
       printf ("\n");
     }
@@ -228,8 +226,7 @@ sliding_attacks (bboard slider, bboard propagator, int dir)
 void
 precalculate_xray_attack_white_pawn (bboard xray[64])
 {
-  int i;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
       xray[i] = EMPTY_BOARD;
       xray[i] = shift_one (1ULL << i, 7) | shift_one (1ULL << i, 1);
@@ -239,8 +236,7 @@ precalculate_xray_attack_white_pawn (bboard xray[64])
 void
 precalculate_xray_attack_black_pawn (bboard xray[64])
 {
-  int i;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
       xray[i] = EMPTY_BOARD;
       xray[i] = shift_one (1ULL << i, 5) | shift_one (1ULL << i, 3);
@@ -250,8 +246,7 @@ precalculate_xray_attack_black_pawn (bboard xray[64])
 void
 precalculate_xray_knight (bboard xray[64])
 {
-  int i;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
       xray[i] = 1ULL << i;
       xray[i] = ((xray[i] << 17) & NOT_FILE_A)
@@ -268,11 +263,10 @@ precalculate_xray_knight (bboard xray[64])
 void
 precalculate_xray_king (bboard xray[64])
 {
-  int i, j;
-  for (i = 0; i < 64; i++)
+  for (int i = 0; i < 64; i++)
     {
       xray[i] = EMPTY_BOARD;
-      for (j = 0; j < 8; j++)
+      for (int j = 0; j < 8; j++)
         xray[i] = sliding_attacks (1ULL << i, EMPTY_BOARD, j) | xray[i];
     }
 }
@@ -328,10 +322,9 @@ xray_attack_black_pawn (int square)
 bboard
 xray_rook (bboard occupied_square, int square)
 {
-  int i, dir;
   bboard xray[4];
   bboard collision, shielded_square;
-  for (i = 0, dir = 0; i < 4; i++, dir+=2)
+  for (int i = 0, dir = 0; i < 4; i++, dir+=2)
     {
       xray[i] = sliding_attacks (1ULL << square, FULL_BOARD, dir);
       collision = xray[i] & occupied_square;
@@ -350,10 +343,9 @@ xray_knight (int square)
 bboard
 xray_bishop (bboard occupied_square, int square)
 {
-  int i, dir;
   bboard xray[4];
   bboard collision, shielded_square;
-  for (i = 0, dir = 1; i < 4; i++, dir+=2)
+  for (int i = 0, dir = 1; i < 4; i++, dir+=2)
     {
       xray[i] = sliding_attacks (1ULL << square, FULL_BOARD, dir);
       collision = xray[i] & occupied_square;
