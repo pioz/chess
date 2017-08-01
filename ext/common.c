@@ -22,7 +22,7 @@ square_to_rank (int square)
 int
 coord_to_square (const char *coord)
 {
-  return 8 * (coord[1] - 49) + (coord[0] - 97);
+  return 8 * ((coord[1] | ' ') - 49) + ((coord[0] | ' ') - 97);
 }
 
 char*
