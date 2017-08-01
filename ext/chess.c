@@ -423,7 +423,7 @@ board_placement (VALUE self)
  * call-seq: [square]
  *
  * Returns the piece on the +square+ of the chessboard. If there is no piece or
- * the square is not valid return the blank string.
+ * the square is not valid return +nil+.
  *
  * Each square on the chessboard is represented by an integer according to the
  * following scheme:
@@ -440,7 +440,7 @@ board_placement (VALUE self)
  *
  * Parameters are:
  * +square+:: the square of the board. Can be a fixnum between 0 and 63 or a
- * string like 'a2', 'c5'... The string must be downcase.
+ * string like 'a2', 'c5'...
  */
 VALUE
 board_get_piece (VALUE self, VALUE square)
@@ -453,7 +453,10 @@ board_get_piece (VALUE self, VALUE square)
   else
     i = FIX2INT (square);
   char piece = board->placement[i];
-  return rb_str_new (&piece, 1);
+  if (i < 0 || i > 63 || !piece)
+    return Qnil;
+  else
+    return rb_str_new (&piece, 1);
 }
 
 /*

@@ -53,7 +53,7 @@ get_board (Game *g, int index)
     return &STARTING_BOARD;
   if (index < g->current)
     return g->boards[index];
-  return 0;
+  return NULL;
 }
 
 char*
