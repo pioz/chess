@@ -242,9 +242,8 @@ game_coord_moves (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
-  int i;
   VALUE moves = rb_ary_new ();
-  for (i = 0; i &lt; g-&gt;current; i++)
+  for (int i = 0; i &lt; g-&gt;current; i++)
     rb_ary_push (moves, rb_str_new2 (g-&gt;coord_moves[i]));
   return moves;
 }</pre>
@@ -372,12 +371,13 @@ game_each (VALUE self)
 {
   if (!rb_block_given_p ())
     return game_moves(self);
-  int i;
   Game *g;
   Data_Get_Struct (self, Game, g);
-  for (i = 0; i &lt; g-&gt;current; i++)
-    rb_yield_values (4, Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
-                     rb_str_new2 (g-&gt;moves[i]), rb_str_new2 (g-&gt;coord_moves[i]),
+  for (int i = 0; i &lt; g-&gt;current; i++)
+    rb_yield_values (4,
+                     Data_Wrap_Struct (board_klass, 0, 0, get_board (g, i)),
+                     rb_str_new2 (g-&gt;moves[i]),
+                     rb_str_new2 (g-&gt;coord_moves[i]),
                      INT2FIX (i));
   return self;
 }</pre>
@@ -652,9 +652,8 @@ game_moves (VALUE self)
 {
   Game *g;
   Data_Get_Struct (self, Game, g);
-  int i;
   VALUE moves = rb_ary_new ();
-  for (i = 0; i &lt; g-&gt;current; i++)
+  for (int i = 0; i &lt; g-&gt;current; i++)
     rb_ary_push (moves, rb_str_new2 (g-&gt;moves[i]));
   return moves;
 }</pre>
