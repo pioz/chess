@@ -440,7 +440,7 @@ board_placement (VALUE self)
  *
  * Parameters are:
  * +square+:: the square of the board. Can be a fixnum between 0 and 63 or a
- * string like 'a2', 'c5'...
+ *            string like 'a2', 'c5'...
  */
 VALUE
 board_get_piece (VALUE self, VALUE square)
