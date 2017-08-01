@@ -151,7 +151,7 @@ calculations. This ensures a fast library.</p>
         <div class="method-description">
           
           <p>Returns the piece on the <code>square</code> of the chessboard. If there is
-no piece or the square is not valid return the blank string.</p>
+no piece or the square is not valid return <code>nil</code>.</p>
 
 <p>Each square on the chessboard is represented by an integer according to the
 following scheme:</p>
@@ -173,7 +173,7 @@ following scheme:</p>
 <p>the square of the board. Can be a fixnum between 0 and 63 or a</p>
 </dd></dl>
 
-<p>string like &#39;a2&#39;, &#39;c5&#39;… The string must be downcase.</p>
+<p>string like &#39;a2&#39;, &#39;c5&#39;…</p>
           
           
 
@@ -190,7 +190,10 @@ board_get_piece (VALUE self, VALUE square)
   else
     i = FIX2INT (square);
   char piece = board-&gt;placement[i];
-  return rb_str_new (&amp;piece, 1);
+  if (i &lt; 0 || i &gt; 63 || !piece)
+    return Qnil;
+  else
+    return rb_str_new (&amp;piece, 1);
 }</pre>
           </div>
           
