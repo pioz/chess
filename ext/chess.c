@@ -439,7 +439,7 @@ board_placement (VALUE self)
  *         a  b  c  d  e  f  g  h
  *
  * Parameters are:
- * +square+:: the square of the board. Can be a fixnum between 0 and 63 or a
+ * +square+:: the square of the board. Can be an integer between 0 and 63 or a
  *            string like 'a2', 'c5'...
  */
 VALUE
