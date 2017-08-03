@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'chess'
   s.version     = Chess::VERSION
   s.authors     = ['Enrico Pilotto']
-  s.email       = ['enrico@megiston.it']
+  s.email       = ['epilotto@gmx.com']
   s.homepage    = 'https://github.com/pioz/chess'
   s.summary     = %q{A fast chess library to play chess with Ruby.}
   s.description = %q{A fast chess library that use bitboards to play chess with Ruby.}
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.extensions    = ['ext/extconf.rb']
   s.require_paths = ['lib']
 
+  s.required_ruby_version = '>= 1.9'
   s.add_development_dependency 'bundler', '~> 1.14'
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'minitest', '~> 5.10'
