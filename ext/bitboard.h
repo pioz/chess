@@ -1,7 +1,7 @@
 /*
  * chess - a fast library to play chess in Ruby
  *
- * Copyright (c) 2011-2012, Enrico Pilotto <epilotto@gmx.com>
+ * Copyright (c) 2011-2017, Enrico Pilotto <epilotto@gmx.com>
  * This code is under LICENSE LGPLv3
  */
 
