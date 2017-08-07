@@ -1,5 +1,6 @@
 *.gem
 .bundle
+.yardoc/
 doc/
 ext/chess
 ext/Makefile
