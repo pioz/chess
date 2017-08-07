@@ -322,6 +322,9 @@ fifty_move_rule (Board *board)
 bool
 pseudo_legal_move (Board *board, int from, int to)
 {
+  // from and to squares must be different
+  if (from == to)
+    return FALSE;
   // Piece in from square is the right color
   if (get_color (board, from) != board->active_color)
     return FALSE;
