@@ -630,6 +630,8 @@ Init_chess ()
   VALUE chess = rb_define_module ("Chess");
 
   /*
+   * Document-class: Chess::Game
+   *
    * This class rappresents a collection of boards of a single chess game.
    */
   VALUE game = rb_define_class_under (chess, "CGame", rb_cObject);
@@ -654,6 +656,8 @@ Init_chess ()
   rb_define_alias (game, "board", "current");
 
   /*
+   * Document-class: Chess::Board
+   *
    * This class rappresents a chess board.
    * The rappresentation of the board use _bitboards_ where each bit represents
    * a game position or state, designed for optimization of speed and/or memory
@@ -675,6 +679,8 @@ Init_chess ()
   rb_define_method (board_klass, "to_s", board_to_s, 0);
 
   /*
+   * Document-class: Chess::IllegalMoveError
+   *
    * This exception will be raised when making an illegal move.
    */
   illegal_move_error = rb_define_class_under (chess, "IllegalMoveError", rb_eStandardError);
