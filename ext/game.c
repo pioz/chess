@@ -353,14 +353,14 @@ main ()
 
       // 1. e4 a6 2. Bc4 a5 3. Qh5 a4 4. Qxf7#
       board = current_board (g);
-      get_coord (board, 'P', "e", "e4", 0, &from, &to);
+      get_coord (board, 'P', "", "e4", 0, &from, &to);
       pseudo_legal_move (board, from, to);
       apply_move (g, from, to, 0);
       fen = to_fen (board);
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "a", "a6", 0, &from, &to);
+      get_coord (board, 'P', "", "a6", 0, &from, &to);
       pseudo_legal_move (board, from, to);
       apply_move (g, from, to, 0);
       fen = to_fen (current_board (g));
@@ -374,7 +374,7 @@ main ()
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "a", "a5", 0, &from, &to);
+      get_coord (board, 'P', "", "a5", 0, &from, &to);
       pseudo_legal_move (board, from, to);
       apply_move (g, from, to, 0);
       fen = to_fen (current_board (g));
@@ -388,7 +388,7 @@ main ()
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "a", "a4", 0, &from, &to);
+      get_coord (board, 'P', "", "a4", 0, &from, &to);
       pseudo_legal_move (board, from, to);
       apply_move (g, from, to, 0);
       fen = to_fen (current_board (g));
