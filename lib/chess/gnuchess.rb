@@ -1,3 +1,5 @@
+require 'mkmf'
+
 module Chess
 
   # Use Gnuchess to I.A. <em>(Only a draft)</em>
@@ -101,16 +103,10 @@ module Chess
 
     private
 
-    # Return true if Gnuchess is installed, false otherwise.
-    def self.gnuchess_installed?
-      system('which gnuchess >& /dev/null')
-      $?.exitstatus == 0
-    end
-
     # Raise an exception if Gnuchess is not installed
     def self.raise_if_gnuchess_is_not_installed
-      unless gnuchess_installed?
-        raise 'You need to install Gnuchess to use the module Chess::Gnuchess.'
+      unless find_executable0('gnuchesss')
+        raise 'You must install Gnuchess to use the module Chess::Gnuchess!'
       end
     end
 
