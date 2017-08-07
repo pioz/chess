@@ -6,7 +6,7 @@ module Chess
     # :nodoc:
     # Create a new exception.
     def initialize(notation)
-      super("The notation '#{notation}' is invalid")
+      super("Invalid notation '#{notation}'")
     end
   end
 
@@ -15,7 +15,7 @@ module Chess
     # :nodoc:
     # Create a new exception.
     def initialize(filename)
-      super("Invalid PGN file: '#{filename}'")
+      super("Invalid PGN file '#{filename}'")
     end
   end
 
@@ -24,7 +24,7 @@ module Chess
     # :nodoc:
     # Create a new exception.
     def initialize(fen_string)
-      super("Invalid FEN string: '#{fen_string}'")
+      super("Invalid FEN string '#{fen_string}'")
     end
   end
 
