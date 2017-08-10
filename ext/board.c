@@ -237,7 +237,8 @@ king_in_checkmate (Board *board, int color)
   if (pieces_can_safe_capture (board, color, attacker))
     return FALSE;
   // Test if there is an en passant capture
-  if (have_en_passant2 (board, attacker))
+  if (have_en_passant (board, attacker + 1, board->en_passant) ||
+      have_en_passant (board, attacker - 1, board->en_passant))
     return FALSE;
   // Test if attack can be shielded
   bboard slide = EMPTY_BOARD;
@@ -310,6 +311,7 @@ insufficient_material (Board *board)
           || (only_black_squares(board->bishops[WHITE]) && only_black_squares(board->bishops[BLACK])))
         return TRUE;
     }
+  // TODO more bishops on same color square
   return FALSE;
 }
 
@@ -320,11 +322,18 @@ fifty_move_rule (Board *board)
 }
 
 bool
+invalid_promotion (Board *board, int from, int to)
+{
+  if (toupper (board->placement[from]) != 'P')
+    return TRUE;
+  if ((board->active_color ? 0xffffffffffffff00 : 0x00ffffffffffffff) & (1ULL << to))
+    return TRUE;
+  return FALSE;
+}
+
+bool
 pseudo_legal_move (Board *board, int from, int to)
 {
-  // from and to squares must be different
-  if (from == to)
-    return FALSE;
   // Piece in from square is the right color
   if (get_color (board, from) != board->active_color)
     return FALSE;
@@ -339,7 +348,7 @@ pseudo_legal_move (Board *board, int from, int to)
   return x & (1ULL << to) ? TRUE : FALSE;
 }
 
-void
+bool
 get_coord (Board *board, char piece, const char *disambiguating, const char *to_coord, char promote_in, int *from, int *to)
 {
   int count = 0;
@@ -374,13 +383,20 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
         }
     }
   if (count != 1)
-    *from = *to = 0;
-  // For compatibility: if pawn capture a file disambiguating is required
-  else if (piece == 'P' && !strcmp (disambiguating, ""))
-    if (square_to_file (*from) != square_to_file (*to))
+    {
       *from = *to = 0;
+      return FALSE;
+    }
+  // For compatibility: if pawn capture a file disambiguating is required
+  if (piece == 'P' && !strcmp (disambiguating, ""))
+    if (square_to_file (*from) != square_to_file (*to)) {
+      *from = *to = 0;
+      return FALSE;
+    }
+  return TRUE;
 }
 
+// This function assume that the pseudo_legal_move is valid.
 // This function do not consider castling, this is handled separately.
 bool
 try_move (Board *board, int from, int to, char promote_in, Board *new_board, char **move_done, char *capture)
@@ -406,10 +422,7 @@ try_move (Board *board, int from, int to, char promote_in, Board *new_board, cha
   new_board->placement[from] = 0;
   // Promotion check
   if (require_a_promotion (new_board))
-    {
-      if (!promote (new_board, to, promote_in))
-        return FALSE;
-    }
+    promote (new_board, to, promote_in);
   else
     promote_in = 0;
   // Set occupied pieces in new board

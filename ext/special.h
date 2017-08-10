@@ -16,8 +16,7 @@ int castling_type (Board *board, int from, int to);
 char* castling (Board *board, int castling_type, Board *new_board);
 void update_en_passant (Board *board, int from, int to);
 int have_en_passant (Board *board, int from, int to);
-int have_en_passant2 (Board *board, int to);
 bool require_a_promotion (Board *board);
-bool promote (Board *board, int square, char promote_in);
+void promote (Board *board, int square, char promote_in);
 
 #endif

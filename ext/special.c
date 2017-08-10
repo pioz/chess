@@ -163,19 +163,13 @@ have_en_passant (Board *board, int from, int to)
   return 0;
 }
 
-int
-have_en_passant2 (Board *board, int to)
-{
-  return have_en_passant (board, to + 1, board->en_passant) || have_en_passant (board, to - 1, board->en_passant);
-}
-
 bool
 require_a_promotion (Board *board)
 {
   return ((board->pawns[WHITE] | board->pawns[BLACK]) & 0xff000000000000ff) ? TRUE : FALSE;
 }
 
-bool
+void
 promote (Board *board, int square, char promote_in)
 {
   if (board->active_color)
@@ -191,9 +185,6 @@ promote (Board *board, int square, char promote_in)
         promote_in = 'Q';
     }
   *(get_bitboard (board, square)) ^= 1ULL << square;
-  bboard *bb = get_piece_bitboard (board, promote_in);
-  if (!bb) return FALSE;
-  *(bb) ^= 1ULL << square;
+  *(get_piece_bitboard (board, promote_in)) ^= 1ULL << square;
   board->placement[square] = promote_in;
-  return TRUE;
 }

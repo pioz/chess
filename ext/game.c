@@ -77,6 +77,7 @@ apply_move (Game *g, int from, int to, char promote_in)
 {
   if (g->result != IN_PROGRESS) return FALSE;
   Board *board = current_board (g);
+  if (promote_in && invalid_promotion (board, from, to)) return FALSE;
   Board *new_board = NEW_BOARD;
   char capture = 0;
   char *move_done = castling (board, castling_type (board, from, to), new_board);

@@ -82,9 +82,10 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
   char *to_coord = StringValuePtr (rb_to_coord);
   char promote_in = StringValuePtr (rb_promote_in)[0];
   int from, to;
-  get_coord (board, piece, disambiguating, to_coord, promote_in, &from, &to);
-  // printf ("From: %d, To: %d, Promo: %c\n", from , to , promote_in);
-  if (pseudo_legal_move (board, from, to) && apply_move (g, from, to, promote_in))
+  if (
+    get_coord (board, piece, disambiguating, to_coord, promote_in, &from, &to) &&
+    apply_move (g, from, to, promote_in)
+  )
     return rb_str_new2 (current_move (g));
   else
     rb_raise (illegal_move_error, "Illegal move");
