@@ -75,7 +75,7 @@ current_coord_move (Game *g)
 bool
 apply_move (Game *g, int from, int to, char promote_in)
 {
-  if (g->result != IN_PROGRESS) return FALSE;
+  if (g->result != IN_PROGRESS && g->result != DRAW) return FALSE;
   Board *board = current_board (g);
   if (promote_in && invalid_promotion (board, from, to)) return FALSE;
   Board *new_board = NEW_BOARD;
@@ -114,8 +114,8 @@ apply_move (Game *g, int from, int to, char promote_in)
       else
         strcat (move_done, "+");
     }
-  // Set game result to DRAW if there are only the two kings
-  else if (only_kings (new_board))
+  // Set game result to DRAW if insufficient material
+  else if (insufficient_material (new_board))
     g->result = DRAW;
   // Test stalemate
   else if (stalemate (new_board, new_board->active_color))
