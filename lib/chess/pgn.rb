@@ -18,7 +18,7 @@ module Chess
     # Load a PGN from file.
     def load(filename)
       data = File.open(filename, 'r').read
-      data.gsub!(/\{.*?\}/, '')
+      data.gsub!(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
         instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size+3..-3])
       end
