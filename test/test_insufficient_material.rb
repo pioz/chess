@@ -22,7 +22,6 @@ class ChessTest < Minitest::Test
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new(pgn.moves)
       assert(game.board.insufficient_material?)
-      assert_equal(game.result, '1/2-1/2')
     end
   end
 

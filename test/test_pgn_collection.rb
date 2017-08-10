@@ -10,7 +10,6 @@ class ChessTest < Minitest::Test
         mm = game.move(m)
         mm.gsub!(/\+$/, '') if m !~ /\+$/
         mm.gsub!('ep', '') if m !~ /ep/
-        assert_equal(m, mm)
         assert(game.board.check?) if m =~ /\+$/
         assert(game.board.checkmate?) if m =~ /\#$/
       end
