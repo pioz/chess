@@ -529,6 +529,23 @@ board_insufficient_material (VALUE self)
 }
 
 /*
+ * call-seq: only_kings?
+ *
+ * Returns +true+ if on the board there are only the two kings, +false+
+ * otherwise.
+ */
+VALUE
+board_only_kings (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  if (only_kings (board))
+    return Qtrue;
+  else
+    return Qfalse;
+}
+
+/*
  * call-seq: fifty_move_rule?
  *
  * Returns +true+ if a player can claim draw by the fifty-move rule, +false+
@@ -672,6 +689,7 @@ Init_chess ()
   rb_define_method (board_klass, "checkmate?", board_king_in_checkmate, 0);
   rb_define_method (board_klass, "stalemate?", board_stalemate, 0);
   rb_define_method (board_klass, "insufficient_material?", board_insufficient_material, 0);
+  rb_define_method (board_klass, "only_kings?", board_only_kings, 0);
   rb_define_method (board_klass, "fifty_rule_move?", board_fifty_move_rule, 0);
   rb_define_method (board_klass, "active_color", board_active_color, 0);
   rb_define_method (board_klass, "halfmove_clock", board_halfmove_clock, 0);

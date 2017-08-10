@@ -9,10 +9,23 @@ class ChessTest < Minitest::Test
     '8/2k5/8/5b2/8/8/2K5/8 w - - 0 1'
   ]
 
+  ONLY_KINGS_FENS = [
+    '8/2k5/8/8/8/8/2K5/8 w - - 0 1',
+    '8/4k3/8/8/1K6/8/8/8 w - - 0 1'
+  ]
+
   FENS.each_with_index do |fen, i|
     define_method("test_insufficient_material_by_fen_#{i}") do
       game = Chess::Game.load_fen(fen)
       assert(game.board.insufficient_material?)
+    end
+  end
+
+  ONLY_KINGS_FENS.each_with_index do |fen, i|
+    define_method("test_only_kings_by_fen_#{i}") do
+      game = Chess::Game.load_fen(fen)
+      assert(game.board.insufficient_material?)
+      assert(game.board.only_kings?)
     end
   end
 

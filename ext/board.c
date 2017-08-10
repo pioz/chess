@@ -315,6 +315,17 @@ insufficient_material (Board *board)
   return FALSE;
 }
 
+// Return true if on the board there are only the two kings.
+bool
+only_kings (Board *board)
+{
+  return !board->pawns[WHITE]   && !board->pawns[BLACK] &&
+         !board->rooks[WHITE]   && !board->rooks[BLACK] &&
+         !board->knights[WHITE] && !board->knights[BLACK] &&
+         !board->bishops[WHITE] && !board->bishops[BLACK] &&
+         !board->queens[WHITE]  && !board->queens[BLACK];
+}
+
 bool
 fifty_move_rule (Board *board)
 {

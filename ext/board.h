@@ -52,6 +52,7 @@ bool king_in_check (Board *board, int color);
 bool king_in_checkmate (Board *board, int color);
 bool stalemate (Board *board, int color);
 bool insufficient_material (Board *board);
+bool only_kings (Board *board);
 bool fifty_move_rule (Board *board);
 bool invalid_promotion (Board *board, int from, int to);
 bool pseudo_legal_move (Board *board, int from, int to);
