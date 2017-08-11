@@ -26,10 +26,7 @@ module Chess
         when '0-1'
           game.resign(:white)
         when '1/2-1/2'
-          if game.board.insufficient_material? || game.board.stalemate? ||
-            game.threefold_repetition? || game.board.fifty_rule_move?
-            game.draw
-          end
+          game.draw
         end
       end
       return game
