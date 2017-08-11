@@ -378,10 +378,10 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
             {
               file = square_to_file (i);
               rank = square_to_rank (i);
-              if (!strcmp (disambiguating, "")
-                || disambiguating[0] == file
-                || disambiguating[0] == rank
-                || (disambiguating[0] == file && disambiguating[1] == rank))
+              if (!disambiguating
+                  || disambiguating[0] == file
+                  || disambiguating[0] == rank
+                  || (disambiguating[0] == file && disambiguating[1] == rank))
                 {
                   Board new_board;
                   if (try_move (board, i, *to, promote_in, &new_board, 0, 0))
@@ -399,8 +399,8 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
       return FALSE;
     }
   // For compatibility: if pawn capture a file disambiguating is required
-  if (piece == 'P' && !strcmp (disambiguating, ""))
-    if (square_to_file (*from) != square_to_file (*to)) {
+  if (piece == 'P' && !disambiguating && square_to_file (*from) != square_to_file (*to)
+    {
       *from = *to = 0;
       return FALSE;
     }

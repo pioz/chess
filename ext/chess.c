@@ -49,7 +49,8 @@ game_set_fen (VALUE self, VALUE fen)
  * Make a move. This add a new Board in the Game.
  *
  * Parameters are:
- * +piece+:: the character of the moving piece <em>('P', 'R', 'N', 'B', 'Q', 'K')</em>.
+ * +piece+:: the character of the moving piece <em>('P', 'R', 'N', 'B', 'Q',
+ *           'K')</em>.
  * +disambiguating+:: when two (or more) identical pieces can move to the same
  *                    square, the moving piece is uniquely identified by
  *                    specifying the piece's letter, followed by (in descending
@@ -62,11 +63,12 @@ game_set_fen (VALUE self, VALUE fen)
  *                      rare cases where one or more pawns have promoted,
  *                      resulting in a player having three or more identical
  *                      pieces able to reach the same square).
- *                    Keep blank if no needed.
- * +to_coord+:: the square where the moving piece will <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
- * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
- *                If no promotion occured raise an IllegalMoveError. If no
- *                value is passed, 'Q' is the default.
+ *                    Keep +nil+ if no needed.
+ * +to_coord+:: the square where the moving piece will <em>('a1', 'a2', ... ,
+ *              'h7', 'h8')</em>.
+ * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B',
+ *                'Q')</em>. If not +nil+ and no promotion occured raise an
+ *                IllegalMoveError. If +nil+, 'Q' is the default.
  *
  * This method returns a string that represents the short algebraic chess
  * notation of the move or raise an IllegalMoveError if the move is illegal.
@@ -78,9 +80,9 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
   Data_Get_Struct (self, Game, g);
   Board *board = current_board (g);
   char piece = StringValuePtr (rb_piece)[0];
-  char *disambiguating = StringValuePtr (rb_disambiguating);
+  char *disambiguating = rb_disambiguating == Qnil ? NULL : StringValuePtr (rb_disambiguating);
   char *to_coord = StringValuePtr (rb_to_coord);
-  char promote_in = StringValuePtr (rb_promote_in)[0];
+  char promote_in = rb_promote_in == Qnil ? '\0' : StringValuePtr (rb_promote_in)[0];
   int from, to;
   if (
     get_coord (board, piece, disambiguating, to_coord, promote_in, &from, &to) &&
@@ -102,8 +104,8 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
  * +to+:: the 2 character string representing the ending square of the moving
  *        piece <em>('a1', 'a2', ... , 'h7', 'h8')</em>.
  * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
- *                If no promotion occured raise an IllegalMoveError. If no
- *                value is passed, 'Q' is the default.
+ *                If not +nil+ and no promotion occured raise an
+ *                IllegalMoveError. If +nil+, 'Q' is the default.
  *
  * This method returns a string that represents the short algebraic chess
  * notation of the move or raise an IllegalMoveError if the move is illegal.
@@ -116,7 +118,7 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
   Board *board = current_board (g);
   int from = coord_to_square (StringValuePtr (rb_from));
   int to = coord_to_square (StringValuePtr (rb_to));
-  char promote_in = StringValuePtr (rb_promote_in)[0];
+  char promote_in = rb_promote_in == Qnil ? '\0' : StringValuePtr (rb_promote_in)[0];
   if (pseudo_legal_move (board, from, to) && apply_move (g, from, to, promote_in))
     return rb_str_new2 (current_move (g));
   else
@@ -145,8 +147,8 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
  * +from+:: the integer representing the starting square of the moving piece.
  * +to+:: the integer representing the ending square of the moving piece.
  * +promote_in+:: the character of promotion piece <em>('R', 'N', 'B', 'Q')</em>.
- *                If no promotion occured raise an IllegalMoveError. If no
- *                value is passed, 'Q' is the default.
+ *                If not +nil+ and no promotion occured raise an
+ *                IllegalMoveError. If +nil+, 'Q' is the default.
  *
  * This method returns a string that represents the short algebraic chess
  * notation of the move or raise an IllegalMoveError if the move is illegal.
@@ -159,7 +161,7 @@ game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
   Board *board = current_board (g);
   int from = FIX2INT (rb_from);
   int to = FIX2INT (rb_to);
-  char promote_in = StringValuePtr (rb_promote_in)[0];
+  char promote_in = rb_promote_in == Qnil ? '\0' : StringValuePtr (rb_promote_in)[0];
   if (pseudo_legal_move (board, from, to) && apply_move (g, from, to, promote_in))
     return rb_str_new2 (current_move (g));
   else
