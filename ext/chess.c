@@ -28,7 +28,7 @@ game_alloc (VALUE class)
 /*
  * call-seq: set_fen!(fen)
  *
- * Set the game position with a FEN string.
+ * Set the game position by FEN string.
  *
  * Parameters are:
  * +fen+:: the FEN (Forsyth–Edwards Notation) string notation used to set the

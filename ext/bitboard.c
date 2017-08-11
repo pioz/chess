@@ -73,12 +73,15 @@ const bboard AVOID_WRAP[8] =
 };
 
 // Bitboard getters
+
+// Given file and rank returns the square (0..63).
 int
 square (int file, int rank)
 {
   return 8 * rank + file;
 }
 
+// Given a bitboard returns the first square (0..63) with a piece.
 int
 square2 (bboard b)
 {
@@ -91,6 +94,7 @@ square2 (bboard b)
   return pos;
 }
 
+// Returns the array and its size (n) with pieces in the bitboard.
 void
 squares (bboard b, int *array, int *n)
 {
@@ -103,29 +107,36 @@ squares (bboard b, int *array, int *n)
       }
 }
 
+// Given a square returns the corresponding file.
 int
 file (int square)
 {
   return square & 7;
 }
 
+// Given a square returns the corresponding rank.
 int rank (int square)
 {
   return square >> 3;
 }
 
+// Given a bitboard and a square (0..63) returns a bitboard copy with square set
+// to 1.
 bboard
 get (bboard b, int square)
 {
   return b & (1ULL << square);
 }
 
+// Given a bitboard, a file and a rank returns a bitboard copy with square set
+// to 1.
 bboard
 get2 (bboard b, int file, int rank)
 {
   return b & (1ULL << (8 * rank + file));
 }
 
+// Print the bitboard.
 void
 print_bitboard (bboard b)
 {
@@ -139,24 +150,28 @@ print_bitboard (bboard b)
 
 // Bitboard manipulations
 
+// Returns true if the bitboard has only one bit equals to 1.
 bboard
 has_only_one_one (bboard b)
 {
   return b && !(b & (b-1));
 }
 
+// Returns true if the bitboard has only bits equals to 1 in the white squares.
 bboard
 only_white_squares (bboard b)
 {
   return !((b ^ WHITE_SQUARES) & b);
 }
 
+// Returns true if the bitboard has only bits equals to 1 in the black squares.
 bboard
 only_black_squares (bboard b)
 {
   return !((b ^ BLACK_SQUARES) & b);
 }
 
+// Returns the horizontally mirrored bitboard.
 bboard
 mirror_horizontal (bboard b)
 {
@@ -169,6 +184,7 @@ mirror_horizontal (bboard b)
   return b;
 }
 
+// Returns the vertically mirrored bitboard.
 bboard
 mirror_vertical (bboard b)
 {
@@ -180,6 +196,7 @@ mirror_vertical (bboard b)
   return b;
 }
 
+// Returns the left rotated bitboard.
 bboard
 rotate_left (bboard b, int s)
 {
@@ -188,6 +205,7 @@ rotate_left (bboard b, int s)
   return s > 0 ? b << s : b >> -s;
 }
 
+// Returns the right rotated bitboard.
 bboard
 rotate_right (bboard b, int s)
 {
@@ -196,6 +214,8 @@ rotate_right (bboard b, int s)
   return s > 0 ? b >> s : b << -s;
 }
 
+// Given a generator, a propagator and a direction returns the bitboard with
+// occluded squares setted to 1.
 bboard
 occluded_fill (bboard gen, bboard pro, int dir)
 {
@@ -209,12 +229,14 @@ occluded_fill (bboard gen, bboard pro, int dir)
    return gen;
 }
 
+// Returns the shifted bitboard.
 bboard
 shift_one (bboard b, int dir)
 {
   return rotate_left (b, DIR[dir]) & AVOID_WRAP[dir];
 }
 
+// Returns the bitboard with sliding attacks.
 bboard
 sliding_attacks (bboard slider, bboard propagator, int dir)
 {
@@ -223,6 +245,7 @@ sliding_attacks (bboard slider, bboard propagator, int dir)
 }
 
 // Pre-calculators
+
 void
 precalculate_xray_attack_white_pawn (bboard xray[64])
 {
@@ -281,6 +304,7 @@ precalculate_all_xray ()
 }
 
 // XRay generators
+
 bboard
 xray_white_pawn (bboard occupied_square, int square)
 {

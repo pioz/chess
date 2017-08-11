@@ -7,6 +7,7 @@
 
 #include "special.h"
 
+// Update the board castling bits (FEN style).
 void
 update_castling (Board *board, int from)
 {
@@ -33,6 +34,8 @@ update_castling (Board *board, int from)
     }
 }
 
+// Returns the castling type for the move from-to. If not a castling move
+// returns 0.
 int
 castling_type (Board *board, int from, int to)
 {
@@ -79,6 +82,9 @@ castling_type (Board *board, int from, int to)
   return 0;
 }
 
+// Returns the short algebraic chess notation and the new board of a castling
+// type move. Assume that the castling move is legal. Equivalent of
+// Game#apply_move but for a castling move.
 char*
 castling (Board *board, int castling_type, Board *new_board)
 {
@@ -140,6 +146,7 @@ castling (Board *board, int castling_type, Board *new_board)
   return move;
 }
 
+// Update the board en passant bits (FEN style).
 void
 update_en_passant (Board *board, int from, int to)
 {
@@ -151,6 +158,8 @@ update_en_passant (Board *board, int from, int to)
     board->en_passant = -1;
 }
 
+// Returns the position (0..63) "behind" the pawn that can perform a en passant
+// capture. 0 if en passant is not available.
 int
 have_en_passant (Board *board, int from, int to)
 {
@@ -163,12 +172,15 @@ have_en_passant (Board *board, int from, int to)
   return 0;
 }
 
+// Returns true if a pawn must be promoted (a pawn is on the edges).
 bool
 require_a_promotion (Board *board)
 {
   return ((board->pawns[WHITE] | board->pawns[BLACK]) & 0xff000000000000ff) ? TRUE : FALSE;
 }
 
+// Perform the promotion of the piece on the square (transform the piece in the
+// promoted piece). If promote_in is invalid promote in a Queen.
 void
 promote (Board *board, int square, char promote_in)
 {

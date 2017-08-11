@@ -43,7 +43,7 @@ bboard* get_piece_bitboard (Board *board, char piece);
 bboard* get_bitboard (Board *board, int square);
 bboard xray (Board *board, int from, bool only_attack);
 bboard all_xray (Board *board, int color, bool only_attack);
-bboard all_xray_friend (Board *board, int color, bool only_attack);
+bboard all_xray_without_friends (Board *board, int color, bool only_attack);
 void remove_piece (Board *board, int square, Board *new_board);
 int same_pieces_that_can_capture_a_square (Board *board, int color, int square, int *pieces, char piece_filter);
 bool capture (Board *board, int color, int square);

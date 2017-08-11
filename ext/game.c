@@ -9,6 +9,7 @@
 
 static Board STARTING_BOARD;
 
+// Initialize the library.
 void
 init_chess_library ()
 {
@@ -16,6 +17,7 @@ init_chess_library ()
   precalculate_all_xray ();
 }
 
+// Initialize the Game struct.
 Game*
 init_game ()
 {
@@ -25,7 +27,7 @@ init_game ()
   return g;
 }
 
-// Free memory of a game
+// Free memory of a game.
 void
 free_game (Game *g)
 {
@@ -38,6 +40,7 @@ free_game (Game *g)
   free (g);
 }
 
+// Returns the last board of the game.
 Board*
 current_board (Game *g)
 {
@@ -46,6 +49,8 @@ current_board (Game *g)
   return &STARTING_BOARD;
 }
 
+// Returns the board at i-th position. If i is negative returns the starting
+// board. NULL if i is out of bounds.
 Board*
 get_board (Game *g, int index)
 {
@@ -56,6 +61,7 @@ get_board (Game *g, int index)
   return NULL;
 }
 
+// Returns the last move done.
 char*
 current_move (Game *g)
 {
@@ -64,6 +70,7 @@ current_move (Game *g)
   return 0;
 }
 
+// Returns the last move done in coordinate format.
 char*
 current_coord_move (Game *g)
 {
@@ -72,6 +79,7 @@ current_coord_move (Game *g)
   return 0;
 }
 
+// Returns true if the move from-to is legal. Add the new board on the game.
 bool
 apply_move (Game *g, int from, int to, char promote_in)
 {
@@ -123,6 +131,7 @@ apply_move (Game *g, int from, int to, char promote_in)
   return TRUE;
 }
 
+// Rollback last move.
 void
 rollback (Game *g)
 {
@@ -136,6 +145,7 @@ rollback (Game *g)
     }
 }
 
+// Returns true if a player can claim draw by the threefold repetition rule.
 bool
 threefold_repetition (Game *g)
 {
@@ -180,6 +190,7 @@ threefold_repetition (Game *g)
 }
 
 /*
+ * Set the game position by FEN string.
  A FEN string is composed of 6 parts separated by " " (space).
  1. Piece placement (from white's perspective).
  2. Active color. "w" means white moves next, "b" means black.
@@ -336,6 +347,8 @@ set_fen (Game *g, const char *fen)
   free (s);
 }
 
+
+
 ///////////////////////////////////
 // MAIN (only for internal test) //
 ///////////////////////////////////
@@ -354,53 +367,56 @@ main ()
 
       // 1. e4 a6 2. Bc4 a5 3. Qh5 a4 4. Qxf7#
       board = current_board (g);
-      get_coord (board, 'P', "", "e4", 0, &from, &to);
+      get_coord (board, 'P', NULL, "e4", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
       apply_move (g, from, to, 0);
       fen = to_fen (board);
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "", "a6", 0, &from, &to);
+      get_coord (board, 'P', NULL, "a6", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'B', "", "c4", 0, &from, &to);
+      get_coord (board, 'B', NULL, "c4", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "", "a5", 0, &from, &to);
+      get_coord (board, 'P', NULL, "a5", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'Q', "", "h5", 0, &from, &to);
+      get_coord (board, 'Q', NULL, "h5", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'P', "", "a4", 0, &from, &to);
+      get_coord (board, 'P', NULL, "a4", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
 
       board = current_board (g);
-      get_coord (board, 'Q', "", "f7", 0, &from, &to);
+      get_coord (board, 'Q', NULL, "f7", '\0', &from, &to);
       pseudo_legal_move (board, from, to);
-      apply_move (g, from, to, 0);
+      apply_move (g, from, to, '\0');
       fen = to_fen (current_board (g));
       free (fen);
+
+      // board = current_board (g);
+      // printf("%s\n", print_board (board));
 
       free_game (g);
     }
