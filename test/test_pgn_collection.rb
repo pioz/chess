@@ -8,8 +8,6 @@ class ChessTest < Minitest::Test
       game = Chess::Game.new
       pgn.moves.each do |m|
         mm = game.move(m)
-        mm.gsub!(/\+$/, '') if m !~ /\+$/
-        mm.gsub!('ep', '') if m !~ /ep/
         assert(game.board.check?) if m =~ /\+$/
         assert(game.board.checkmate?) if m =~ /\#$/
       end
