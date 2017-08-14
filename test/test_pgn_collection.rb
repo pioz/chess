@@ -7,7 +7,7 @@ class ChessTest < Minitest::Test
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new
       pgn.moves.each do |m|
-        mm = game.move(m)
+        game.move(m)
         assert(game.board.check?) if m =~ /\+$/
         assert(game.board.checkmate?) if m =~ /\#$/
       end
