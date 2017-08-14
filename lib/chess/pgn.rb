@@ -9,16 +9,16 @@ module Chess
     attr_accessor(*(TAGS + [:moves]))
 
     # Creates a new PGN. If param +filename+, load it from file.
-    def initialize(filename = nil)
-      self.load(filename) if filename
+    def initialize(filename = nil, check_moves: false)
+      self.load(filename, check_moves: check_moves) if filename
       @date = '??'
       @round = '1'
     end
 
     # Load a PGN from file.
-    def load(filename)
+    def load(filename, check_moves: false)
       data = File.open(filename, 'r').read
-      data.gsub!(/\{.*?\}/, '')
+      data.gsub!(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
         instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size+3..-3])
       end
@@ -28,6 +28,12 @@ module Chess
       game = data[game_index..-1].strip
       @moves = game.gsub("\n", ' ').split(/\d+\./).collect{|t| t.strip}[1..-1].collect{|t| t.split(' ')}.flatten
       @moves.delete_at(@moves.size-1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
+      @moves.each do |m|
+        if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
+          raise Chess::InvalidPgnFormatError.new(filename)
+        end
+      end
+      Chess::Game.new(@moves) if check_moves
       return self
     end
 

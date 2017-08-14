@@ -7,6 +7,7 @@
 
 #include "board.h"
 
+// Initialize the board
 void
 init_board (Board *board)
 {
@@ -32,6 +33,7 @@ init_board (Board *board)
   set_occupied (board);
 }
 
+// Set helpers bitboards (white pieces, black pieces, occupied squares).
 void
 set_occupied (Board *board)
 {
@@ -50,6 +52,7 @@ set_occupied (Board *board)
   board->occupied = board->pieces[WHITE] | board->pieces[BLACK];
 }
 
+// Board to string.
 char*
 print_board (Board *board)
 {
@@ -72,6 +75,7 @@ print_board (Board *board)
   return s;
 }
 
+// Given a square returns its color (white is 0, black is 1).
 int
 get_color (Board *board, int square)
 {
@@ -85,6 +89,7 @@ get_color (Board *board, int square)
     return -1;
 }
 
+// Given a piece returns the piece's bitboard.
 bboard*
 get_piece_bitboard (Board *board, char piece)
 {
@@ -107,12 +112,15 @@ get_piece_bitboard (Board *board, char piece)
     }
 }
 
+// Given a square (0..63) retuns the piece's bitboard in that square.
 bboard*
 get_bitboard (Board *board, int square)
 {
   return get_piece_bitboard (board, board->placement[square]);
 }
 
+// Returns the bitboard with the xray that start from square. If only_attack use
+// only pawns attack squares.
 bboard
 xray (Board *board, int from, bool only_attack)
 {
@@ -140,7 +148,8 @@ xray (Board *board, int from, bool only_attack)
     }
 }
 
-// All xray of color pieces
+
+// Returns the bitboard with all the xray that start from the color pieces.
 bboard
 all_xray (Board *board, int color, bool only_attack)
 {
@@ -155,13 +164,15 @@ all_xray (Board *board, int color, bool only_attack)
   return x;
 }
 
-// All xray of color pieces with friends square removed
+// Returns the bitboard with all the xray that start from the color pieces with
+// friend squares removed.
 bboard
-all_xray_friend (Board *board, int color, bool only_attack)
+all_xray_without_friends (Board *board, int color, bool only_attack)
 {
   return all_xray (board, color, only_attack) & ~board->pieces[color];
 }
 
+// Returns a new board with the piece in square position removed.
 void
 remove_piece (Board *board, int square, Board *new_board)
 {
@@ -174,7 +185,8 @@ remove_piece (Board *board, int square, Board *new_board)
     }
 }
 
-// return the squares of pieces as piece that can capture in to
+// Returns the squares of the same pieces of color and its size that can capture
+// the square. If piece_filter consider only that kind of pieces.
 int
 same_pieces_that_can_capture_a_square (Board *board, int color, int square, int *pieces, char piece_filter)
 {
@@ -195,13 +207,15 @@ same_pieces_that_can_capture_a_square (Board *board, int color, int square, int 
   return index;
 }
 
+// Returns true if square can be captured from color pieces.
 bool
 capture (Board *board, int color, int square)
 {
-  return all_xray_friend (board, color, FALSE) & (1ULL << square) ? TRUE : FALSE;
+  return all_xray_without_friends (board, color, FALSE) & (1ULL << square) ? TRUE : FALSE;
 }
 
-// If there is a piece that can capture the to square without put its king in check return true
+// Returns true if there is a piece that can capture the square without put its
+// king in check.
 bool
 pieces_can_safe_capture (Board *board, int color, int square)
 {
@@ -209,20 +223,22 @@ pieces_can_safe_capture (Board *board, int color, int square)
   return same_pieces_that_can_capture_a_square (board, color, square, pieces, 0) > 0;
 }
 
+// Returns true if the king color is in check.
 bool
 king_in_check (Board *board, int color)
 {
-  return all_xray_friend (board, !color, TRUE) & board->king[color] ? TRUE : FALSE;
+  return all_xray_without_friends (board, !color, TRUE) & board->king[color] ? TRUE : FALSE;
 }
 
-// Assumes that king is in check
+// Returns true if the king color is in check. Assumes that the king is in
+// check.
 bool
 king_in_checkmate (Board *board, int color)
 {
   int king_square = square2 (board->king[color]);
   bboard king = xray_king (king_square) & ~board->pieces[color];
   Board board_without_king;
-  remove_piece (board, king_square, &board_without_king); // King cant be auto-shielded xray
+  remove_piece (board, king_square, &board_without_king); // King can't be auto-shielded xray
   bboard attackers = all_xray (&board_without_king, !color, TRUE);
   // If king can move return false
   if (king & ~attackers)
@@ -237,7 +253,8 @@ king_in_checkmate (Board *board, int color)
   if (pieces_can_safe_capture (board, color, attacker))
     return FALSE;
   // Test if there is an en passant capture
-  if (have_en_passant2 (board, attacker))
+  if (have_en_passant (board, attacker + 1, board->en_passant) ||
+      have_en_passant (board, attacker - 1, board->en_passant))
     return FALSE;
   // Test if attack can be shielded
   bboard slide = EMPTY_BOARD;
@@ -249,7 +266,7 @@ king_in_checkmate (Board *board, int color)
         break;
     }
   bboard attack = xray (board, attacker, TRUE) & slide;
-  bboard defend = all_xray_friend (board, color, FALSE);
+  bboard defend = all_xray_without_friends (board, color, FALSE);
   bboard shield = attack & defend;
   if (shield)
     {
@@ -263,6 +280,7 @@ king_in_checkmate (Board *board, int color)
   return TRUE;
 }
 
+// Returns true if the color pieces are in stale.
 bool
 stalemate (Board *board, int color)
 {
@@ -285,6 +303,7 @@ stalemate (Board *board, int color)
   return TRUE;
 }
 
+// Returns true if there are insufficient material to make a checkmate.
 bool
 insufficient_material (Board *board)
 {
@@ -310,21 +329,43 @@ insufficient_material (Board *board)
           || (only_black_squares(board->bishops[WHITE]) && only_black_squares(board->bishops[BLACK])))
         return TRUE;
     }
+  // TODO more bishops on same color square
   return FALSE;
 }
 
+// Returns true if on the board there are only the two kings.
+bool
+only_kings (Board *board)
+{
+  return !board->pawns[WHITE]   && !board->pawns[BLACK] &&
+         !board->rooks[WHITE]   && !board->rooks[BLACK] &&
+         !board->knights[WHITE] && !board->knights[BLACK] &&
+         !board->bishops[WHITE] && !board->bishops[BLACK] &&
+         !board->queens[WHITE]  && !board->queens[BLACK];
+}
+
+// Returns true if fifty move rule is available.
 bool
 fifty_move_rule (Board *board)
 {
   return board->halfmove_clock >= 50;
 }
 
+// Returns true if the move from-to can not promote the pawn.
+bool
+invalid_promotion (Board *board, int from, int to)
+{
+  if (toupper (board->placement[from]) != 'P')
+    return TRUE;
+  if ((board->active_color ? 0xffffffffffffff00 : 0x00ffffffffffffff) & (1ULL << to))
+    return TRUE;
+  return FALSE;
+}
+
+// Returns true if the move from-to is pseudo legal.
 bool
 pseudo_legal_move (Board *board, int from, int to)
 {
-  // from and to squares must be different
-  if (from == to)
-    return FALSE;
   // Piece in from square is the right color
   if (get_color (board, from) != board->active_color)
     return FALSE;
@@ -339,7 +380,9 @@ pseudo_legal_move (Board *board, int from, int to)
   return x & (1ULL << to) ? TRUE : FALSE;
 }
 
-void
+// Returns true if the move piece-dis-to is legal. Returns also [from, to]
+// coordinate (0..63). Pseudo legal move check included.
+bool
 get_coord (Board *board, char piece, const char *disambiguating, const char *to_coord, char promote_in, int *from, int *to)
 {
   int count = 0;
@@ -358,10 +401,10 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
             {
               file = square_to_file (i);
               rank = square_to_rank (i);
-              if (!strcmp (disambiguating, "")
-                || disambiguating[0] == file
-                || disambiguating[0] == rank
-                || (disambiguating[0] == file && disambiguating[1] == rank))
+              if (!disambiguating
+                  || disambiguating[0] == file
+                  || disambiguating[0] == rank
+                  || (disambiguating[0] == file && disambiguating[1] == rank))
                 {
                   Board new_board;
                   if (try_move (board, i, *to, promote_in, &new_board, 0, 0))
@@ -374,14 +417,23 @@ get_coord (Board *board, char piece, const char *disambiguating, const char *to_
         }
     }
   if (count != 1)
-    *from = *to = 0;
-  // For compatibility: if pawn capture a file disambiguating is required
-  else if (piece == 'P' && !strcmp (disambiguating, ""))
-    if (square_to_file (*from) != square_to_file (*to))
+    {
       *from = *to = 0;
+      return FALSE;
+    }
+  // For compatibility: if pawn capture a file disambiguating is required
+  if (piece == 'P' && !disambiguating && square_to_file (*from) != square_to_file (*to))
+    {
+      *from = *to = 0;
+      return FALSE;
+    }
+  return TRUE;
 }
 
-// This function do not consider castling, this is handled separately.
+// Returns true if the move from-to can be performed. Returns also the short
+// algebraic chess notation of the move and the captured piece if occured.
+// Assume that the move is pseudo legal. Do not consider castling, this is
+// handled separately.
 bool
 try_move (Board *board, int from, int to, char promote_in, Board *new_board, char **move_done, char *capture)
 {
@@ -406,10 +458,7 @@ try_move (Board *board, int from, int to, char promote_in, Board *new_board, cha
   new_board->placement[from] = 0;
   // Promotion check
   if (require_a_promotion (new_board))
-    {
-      if (!promote (new_board, to, promote_in))
-        return FALSE;
-    }
+    promote (new_board, to, promote_in);
   else
     promote_in = 0;
   // Set occupied pieces in new board
@@ -423,6 +472,7 @@ try_move (Board *board, int from, int to, char promote_in, Board *new_board, cha
   return TRUE;
 }
 
+// Returns the short algebraic chess notation of the move from-to.
 char*
 get_notation (Board *board, int from, int to, int capture, int ep, char promotion, int check, int checkmate)
 {
@@ -509,6 +559,7 @@ get_notation (Board *board, int from, int to, int capture, int ep, char promotio
   return notation;
 }
 
+// Returns the fen string that rappresent the board.
 char*
 to_fen (Board *board)
 {

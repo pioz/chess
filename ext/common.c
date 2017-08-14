@@ -7,24 +7,28 @@
 
 #include "common.h"
 
+// Given a square returns the file.
 char
 square_to_file (int square)
 {
   return (square % 8) + 97;
 }
 
+// Given a square returns the rank.
 char
 square_to_rank (int square)
 {
   return (square / 8) + 49;
 }
 
+// Given a coordinate (a1) returns the square (0..63).
 int
 coord_to_square (const char *coord)
 {
   return 8 * ((coord[1] | ' ') - 49) + ((coord[0] | ' ') - 97);
 }
 
+// Given a square (0..63) returns the coordinate (a1).
 char*
 square_to_coord (int square)
 {
@@ -35,6 +39,8 @@ square_to_coord (int square)
   return s;
 }
 
+// Given a move from-to returns the coordinated (a2a1) with promotion syntax if
+// occured (a2a1=Q).
 char*
 ft_to_coord_move (int from, int to, char promote_in)
 {
@@ -53,6 +59,7 @@ ft_to_coord_move (int from, int to, char promote_in)
   return s;
 }
 
+// Given the result int returns the corresponding string.
 char*
 result_to_s (unsigned short int r)
 {
@@ -75,6 +82,7 @@ result_to_s (unsigned short int r)
   return s;
 }
 
+// Given the castling int returns the corresponding FEN string.
 char*
 castling_to_s (short int castling)
 {
@@ -89,6 +97,7 @@ castling_to_s (short int castling)
   return s;
 }
 
+// Given the en passant int returns the corresponding FEN string.
 char*
 en_passant_to_s (short int en_passant)
 {
@@ -100,6 +109,7 @@ en_passant_to_s (short int en_passant)
   return s;
 }
 
+// Compare two strings.
 int
 compare (const void *a, const void *b)
 {

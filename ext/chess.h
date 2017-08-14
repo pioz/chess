@@ -36,6 +36,7 @@ VALUE board_king_in_check (VALUE self);
 VALUE board_king_in_checkmate (VALUE self);
 VALUE board_stalemate (VALUE self);
 VALUE board_insufficient_material (VALUE self);
+VALUE board_only_kings (VALUE self);
 VALUE board_fifty_move_rule (VALUE self);
 VALUE board_active_color (VALUE self);
 VALUE board_halfmove_clock (VALUE self);

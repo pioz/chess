@@ -26,10 +26,7 @@ module Chess
         when '0-1'
           game.resign(:white)
         when '1/2-1/2'
-          if game.board.insufficient_material? || game.board.stalemate? ||
-            game.threefold_repetition? || game.board.fifty_rule_move?
-            game.draw
-          end
+          game.draw
         end
       end
       return game
@@ -72,7 +69,11 @@ module Chess
           super(expand[:name], expand[:dis], expand[:to], expand[:promotion])
         end
       rescue IllegalMoveError
-        raise IllegalMoveError.new("Illegal move '#{m}'")
+        if ENV['DEBUG']
+          raise IllegalMoveError.new("Illegal move '#{m}'\nStatus: #{self.status}\nPlayer turn #{self.active_player}\n#{self.to_s}")
+        else
+          raise IllegalMoveError.new("Illegal move '#{m}'")
+        end
       end
     end
     alias :move= :move
@@ -153,32 +154,39 @@ module Chess
 
     # Expand the short algebraic chess notation string +m+ in a hash like this:
     #
-    #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: '' }
+    #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
     def expand_move(m)
-      if match = m.match(/^([RNBQK])?([a-h]?[1-8]?)(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/)
+      if match = m.match(Chess::MOVE_REGEXP)
         expand = {
           name: match[1] || 'P',    # Piece name [RNBQK]
           dis: match[2],            # Disambiguating move
           to: match[3],             # Move to
-          promotion: match[4].to_s, # Promote with
+          promotion: match[4],      # Promote with
         }
         expand[:from] = match[2] if match[2] && match[2].size == 2
         return expand
-      elsif m =~ /^([0O])-([0O])([\+#])?$/
+      elsif m =~ SHORT_CASTLING_REGEXP
         if self.board.active_color # black king short castling
-          return { name: 'K', dis: '', from: 'e8', to: 'g8', promotion: '' }
+          return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil }
         else # white king short castling
-          return { name: 'K', dis: '', from: 'e1', to: 'g1', promotion: '' }
+          return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil }
         end
-      elsif m =~ /^([0O])-([0O])-([0O])([\+#])?$/
+      elsif m =~ LONG_CASTLING_REGEXP
         if self.board.active_color # black king long castling
-          return { name: 'K', dis: '', from: 'e8', to: 'c8', promotion: '' }
+          return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil }
         else # white king long castling
-          return { name: 'K', dis: '', from: 'e1', to: 'c1', promotion: '' }
+          return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil }
         end
       end
       raise BadNotationError.new(m)
     end
 
   end
+
+  private
+
+  MOVE_REGEXP = /^([RNBQK])?([a-h]|[1-8]|[a-h][1-8])?(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/
+  SHORT_CASTLING_REGEXP = /^([0O])-([0O])([\+#])?$/
+  LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([\+#])?$/
+
 end
