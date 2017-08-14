@@ -2,18 +2,19 @@ require 'mkmf'
 
 module Chess
 
-  # Use Gnuchess to I.A. <em>(Only a draft)</em>
-  # To use this module, extend a game object with Chess::Gnuchess.
-  # Gnuchess binary have to be installed.
+  # Use Gnuchess to I.A. _(Only a draft)_.
   #
-  #    g = Chess::Game.new
-  #    g.extend Chess::Gnuchess
-  #    g.gnuchess_move!
-  #    puts g
+  # To use this module, extend a game object with {Chess::Gnuchess}.
+  # @note Gnuchess binary have to be installed.
+  # @example
+  #   g = Chess::Game.new
+  #   g.extend Chess::Gnuchess
+  #   g.gnuchess_move!
+  #   puts g
   module Gnuchess
 
-    # Return the next move calculated by Gnuchess.
-    # Gnuchess must be installed!
+    # Returns the next move calculated by Gnuchess.
+    # @return [String] Returns the short algebraic chess notation of the move.
     def gnuchess_move
       pipe = IO.popen('gnuchess -x', 'r+')
       begin
@@ -35,25 +36,24 @@ module Chess
       return moves
     end
 
-    # Make a move using Gnuchess engine. This add a new Board in the Game.
-    # Return the next move calculated by Gnuchess.
-    # Gnuchess must be installed!
+    # Make a move using Gnuchess engine.
+    # @note This add a new {Board} in the {Game}.
+    # @return [String] Returns the short algebraic chess notation of the move.
     def gnuchess_move!
       next_move = self.gnuchess_move
       self.move(next_move) if next_move
     end
 
-    # :nodoc:
+    private
+
     def self.included(mod)
       raise_if_gnuchess_is_not_installed
     end
 
-    # :nodoc:
     def self.extended(mod)
       raise_if_gnuchess_is_not_installed
     end
 
-    # :nodoc:
     def gen_pgn(file_to_save, moves = [])
       done = false
       pipe = IO.popen('gnuchess', 'r+')
@@ -101,11 +101,9 @@ module Chess
       end
     end
 
-    private
-
     # Raise an exception if Gnuchess is not installed
     def self.raise_if_gnuchess_is_not_installed
-      unless find_executable0('gnuchesss')
+      unless find_executable0('gnuchess')
         raise 'You must install Gnuchess to use the module Chess::Gnuchess!'
       end
     end
