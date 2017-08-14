@@ -5,16 +5,19 @@ module Chess
   # This class rappresents a chess game.
   class Game < CGame
 
-    # Create a new game. If an array of moves is provided, the moves will be performed.
-    #
-    # May be raise an IllegalMoveError or BadNotationError.
+    # @param [Array] moves If an array of moves is provided, the moves will be performed.
+    # @raise [IllegalMoveError]
+    # @raise [BadNotationError]
     def initialize(moves = [])
       moves.each { |m| move(m) }
     end
 
     # Creates a new game from a file in PGN format.
-    #
-    # May be raise an InvalidPgnFormatError or IllegalMoveError or BadNotationError.
+    # @param [String] file The path of the PGN to laod.
+    # @return [Game]
+    # @raise [InvalidPgnFormatError]
+    # @raise [IllegalMoveError]
+    # @raise [BadNotationError]
     def self.load_pgn(file)
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new
@@ -33,10 +36,10 @@ module Chess
     end
 
     # Creates a new game from a FEN string.
-    #
-    # May be raise an InvalidFenFormatError.
-    #
-    # *Warning*: this game do not have history before the FEN placement.
+    # @param [String] fen The FEN string to laod.
+    # @return [Game]
+    # @raise [InvalidFenFormatError]
+    # @note This game do not have history before the FEN placement.
     def self.load_fen(fen)
       if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/
         game = Chess::Game.new
@@ -47,19 +50,17 @@ module Chess
       end
     end
 
-    # Make a move. This add a new Board in the Storyboard.
+    # Make a move.
+    # @note This add a new {Board} in the {Game}.
+    # @param [String] m Represents the short algebraic chess notation string of
+    #   the move. `m` can be also _from_square_ plus _to_square_ _('e2e4', ...,
+    #   'b1c3')_ (coordinate chess notation).
+    # @return [String] Returns a string that represents the short algebraic
+    #   chess notation of the move.
     #
-    # Parameters are:
-    # +m+:: represents the short algebraic chess notation string of the move.
-    #       +m+ can be <em>from_square</em> plus <em>to_square</em>
-    #       <em>('e2e4', ..., 'b1c3')</em> (coordinate chess notation).
-    #
-    # This method returns a string that represents the short algebraic chess
-    # notation of the move.
-    #
-    # Raise an IllegalMoveError if the move is illegal.
-    # Raise an BadNotationError if the short algebraic chess notation is
-    # malformed.
+    # @raise {IllegalMoveError} if the move is illegal.
+    # @raise {BadNotationError} if the short algebraic chess notation is
+    #   malformed.
     def move(m)
       begin
         expand = expand_move(m)
@@ -80,33 +81,39 @@ module Chess
     alias :<< :move
 
     # Make the array of moves.
+    # @param [Array] moves The array of moves to performe.
     def moves=(moves)
       moves.each { |m| move(m) }
     end
 
-    # Returns +:white+ if the active player is the white player, +:black+ otherwise.
+    # Returns `:white` if the active player is the white player, `:black`
+    # otherwise.
+    # @return [Symbol]
     def active_player
       self.board.active_color ? :black : :white
     end
 
-    # Returns +:white+ if the inactive player is the white player, +:black+ otherwise.
+    # Returns `:white` if the inactive player is the white player, `:black`
+    # otherwise.
+    # @return [Symbol]
     def inactive_player
       self.board.active_color ? :white : :black
     end
 
     # Returns the status of the game.
-    #
     # Possible states are:
-    # * +in_progress+:: the game is in progress.
-    # * +white_won+:: white player has won with a checkmate.
-    # * +black_won+:: black player has won with a checkmate.
-    # * +white_won_resign+:: white player has won for resign.
-    # * +black_won_resign+:: black player has won for resign.
-    # * +stalemate+:: draw for stalemate.
-    # * +insufficient_material+:: draw for insufficient material to checkmate.
-    # * +fifty_rule_move+:: draw for fifty rule move.
-    # * +threefold_repetition+:: draw for threefold_repetition.
-    # * +unknown+:: something went wrong.
+    #
+    # * `in_progress`: the game is in progress.
+    # * `white_won`: white player has won with a checkmate.
+    # * `black_won`: black player has won with a checkmate.
+    # * `white_won_resign`: white player has won for resign.
+    # * `black_won_resign`: black player has won for resign.
+    # * `stalemate`: draw for stalemate.
+    # * `insufficient_material`: draw for insufficient material to checkmate.
+    # * `fifty_rule_move`: draw for fifty rule move.
+    # * `threefold_repetition`: draw for threefold_repetition.
+    # * `unknown`: something went wrong.
+    # @return [String]
     def status
       case self.result
       when '*'
@@ -137,12 +144,13 @@ module Chess
       return :unknown
     end
 
-    # Returns +true+ if the game is over
+    # Returns `true` if the game is over.
     def over?
       return self.result != '*'
     end
 
     # Returns the PGN rappresenting the game.
+    # @return [String]
     def pgn
       pgn = Chess::Pgn.new
       pgn.moves = self.moves

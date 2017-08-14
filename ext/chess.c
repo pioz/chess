@@ -333,8 +333,8 @@ game_size (VALUE self)
  *   @yield [board, move, coord_move, index]
  *     Calls `block` once for each {Board} in `self`, passing that
  *     `board`, `move`, `coord_move` and `index` as parameters.
- *   @return [Game,Array] Returns `self`. If no block is given, the array of
- *     game moves is returned instead.
+ *   @return [Game] Returns `self` if a block is given.
+ *   @return [Array] Returns the array of game moves if no block is given.
  */
 VALUE
 game_each (VALUE self)
@@ -391,8 +391,8 @@ game_to_s (VALUE self)
  *   @yield [piece, index]
  *     Calls `block` once for each square in the {Board}, passing the `piece` in
  *     the square and the `index` as parameters.
- *   @return [Board, Array] Returns `self`. If no block is given, the array of
- *     pieces is returned instead.
+ *   @return [Board] Returns `self` if a block is given.
+ *   @return [Array] Returns the array of pieces if no block is given.
  */
 VALUE
 board_placement (VALUE self)
