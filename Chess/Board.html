@@ -1,162 +1,490 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Chess::Board
+  
+    &mdash; Chess
+  
+</title>
 
-<title>class Chess::Board - Chess</title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../";
-  var index_rel_prefix = "../";
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Chess::Board";
+  relpath = '../';
 </script>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/darkfish.js"></script>
 
-<link href="../css/fonts.css" rel="stylesheet">
-<link href="../css/rdoc.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
 
-<body id="top" role="document" class="class">
-<nav role="navigation">
-  <div id="project-navigation">
-    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
-  <h2>
-    <a href="../index.html" rel="home">Home</a>
-  </h2>
-
-  <div id="table-of-contents-navigation">
-    <a href="../table_of_contents.html#pages">Pages</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
-  </div>
-</div>
-
-    <div id="search-section" role="search" class="project-section initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <div id="search-field-wrapper">
-      <input id="search-field" role="combobox" aria-label="Search"
-             aria-autocomplete="list" aria-controls="search-results"
-             type="text" name="search" placeholder="Search" spellcheck="false"
-             title="Type to search, Up and Down to navigate, Enter to load">
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
     </div>
 
-    <ul id="search-results" aria-label="Search Results"
-        aria-busy="false" aria-expanded="false"
-        aria-atomic="false" class="initially-hidden"></ul>
-  </form>
-</div>
-
-  </div>
-
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
   
-
-  <div id="class-metadata">
-    
-    <div id="parent-class-section" class="nav-section">
-  <h3>Parent</h3>
-
-  
-  <p class="link">Object
+    <a href="../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Chess.html" title="Chess (module)">Chess</a></span></span>
+     &raquo; 
+    <span class="title">Board</span>
   
 </div>
 
-    
-    
-    <!-- Method Quickref -->
-<div id="method-list-section" class="nav-section">
-  <h3>Methods</h3>
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
 
-  <ul class="link-list" role="directory">
-    
-    <li ><a href="#method-i-5B-5D">#[]</a>
-    
-    <li ><a href="#method-i-active_color">#active_color</a>
-    
-    <li ><a href="#method-i-check-3F">#check?</a>
-    
-    <li ><a href="#method-i-checkmate-3F">#checkmate?</a>
-    
-    <li ><a href="#method-i-fifty_rule_move-3F">#fifty_rule_move?</a>
-    
-    <li ><a href="#method-i-fullmove_number">#fullmove_number</a>
-    
-    <li ><a href="#method-i-halfmove_clock">#halfmove_clock</a>
-    
-    <li ><a href="#method-i-insufficient_material-3F">#insufficient_material?</a>
-    
-    <li ><a href="#method-i-placement">#placement</a>
-    
-    <li ><a href="#method-i-stalemate-3F">#stalemate?</a>
-    
-    <li ><a href="#method-i-to_fen">#to_fen</a>
-    
-    <li ><a href="#method-i-to_s">#to_s</a>
-    
-  </ul>
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Chess::Board
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Chess::Board</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>ext/chess.c<span class="defines">,<br />
+  ext/chess.c</span>
+</dd>
+  </dl>
+  
 </div>
 
-  </div>
-</nav>
-
-<main role="main" aria-labelledby="class-Chess::Board">
-  <h1 id="class-Chess::Board" class="class">
-    class Chess::Board
-  </h1>
-
-  <section class="description">
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
     
 <p>This class rappresents a chess board. The rappresentation of the board use
 <em>bitboards</em> where each bit represents a game position or state,
 designed for optimization of speed and/or memory or disk use in mass
 calculations. This ensures a fast library.</p>
 
-  </section>
 
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(square)  &#x21d2; String </a>
+    
+
+    
+  </span>
   
   
   
-  <section id="5Buntitled-5D" class="documentation-section">
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the piece on the <code>square</code> of the chessboard.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active_color-instance_method" title="#active_color (instance method)">#<strong>active_color</strong>  &#x21d2; Boolean </a>
     
 
     
+  </span>
+  
+  
+  
+  
+  
+  
+  
 
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the active color: <code>false</code> means white turn,
+<code>true</code> means black turn.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check%3F-instance_method" title="#check? (instance method)">#<strong>check?</strong>  &#x21d2; Boolean </a>
     
 
     
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the king of the color that has the turn is in
+check, <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#checkmate%3F-instance_method" title="#checkmate? (instance method)">#<strong>checkmate?</strong>  &#x21d2; Boolean </a>
+    
 
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the king of the color that has the turn is in
+checkmate, <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fifty_rule_move%3F-instance_method" title="#fifty_move_rule? (instance method)">#<strong>fifty_move_rule?</strong>  &#x21d2; Boolean </a>
+    
 
     
-      <div id="method-i-5B-5D" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            [square]
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+  </span>
+  
+  
+  
+  
+  
+  
+  
 
-        <div class="method-description">
-          
-          <p>Returns the piece on the <code>square</code> of the chessboard. If there is
-no piece or the square is not valid return <code>nil</code>.</p>
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if a player can claim draw by the fifty-move
+rule, <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
 
-<p>Each square on the chessboard is represented by an integer according to the
-following scheme:</p>
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fullmove_number-instance_method" title="#fullmove_number (instance method)">#<strong>fullmove_number</strong>  &#x21d2; Integer </a>
+    
 
-<pre>8 | 56 57 58 59 60 61 62 63
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the fullmove number: the number of the full move.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#halfmove_clock-instance_method" title="#halfmove_clock (instance method)">#<strong>halfmove_clock</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the halfmove clock that is the number of halfmoves since the last
+pawn advance or capture.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#insufficient_material%3F-instance_method" title="#insufficient_material? (instance method)">#<strong>insufficient_material?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the board has insufficient material to
+checkmate, <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#only_kings%3F-instance_method" title="#only_kings? (instance method)">#<strong>only_kings?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if on the board there are only the two kings,
+<code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#placement-instance_method" title="#placement (instance method)">#<strong>placement</strong> {|piece, index| ... } &#x21d2; Board, Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> squares.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stalemate%3F-instance_method" title="#stalemate? (instance method)">#<strong>stalemate?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns <code>true</code> if the pieces of the color that has the turn are
+in stalemate, <code>false</code> otherwise.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_fen-instance_method" title="#to_fen (instance method)">#<strong>to_fen</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the FEN string of the board.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p><span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> to string.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-instance_method">
+  
+    #<strong>[]</strong>(square)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the piece on the <code>square</code> of the chessboard. If there is
+no piece or the square is not valid return <code>nil</code>. Each square on
+the chessboard is represented by an integer according to the following
+scheme:</p>
+
+<pre class="code"><code class="">8 | 56 57 58 59 60 61 62 63
 7 | 48 49 50 51 52 53 54 55
 6 | 40 41 42 43 44 45 46 47
 5 | 32 33 34 35 36 37 38 39
@@ -165,20 +493,85 @@ following scheme:</p>
 2 |  8  9 10 11 12 13 14 15
 1 |  0  1  2  3  4  5  6  7
   +-------------------------
-     a  b  c  d  e  f  g  h</pre>
+     a  b  c  d  e  f  g  h</code></pre>
 
-<p>Parameters are:</p>
-<dl class="rdoc-list note-list"><dt><code>square</code>
-<dd>
-<p>the square of the board. Can be an integer between 0 and 63 or a string
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>square</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string
 like &#39;a2&#39;, &#39;c5&#39;…</p>
-</dd></dl>
-          
-          
+</div>
+      
+    </li>
+  
+</ul>
 
-          
-          <div class="method-source-code" id="5B-5D-source">
-            <pre>VALUE
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The symbol that identify the piece <em>(&#39;P&#39;, &#39;R&#39;,
+&#39;N&#39;, &#39;B&#39;, &#39;Q&#39;, &#39;K&#39;)</em>. Upcase for a
+white piece, downcase for a black piece.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 446</span>
+
+VALUE
 board_get_piece (VALUE self, VALUE square)
 {
   Board *board;
@@ -194,40 +587,77 @@ board_get_piece (VALUE self, VALUE square)
   else
     return rb_str_new (&amp;piece, 1);
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-active_color" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            active_color
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="active_color-instance_method">
+  
+    #<strong>active_color</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns the active color: <code>false</code> means white turn,
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the active color: <code>false</code> means white turn,
 <code>true</code> means black turn.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="active_color-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 565</span>
+
+VALUE
 board_active_color (VALUE self)
 {
   Board *board;
@@ -237,40 +667,77 @@ board_active_color (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-check-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            check?
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="check?-instance_method">
+  
+    #<strong>check?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns <code>true</code> if the king of the color that has the turn is in
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the king of the color that has the turn is in
 check, <code>false</code> otherwise.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="check-3F-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 468</span>
+
+VALUE
 board_king_in_check (VALUE self)
 {
   Board *board;
@@ -280,40 +747,77 @@ board_king_in_check (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-checkmate-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            checkmate?
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="checkmate?-instance_method">
+  
+    #<strong>checkmate?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns <code>true</code> if the king of the color that has the turn is in
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the king of the color that has the turn is in
 checkmate, <code>false</code> otherwise.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="checkmate-3F-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 484</span>
+
+VALUE
 board_king_in_checkmate (VALUE self)
 {
   Board *board;
@@ -323,40 +827,77 @@ board_king_in_checkmate (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-fifty_rule_move-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            fifty_move_rule?
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="fifty_rule_move?-instance_method">
+  
+    #<strong>fifty_move_rule?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns <code>true</code> if a player can claim draw by the fifty-move
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if a player can claim draw by the fifty-move
 rule, <code>false</code> otherwise.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="fifty_rule_move-3F-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 548</span>
+
+VALUE
 board_fifty_move_rule (VALUE self)
 {
   Board *board;
@@ -366,121 +907,226 @@ board_fifty_move_rule (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-fullmove_number" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            fullmove_number
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="fullmove_number-instance_method">
+  
+    #<strong>fullmove_number</strong>  &#x21d2; <tt>Integer</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns the fullmove number: the number of the full move. It starts at 1,
-and is incremented after black&#39;s move.</p>
-          
-          
+  
 
-          
-          <div class="method-source-code" id="fullmove_number-source">
-            <pre>VALUE
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the fullmove number: the number of the full move. It starts at 1,
+and * is incremented after black&#39;s move.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+597
+598
+599
+600
+601
+602
+603</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 597</span>
+
+VALUE
 board_fullmove_number (VALUE self)
 {
   Board *board;
   Data_Get_Struct (self, Board, board);
   return INT2FIX (board-&gt;fullmove_number);
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-halfmove_clock" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            halfmove_clock
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="halfmove_clock-instance_method">
+  
+    #<strong>halfmove_clock</strong>  &#x21d2; <tt>Integer</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns the halfmove clock that is the number of halfmoves since the last
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the halfmove clock that is the number of halfmoves since the last
 pawn advance or capture. This is used to determine if a draw can be claimed
 under the fifty-move rule.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="halfmove_clock-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+583
+584
+585
+586
+587
+588
+589</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 583</span>
+
+VALUE
 board_halfmove_clock (VALUE self)
 {
   Board *board;
   Data_Get_Struct (self, Board, board);
   return INT2FIX (board-&gt;halfmove_clock);
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-insufficient_material-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            insufficient_material?
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="insufficient_material?-instance_method">
+  
+    #<strong>insufficient_material?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns <code>true</code> if the board has insufficient material to
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the board has insufficient material to
 checkmate, <code>false</code> otherwise.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="insufficient_material-3F-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 516</span>
+
+VALUE
 board_insufficient_material (VALUE self)
 {
   Board *board;
@@ -490,41 +1136,209 @@ board_insufficient_material (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-placement" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            placement { |piece, index| block }
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="only_kings?-instance_method">
+  
+    #<strong>only_kings?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Calls <code>block</code> once for each square in the board, passing the
-<code>piece</code> in the square and the <code>index</code> as parameters.
-Return self. If no block is given, the array of pieces is returned instead.</p>
-          
-          
+  
 
-          
-          <div class="method-source-code" id="placement-source">
-            <pre>VALUE
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if on the board there are only the two kings,
+<code>false</code> otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 532</span>
+
+VALUE
+board_only_kings (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  if (only_kings (board))
+    return Qtrue;
+  else
+    return Qfalse;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="placement-instance_method">
+  
+    #<strong>placement</strong> {|piece, index| ... } &#x21d2; <tt><span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span></tt>, <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> squares.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>piece</tt>, <tt>index</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Calls <code>block</code> once for each square in the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>, passing the
+<code>piece</code> in the square and the <code>index</code> as parameters.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns <code>self</code> if a block is given.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns the array of pieces if no block is given.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 397</span>
+
+VALUE
 board_placement (VALUE self)
 {
   Board *board;
@@ -549,40 +1363,77 @@ board_placement (VALUE self)
       return self;
     }
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-stalemate-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            stalemate?
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="stalemate?-instance_method">
+  
+    #<strong>stalemate?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Returns <code>true</code> if the pieces of the color that has the turn are
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns <code>true</code> if the pieces of the color that has the turn are
 in stalemate, <code>false</code> otherwise.</p>
-          
-          
 
-          
-          <div class="method-source-code" id="stalemate-3F-source">
-            <pre>VALUE
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 500</span>
+
+VALUE
 board_stalemate (VALUE self)
 {
   Board *board;
@@ -592,39 +1443,76 @@ board_stalemate (VALUE self)
   else
     return Qfalse;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-to_fen" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            to_fen
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="to_fen-instance_method">
+  
+    #<strong>to_fen</strong>  &#x21d2; <tt>String</tt> 
+  
 
-        <div class="method-description">
-          
-          <p>Return the FEN string of the board.</p>
-          
-          
+  
 
-          
-          <div class="method-source-code" id="to_fen-source">
-            <pre>VALUE
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the FEN string of the board.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 610</span>
+
+VALUE
 board_to_fen (VALUE self)
 {
   Board *board;
@@ -634,39 +1522,76 @@ board_to_fen (VALUE self)
   free (fen);
   return rb_fen;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-      <div id="method-i-to_s" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            to_s
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>String</tt> 
+  
 
-        <div class="method-description">
-          
-          <p><a href="Board.html">Board</a> to string.</p>
-          
-          
+  
 
-          
-          <div class="method-source-code" id="to_s-source">
-            <pre>VALUE
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p><span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> to string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 626</span>
+
+VALUE
 board_to_s (VALUE self)
 {
   Board *board;
@@ -676,25 +1601,21 @@ board_to_s (VALUE self)
   free (s);
   return rb_s;
 }</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
+    </td>
+  </tr>
+</table>
+</div>
     
-    </section>
-  
-  </section>
-</main>
+  </div>
 
+</div>
 
-<footer id="validator-badges" role="contentinfo">
-  <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.1.0.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
-</footer>
+      <div id="footer">
+  Generated on Wed Aug 16 12:29:07 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.4.1).
+</div>
 
+    </div>
+  </body>
+</html>

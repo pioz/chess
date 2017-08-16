@@ -1,0 +1,13 @@
+lib/chess.rb 4045751c0faf49f451720ee5e9a0fcfa206a8153
+lib/chess/pgn.rb bd16b572389eeba149e538aec82a6be0b9978ed5
+lib/chess/game.rb 9dfde7cf60b6137287af016fe4a2c83031d1a2ef
+lib/chess/version.rb 91de45e64525134f66b09d89371e18ca6472cb4f
+lib/chess/gnuchess.rb 34a4f9d098635290ce266e80009ac44fb52c5c66
+lib/chess/exceptions.rb 4ae502c5af3b25a7c1dbdfa4004f2247e76fcf7f
+lib/chess/utf8_notation.rb db97caea7ea4944e0897fd2324176cab47879e26
+ext/game.c 46905569d4d447e861680e1182564c959e21e605
+ext/board.c 9bdec0443394b7a333c82f00d8aa1a413eff8a49
+ext/chess.c 17a7c18ee46917590058c1ee7aa5826f0e2e7218
+ext/common.c 5db0b123c4a9bca6bae022d0d3d4bd45d0b385fa
+ext/special.c 4b52f01502ee06e44f900f8de8fe7d511db0da4d
+ext/bitboard.c 9930dc0bcdef0115da5281b4138928a0c37b6262
