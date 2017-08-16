@@ -5,7 +5,7 @@ module Chess
   # This class rappresents a chess game.
   class Game < CGame
 
-    # @param [Array] moves If an array of moves is provided, the moves will be performed.
+    # @param [Array<String>] moves If an array of moves is provided, the moves will be performed.
     # @raise [IllegalMoveError]
     # @raise [BadNotationError]
     def initialize(moves = [])
@@ -81,7 +81,7 @@ module Chess
     alias :<< :move
 
     # Make the array of moves.
-    # @param [Array] moves The array of moves to performe.
+    # @param [Array<String>] moves The array of moves to performe.
     def moves=(moves)
       moves.each { |m| move(m) }
     end
@@ -160,7 +160,7 @@ module Chess
 
     private
 
-    # Expand the short algebraic chess notation string +m+ in a hash like this:
+    # Expand the short algebraic chess notation string `m` in a hash like this:
     #
     #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
     def expand_move(m)

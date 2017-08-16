@@ -6,9 +6,39 @@ module Chess
     # Array that include PGN standard tags.
     TAGS = %w(event site date round white black result)
 
-    attr_accessor(*(TAGS + [:moves]))
+    # The name of the tournament or match event.
+    # @return [String]
+    attr_accessor :event
+    # The location of the event. This is in City, Region COUNTRY format, where
+    # COUNTRY is the three-letter International Olympic Committee code for the
+    # country.
+    # @return [String]
+    attr_accessor :site
+    # The starting date of the game, in YYYY.MM.DD form. ?? is used for unknown values.
+    # @return [String]
+    attr_accessor :date
+    # The playing round ordinal of the game within the event.
+    # @return [String]
+    attr_accessor :round
+    # The player of the white pieces, in Lastname, Firstname format.
+    # @return [String]
+    attr_accessor :white
+    # The player of the black pieces, same format as White.
+    # @return [String]
+    attr_accessor :black
+    # The result of the game. This can only have four possible values: 1-0
+    # (White won), 0-1 (Black won), 1/2-1/2 (Draw), or * (other, e.g., the game
+    # is ongoing).
+    # @return [String]
+    attr_accessor :result
+    # The array with all moves done in short algebraic chess notation.
+    # @return [Array<String>]
+    attr_accessor :moves
 
-    # Creates a new PGN. If param +filename+, load it from file.
+    # @param [String] filename The path of the PGN file.
+    # @param [Boolean] check_moves If true check if the moves are legal.
+    # @raise [InvalidPgnFormatError]
+    # @raise [IllegalMoveError]
     def initialize(filename = nil, check_moves: false)
       self.load(filename, check_moves: check_moves) if filename
       @date = '??'
@@ -16,6 +46,11 @@ module Chess
     end
 
     # Load a PGN from file.
+    # @param [String] filename The path of the PGN file.
+    # @param [Boolean] check_moves If true check if the moves are legal.
+    # @return [Pgn] Returns `self`.
+    # @raise [InvalidPgnFormatError]
+    # @raise [IllegalMoveError]
     def load(filename, check_moves: false)
       data = File.open(filename, 'r').read
       data.gsub!(/\{.*?\}/, '') # remove comments
@@ -55,14 +90,14 @@ module Chess
     end
 
     # Write PGN to file.
+    # @param [String] filename The path of the PGN file.
     def write(filename)
       File.open(filename, 'w') { |f| f.write(self.to_s) }
     end
 
-    # :nodoc:
+    # @!visibility private
     alias :old_date= :date=
 
-    # :nodoc:
     # Set the date tag.
     def date=(value)
       if value.is_a?(Time)
@@ -71,7 +106,6 @@ module Chess
         @data = value
       end
     end
-
 
   end
 end

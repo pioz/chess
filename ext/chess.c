@@ -58,7 +58,7 @@ game_set_fen (VALUE self, VALUE fen)
  *       piece—which occurs only in rare cases where one or more pawns have
  *       promoted, resulting in a player having three or more identical pieces
  *       able to reach the same square).
- *     Keep +nil+ if no needed.
+ *     Keep `nil` if no needed.
  *   @param [String] to_coord The square where the moving piece will _('a1',
  *     'a2', ... , 'h7', 'h8')_.
  *   @param [String] promote_in The character of promotion piece _('R', 'N',
@@ -236,7 +236,7 @@ game_current_board (VALUE self)
 /*
  * @overload moves
  *   Returns the array with all moves done _(es: Nc3)_.
- *   @return [Array]
+ *   @return [Array<String>]
  */
 VALUE
 game_moves (VALUE self)
@@ -253,7 +253,7 @@ game_moves (VALUE self)
  * @overload coord_moves
  *   Returns the array with all moves done in coordinate chess notation _(es:
  *   b1c3)_.
- *   @return [Array]
+ *   @return [Array<String>]
  */
 VALUE
 game_coord_moves (VALUE self)
@@ -334,7 +334,7 @@ game_size (VALUE self)
  *     Calls `block` once for each {Board} in `self`, passing that
  *     `board`, `move`, `coord_move` and `index` as parameters.
  *   @return [Game] Returns `self` if a block is given.
- *   @return [Array] Returns the array of game moves if no block is given.
+ *   @return [Array<String>] Returns the array of game moves if no block is given.
  */
 VALUE
 game_each (VALUE self)
@@ -392,7 +392,7 @@ game_to_s (VALUE self)
  *     Calls `block` once for each square in the {Board}, passing the `piece` in
  *     the square and the `index` as parameters.
  *   @return [Board] Returns `self` if a block is given.
- *   @return [Array] Returns the array of pieces if no block is given.
+ *   @return [Array<String>] Returns the array of pieces if no block is given.
  */
 VALUE
 board_placement (VALUE self)
@@ -643,7 +643,7 @@ Init_chess ()
   VALUE chess = rb_define_module ("Chess");
 
   /*
-   * Document-class: Chess::Game
+   * Document-class: Chess::CGame
    *
    * This class rappresents a collection of boards of a single chess game.
    */

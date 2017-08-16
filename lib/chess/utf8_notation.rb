@@ -1,6 +1,6 @@
 module Chess
 
-  # With this module is possible call the method +to_utf8+ on a string. This
+  # With this module is possible call the method {#to_utf8} on a string. This
   # method convert the chess piece identifier character into UTF8 chess
   # character.
   # @example
