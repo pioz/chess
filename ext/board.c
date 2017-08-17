@@ -472,7 +472,9 @@ try_move (Board *board, int from, int to, char promote_in, Board *new_board, cha
   return TRUE;
 }
 
-// Returns the short algebraic chess notation of the move from-to.
+// Returns the short algebraic chess notation of the move from-to. Do not
+// perform the check to add mate symbols like '+' or '#'. This check is done on
+// `apply_move` method.
 char*
 get_notation (Board *board, int from, int to, int capture, int ep, char promotion, int check, int checkmate)
 {
@@ -522,6 +524,13 @@ get_notation (Board *board, int from, int to, int capture, int ep, char promotio
                       disc_rank_added = 1;
                     }
                 }
+            }
+          // Swap file and rank disambiguating char if number is before the letter.
+          if (disc_file_added && disc_rank_added && notation[i-2] < notation[i-1])
+            {
+              int tmp = notation[i-2];
+              notation[i-2] = notation[i-1];
+              notation[i-1] = tmp;
             }
         }
     }
