@@ -603,6 +603,44 @@ board_fullmove_number (VALUE self)
 }
 
 /*
+ * @overload generate_moves(square)
+ *   Generate all legal moves for the piece in `square` position.
+ *   @param [Integer,String] square The square of the {Board}. Can be an integer
+ *     between 0 and 63 or a string like 'a2', 'c5'...
+ *   @return [Array<String>] Returns all legal moves that the piece in `square`
+ *     position can perform. The moves are in short algebraic chess notation
+ *     format.
+ *   @example
+ *     :001 > g = Chess::Game.new
+ *      => #<Chess::Game:0x007f88a529fa88>
+ *     :002 > g.board.generate_moves('b1')
+ *      => ["Na3", "Nc3"]
+ */
+VALUE
+board_generate_moves (VALUE self, VALUE square)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  int from;
+  if (TYPE (square) == T_STRING)
+    from = coord_to_square (StringValuePtr (square));
+  else
+    from = FIX2INT (square);
+  VALUE moves = rb_ary_new ();
+  Board new_board;
+  char *move_done;
+  char capture;
+  for (int i = 0; i < 64; i++)
+    if (pseudo_legal_move (board, from, i))
+      {
+        move_done = castling (board, castling_type (board, from, i), &new_board);
+        if (move_done || try_move (board, from, i, 'Q', &new_board, &move_done, &capture))
+          rb_ary_push (moves, rb_str_new2 (move_done));
+      }
+  return moves;
+}
+
+/*
  * @overload to_fen
  *   Returns the FEN string of the board.
  *   @return [String]
@@ -689,6 +727,7 @@ Init_chess ()
   rb_define_method (board_klass, "active_color", board_active_color, 0);
   rb_define_method (board_klass, "halfmove_clock", board_halfmove_clock, 0);
   rb_define_method (board_klass, "fullmove_number", board_fullmove_number, 0);
+  rb_define_method (board_klass, "generate_moves", board_generate_moves, 1);
   rb_define_method (board_klass, "to_fen", board_to_fen, 0);
   rb_define_method (board_klass, "to_s", board_to_s, 0);
 
