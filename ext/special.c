@@ -95,10 +95,10 @@ castling (Board *board, int castling_type, Board *new_board)
       memcpy (new_board, board, sizeof (Board));
       new_board->king[WHITE] ^= 0x50;
       new_board->rooks[WHITE] ^= 0xa0;
-      new_board->placement[E1] = 0;
+      new_board->placement[E1] = '\0';
       new_board->placement[F1] = 'R';
       new_board->placement[G1] = 'K';
-      new_board->placement[H1] = 0;
+      new_board->placement[H1] = '\0';
       new_board->castling ^= new_board->castling & 0x1100;
       move = (char *) malloc (5);
       strcpy (move, "O-O");
@@ -107,10 +107,10 @@ castling (Board *board, int castling_type, Board *new_board)
       memcpy (new_board, board, sizeof (Board));
       new_board->king[WHITE] ^= 0x14;
       new_board->rooks[WHITE] ^= 0x09;
-      new_board->placement[E1] = 0;
+      new_board->placement[E1] = '\0';
       new_board->placement[D1] = 'R';
       new_board->placement[C1] = 'K';
-      new_board->placement[A1] = 0;
+      new_board->placement[A1] = '\0';
       new_board->castling ^= new_board->castling & 0x1100;
       move = (char *) malloc (7);
       strcpy (move, "O-O-O");
@@ -119,10 +119,10 @@ castling (Board *board, int castling_type, Board *new_board)
       memcpy (new_board, board, sizeof (Board));
       new_board->king[BLACK] ^= 0x5000000000000000;
       new_board->rooks[BLACK] ^= 0xa000000000000000;
-      new_board->placement[E8] = 0;
+      new_board->placement[E8] = '\0';
       new_board->placement[F8] = 'r';
       new_board->placement[G8] = 'k';
-      new_board->placement[H8] = 0;
+      new_board->placement[H8] = '\0';
       new_board->castling ^= new_board->castling & 0x0011;
       move = (char *) malloc (5);
       strcpy (move, "O-O");
@@ -131,16 +131,16 @@ castling (Board *board, int castling_type, Board *new_board)
       memcpy (new_board, board, sizeof (Board));
       new_board->king[BLACK] ^= 0x1400000000000000;
       new_board->rooks[BLACK] ^= 0x0900000000000000;
-      new_board->placement[E8] = 0;
+      new_board->placement[E8] = '\0';
       new_board->placement[D8] = 'r';
       new_board->placement[C8] = 'k';
-      new_board->placement[A8] = 0;
+      new_board->placement[A8] = '\0';
       new_board->castling ^= new_board->castling & 0x0011;
       move = (char *) malloc (7);
       strcpy (move, "O-O-O");
       break;
     default:
-      return 0;
+      return NULL;
     }
   set_occupied (new_board);
   return move;
