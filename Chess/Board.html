@@ -281,6 +281,30 @@ rule, <code>false</code> otherwise.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#generate_moves-instance_method" title="#generate_moves (instance method)">#<strong>generate_moves</strong>(square)  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate all legal moves for the piece in <code>square</code> position.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#halfmove_clock-instance_method" title="#halfmove_clock (instance method)">#<strong>halfmove_clock</strong>  &#x21d2; Integer </a>
     
 
@@ -987,6 +1011,149 @@ board_fullmove_number (VALUE self)
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="generate_moves-instance_method">
+  
+    #<strong>generate_moves</strong>(square)  &#x21d2; <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Generate all legal moves for the piece in <code>square</code> position.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>:001 &gt; g = Chess::Game.new
+ =&gt; #&lt;Chess::Game:0x007f88a529fa88&gt;
+:002 &gt; g.board.generate_moves(&#39;b1&#39;)
+ =&gt; [&quot;Na3&quot;, &quot;Nc3&quot;]</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>square</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string
+like &#39;a2&#39;, &#39;c5&#39;…</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns all legal moves that the piece in <code>square</code> position can
+perform. The moves are in short algebraic chess notation format.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 619</span>
+
+VALUE
+board_generate_moves (VALUE self, VALUE square)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  int from;
+  if (TYPE (square) == T_STRING)
+    from = coord_to_square (StringValuePtr (square));
+  else
+    from = FIX2INT (square);
+  VALUE moves = rb_ary_new ();
+  Board new_board;
+  char *move_done;
+  char capture;
+  for (int i = 0; i &lt; 64; i++)
+    if (pseudo_legal_move (board, from, i))
+      {
+        move_done = castling (board, castling_type (board, from, i), &amp;new_board);
+        if (move_done || try_move (board, from, i, &#39;Q&#39;, &amp;new_board, &amp;move_done, &amp;capture))
+          rb_ary_push (moves, rb_str_new2 (move_done));
+      }
+  return moves;
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="halfmove_clock-instance_method">
   
     #<strong>halfmove_clock</strong>  &#x21d2; <tt>Integer</tt> 
@@ -1498,19 +1665,19 @@ board_stalemate (VALUE self)
       <pre class="lines">
 
 
-610
-611
-612
-613
-614
-615
-616
-617
-618
-619</pre>
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 610</span>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 648</span>
 
 VALUE
 board_to_fen (VALUE self)
@@ -1577,19 +1744,19 @@ board_to_fen (VALUE self)
       <pre class="lines">
 
 
-626
-627
-628
-629
-630
-631
-632
-633
-634
-635</pre>
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 626</span>
+      <pre class="code"><span class="info file"># File 'ext/chess.c', line 664</span>
 
 VALUE
 board_to_s (VALUE self)
@@ -1611,7 +1778,7 @@ board_to_s (VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Wed Aug 16 12:29:07 2017 by
+  Generated on Thu Aug 17 09:55:31 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
