@@ -67,7 +67,7 @@ current_move (Game *g)
 {
   if (g->current > 0)
     return g->moves[g->current-1];
-  return 0;
+  return NULL;
 }
 
 // Returns the last move done in coordinate format.
