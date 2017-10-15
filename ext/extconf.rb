@@ -25,5 +25,6 @@ LIB_DIRS = [
 ]
 
 #dir_config('chess', INCLUDE_DIRS, LIB_DIRS)
+$CFLAGS << " -std=c99"
 
 create_makefile('chess/chess')
