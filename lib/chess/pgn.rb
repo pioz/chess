@@ -103,7 +103,7 @@ module Chess
       if value.is_a?(Time)
         @date = value.strftime('%Y.%m.%d')
       else
-        @data = value
+        @date = value
       end
     end
 
