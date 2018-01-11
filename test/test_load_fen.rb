@@ -38,4 +38,16 @@ class ChessTest < Minitest::Test
     assert_equal :stalemate, g.status
   end
 
+  def test_fen_castling_from
+    g = Chess::Game.load_fen('2b1kbnr/rpq1pp1p/2n3p1/8/3Q4/2P5/PP3PPP/RN2KBNR w KQk - 0 9')
+    g.move('Kd1')
+    assert_equal '2b1kbnr/rpq1pp1p/2n3p1/8/3Q4/2P5/PP3PPP/RN1K1BNR b k - 1 9', g.board.to_fen
+  end
+
+  def test_fen_castling_to
+    g = Chess::Game.load_fen('2b1kbnr/rpq1pp1p/2n3p1/8/3Q4/2P5/PP3PPP/RN2KBNR w KQk - 0 9')
+    g.move('Qh8')
+    assert_equal '2b1kbnQ/rpq1pp1p/2n3p1/8/8/2P5/PP3PPP/RN2KBNR b KQ - 0 9', g.board.to_fen
+  end
+
 end

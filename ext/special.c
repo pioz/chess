@@ -9,9 +9,9 @@
 
 // Update the board castling bits (FEN style).
 void
-update_castling (Board *board, int from)
+update_castling_by_square (Board *board, int square)
 {
-  switch (from)
+  switch (square)
     {
     case A1:
       board->castling ^= board->castling & 0x0100;
@@ -32,6 +32,13 @@ update_castling (Board *board, int from)
       board->castling ^= board->castling & 0x0010;
       break;
     }
+}
+
+// Update the board castling bits checking if squares from and to are involved.
+void
+update_castling (Board *board, int from, int to) {
+  update_castling_by_square (board, from);
+  update_castling_by_square (board, to);
 }
 
 // Returns the castling type for the move from-to. If not a castling move

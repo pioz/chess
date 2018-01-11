@@ -11,7 +11,8 @@
 #include "common.h"
 #include "board.h"
 
-void update_castling (Board *board, int from);
+void update_castling_by_square (Board *board, int square);
+void update_castling (Board *board, int from, int to);
 int castling_type (Board *board, int from, int to);
 char* castling (Board *board, int castling_type, Board *new_board);
 void update_en_passant (Board *board, int from, int to);

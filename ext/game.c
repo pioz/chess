@@ -98,7 +98,7 @@ apply_move (Game *g, int from, int to, char promote_in)
         }
     }
   // Ok move is legal, update the game
-  update_castling (new_board, from);
+  update_castling (new_board, from, to);
   update_en_passant (new_board, from, to);
   if (new_board->active_color)
     new_board->fullmove_number++;
