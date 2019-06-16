@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   TestHelper.pgns('fifty_move_rule').each do |file|
     name = File.basename(file, '.pgn')
     define_method "test_fifty_rule_move_#{name}" do
@@ -10,5 +9,4 @@ class ChessTest < Minitest::Test
       assert(game.board.fifty_rule_move?)
     end
   end
-
 end

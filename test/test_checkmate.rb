@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   TestHelper.pgns('checkmate').each do |file|
     name = File.basename(file, '.pgn')
     win = file.include?('white') ? 'white' : 'black'
@@ -18,5 +17,4 @@ class ChessTest < Minitest::Test
       end
     end
   end
-
 end

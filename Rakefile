@@ -2,10 +2,10 @@ require 'bundler/gem_tasks'
 
 require 'yard'
 YARD::Rake::YardocTask.new do |t|
- t.files = ['lib/**/*.rb', 'ext/*.c']
- t.options << '-rREADME.md'
- t.options << '--title=Chess'
- t.options << '-mmarkdown'
+  t.files = ['lib/**/*.rb', 'ext/*.c']
+  t.options << '-rREADME.md'
+  t.options << '--title=Chess'
+  t.options << '-mmarkdown'
 end
 
 require 'rake/testtask'

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   TestHelper.pgns('invalid').each do |file|
     name = File.basename(file, '.pgn')
     define_method "test_invalid_pgn_#{name}" do
@@ -20,5 +19,4 @@ class ChessTest < Minitest::Test
       Chess::Pgn.new(file)
     end
   end
-
 end

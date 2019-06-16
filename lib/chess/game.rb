@@ -1,10 +1,8 @@
 require File.join(File.dirname(__FILE__), '../../ext/chess')
 
 module Chess
-
   # This class rappresents a chess game.
   class Game < CGame
-
     # @param [Array<String>] moves If an array of moves is provided, the moves will be performed.
     # @raise [IllegalMoveError]
     # @raise [BadNotationError]
@@ -41,7 +39,7 @@ module Chess
     # @raise [InvalidFenFormatError]
     # @note This game do not have history before the FEN placement.
     def self.load_fen(fen)
-      if fen =~ /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/
+      if /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/.match?(fen)
         game = Chess::Game.new
         game.set_fen!(fen)
         return game
@@ -52,8 +50,8 @@ module Chess
 
     # Make a move.
     # @note This add a new {Board} in the {Game}.
-    # @param [String] m Represents the short algebraic chess notation string of
-    #   the move. `m` can be also _from_square_ plus _to_square_ _('e2e4', ...,
+    # @param [String] notation Represents the short algebraic chess notation string of
+    #   the move. `notation` can be also _from_square_ plus _to_square_ _('e2e4', ...,
     #   'b1c3')_ (coordinate chess notation).
     # @return [String] Returns a string that represents the short algebraic
     #   chess notation of the move.
@@ -61,24 +59,22 @@ module Chess
     # @raise {IllegalMoveError} if the move is illegal.
     # @raise {BadNotationError} if the short algebraic chess notation is
     #   malformed.
-    def move(m)
-      begin
-        expand = expand_move(m)
-        if expand[:from]
-          move2(expand[:from], expand[:to], expand[:promotion])
-        else
-          super(expand[:name], expand[:dis], expand[:to], expand[:promotion])
-        end
-      rescue IllegalMoveError
-        if ENV['DEBUG']
-          raise IllegalMoveError.new("Illegal move '#{m}'\nStatus: #{self.status}\nPlayer turn #{self.active_player}\n#{self.to_s}")
-        else
-          raise IllegalMoveError.new("Illegal move '#{m}'")
-        end
+    def move(notation)
+      expand = expand_move(notation)
+      if expand[:from]
+        move2(expand[:from], expand[:to], expand[:promotion])
+      else
+        super(expand[:name], expand[:dis], expand[:to], expand[:promotion])
+      end
+    rescue IllegalMoveError
+      if ENV['DEBUG']
+        raise IllegalMoveError.new("Illegal move '#{notation}'\nStatus: #{self.status}\nPlayer turn #{self.active_player}\n#{self}")
+      else
+        raise IllegalMoveError.new("Illegal move '#{notation}'")
       end
     end
-    alias :move= :move
-    alias :<< :move
+    alias move= move
+    alias << move
 
     # Make the array of moves.
     # @param [Array<String>] moves The array of moves to performe.
@@ -160,41 +156,37 @@ module Chess
 
     private
 
-    # Expand the short algebraic chess notation string `m` in a hash like this:
-    #
-    #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
-    def expand_move(m)
-      if match = m.match(Chess::MOVE_REGEXP)
-        expand = {
-          name: match[1] || 'P',    # Piece name [RNBQK]
-          dis: match[2],            # Disambiguating move
-          to: match[3],             # Move to
-          promotion: match[4],      # Promote with
-        }
-        expand[:from] = match[2] if match[2] && match[2].size == 2
-        return expand
-      elsif m =~ SHORT_CASTLING_REGEXP
-        if self.board.active_color # black king short castling
-          return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil }
-        else # white king short castling
-          return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil }
+      # Expand the short algebraic chess notation string `notation` in a hash like this:
+      #
+      #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
+      def expand_move(notation)
+        if (match = notation.match(Chess::MOVE_REGEXP))
+          expand = {
+            name: match[1] || 'P',    # Piece name [RNBQK]
+            dis: match[2],            # Disambiguating move
+            to: match[3],             # Move to
+            promotion: match[4]      # Promote with
+          }
+          expand[:from] = match[2] if match[2] && match[2].size == 2
+          return expand
+        elsif SHORT_CASTLING_REGEXP.match?(notation)
+          if self.board.active_color # black king short castling
+            return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil }
+          else # white king short castling
+            return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil }
+          end
+        elsif LONG_CASTLING_REGEXP.match?(notation)
+          if self.board.active_color # black king long castling
+            return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil }
+          else # white king long castling
+            return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil }
+          end
         end
-      elsif m =~ LONG_CASTLING_REGEXP
-        if self.board.active_color # black king long castling
-          return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil }
-        else # white king long castling
-          return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil }
-        end
+        raise BadNotationError.new(notation)
       end
-      raise BadNotationError.new(m)
-    end
-
   end
 
-  private
-
-  MOVE_REGEXP = /^([RNBQK])?([a-h]|[1-8]|[a-h][1-8])?(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/
-  SHORT_CASTLING_REGEXP = /^([0O])-([0O])([\+#])?$/
-  LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([\+#])?$/
-
+  MOVE_REGEXP = /^([RNBQK])?([a-h]|[1-8]|[a-h][1-8])?(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/.freeze
+  SHORT_CASTLING_REGEXP = /^([0O])-([0O])([\+#])?$/.freeze
+  LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([\+#])?$/.freeze
 end

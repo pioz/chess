@@ -10,8 +10,8 @@ INCLUDE_DIRS = [
   # Then search /usr/local for people that installed from source
   '/usr/local/include',
   # Finally fall back to /usr
-  '/usr/include',
-]
+  '/usr/include'
+].freeze
 
 LIB_DIRS = [
   # Check the ruby install locations
@@ -21,10 +21,10 @@ LIB_DIRS = [
   # Then search /usr/local for people that installed from source
   '/usr/local/lib',
   # Finally fall back to /usr
-  '/usr/lib',
-]
+  '/usr/lib'
+].freeze
 
-#dir_config('chess', INCLUDE_DIRS, LIB_DIRS)
-$CFLAGS << " -std=c99"
+# dir_config('chess', INCLUDE_DIRS, LIB_DIRS)
+$CFLAGS << ' -std=c99'
 
 create_makefile('chess/chess')

@@ -1,5 +1,4 @@
 module Chess
-
   # This exception will be raised when an invalid short algebraic chess notation
   # string is passed to the {Game#move} function.
   class BadNotationError < StandardError
@@ -24,5 +23,4 @@ module Chess
       super("Invalid FEN string '#{fen_string}'")
     end
   end
-
 end

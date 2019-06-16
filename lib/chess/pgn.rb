@@ -1,10 +1,8 @@
 module Chess
-
   # Rappresents a game in PGN (Portable Game Notation) format.
   class Pgn
-
     # Array that include PGN standard tags.
-    TAGS = %w(event site date round white black result)
+    TAGS = %w[event site date round white black result].freeze
 
     # The name of the tournament or match event.
     # @return [String]
@@ -16,7 +14,7 @@ module Chess
     attr_accessor :site
     # The starting date of the game, in YYYY.MM.DD form. ?? is used for unknown values.
     # @return [String]
-    attr_accessor :date
+    attr_reader :date
     # The playing round ordinal of the game within the event.
     # @return [String]
     attr_accessor :round
@@ -55,14 +53,15 @@ module Chess
       data = File.open(filename, 'r').read
       data.gsub!(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
-        instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size+3..-3])
+        instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
       end
       @result = '1/2-1/2' if @result == '1/2'
       game_index = data.index(/^1\./)
       raise Chess::InvalidPgnFormatError.new(filename) if game_index.nil?
+
       game = data[game_index..-1].strip
-      @moves = game.gsub("\n", ' ').split(/\d+\./).collect{|t| t.strip}[1..-1].collect{|t| t.split(' ')}.flatten
-      @moves.delete_at(@moves.size-1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
+      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].collect { |t| t.split(' ') }.flatten
+      @moves.delete_at(@moves.size - 1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
       @moves.each do |m|
         if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
           raise Chess::InvalidPgnFormatError.new(filename)
@@ -82,7 +81,7 @@ module Chess
       s << "\n"
       m = ''
       @moves.each_with_index do |move, i|
-        m << "#{i/2+1}. " if i % 2 == 0
+        m << "#{i / 2 + 1}. " if i.even?
         m << "#{move} "
       end
       m << @result unless @result.nil?
@@ -95,8 +94,8 @@ module Chess
       File.open(filename, 'w') { |f| f.write(self.to_s) }
     end
 
-    # @!visibility private
-    alias :old_date= :date=
+    # # @!visibility private
+    # alias old_date= date=
 
     # Set the date tag.
     def date=(value)
@@ -106,6 +105,5 @@ module Chess
         @date = value
       end
     end
-
   end
 end

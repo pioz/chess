@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   def test_fen_in_progress
     g = Chess::Game.load_fen('rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2')
     assert_equal 'P', g.board['e4']
@@ -49,5 +48,4 @@ class ChessTest < Minitest::Test
     g.move('Qh8')
     assert_equal '2b1kbnQ/rpq1pp1p/2n3p1/8/8/2P5/PP3PPP/RN2KBNR b KQ - 0 9', g.board.to_fen
   end
-
 end

@@ -7,12 +7,12 @@ class ChessTest < Minitest::Test
     '8/2k5/8/3b4/B7/8/2K5/8 w - - 0 1',
     '8/2k5/8/8/4B3/8/2K5/8 w - - 0 1',
     '8/2k5/8/5b2/8/8/2K5/8 w - - 0 1'
-  ]
+  ].freeze
 
   ONLY_KINGS_FENS = [
     '8/2k5/8/8/8/8/2K5/8 w - - 0 1',
     '8/4k3/8/8/1K6/8/8/8 w - - 0 1'
-  ]
+  ].freeze
 
   FENS.each_with_index do |fen, i|
     define_method("test_insufficient_material_by_fen_#{i}") do
@@ -37,5 +37,4 @@ class ChessTest < Minitest::Test
       assert(game.board.insufficient_material?)
     end
   end
-
 end

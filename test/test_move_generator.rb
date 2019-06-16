@@ -1,20 +1,19 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   GENS = {
-    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w K - 0 1' => {'e1' => ['Kd1', 'Ke2', 'Kf2', 'Kf1', 'O-O']},
-    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w - - 0 1' => {'e1' => ['Kd1', 'Ke2', 'Kf2', 'Kf1']},
-    'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R w K - 0 1' => {'e1' => ['Kd1', 'Ke2', 'Kf1']},
-    'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R b K - 0 1' => {'a2' => ['a1=Q']},
-    'r2qk3/8/2n1n3/2b5/8/8/p2B4/4K2R b K - 0 1' => {'e6' => ['Nf8', 'Ng7', 'Ng5', 'Nf4', 'Ned4', 'Nc7']},
-    'r2qk3/8/2n5/2b2pP1/8/8/3B4/4K2R w K f6 0 1' => {'g5' => ['gxf6ep', 'g6']},
-    '1B1k4/r3q3/2n1n3/2b2pP1/8/1n6/3B4/4K2R b K - 0 1' => {'c6' => ['Nxb8', 'Ne5', 'Ncd4', 'Nb4', 'Nca5']},
-    '1B1k4/r3q3/2n1n3/2b2pP1/8/8/2nB4/3K3R b - - 0 1' => {'c6' => ['Nxb8', 'Ne5', 'Nc6d4', 'N6b4', 'Na5']},
-    '1B1k4/r3q3/2n1n2P/2b5/5p2/3p1RP1/3B4/3K4 w - - 0 1' => {'f3' => ['Rxd3', 'Re3', 'Rxf4', 'Rf2', 'Rf1']},
-    'k7/1Q6/2P5/8/8/8/8/3K4 b - - 0 1' => {'a8' => []},
-    'k7/6P1/8/8/8/3r4/3Q4/3K4 w - - 0 1' => {'d2' => ['Qxd3']}
-  }
+    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w K - 0 1' => { 'e1' => ['Kd1', 'Ke2', 'Kf2', 'Kf1', 'O-O'] },
+    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w - - 0 1' => { 'e1' => %w[Kd1 Ke2 Kf2 Kf1] },
+    'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R w K - 0 1' => { 'e1' => %w[Kd1 Ke2 Kf1] },
+    'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R b K - 0 1' => { 'a2' => ['a1=Q'] },
+    'r2qk3/8/2n1n3/2b5/8/8/p2B4/4K2R b K - 0 1' => { 'e6' => %w[Nf8 Ng7 Ng5 Nf4 Ned4 Nc7] },
+    'r2qk3/8/2n5/2b2pP1/8/8/3B4/4K2R w K f6 0 1' => { 'g5' => %w[gxf6ep g6] },
+    '1B1k4/r3q3/2n1n3/2b2pP1/8/1n6/3B4/4K2R b K - 0 1' => { 'c6' => %w[Nxb8 Ne5 Ncd4 Nb4 Nca5] },
+    '1B1k4/r3q3/2n1n3/2b2pP1/8/8/2nB4/3K3R b - - 0 1' => { 'c6' => %w[Nxb8 Ne5 Nc6d4 N6b4 Na5] },
+    '1B1k4/r3q3/2n1n2P/2b5/5p2/3p1RP1/3B4/3K4 w - - 0 1' => { 'f3' => %w[Rxd3 Re3 Rxf4 Rf2 Rf1] },
+    'k7/1Q6/2P5/8/8/8/8/3K4 b - - 0 1' => { 'a8' => [] },
+    'k7/6P1/8/8/8/3r4/3Q4/3K4 w - - 0 1' => { 'd2' => ['Qxd3'] }
+  }.freeze
 
   GENS.each do |fen, generators|
     define_method("test_move_generator_#{fen}") do
@@ -25,5 +24,4 @@ class ChessTest < Minitest::Test
       end
     end
   end
-
 end

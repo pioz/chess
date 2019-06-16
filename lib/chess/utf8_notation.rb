@@ -1,5 +1,4 @@
 module Chess
-
   # With this module is possible call the method {#to_utf8} on a string. This
   # method convert the chess piece identifier character into UTF8 chess
   # character.
@@ -12,7 +11,6 @@ module Chess
   # @note To use this utility explicit require is needed: <tt>require
   #   'chess/utf8_notation'</tt>
   module UTF8Notation
-
     # Map a piece identifier character with the corresponding UTF8 chess
     # character
     UTF8_MAP = {
@@ -28,14 +26,13 @@ module Chess
       'b' => '♝',
       'q' => '♛',
       'k' => '♚'
-    }
+    }.freeze
 
     # Replace the piece identifier characters with UTF8 chess characters.
     # @return [String]
     def to_utf8
       self.gsub(/[PRNBQKprnbqk]/, UTF8_MAP)
     end
-
   end
 end
 

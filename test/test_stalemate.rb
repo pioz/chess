@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ChessTest < Minitest::Test
-
   TestHelper.pgns('stalemate').each do |file|
     name = File.basename(file, '.pgn')
     define_method "test_stalemate_#{name}" do
@@ -11,5 +10,4 @@ class ChessTest < Minitest::Test
       assert_equal(game.result, '1/2-1/2')
     end
   end
-
 end
