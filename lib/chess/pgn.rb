@@ -50,21 +50,31 @@ module Chess
     # @raise [InvalidPgnFormatError]
     # @raise [IllegalMoveError]
     def load(filename, check_moves: false)
-      data = File.open(filename, 'r').read
-      data.gsub!(/\{.*?\}/, '') # remove comments
+      str = File.open(filename, 'r').read
+      load_from_string(str, check_moves: check_moves)
+    end
+
+    # Load a PGN from string.
+    # @param [String] str The PGN string to load.
+    # @param [Boolean] check_moves If true check if the moves are legal.
+    # @return [Pgn] Returns `self`.
+    # @raise [InvalidPgnFormatError]
+    # @raise [IllegalMoveError]
+    def load_from_string(str, check_moves: false)
+      str.gsub!(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
-        instance_variable_set("@#{t}", data.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
+        instance_variable_set("@#{t}", str.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
       end
       @result = '1/2-1/2' if @result == '1/2'
-      game_index = data.index(/^1\./)
-      raise Chess::InvalidPgnFormatError.new(filename) if game_index.nil?
+      game_index = str.index(/^1\./)
+      raise Chess::InvalidPgnFormatError.new if game_index.nil?
 
-      game = data[game_index..-1].strip
+      game = str[game_index..-1].strip
       @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].collect { |t| t.split(' ') }.flatten
       @moves.delete_at(@moves.size - 1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
       @moves.each do |m|
         if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
-          raise Chess::InvalidPgnFormatError.new(filename)
+          raise Chess::InvalidPgnFormatError.new
         end
       end
       Chess::Game.new(@moves) if check_moves

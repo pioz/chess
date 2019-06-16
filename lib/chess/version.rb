@@ -1,5 +1,5 @@
 # The Chess library module.
 module Chess
   # The library version.
-  VERSION = '0.2.2'.freeze
+  VERSION = '0.3.0'.freeze
 end

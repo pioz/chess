@@ -10,9 +10,8 @@ module Chess
 
   # This exception will be raised when a malformed PGN file is loaded.
   class InvalidPgnFormatError < StandardError
-    # @param [String] filename The PGN filename
-    def initialize(filename)
-      super("Invalid PGN file '#{filename}'")
+    def initialize
+      super('Invalid PGN format')
     end
   end
 
