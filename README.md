@@ -6,7 +6,7 @@ generator is written in C as a Ruby extension.
 
 ## Requirements
 
-- Ruby 1.9 or higher
+- Ruby 2.0 or higher
 
 ## Installation
 
