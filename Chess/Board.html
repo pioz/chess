@@ -103,11 +103,11 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This class rappresents a chess board. The rappresentation of the board use
-<em>bitboards</em> where each bit represents a game position or state,
-designed for optimization of speed and/or memory or disk use in mass
-calculations. This ensures a fast library.</p>
+    <p>This class rappresents a chess board.
+The rappresentation of the board use <em>bitboards</em> where each bit represents
+a game position or state, designed for optimization of speed and/or memory
+or disk use in mass calculations.
+This ensures a fast library.</p>
 
 
   </div>
@@ -147,8 +147,7 @@ calculations. This ensures a fast library.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the piece on the <code>square</code> of the chessboard.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the piece on the <code>square</code> of the chessboard.</p>
 </div></span>
   
 </li>
@@ -171,9 +170,7 @@ calculations. This ensures a fast library.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the active color: <code>false</code> means white turn,
-<code>true</code> means black turn.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the active color: <code>false</code> means white turn, <code>true</code> means black turn.</p>
 </div></span>
   
 </li>
@@ -196,9 +193,7 @@ calculations. This ensures a fast library.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the king of the color that has the turn is in
-check, <code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if the king of the color that has the turn is in check, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -221,9 +216,7 @@ check, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the king of the color that has the turn is in
-checkmate, <code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if the king of the color that has the turn is in checkmate, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -246,9 +239,7 @@ checkmate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if a player can claim draw by the fifty-move
-rule, <code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if a player can claim draw by the fifty-move rule, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -271,8 +262,7 @@ rule, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the fullmove number: the number of the full move.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the fullmove number: the number of the full move.</p>
 </div></span>
   
 </li>
@@ -295,8 +285,7 @@ rule, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Generate all legal moves for the piece in <code>square</code> position.</p>
+    <span class="summary_desc"><div class='inline'><p>Generate all legal moves for the piece in <code>square</code> position.</p>
 </div></span>
   
 </li>
@@ -319,9 +308,7 @@ rule, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the halfmove clock that is the number of halfmoves since the last
-pawn advance or capture.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the halfmove clock that is the number of halfmoves since the last pawn advance or capture.</p>
 </div></span>
   
 </li>
@@ -344,9 +331,7 @@ pawn advance or capture.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the board has insufficient material to
-checkmate, <code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if the board has insufficient material to checkmate, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -369,9 +354,7 @@ checkmate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if on the board there are only the two kings,
-<code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if on the board there are only the two kings, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -394,8 +377,7 @@ checkmate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> squares.</p>
+    <span class="summary_desc"><div class='inline'><p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> squares.</p>
 </div></span>
   
 </li>
@@ -418,9 +400,7 @@ checkmate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the pieces of the color that has the turn are
-in stalemate, <code>false</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if the pieces of the color that has the turn are in stalemate, <code>false</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -443,8 +423,7 @@ in stalemate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the FEN string of the board.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the FEN string of the board.</p>
 </div></span>
   
 </li>
@@ -467,8 +446,7 @@ in stalemate, <code>false</code> otherwise.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p><span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> to string.</p>
+    <span class="summary_desc"><div class='inline'><p><span class='object_link'><a href="" title="Chess::Board (class)">Board</a></span> to string.</p>
 </div></span>
   
 </li>
@@ -496,17 +474,17 @@ in stalemate, <code>false</code> otherwise.</p>
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns the piece on the <code>square</code> of the chessboard. If there is
-no piece or the square is not valid return <code>nil</code>. Each square on
-the chessboard is represented by an integer according to the following
-scheme:</p>
+    <p>Returns the piece on the <code>square</code> of the chessboard. If there is no piece
+or the square is not valid return <code>nil</code>.
+Each square on the chessboard is represented by an integer according to the
+following scheme:</p>
 
 <pre class="code"><code class="">8 | 56 57 58 59 60 61 62 63
 7 | 48 49 50 51 52 53 54 55
@@ -517,7 +495,8 @@ scheme:</p>
 2 |  8  9 10 11 12 13 14 15
 1 |  0  1  2  3  4  5  6  7
   +-------------------------
-     a  b  c  d  e  f  g  h</code></pre>
+     a  b  c  d  e  f  g  h
+</code></pre>
 
 
   </div>
@@ -536,9 +515,8 @@ scheme:</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string
-like &#39;a2&#39;, &#39;c5&#39;…</p>
+        <div class='inline'><p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer
+between 0 and 63 or a string like ‘a2’, ‘c5’…</p>
 </div>
       
     </li>
@@ -556,10 +534,8 @@ like &#39;a2&#39;, &#39;c5&#39;…</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The symbol that identify the piece <em>(&#39;P&#39;, &#39;R&#39;,
-&#39;N&#39;, &#39;B&#39;, &#39;Q&#39;, &#39;K&#39;)</em>. Upcase for a
-white piece, downcase for a black piece.</p>
+        <div class='inline'><p>The symbol that identify the piece <em>(‘P’, ‘R’, ‘N’, ‘B’,
+‘Q’, ‘K’)</em>. Upcase for a white piece, downcase for a black piece.</p>
 </div>
       
     </li>
@@ -629,15 +605,15 @@ board_get_piece (VALUE self, VALUE square)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns the active color: <code>false</code> means white turn,
-<code>true</code> means black turn.</p>
+    <p>Returns the active color: <code>false</code> means white turn, <code>true</code> means black
+turn.</p>
 
 
   </div>
@@ -709,15 +685,15 @@ board_active_color (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the king of the color that has the turn is in
-check, <code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if the king of the color that has the turn is in check,
+<code>false</code> otherwise.</p>
 
 
   </div>
@@ -789,15 +765,15 @@ board_king_in_check (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the king of the color that has the turn is in
-checkmate, <code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if the king of the color that has the turn is in checkmate,
+<code>false</code> otherwise.</p>
 
 
   </div>
@@ -869,15 +845,15 @@ board_king_in_checkmate (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if a player can claim draw by the fifty-move
-rule, <code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if a player can claim draw by the fifty-move rule, <code>false</code>
+otherwise.</p>
 
 
   </div>
@@ -949,15 +925,15 @@ board_fifty_move_rule (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns the fullmove number: the number of the full move. It starts at 1,
-and * is incremented after black&#39;s move.</p>
+    <p>Returns the fullmove number: the number of the full move. It starts at 1,
+and * is incremented after black’s move.</p>
 
 
   </div>
@@ -1023,14 +999,14 @@ board_fullmove_number (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Generate all legal moves for the piece in <code>square</code> position.</p>
+    <p>Generate all legal moves for the piece in <code>square</code> position.</p>
 
 
   </div>
@@ -1060,9 +1036,8 @@ board_fullmove_number (VALUE self)
       
       
         &mdash;
-        <div class='inline'>
-<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string
-like &#39;a2&#39;, &#39;c5&#39;…</p>
+        <div class='inline'><p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer
+between 0 and 63 or a string like ‘a2’, ‘c5’…</p>
 </div>
       
     </li>
@@ -1080,9 +1055,9 @@ like &#39;a2&#39;, &#39;c5&#39;…</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>Returns all legal moves that the piece in <code>square</code> position can
-perform. The moves are in short algebraic chess notation format.</p>
+        <div class='inline'><p>Returns all legal moves that the piece in <code>square</code>
+position can perform. The moves are in short algebraic chess notation
+format.</p>
 </div>
       
     </li>
@@ -1166,14 +1141,14 @@ board_generate_moves (VALUE self, VALUE square)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns the halfmove clock that is the number of halfmoves since the last
+    <p>Returns the halfmove clock that is the number of halfmoves since the last
 pawn advance or capture. This is used to determine if a draw can be claimed
 under the fifty-move rule.</p>
 
@@ -1241,15 +1216,15 @@ board_halfmove_clock (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the board has insufficient material to
-checkmate, <code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if the board has insufficient material to checkmate, <code>false</code>
+otherwise.</p>
 
 
   </div>
@@ -1321,15 +1296,15 @@ board_insufficient_material (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if on the board there are only the two kings,
-<code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if on the board there are only the two kings, <code>false</code>
+otherwise.</p>
 
 
   </div>
@@ -1401,14 +1376,14 @@ board_only_kings (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> squares.</p>
+    <p>Cycle the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> squares.</p>
 
 
   </div>
@@ -1426,9 +1401,8 @@ board_only_kings (VALUE self)
       
       
         &mdash;
-        <div class='inline'>
-<p>Calls <code>block</code> once for each square in the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>, passing the
-<code>piece</code> in the square and the <code>index</code> as parameters.</p>
+        <div class='inline'><p>Calls <code>block</code> once for each square in the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>, passing the <code>piece</code> in
+the square and the <code>index</code> as parameters.</p>
 </div>
       
     </li>
@@ -1445,8 +1419,7 @@ board_only_kings (VALUE self)
       
       
         &mdash;
-        <div class='inline'>
-<p>Returns <code>self</code> if a block is given.</p>
+        <div class='inline'><p>Returns <code>self</code> if a block is given.</p>
 </div>
       
     </li>
@@ -1459,8 +1432,7 @@ board_only_kings (VALUE self)
       
       
         &mdash;
-        <div class='inline'>
-<p>Returns the array of pieces if no block is given.</p>
+        <div class='inline'><p>Returns the array of pieces if no block is given.</p>
 </div>
       
     </li>
@@ -1548,15 +1520,15 @@ board_placement (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the pieces of the color that has the turn are
-in stalemate, <code>false</code> otherwise.</p>
+    <p>Returns <code>true</code> if the pieces of the color that has the turn are in
+stalemate, <code>false</code> otherwise.</p>
 
 
   </div>
@@ -1628,14 +1600,14 @@ board_stalemate (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p>Returns the FEN string of the board.</p>
+    <p>Returns the FEN string of the board.</p>
 
 
   </div>
@@ -1707,14 +1679,14 @@ board_to_fen (VALUE self)
   <div class="discussion">
     
 
+
   </div>
 </div>
 <div class="tags">
   
   <div class="docstring">
   <div class="discussion">
-    
-<p><span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> to string.</p>
+    <p><span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span> to string.</p>
 
 
   </div>
@@ -1778,9 +1750,9 @@ board_to_s (VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Thu Aug 17 09:55:31 2017 by
+  Generated on Sun Jun 16 10:37:51 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.19 (ruby-2.6.1).
 </div>
 
     </div>

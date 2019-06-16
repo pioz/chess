@@ -103,8 +103,7 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This class rappresents a chess game.</p>
+    <p>This class rappresents a chess game.</p>
 
 
   </div>
@@ -144,8 +143,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Creates a new game from a FEN string.</p>
+    <span class="summary_desc"><div class='inline'><p>Creates a new game from a FEN string.</p>
 </div></span>
   
 </li>
@@ -168,8 +166,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Creates a new game from a file in PGN format.</p>
+    <span class="summary_desc"><div class='inline'><p>Creates a new game from a file in PGN format.</p>
 </div></span>
   
 </li>
@@ -201,9 +198,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>:white</code> if the active player is the white player,
-<code>:black</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>:white</code> if the active player is the white player, <code>:black</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -226,9 +221,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>:white</code> if the inactive player is the white player,
-<code>:black</code> otherwise.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>:white</code> if the inactive player is the white player, <code>:black</code> otherwise.</p>
 </div></span>
   
 </li>
@@ -253,8 +246,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A new instance of Game.</p>
+    <span class="summary_desc"><div class='inline'><p>A new instance of Game.</p>
 </div></span>
   
 </li>
@@ -263,7 +255,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#move-instance_method" title="#move (instance method)">#<strong>move</strong>(m)  &#x21d2; String </a>
+      <a href="#move-instance_method" title="#move (instance method)">#<strong>move</strong>(notation)  &#x21d2; String </a>
     
 
     
@@ -279,8 +271,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Make a move.</p>
+    <span class="summary_desc"><div class='inline'><p>Make a move.</p>
 </div></span>
   
 </li>
@@ -303,8 +294,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Make the array of moves.</p>
+    <span class="summary_desc"><div class='inline'><p>Make the array of moves.</p>
 </div></span>
   
 </li>
@@ -327,8 +317,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns <code>true</code> if the game is over.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns <code>true</code> if the game is over.</p>
 </div></span>
   
 </li>
@@ -351,8 +340,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the PGN rappresenting the game.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the PGN rappresenting the game.</p>
 </div></span>
   
 </li>
@@ -375,8 +363,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the status of the game.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns the status of the game.</p>
 </div></span>
   
 </li>
@@ -410,8 +397,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns a new instance of Game</p>
+    <p>Returns a new instance of Game</p>
 
 
   </div>
@@ -432,8 +418,7 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>If an array of moves is provided, the moves will be performed.</p>
+        <div class='inline'><p>If an array of moves is provided, the moves will be performed.</p>
 </div>
       
     </li>
@@ -469,12 +454,12 @@
       <pre class="lines">
 
 
-11
-12
-13</pre>
+9
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_moves'>moves</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_moves'>moves</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='op'>|</span> <span class='id identifier rubyid_move'>move</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -505,11 +490,9 @@
     
   <div class="note notetag">
     <strong>Note:</strong>
-    <div class='inline'>
-<p>This game do not have history before the FEN placement.</p>
+    <div class='inline'><p>This game do not have history before the FEN placement.</p>
 </div>
   </div>
-
 
 <p>Creates a new game from a FEN string.</p>
 
@@ -530,8 +513,7 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>The FEN string to laod.</p>
+        <div class='inline'><p>The FEN string to laod.</p>
 </div>
       
     </li>
@@ -571,21 +553,21 @@
       <pre class="lines">
 
 
+41
+42
 43
 44
 45
 46
 47
 48
-49
-50
-51</pre>
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_load_fen'>load_fen</span><span class='lparen'>(</span><span class='id identifier rubyid_fen'>fen</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_fen'>fen</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$</span><span class='regexp_end'>/</span></span>
+  <span class='kw'>if</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='id identifier rubyid_fen'>fen</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_game'>game</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Chess.html" title="Chess (module)">Chess</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Chess::Game (class)">Game</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Chess::Game#initialize (method)">new</a></span></span>
     <span class='id identifier rubyid_game'>game</span><span class='period'>.</span><span class='id identifier rubyid_set_fen!'>set_fen!</span><span class='lparen'>(</span><span class='id identifier rubyid_fen'>fen</span><span class='rparen'>)</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_game'>game</span>
@@ -609,8 +591,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Creates a new game from a file in PGN format.</p>
+    <p>Creates a new game from a file in PGN format.</p>
 
 
   </div>
@@ -629,8 +610,7 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>The path of the PGN to laod.</p>
+        <div class='inline'><p>The path of the PGN to laod.</p>
 </div>
       
     </li>
@@ -688,6 +668,8 @@
       <pre class="lines">
 
 
+19
+20
 21
 22
 23
@@ -701,12 +683,10 @@
 31
 32
 33
-34
-35
-36</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_load_pgn'>load_pgn</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_pgn'>pgn</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Chess.html" title="Chess (module)">Chess</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pgn.html" title="Chess::Pgn (class)">Pgn</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Pgn.html#initialize-instance_method" title="Chess::Pgn#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
@@ -746,9 +726,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>:white</code> if the active player is the white player,
-<code>:black</code> otherwise.</p>
+    <p>Returns <code>:white</code> if the active player is the white player, <code>:black</code>
+otherwise.</p>
 
 
   </div>
@@ -775,12 +754,12 @@
       <pre class="lines">
 
 
-92
-93
-94</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_active_player'>active_player</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_active_color'>active_color</span> <span class='op'>?</span> <span class='symbol'>:black</span> <span class='op'>:</span> <span class='symbol'>:white</span>
@@ -801,9 +780,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>:white</code> if the inactive player is the white player,
-<code>:black</code> otherwise.</p>
+    <p>Returns <code>:white</code> if the inactive player is the white player, <code>:black</code>
+otherwise.</p>
 
 
   </div>
@@ -830,12 +808,12 @@
       <pre class="lines">
 
 
-99
-100
-101</pre>
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inactive_player'>inactive_player</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_active_color'>active_color</span> <span class='op'>?</span> <span class='symbol'>:white</span> <span class='op'>:</span> <span class='symbol'>:black</span>
@@ -848,7 +826,7 @@
       <div class="method_details ">
   <h3 class="signature " id="move-instance_method">
   
-    #<strong>move</strong>(m)  &#x21d2; <tt>String</tt> 
+    #<strong>move</strong>(notation)  &#x21d2; <tt>String</tt> 
   
 
   
@@ -863,11 +841,9 @@
     
   <div class="note notetag">
     <strong>Note:</strong>
-    <div class='inline'>
-<p>This add a new <span class='object_link'><a href="Board.html" title="Chess::Board (class)">Board</a></span> in the <span class='object_link'><a href="" title="Chess::Game (class)">Chess::Game</a></span>.</p>
+    <div class='inline'><p>This add a new <span class='object_link'><a href="Board.html" title="Chess::Board (class)">Board</a></span> in the <span class='object_link'><a href="" title="Chess::Game (class)">Chess::Game</a></span>.</p>
 </div>
   </div>
-
 
 <p>Make a move.</p>
 
@@ -880,7 +856,7 @@
   
     <li>
       
-        <span class='name'>m</span>
+        <span class='name'>notation</span>
       
       
         <span class='type'>(<tt>String</tt>)</span>
@@ -888,10 +864,9 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>Represents the short algebraic chess notation string of the move.
-<code>m</code> can be also <em>from_square</em> plus <em>to_square</em>
-<em>(&#39;e2e4&#39;, …, &#39;b1c3&#39;)</em> (coordinate chess notation).</p>
+        <div class='inline'><p>Represents the short algebraic chess notation string of
+the move. <code>notation</code> can be also <em>from_square</em> plus <em>to_square</em> <em>(‘e2e4’, …,
+‘b1c3’)</em> (coordinate chess notation).</p>
 </div>
       
     </li>
@@ -909,9 +884,8 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>Returns a string that represents the short algebraic chess notation of the
-move.</p>
+        <div class='inline'><p>Returns a string that represents the short algebraic
+chess notation of the move.</p>
 </div>
       
     </li>
@@ -928,8 +902,7 @@ move.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>if the move is illegal.</p>
+        <div class='inline'><p>if the move is illegal.</p>
 </div>
       
     </li>
@@ -942,8 +915,8 @@ move.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>if the short algebraic chess notation is malformed.</p>
+        <div class='inline'><p>if the short algebraic chess notation is
+malformed.</p>
 </div>
       
     </li>
@@ -956,6 +929,8 @@ move.</p>
       <pre class="lines">
 
 
+62
+63
 64
 65
 66
@@ -967,29 +942,23 @@ move.</p>
 72
 73
 74
-75
-76
-77
-78
-79</pre>
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 62</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_move'>move</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span>
-  <span class='kw'>begin</span>
-    <span class='id identifier rubyid_expand'>expand</span> <span class='op'>=</span> <span class='id identifier rubyid_expand_move'>expand_move</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:from</span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_move2'>move2</span><span class='lparen'>(</span><span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:from</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:to</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:promotion</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='kw'>else</span>
-      <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:dis</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:to</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:promotion</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
-  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span>
-    <span class='kw'>if</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DEBUG</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal move &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_m'>m</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;\nStatus: </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span><span class='embexpr_end'>}</span><span class='tstring_content'>\nPlayer turn </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_player'>active_player</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='kw'>else</span>
-      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal move &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_m'>m</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_move'>move</span><span class='lparen'>(</span><span class='id identifier rubyid_notation'>notation</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_expand'>expand</span> <span class='op'>=</span> <span class='id identifier rubyid_expand_move'>expand_move</span><span class='lparen'>(</span><span class='id identifier rubyid_notation'>notation</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:from</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_move2'>move2</span><span class='lparen'>(</span><span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:from</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:to</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:promotion</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:dis</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:to</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_expand'>expand</span><span class='lbracket'>[</span><span class='symbol'>:promotion</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span>
+  <span class='kw'>if</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DEBUG</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal move &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notation'>notation</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;\nStatus: </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span><span class='embexpr_end'>}</span><span class='tstring_content'>\nPlayer turn </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_player'>active_player</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal move &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notation'>notation</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1008,8 +977,7 @@ move.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Make the array of moves.</p>
+    <p>Make the array of moves.</p>
 
 
   </div>
@@ -1028,8 +996,7 @@ move.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The array of moves to performe.</p>
+        <div class='inline'><p>The array of moves to performe.</p>
 </div>
       
     </li>
@@ -1043,12 +1010,12 @@ move.</p>
       <pre class="lines">
 
 
-85
-86
-87</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_moves='>moves=</span><span class='lparen'>(</span><span class='id identifier rubyid_moves'>moves</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_moves'>moves</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='op'>|</span> <span class='id identifier rubyid_move'>move</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -1069,8 +1036,7 @@ move.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns <code>true</code> if the game is over.</p>
+    <p>Returns <code>true</code> if the game is over.</p>
 
 
   </div>
@@ -1097,12 +1063,12 @@ move.</p>
       <pre class="lines">
 
 
-148
-149
-150</pre>
+144
+145
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_over?'>over?</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*</span><span class='tstring_end'>&#39;</span></span>
@@ -1123,8 +1089,7 @@ move.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns the PGN rappresenting the game.</p>
+    <p>Returns the PGN rappresenting the game.</p>
 
 
   </div>
@@ -1151,15 +1116,15 @@ move.</p>
       <pre class="lines">
 
 
+150
+151
+152
+153
 154
-155
-156
-157
-158
-159</pre>
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pgn'>pgn</span>
   <span class='id identifier rubyid_pgn'>pgn</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Chess.html" title="Chess (module)">Chess</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pgn.html" title="Chess::Pgn (class)">Pgn</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Pgn.html#initialize-instance_method" title="Chess::Pgn#initialize (method)">new</a></span></span>
@@ -1183,30 +1148,21 @@ move.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns the status of the game. Possible states are:</p>
-<ul><li>
-<p><code>in_progress</code>: the game is in progress.</p>
-</li><li>
-<p><code>white_won</code>: white player has won with a checkmate.</p>
-</li><li>
-<p><code>black_won</code>: black player has won with a checkmate.</p>
-</li><li>
-<p><code>white_won_resign</code>: white player has won for resign.</p>
-</li><li>
-<p><code>black_won_resign</code>: black player has won for resign.</p>
-</li><li>
-<p><code>stalemate</code>: draw for stalemate.</p>
-</li><li>
-<p><code>insufficient_material</code>: draw for insufficient material to
-checkmate.</p>
-</li><li>
-<p><code>fifty_rule_move</code>: draw for fifty rule move.</p>
-</li><li>
-<p><code>threefold_repetition</code>: draw for threefold_repetition.</p>
-</li><li>
-<p><code>unknown</code>: something went wrong.</p>
-</li></ul>
+    <p>Returns the status of the game.
+Possible states are:</p>
+
+<ul>
+  <li><code>in_progress</code>: the game is in progress.</li>
+  <li><code>white_won</code>: white player has won with a checkmate.</li>
+  <li><code>black_won</code>: black player has won with a checkmate.</li>
+  <li><code>white_won_resign</code>: white player has won for resign.</li>
+  <li><code>black_won_resign</code>: black player has won for resign.</li>
+  <li><code>stalemate</code>: draw for stalemate.</li>
+  <li><code>insufficient_material</code>: draw for insufficient material to checkmate.</li>
+  <li><code>fifty_rule_move</code>: draw for fifty rule move.</li>
+  <li><code>threefold_repetition</code>: draw for threefold_repetition.</li>
+  <li><code>unknown</code>: something went wrong.</li>
+</ul>
 
 
   </div>
@@ -1233,6 +1189,10 @@ checkmate.</p>
       <pre class="lines">
 
 
+113
+114
+115
+116
 117
 118
 119
@@ -1257,14 +1217,10 @@ checkmate.</p>
 138
 139
 140
-141
-142
-143
-144
-145</pre>
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_status'>status</span>
   <span class='kw'>case</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span>
@@ -1305,9 +1261,9 @@ checkmate.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Aug 17 09:55:31 2017 by
+  Generated on Sun Jun 16 10:37:50 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.19 (ruby-2.6.1).
 </div>
 
     </div>

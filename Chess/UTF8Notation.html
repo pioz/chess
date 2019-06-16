@@ -88,12 +88,10 @@
     
   <div class="note notetag">
     <strong>Note:</strong>
-    <div class='inline'>
-<p>To use this utility explicit require is needed: <code>require
-&#39;chess/utf8_notation&#39;</code></p>
+    <div class='inline'><p>To use this utility explicit require is needed: <tt>require
+‘chess/utf8_notation’</tt></p>
 </div>
   </div>
-
 
 <p>With this module is possible call the method <span class='object_link'><a href="#to_utf8-instance_method" title="Chess::UTF8Notation#to_utf8 (method)">#to_utf8</a></span> on a string. This
 method convert the chess piece identifier character into UTF8 chess
@@ -117,14 +115,18 @@ character.</p>
 
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="UTF8_MAP-constant" class="">UTF8_MAP =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="UTF8_MAP-constant" class="">UTF8_MAP =
+          <div class="docstring">
   <div class="discussion">
-    
-<p>Map a piece identifier character with the corresponding UTF8 chess
+    <p>Map a piece identifier character with the corresponding UTF8 chess
 character</p>
 
 
@@ -134,8 +136,8 @@ character</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='lbrace'>{</span>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>P</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♙</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>R</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♖</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>N</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♘</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
@@ -148,9 +150,10 @@ character</p>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>b</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♝</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>q</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♛</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>k</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>♚</span><span class='tstring_end'>&#39;</span></span>
-<span class='rbrace'>}</span></pre></dd>
-    
-  </dl>
+<span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -183,8 +186,7 @@ character</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Replace the piece identifier characters with UTF8 chess characters.</p>
+    <span class="summary_desc"><div class='inline'><p>Replace the piece identifier characters with UTF8 chess characters.</p>
 </div></span>
   
 </li>
@@ -210,8 +212,7 @@ character</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Replace the piece identifier characters with UTF8 chess characters.</p>
+    <p>Replace the piece identifier characters with UTF8 chess characters.</p>
 
 
   </div>
@@ -238,12 +239,12 @@ character</p>
       <pre class="lines">
 
 
-35
-36
-37</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/utf8_notation.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/utf8_notation.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_utf8'>to_utf8</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[PRNBQKprnbqk]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#UTF8_MAP-constant" title="Chess::UTF8Notation::UTF8_MAP (constant)">UTF8_MAP</a></span></span><span class='rparen'>)</span>
@@ -258,9 +259,9 @@ character</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Aug 17 09:55:30 2017 by
+  Generated on Sun Jun 16 10:37:50 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.19 (ruby-2.6.1).
 </div>
 
     </div>
