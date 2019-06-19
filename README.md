@@ -40,5 +40,5 @@ pull request.
 
 ## Copyright
 
-Copyright (c) 2017 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
+Copyright (c) 2019 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
 [LICENSE](https://github.com/pioz/chess/blob/master/LICENSE) for details.
