@@ -11,8 +11,6 @@ Gem::Specification.new do |s|
   s.description = 'A fast chess library that use bitboards to play chess with Ruby.'
   s.license     = 'LGPLv3'
 
-  s.rubyforge_project = 'chess'
-
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
