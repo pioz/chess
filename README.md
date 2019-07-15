@@ -14,21 +14,23 @@ generator is written in C as a Ruby extension.
 
 ## Usage
 
-    require 'chess'
-    g = Chess::Game.new
-    until g.over?
-      begin
-        print "Give me a #{g.active_player} move: "
-        input = gets.chop
-        break if input == 'quit'
-        g << input
-        puts g
-        puts g.moves.last
-      rescue Chess::IllegalMoveError => e
-        puts 'Illegal move!'
-      end
-    end
-    puts g.status
+```ruby
+require 'chess'
+g = Chess::Game.new
+until g.over?
+  begin
+    print "Give me a #{g.active_player} move: "
+    input = gets.chop
+    break if input == 'quit'
+    g << input
+    puts g
+    puts g.moves.last
+  rescue Chess::IllegalMoveError => e
+    puts 'Illegal move!'
+  end
+end
+puts g.status
+```
 
 **Documentation** is available [here](http://pioz.github.com/chess).
 
