@@ -1,5 +1,7 @@
 # Chess
 
+[![Build Status](https://travis-ci.org/pioz/chess.svg?branch=master)](https://travis-ci.org/pioz/chess)
+
 A fast Ruby library to play chess with Ruby. This library is quite fast
 because rappresent the game situations with bitboards. In addition, the move
 generator is written in C as a Ruby extension.
