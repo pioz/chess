@@ -1,1 +1,3 @@
 language: ruby
+before_script:
+  - cd ext && bundle exec ruby extconf.rb && make
