@@ -1,0 +1,22 @@
+# Compile this C chess library
+
+chess:		bitboard.o board.o common.o game.o special.o
+		gcc -g -o chess bitboard.o board.o common.o game.o special.o
+
+bitboard.o:	bitboard.h bitboard.c
+		gcc -g -c bitboard.c -o bitboard.o
+
+board.o:	board.h board.c
+		gcc -g -c board.c -o board.o
+
+common.o:	common.h common.c  
+		gcc -g -c common.c -o common.o
+
+game.o:		game.h game.c  
+		gcc -g -c game.c -o game.o
+
+special.o:	special.h special.c  
+		gcc -g -c special.c -o special.o
+
+clean:
+		rm *.o

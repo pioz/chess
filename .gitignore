@@ -1,0 +1,10 @@
+*.gem
+.bundle
+.yardoc/
+ext/chess
+ext/Makefile
+ext/*.bundle
+ext/*.o
+Gemfile.lock
+main.rb
+pkg/*

@@ -1,0 +1,20 @@
+[Event "GP"]
+[Site "Buenos Aires ARG"]
+[Date "1992.??.??"]
+[Round "3"]
+[White "Hoffman, Alejandro S"]
+[Black "Perez Pietronave, Carlos"]
+[Result "1-0"]
+[WhiteELO "2450"]
+[BlackELO "2265"]
+[WhiteTitle "IM"]
+[BlackTitle "IM"]
+[ECO "A45"]
+[WhiteCountry "ARG"]
+[BlackCountry "ARG"]
+[PlyCount "33"]
+
+1.d4 Nf6 2.Nf3 e6 3.Bg5 h6 4.Bxf6 Qxf6 5.e4 c5 6.e5 Qd8 7.d5 exd5 8.Qxd5 Nc6 9.Bc4 
+Qe7 10.Nc3 d6 11.O-O-O dxe5 12.Bb5 Bd7 13.Nxe5 O-O-O 14.Bxc6 Qg5+ 15.f4 Qxf4+ 16.Kb1 
+bxc6 17.Nxc6 1-0
+

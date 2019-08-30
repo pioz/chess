@@ -1,0 +1,23 @@
+[Event "Lloyds Bank"]
+[Site "London ENG"]
+[Date "1990.07.??"]
+[White "Kaidanov, Gregory S"]
+[Black "Martin, Andrew D"]
+[Result "1-0"]
+[WhiteELO "2540"]
+[BlackELO "2415"]
+[WhiteTitle "IGM"]
+[BlackTitle "IGM"]
+[ECO "A56"]
+[WhiteCountry "URS"]
+[BlackCountry "ENG"]
+[PlyCount "99"]
+
+1.d4 Nf6 2.c4 c5 3.d5 Ne4 4.Qc2 Qa5+ 5.Nd2 Nd6 6.e4 g6 7.Nf3 Bg7 8.Bd3 O-O 9.O-O
+Na6 10.a3 b5 11.cxb5 Nxb5 12.Nc4 Qd8 13.Bg5 Qe8 14.Rfe1 Nac7 15.a4 Nd4 16.Nxd4 Bxd4
+17.Bh6 Na6 18.Qd2 Nb4 19.Bf1 Rb8 20.Rac1 Qd8 21.d6 e6 22.Na3 a6 23.Nc4 Re8 24.Be3
+Nc6 25.Bxd4 Nxd4 26.Rc3 Bb7 27.b4 cxb4 28.Rh3 e5 29.f4 Ne6 30.Nxe5 Bc6 31.Bc4 Rf8
+32.f5 Qg5 33.Qf2 Bxa4 34.Nf3 Qf4 35.fxe6 fxe6 36.Qa2 Bc6 37.Qd2 a5 38.Qxf4 Rxf4
+39.Ne5 Rc8 40.Rhe3 Rff8 41.Ra1 a4 42.Rb1 b3 43.Nxc6 Rxc6 44.Bb5 a3 45.Bxc6 a2 46.Rexb3
+axb1=Q+ 47.Rxb1 dxc6 48.e5 Kg7 49.Rb7+ Kh6 50.Re7 1-0
+

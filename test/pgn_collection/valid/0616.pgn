@@ -1,0 +1,16 @@
+[Event "-"]
+[Site "Cannes Open"]
+[Date "2000.02.20"]
+[Round "2"]
+[White "Grandmougin, O"]
+[Black "Vasilev, Milen"]
+[Result "0-1"]
+[WhiteELO "2139"]
+[BlackELO "2312"]
+[ECO "A57"]
+[PlyCount "42"]
+
+1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 d6 6.e4 Nbd7 7.Qc2 g6 8.b3 Bg7 9.Bb2 Qa5 
+10.Rc1 O-O 11.Nf3 axb5 12.Bxb5 Nxe4 13.Qxe4 Bxc3+ 14.Rxc3 Qxb5 15.a4 Nf6 16.Qh4 
+Qb4 17.Qh6 Qe4+ 18.Kd2 Qxd5+ 19.Rd3 Qh5 20.Qe3 Bf5 21.g4 Nxg4 0-1
+

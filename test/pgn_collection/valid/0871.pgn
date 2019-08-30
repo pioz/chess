@@ -1,0 +1,23 @@
+[Event "-"]
+[Site "Linares ESP"]
+[Date "1995.02.28"]
+[Round "1"]
+[White "Lautier, Joel"]
+[Black "Sokolov, Ivan"]
+[Result "1-0"]
+[WhiteELO "2655"]
+[BlackELO "2645"]
+[WhiteTitle "IGM"]
+[BlackTitle "IGM"]
+[ECO "A40"]
+[WhiteCountry "FRA"]
+[BlackCountry "BIH"]
+[PlyCount "79"]
+
+1.d4 Nf6 2.c4 e6 3.g3 Bb4+ 4.Bd2 Be7 5.Bg2 O-O 6.Nf3 c5 7.dxc5 Bxc5 8.O-O Nc6 9.Nc3 
+h6 10.Bf4 d6 11.Na4 e5 12.Nxc5 exf4 13.Nb3 fxg3 14.hxg3 Be6 15.Rc1 Qd7 16.Qd2 Bh3 
+17.Rfd1 Bxg2 18.Kxg2 Rad8 19.Nbd4 Rfe8 20.Nb5 Ne4 21.Qc2 Qg4 22.Rh1 Rc8 23.Rh4 Qg6 
+24.Rxe4 Rxe4 25.Nxd6 Qxd6 26.Qxe4 Rd8 27.Rc3 Qf6 28.Rb3 Rb8 29.Rb5 g6 30.e3 a6 31.Rb6 
+Qd8 32.c5 Qf8 33.b4 Re8 34.Qf4 Nd8 35.Nd4 h5 36.Qf6 Re7 37.Rd6 Qe8 38.Nf5 gxf5 39.Qg5+ 
+Kf8 40.Rh6 1-0
+
