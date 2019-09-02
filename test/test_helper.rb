@@ -1,8 +1,8 @@
-require 'chess'
 require 'coveralls'
-require 'minitest/autorun'
-
 Coveralls.wear!
+
+require 'chess'
+require 'minitest/autorun'
 
 module TestHelper
   PGN_COLLECTION = 'test/pgn_collection'.freeze
