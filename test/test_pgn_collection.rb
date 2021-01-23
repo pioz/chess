@@ -8,8 +8,8 @@ class ChessTest < Minitest::Test
       game = Chess::Game.new
       pgn.moves.each do |m|
         game.move(m)
-        assert(game.board.check?) if m =~ /\+$/
-        assert(game.board.checkmate?) if m =~ /\#$/
+        assert(game.board.check?) if m.match?(/\+$/)
+        assert(game.board.checkmate?) if m.match?(/\#$/)
       end
     end
     define_method "test_pgn_result_#{name}" do

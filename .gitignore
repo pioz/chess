@@ -1,6 +1,7 @@
 *.gem
 .bundle
 .yardoc/
+coverage
 ext/chess
 ext/Makefile
 ext/*.bundle

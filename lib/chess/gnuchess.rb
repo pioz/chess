@@ -46,69 +46,65 @@ module Chess
     class << self
       private
 
-        def included(_mod)
-          raise_if_gnuchess_is_not_installed
-        end
+      def included(_mod)
+        raise_if_gnuchess_is_not_installed
+      end
 
-        def extended(_mod)
-          raise_if_gnuchess_is_not_installed
-        end
+      def extended(_mod)
+        raise_if_gnuchess_is_not_installed
+      end
 
-        # Raise an exception if Gnuchess is not installed
-        def raise_if_gnuchess_is_not_installed
-          unless find_executable0('gnuchess')
-            raise 'You must install Gnuchess to use the module Chess::Gnuchess!'
-          end
-        end
+      # Raise an exception if Gnuchess is not installed
+      def raise_if_gnuchess_is_not_installed
+        raise 'You must install Gnuchess to use the module Chess::Gnuchess!' unless find_executable0('gnuchess')
+      end
     end
 
     private
 
-      def gen_pgn(file_to_save, moves = [])
-        done = false
-        pipe = IO.popen('gnuchess', 'r+')
-        begin
-          pipe.write("depth 1\n")
-          pipe.write("force\n")
-          pipe.write("name chess.rb\n")
-          moves.each do |move|
-            pipe.write("#{move}\n")
-          end
-          until done
-            pipe.write("go\n")
-            while (line = pipe.gets)
-              if /My move is : /.match?(line)
-                break
-              elsif / : resign/.match?(line)
-                break
-              elsif / : 1-0 {White mates}/.match?(line)
-                done = :white_won
-                break
-              elsif / : 0-1 {Black mates}/.match?(line)
-                done = :black_won
-                break
-              elsif (m = line.match(/1\/2-1\/2 {(.*?)}/))
-                case m[1]
-                when 'Stalemate'
-                  done = :stalemate
-                when 'Draw by repetition'
-                  done = :repetition
-                when 'Draw by fifty-move rule'
-                  done = :fifty_move_rule
-                when 'Draw by insufficient material'
-                  done = :insufficient_material
-                end
-                break
+    def gen_pgn(file_to_save, moves = [])
+      done = false
+      pipe = IO.popen('gnuchess', 'r+')
+      begin
+        pipe.write("depth 1\n")
+        pipe.write("force\n")
+        pipe.write("name chess.rb\n")
+        moves.each do |move|
+          pipe.write("#{move}\n")
+        end
+        until done
+          pipe.write("go\n")
+          while (line = pipe.gets)
+            break if /My move is : /.match?(line) || / : resign/.match?(line)
+
+            if / : 1-0 {White mates}/.match?(line)
+              done = :white_won
+              break
+            elsif / : 0-1 {Black mates}/.match?(line)
+              done = :black_won
+              break
+            elsif (m = line.match(/1\/2-1\/2 {(.*?)}/))
+              case m[1]
+              when 'Stalemate'
+                done = :stalemate
+              when 'Draw by repetition'
+                done = :repetition
+              when 'Draw by fifty-move rule'
+                done = :fifty_move_rule
+              when 'Draw by insufficient material'
+                done = :insufficient_material
               end
+              break
             end
           end
-          dir = File.dirname(file_to_save)
-          name = File.basename(file_to_save)
-          pipe.write("pgnsave #{File.join(dir, done.to_s, name)}\n")
-        ensure
-          pipe.write("quit\n")
-          pipe.close
         end
+        dir = File.dirname(file_to_save)
+        name = File.basename(file_to_save)
+        pipe.write("pgnsave #{File.join(dir, done.to_s, name)}\n")
+      ensure
+        pipe.write("quit\n")
+        pipe.close
       end
+    end
   end
 end

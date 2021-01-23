@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ChessTest < Minitest::Test
   GENS = {
-    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w K - 0 1' => { 'e1' => ['Kd1', 'Ke2', 'Kf2', 'Kf1', 'O-O'] },
+    'r2qk3/8/2n5/8/8/8/p2B4/4K2R w K - 0 1' => { 'e1' => %w[Kd1 Ke2 Kf2 Kf1 O-O] },
     'r2qk3/8/2n5/8/8/8/p2B4/4K2R w - - 0 1' => { 'e1' => %w[Kd1 Ke2 Kf2 Kf1] },
     'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R w K - 0 1' => { 'e1' => %w[Kd1 Ke2 Kf1] },
     'r2qk3/8/2n5/2b5/8/8/p2B4/4K2R b K - 0 1' => { 'a2' => ['a1=Q'] },
