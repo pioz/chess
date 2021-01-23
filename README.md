@@ -1,6 +1,6 @@
 # Chess
 
-![Test](https://github.com/pioz/chess/workflows/Test/badge.svg)
+![build](https://github.com/pioz/chess/workflows/Ruby/badge.svg)
 
 A fast Ruby gem to play chess with Ruby. This library is quite fast because manage game situations with [bitboards](https://en.wikipedia.org/wiki/Bitboard). Also, the move generator is written in C as a Ruby extension.
 
