@@ -1,5 +1,4 @@
 module Chess
-  # rubocop:disable Style/AsciiComments
   # With this module is possible call the method {#to_utf8} on a string. This
   # method convert the chess piece identifier character into UTF8 chess
   # character.
@@ -7,11 +6,10 @@ module Chess
   #   :001 > require 'chess/utf8_notation'
   #   => true
   #   :002 > 'Qf7#'.to_utf8
-  #   => '♕f7#'
+  #   => '♕f7#' # rubocop:disable Style/AsciiComments
   #
   # @note To use this utility explicit require is needed: <tt>require
   #   'chess/utf8_notation'</tt>
-  # rubocop:enable Style/AsciiComments
   module UTF8Notation
     # Map a piece identifier character with the corresponding UTF8 chess
     # character

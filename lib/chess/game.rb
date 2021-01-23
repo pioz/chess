@@ -149,7 +149,7 @@ module Chess
     #
     #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
     def expand_move(notation)
-      if (match = notation.match(Chess::MOVE_REGEXP))
+      if (match = notation.match(MOVE_REGEXP))
         expand = {
           name: match[1] || 'P',    # Piece name [RNBQK]
           dis: match[2],            # Disambiguating move
@@ -174,4 +174,7 @@ module Chess
   MOVE_REGEXP = /^([RNBQK])?([a-h]|[1-8]|[a-h][1-8])?(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/.freeze
   SHORT_CASTLING_REGEXP = /^([0O])-([0O])([+#])?$/.freeze
   LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([+#])?$/.freeze
+  private_constant :MOVE_REGEXP
+  private_constant :SHORT_CASTLING_REGEXP
+  private_constant :LONG_CASTLING_REGEXP
 end
