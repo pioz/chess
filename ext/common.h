@@ -12,11 +12,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "ruby.h"
 
 // Boolean definition
 
-#if RUBY_VERSION_MAJOR >= 3
+#ifndef RUBY_BACKWARD2_BOOL_H
 #define FALSE 0
 #define TRUE 1
 typedef unsigned short bool;
