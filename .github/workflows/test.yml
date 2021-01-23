@@ -28,6 +28,11 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Compile extension
+      working-directory: ./ext
+      run: |
+        ruby extconf.rb
+        make
     - name: Run tests
       run: bundle exec rake test
     - name: Run Rubocop
