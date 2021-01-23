@@ -12,10 +12,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "ruby.h"
 
-// Macros
+// Boolean definition
+
+#if RUBY_VERSION_MAJOR >= 3
 #define FALSE 0
 #define TRUE 1
+typedef unsigned short bool;
+#endif
+
+// Macros
 
 #define A1 0
 #define B1 1
@@ -94,8 +101,6 @@
 #define BLACK_WON 1
 #define DRAW 2
 #define IN_PROGRESS 3
-
-typedef unsigned short bool;
 
 char square_to_file (int square);
 char square_to_rank (int square);
