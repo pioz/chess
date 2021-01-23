@@ -6,7 +6,7 @@ A fast Ruby gem to play chess with Ruby. This library is quite fast because mana
 
 ## Requirements
 
-- Ruby 2.0 or higher
+- Ruby 2.4 or higher
 
 ## Installation
 
@@ -16,6 +16,7 @@ A fast Ruby gem to play chess with Ruby. This library is quite fast because mana
 
 ```ruby
 require 'chess'
+
 g = Chess::Game.new
 until g.over?
   begin
@@ -42,5 +43,5 @@ pull request.
 
 ## Copyright
 
-Copyright (c) 2019 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
+Copyright (c) 2021 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
 [LICENSE](https://github.com/pioz/chess/blob/master/LICENSE) for details.
