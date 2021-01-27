@@ -17,12 +17,14 @@ Gem::Specification.new do |s|
   s.extensions    = ['ext/extconf.rb']
   s.require_paths = ['lib']
 
-  s.required_ruby_version = '>= 2.0'
+  s.required_ruby_version = '>= 2.4'
   s.add_development_dependency 'bundler', '~> 2'
   s.add_development_dependency 'coveralls', '~> 0.8'
   s.add_development_dependency 'minitest', '~> 5'
-  s.add_development_dependency 'rake', '~> 12'
-  s.add_development_dependency 'rubocop', '~> 0.71'
+  s.add_development_dependency 'rake', '~> 13'
+  s.add_development_dependency 'rubocop', '~> 1'
+  s.add_development_dependency 'rubocop-minitest', '~> 0.10'
   s.add_development_dependency 'rubocop-performance', '~> 1'
+  s.add_development_dependency 'rubocop-rake', '~> 0.5'
   s.add_development_dependency 'yard', '~> 0.9'
 end

@@ -11,7 +11,7 @@ class ChessTest < Minitest::Test
       define_method "test_big_pgn_#{filename}" do
         pgn = Chess::Pgn.new(path)
         game = Chess::Game.new(pgn.moves)
-        assert(game.checkmate?) if pgn.moves.last =~ /\#$/
+        assert(game.checkmate?) if pgn.moves.last.match?(/\#$/)
       end
     end
   end

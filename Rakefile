@@ -6,6 +6,7 @@ YARD::Rake::YardocTask.new do |t|
   t.options << '-rREADME.md'
   t.options << '--title=Chess'
   t.options << '-mmarkdown'
+  t.options << '--output-dir=docs'
 end
 
 require 'rake/testtask'

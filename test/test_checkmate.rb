@@ -9,11 +9,11 @@ class ChessTest < Minitest::Test
       game = Chess::Game.new(pgn.moves)
       assert(game.board.checkmate?)
       if file.include?('white_won')
-        assert_equal(game.result, '1-0')
-        assert_equal(game.active_player, :black)
+        assert_equal('1-0', game.result)
+        assert_equal(:black, game.active_player)
       elsif file.include?('black_won')
-        assert_equal(game.result, '0-1')
-        assert_equal(game.active_player, :white)
+        assert_equal('0-1', game.result)
+        assert_equal(:white, game.active_player)
       end
     end
   end

@@ -7,7 +7,7 @@ class ChessTest < Minitest::Test
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new(pgn.moves)
       assert(game.board.stalemate?)
-      assert_equal(game.result, '1/2-1/2')
+      assert_equal('1/2-1/2', game.result)
     end
   end
 end

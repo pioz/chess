@@ -7,6 +7,7 @@ module Chess
     # @raise [IllegalMoveError]
     # @raise [BadNotationError]
     def initialize(moves = [])
+      super()
       moves.each { |m| move(m) }
     end
 
@@ -20,7 +21,7 @@ module Chess
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new
       pgn.moves.each { |m| game.move(m) }
-      if !game.over?
+      unless game.over?
         case pgn.result
         when '1-0'
           game.resign(:black)
@@ -39,13 +40,11 @@ module Chess
     # @raise [InvalidFenFormatError]
     # @note This game do not have history before the FEN placement.
     def self.load_fen(fen)
-      if /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/.match?(fen)
-        game = Chess::Game.new
-        game.set_fen!(fen)
-        return game
-      else
-        raise InvalidFenFormatError.new(fen)
-      end
+      raise InvalidFenFormatError.new(fen) unless /^((?:[PRNBQKprnbqk1-8]{1,8}\/){7}[RNBQKPrnbqkp1-8]{1,8})\s(w|b)\s(K?Q?k?q?|-)\s([a-h][1-8]|-)\s(\d+)\s(\d+)$/.match?(fen)
+
+      game = Chess::Game.new
+      game.set_fen!(fen)
+      return game
     end
 
     # Make a move.
@@ -67,11 +66,9 @@ module Chess
         super(expand[:name], expand[:dis], expand[:to], expand[:promotion])
       end
     rescue IllegalMoveError
-      if ENV['DEBUG']
-        raise IllegalMoveError.new("Illegal move '#{notation}'\nStatus: #{self.status}\nPlayer turn #{self.active_player}\n#{self}")
-      else
-        raise IllegalMoveError.new("Illegal move '#{notation}'")
-      end
+      raise IllegalMoveError.new("Illegal move '#{notation}'\nStatus: #{self.status}\nPlayer turn #{self.active_player}\n#{self}") if ENV['DEBUG']
+
+      raise IllegalMoveError.new("Illegal move '#{notation}'")
     end
     alias move= move
     alias << move
@@ -115,27 +112,19 @@ module Chess
       when '*'
         return :in_progress
       when '1-0'
-        if self.board.checkmate?
-          return :white_won
-        else
-          return :white_won_resign
-        end
+        return :white_won if self.board.checkmate?
+
+        return :white_won_resign
       when '0-1'
-        if self.board.checkmate?
-          return :black_won
-        else
-          return :black_won_resign
-        end
+        return :black_won if self.board.checkmate?
+
+        return :black_won_resign
       when '1/2-1/2'
-        if self.board.stalemate?
-          return :stalemate
-        elsif self.board.insufficient_material?
-          return :insufficient_material
-        elsif self.board.fifty_rule_move?
-          return :fifty_rule_move
-        elsif self.threefold_repetition?
-          return :threefold_repetition
-        end
+        return :stalemate if self.board.stalemate?
+        return :insufficient_material if self.board.insufficient_material?
+        return :fifty_rule_move if self.board.fifty_rule_move?
+
+        return :threefold_repetition if self.threefold_repetition?
       end
       return :unknown
     end
@@ -156,37 +145,36 @@ module Chess
 
     private
 
-      # Expand the short algebraic chess notation string `notation` in a hash like this:
-      #
-      #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
-      def expand_move(notation)
-        if (match = notation.match(Chess::MOVE_REGEXP))
-          expand = {
-            name: match[1] || 'P',    # Piece name [RNBQK]
-            dis: match[2],            # Disambiguating move
-            to: match[3],             # Move to
-            promotion: match[4]      # Promote with
-          }
-          expand[:from] = match[2] if match[2] && match[2].size == 2
-          return expand
-        elsif SHORT_CASTLING_REGEXP.match?(notation)
-          if self.board.active_color # black king short castling
-            return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil }
-          else # white king short castling
-            return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil }
-          end
-        elsif LONG_CASTLING_REGEXP.match?(notation)
-          if self.board.active_color # black king long castling
-            return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil }
-          else # white king long castling
-            return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil }
-          end
-        end
-        raise BadNotationError.new(notation)
+    # Expand the short algebraic chess notation string `notation` in a hash like this:
+    #
+    #     Ngxe2 ==> { name: 'N', dis: 'g', from: nil, to: 'e2', promotion: nil }
+    def expand_move(notation)
+      if (match = notation.match(MOVE_REGEXP))
+        expand = {
+          name: match[1] || 'P',    # Piece name [RNBQK]
+          dis: match[2],            # Disambiguating move
+          to: match[3],             # Move to
+          promotion: match[4]       # Promote with
+        }
+        expand[:from] = match[2] if match[2] && match[2].size == 2
+        return expand
+      elsif SHORT_CASTLING_REGEXP.match?(notation)
+        return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil } if self.board.active_color # black king short castling
+
+        return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil } # white king short castling
+      elsif LONG_CASTLING_REGEXP.match?(notation)
+        return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil } if self.board.active_color # black king long castling
+
+        return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil } # white king long castling
       end
+      raise BadNotationError.new(notation)
+    end
   end
 
   MOVE_REGEXP = /^([RNBQK])?([a-h]|[1-8]|[a-h][1-8])?(?:x)?([a-h][1-8])(?:=?([RrNnBbQq]))?(?:ep)?(?:\+|\#)?$/.freeze
-  SHORT_CASTLING_REGEXP = /^([0O])-([0O])([\+#])?$/.freeze
-  LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([\+#])?$/.freeze
+  SHORT_CASTLING_REGEXP = /^([0O])-([0O])([+#])?$/.freeze
+  LONG_CASTLING_REGEXP = /^([0O])-([0O])-([0O])([+#])?$/.freeze
+  private_constant :MOVE_REGEXP
+  private_constant :SHORT_CASTLING_REGEXP
+  private_constant :LONG_CASTLING_REGEXP
 end

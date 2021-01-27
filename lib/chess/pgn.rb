@@ -70,12 +70,10 @@ module Chess
       raise Chess::InvalidPgnFormatError.new if game_index.nil?
 
       game = str[game_index..-1].strip
-      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].collect { |t| t.split(' ') }.flatten
-      @moves.delete_at(@moves.size - 1) if @moves.last =~ /(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/
+      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].map(&:split).flatten
+      @moves.delete_at(@moves.size - 1) if @moves.last.match?(/(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/)
       @moves.each do |m|
-        if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
-          raise Chess::InvalidPgnFormatError.new
-        end
+        raise Chess::InvalidPgnFormatError.new if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
       end
       Chess::Game.new(@moves) if check_moves
       return self
@@ -109,11 +107,12 @@ module Chess
 
     # Set the date tag.
     def date=(value)
-      if value.is_a?(Time)
-        @date = value.strftime('%Y.%m.%d')
-      else
-        @date = value
-      end
+      @date =
+        if value.is_a?(Time)
+          value.strftime('%Y.%m.%d')
+        else
+          value
+        end
     end
   end
 end

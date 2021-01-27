@@ -1,14 +1,12 @@
 # Chess
 
-[![Build Status](https://travis-ci.org/pioz/chess.svg?branch=master)](https://travis-ci.org/pioz/chess)
+![build](https://github.com/pioz/chess/workflows/Ruby/badge.svg)
 
-A fast Ruby library to play chess with Ruby. This library is quite fast
-because rappresent the game situations with bitboards. In addition, the move
-generator is written in C as a Ruby extension.
+A fast Ruby gem to play chess with Ruby. This library is quite fast because manage game situations with [bitboards](https://en.wikipedia.org/wiki/Bitboard). Also, the move generator is written in C as a Ruby extension.
 
 ## Requirements
 
-- Ruby 2.0 or higher
+- Ruby 2.4 or higher
 
 ## Installation
 
@@ -18,6 +16,7 @@ generator is written in C as a Ruby extension.
 
 ```ruby
 require 'chess'
+
 g = Chess::Game.new
 until g.over?
   begin
@@ -34,7 +33,7 @@ end
 puts g.status
 ```
 
-**Documentation** is available [here](http://pioz.github.com/chess).
+**Documentation** is available **[here](http://pioz.github.com/chess)**.
 
 ## Questions or problems?
 
@@ -44,5 +43,5 @@ pull request.
 
 ## Copyright
 
-Copyright (c) 2019 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
+Copyright (c) 2021 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
 [LICENSE](https://github.com/pioz/chess/blob/master/LICENSE) for details.
