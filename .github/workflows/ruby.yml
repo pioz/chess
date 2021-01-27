@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.4', '2.6', '2.7', '3.0']
+        ruby-version: ['2.5', '2.6', '2.7', '3.0']
 
     steps:
       - uses: actions/checkout@v2
@@ -34,16 +34,18 @@ jobs:
           make
       - name: Run tests
         run: bundle exec rake test
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          CODECOV: true
+      # - name: Upload coverage report to Codecov
+      #   uses: codecov/codecov-action@v1
+      #   with:
+      #     file: ./coverage/.resultset.json
 
   rubocop:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.4', '2.6', '2.7', '3.0']
+        ruby-version: ['2.5', '2.6', '2.7', '3.0']
 
     steps:
       - uses: actions/checkout@v2

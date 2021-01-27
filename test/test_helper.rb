@@ -1,5 +1,9 @@
-require 'coveralls'
-Coveralls.wear!
+require 'simplecov'
+SimpleCov.start
+if ENV['CODECOV'] == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 require 'chess'
 require 'minitest/autorun'

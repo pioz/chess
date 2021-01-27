@@ -1,12 +1,13 @@
 # Chess
 
 ![build](https://github.com/pioz/chess/workflows/Ruby/badge.svg)
+[![codecov](https://codecov.io/gh/pioz/chess/branch/master/graph/badge.svg?token=bsSUOW6wWa)](https://codecov.io/gh/pioz/chess)
 
 A fast Ruby gem to play chess with Ruby. This library is quite fast because manage game situations with [bitboards](https://en.wikipedia.org/wiki/Bitboard). Also, the move generator is written in C as a Ruby extension.
 
 ## Requirements
 
-- Ruby 2.4 or higher
+- Ruby 2.5 or higher
 
 ## Installation
 
