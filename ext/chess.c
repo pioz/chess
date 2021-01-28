@@ -723,7 +723,7 @@ Init_chess ()
   rb_define_method (board_klass, "stalemate?", board_stalemate, 0);
   rb_define_method (board_klass, "insufficient_material?", board_insufficient_material, 0);
   rb_define_method (board_klass, "only_kings?", board_only_kings, 0);
-  rb_define_method (board_klass, "fifty_rule_move?", board_fifty_move_rule, 0);
+  rb_define_method (board_klass, "fifty_move_rule?", board_fifty_move_rule, 0);
   rb_define_method (board_klass, "active_color", board_active_color, 0);
   rb_define_method (board_klass, "halfmove_clock", board_halfmove_clock, 0);
   rb_define_method (board_klass, "fullmove_number", board_fullmove_number, 0);

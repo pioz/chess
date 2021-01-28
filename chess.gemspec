@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.5'
   s.add_development_dependency 'bundler', '~> 2'
+  s.add_development_dependency 'byebug', '~> 11'
   s.add_development_dependency 'codecov', '~> 0.4'
   s.add_development_dependency 'minitest', '~> 5'
   s.add_development_dependency 'rake', '~> 13'

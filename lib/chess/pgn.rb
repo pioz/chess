@@ -40,7 +40,6 @@ module Chess
     def initialize(filename = nil, check_moves: false)
       self.load(filename, check_moves: check_moves) if filename
       @date = '??'
-      @round = '1'
     end
 
     # Load a PGN from file.
@@ -83,7 +82,7 @@ module Chess
     def to_s
       s = ''
       TAGS.each do |t|
-        tag = instance_variable_get("@#{t}")
+        tag = instance_variable_defined?("@#{t}") ? instance_variable_get("@#{t}") : ''
         s << "[#{t.capitalize} \"#{tag}\"]\n"
       end
       s << "\n"

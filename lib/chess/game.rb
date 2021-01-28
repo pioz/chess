@@ -103,9 +103,8 @@ module Chess
     # * `black_won_resign`: black player has won for resign.
     # * `stalemate`: draw for stalemate.
     # * `insufficient_material`: draw for insufficient material to checkmate.
-    # * `fifty_rule_move`: draw for fifty rule move.
+    # * `fifty_move_rule`: draw for fifty rule move.
     # * `threefold_repetition`: draw for threefold_repetition.
-    # * `unknown`: something went wrong.
     # @return [String]
     def status
       case self.result
@@ -122,11 +121,10 @@ module Chess
       when '1/2-1/2'
         return :stalemate if self.board.stalemate?
         return :insufficient_material if self.board.insufficient_material?
-        return :fifty_rule_move if self.board.fifty_rule_move?
+        return :fifty_move_rule if self.board.fifty_move_rule?
 
         return :threefold_repetition if self.threefold_repetition?
       end
-      return :unknown
     end
 
     # Returns `true` if the game is over.

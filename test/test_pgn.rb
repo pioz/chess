@@ -67,4 +67,39 @@ class ChessTest < Minitest::Test
     assert_nil pgn.result
     assert_equal 'Re6', pgn.moves.last
   end
+
+  def test_write_pgn
+    tempfile = Tempfile.new('test_pgn')
+    game = Chess::Game.new
+    game.moves = %w[e4 e5 d3]
+    pgn = game.pgn
+    pgn.event = 'Ruby Chess Tournament'
+    pgn.site = 'Ruby Chess test suite'
+    pgn.date = '1984.10.21'
+    pgn.round = '2'
+    pgn.white = 'Pioz'
+    pgn.black = 'Elizabeth Harmon'
+    pgn.write(tempfile.path)
+
+    loaded_pgn = Chess::Pgn.new
+    loaded_pgn.load(tempfile.path)
+    tempfile.delete
+    assert_equal 'Ruby Chess Tournament', loaded_pgn.event
+    assert_equal 'Ruby Chess test suite', loaded_pgn.site
+    assert_equal '1984.10.21', loaded_pgn.date
+    assert_equal '2', loaded_pgn.round
+    assert_equal 'Pioz', loaded_pgn.white
+    assert_equal 'Elizabeth Harmon', loaded_pgn.black
+    assert_equal '*', loaded_pgn.result
+    assert_equal %w[e4 e5 d3], loaded_pgn.moves
+  end
+
+  def test_set_date
+    pgn = Chess::Pgn.new
+    pgn.date = Time.parse('21-10-1984')
+    assert_equal '1984.10.21', pgn.date
+
+    pgn.date = '1984.10.21'
+    assert_equal '1984.10.21', pgn.date
+  end
 end
