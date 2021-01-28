@@ -1080,12 +1080,12 @@
       <pre class="lines">
 
 
-133
-134
-135</pre>
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_over?'>over?</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*</span><span class='tstring_end'>&#39;</span></span>
@@ -1134,15 +1134,15 @@
       <pre class="lines">
 
 
+137
+138
 139
 140
 141
-142
-143
-144</pre>
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pgn'>pgn</span>
   <span class='id identifier rubyid_pgn'>pgn</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Chess.html" title="Chess (module)">Chess</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pgn.html" title="Chess::Pgn (class)">Pgn</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Pgn.html#initialize-instance_method" title="Chess::Pgn#initialize (method)">new</a></span></span>
@@ -1183,11 +1183,9 @@
 </li><li>
 <p><code>insufficient_material</code>: draw for insufficient material to checkmate.</p>
 </li><li>
-<p><code>fifty_rule_move</code>: draw for fifty rule move.</p>
+<p><code>fifty_move_rule</code>: draw for fifty rule move.</p>
 </li><li>
 <p><code>threefold_repetition</code>: draw for threefold_repetition.</p>
-</li><li>
-<p><code>unknown</code>: something went wrong.</p>
 </li></ul>
 
 
@@ -1215,6 +1213,7 @@
       <pre class="lines">
 
 
+109
 110
 111
 112
@@ -1233,12 +1232,10 @@
 125
 126
 127
-128
-129
-130</pre>
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/chess/game.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_status'>status</span>
   <span class='kw'>case</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span>
@@ -1255,11 +1252,10 @@
   <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1/2-1/2</span><span class='tstring_end'>&#39;</span></span>
     <span class='kw'>return</span> <span class='symbol'>:stalemate</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_stalemate?'>stalemate?</span>
     <span class='kw'>return</span> <span class='symbol'>:insufficient_material</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_insufficient_material?'>insufficient_material?</span>
-    <span class='kw'>return</span> <span class='symbol'>:fifty_rule_move</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_fifty_rule_move?'>fifty_rule_move?</span>
+    <span class='kw'>return</span> <span class='symbol'>:fifty_move_rule</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_board'>board</span><span class='period'>.</span><span class='id identifier rubyid_fifty_move_rule?'>fifty_move_rule?</span>
 
     <span class='kw'>return</span> <span class='symbol'>:threefold_repetition</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_threefold_repetition?'>threefold_repetition?</span>
   <span class='kw'>end</span>
-  <span class='kw'>return</span> <span class='symbol'>:unknown</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1271,9 +1267,9 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jan 23 20:21:29 2021 by
+  Generated on Thu Jan 28 17:21:55 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-2.6.1).
 </div>
 
     </div>
