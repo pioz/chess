@@ -103,9 +103,9 @@ module Chess
     # * `black_won_resign`: black player has won for resign.
     # * `stalemate`: draw for stalemate.
     # * `insufficient_material`: draw for insufficient material to checkmate.
-    # * `fifty_move_rule`: draw for fifty rule move.
-    # * `threefold_repetition`: draw for threefold_repetition.
-    # @return [String]
+    # * `fifty_move_rule`: draw for fifty-move rule.
+    # * `threefold_repetition`: draw for threefold repetition.
+    # @return [Symbol]
     def status
       case self.result
       when '*'
@@ -133,7 +133,7 @@ module Chess
     end
 
     # Returns the PGN rappresenting the game.
-    # @return [String]
+    # @return [Chess::Pgn]
     def pgn
       pgn = Chess::Pgn.new
       pgn.moves = self.moves
