@@ -34,7 +34,7 @@ end
 puts g.status
 ```
 
-**Documentation** is available **[here](http://pioz.github.com/chess)**.
+**Documentation** is available **[here](http://pioz.github.io/chess)**.
 
 ## Questions or problems?
 
