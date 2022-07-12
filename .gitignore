@@ -1,6 +1,7 @@
 *.gem
 .bundle
 .byebug_history
+.ruby-version
 .yardoc/
 coverage/
 ext/chess
