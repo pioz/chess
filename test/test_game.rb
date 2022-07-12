@@ -24,7 +24,7 @@ class ChessTest < Minitest::Test
     game.resign(:black)
     assert_equal :white_won_resign, game.status
     assert game.over?
-    assert '1-0', game.result
+    assert_equal '1-0', game.result
   end
 
   def test_status_black_won_resign
@@ -33,7 +33,7 @@ class ChessTest < Minitest::Test
     game.resign(:white)
     assert_equal :black_won_resign, game.status
     assert game.over?
-    assert '0-1', game.result
+    assert_equal '0-1', game.result
   end
 
   def test_status_insufficient_material

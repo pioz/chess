@@ -49,7 +49,7 @@ module Chess
     # @raise [InvalidPgnFormatError]
     # @raise [IllegalMoveError]
     def load(filename, check_moves: false)
-      str = File.open(filename, 'r').read
+      str = File.read(filename)
       load_from_string(str, check_moves: check_moves)
     end
 
@@ -88,7 +88,7 @@ module Chess
       s << "\n"
       m = ''
       @moves.each_with_index do |move, i|
-        m << "#{i / 2 + 1}. " if i.even?
+        m << "#{(i / 2) + 1}. " if i.even?
         m << "#{move} "
       end
       m << @result unless @result.nil?
@@ -98,7 +98,7 @@ module Chess
     # Write PGN to file.
     # @param [String] filename The path of the PGN file.
     def write(filename)
-      File.open(filename, 'w') { |f| f.write(self.to_s) }
+      File.write(filename, self.to_s)
     end
 
     # # @!visibility private

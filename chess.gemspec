@@ -12,21 +12,22 @@ Gem::Specification.new do |s|
   s.license     = 'LGPLv3'
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.extensions    = ['ext/extconf.rb']
   s.require_paths = ['lib']
 
+  s.metadata['rubygems_mfa_required'] = 'true'
+
   s.required_ruby_version = '>= 2.5'
   s.add_development_dependency 'bundler', '~> 2'
   s.add_development_dependency 'byebug', '~> 11'
-  s.add_development_dependency 'codecov', '~> 0.4'
+  s.add_development_dependency 'codecov', '~> 0'
   s.add_development_dependency 'minitest', '~> 5'
   s.add_development_dependency 'rake', '~> 13'
   s.add_development_dependency 'rubocop', '~> 1'
-  s.add_development_dependency 'rubocop-minitest', '~> 0.10'
+  s.add_development_dependency 'rubocop-minitest', '~> 0'
   s.add_development_dependency 'rubocop-performance', '~> 1'
-  s.add_development_dependency 'rubocop-rake', '~> 0.5'
-  s.add_development_dependency 'simplecov', '~> 0.21'
-  s.add_development_dependency 'yard', '~> 0.9'
+  s.add_development_dependency 'rubocop-rake', '~> 0'
+  s.add_development_dependency 'simplecov', '~> 0'
+  s.add_development_dependency 'yard', '~> 0'
 end
