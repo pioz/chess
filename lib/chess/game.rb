@@ -155,16 +155,32 @@ module Chess
           promotion: match[4]       # Promote with
         }
         expand[:from] = match[2] if match[2] && match[2].size == 2
+
+        # Support UCI protocol (Lichess)
+        case expand[:from]
+        when 'e1'
+          expand[:to] = 'g1' if expand[:to] == 'h1' # UCI protocol (Lichess) white king short castling
+          expand[:to] = 'c1' if expand[:to] == 'a1' # UCI protocol (Lichess) white king long castling
+        when 'e8'
+          expand[:to] = 'g8' if expand[:to] == 'h8' # UCI protocol (Lichess) black king short castling
+          expand[:to] = 'c8' if expand[:to] == 'a8' # UCI protocol (Lichess) black king long castling
+        end
+
         return expand
-      elsif SHORT_CASTLING_REGEXP.match?(notation)
+      end
+
+      # Castling notation
+      if SHORT_CASTLING_REGEXP.match?(notation)
         return { name: 'K', dis: nil, from: 'e8', to: 'g8', promotion: nil } if self.board.active_color # black king short castling
 
         return { name: 'K', dis: nil, from: 'e1', to: 'g1', promotion: nil } # white king short castling
-      elsif LONG_CASTLING_REGEXP.match?(notation)
+      end
+      if LONG_CASTLING_REGEXP.match?(notation)
         return { name: 'K', dis: nil, from: 'e8', to: 'c8', promotion: nil } if self.board.active_color # black king long castling
 
         return { name: 'K', dis: nil, from: 'e1', to: 'c1', promotion: nil } # white king long castling
       end
+
       raise BadNotationError.new(notation)
     end
   end
