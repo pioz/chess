@@ -4,10 +4,9 @@
 .ruby-version
 .yardoc/
 coverage/
-ext/Makefile
-ext/*.bundle
-ext/*.o
-ext/.sitearchdir.time
+ext/chess/Makefile
+ext/chess/*.bundle
+ext/chess/*.o
 lib/chess/chess.bundle
 main.rb
 pkg/*

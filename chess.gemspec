@@ -1,5 +1,4 @@
-$LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'chess/version'
+require_relative 'lib/chess/version'
 
 Gem::Specification.new do |s|
   s.name        = 'chess'
