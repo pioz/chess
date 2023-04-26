@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  s.extensions    = ['ext/extconf.rb']
+  s.extensions    = ['ext/chess/extconf.rb']
   s.require_paths = ['lib']
 
   s.metadata['rubygems_mfa_required'] = 'true'

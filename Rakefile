@@ -12,7 +12,7 @@ end
 require 'rake/testtask'
 task default: :test
 Rake::TestTask.new do |test|
-  test.libs << 'test'
+  test.libs += %w[ext test]
   test.warning = true
   test.test_files = FileList["test/test_#{ENV.fetch('T', '*')}.rb"]
 end

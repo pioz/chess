@@ -1,5 +1,3 @@
-require File.join(File.dirname(__FILE__), '../../ext/chess')
-
 module Chess
   # This class rappresents a chess game.
   class Game < CGame
