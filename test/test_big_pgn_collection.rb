@@ -8,7 +8,7 @@ class ChessTest < Minitest::Test
       path = File.join(TestHelper::BIG_PGN_COLLECTION, filename)
       break unless File.exist?(path)
 
-      define_method "test_big_pgn_#{filename}" do
+      define_method :"test_big_pgn_#{filename}" do
         pgn = Chess::Pgn.new(path)
         game = Chess::Game.new(pgn.moves)
         assert(game.checkmate?) if pgn.moves.last.match?(/\#$/)

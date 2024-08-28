@@ -3,7 +3,8 @@ require 'test_helper'
 class ChessTest < Minitest::Test
   TestHelper.pgns('invalid').each do |file|
     name = File.basename(file, '.pgn')
-    define_method "test_invalid_pgn_#{name}" do
+
+    define_method :"test_invalid_pgn_#{name}" do
       assert_raises(Chess::InvalidPgnFormatError) do
         Chess::Pgn.new(file)
       end
@@ -12,7 +13,8 @@ class ChessTest < Minitest::Test
 
   TestHelper.pgns('illegal').each do |file|
     name = File.basename(file, '.pgn')
-    define_method "test_illegal_pgn_#{name}" do
+
+    define_method :"test_illegal_pgn_#{name}" do
       assert_raises(Chess::IllegalMoveError) do
         Chess::Pgn.new(file, check_moves: true)
       end
@@ -33,6 +35,7 @@ class ChessTest < Minitest::Test
     PGN
     pgn = Chess::Pgn.new
     pgn.load_from_string(pgn_string, check_moves: true)
+
     assert_equal '70th ch-ITA', pgn.event
     assert_equal 'Siena ITA', pgn.site
     assert_equal '10', pgn.round
@@ -57,6 +60,7 @@ class ChessTest < Minitest::Test
     PGN
     pgn = Chess::Pgn.new
     pgn.load_from_string(pgn_string, check_moves: true)
+
     assert_nil pgn.event
     assert_nil pgn.site
     assert_nil pgn.round
@@ -80,10 +84,10 @@ class ChessTest < Minitest::Test
     pgn.white = 'Pioz'
     pgn.black = 'Elizabeth Harmon'
     pgn.write(tempfile.path)
-
     loaded_pgn = Chess::Pgn.new
     loaded_pgn.load(tempfile.path)
     tempfile.delete
+
     assert_equal 'Ruby Chess Tournament', loaded_pgn.event
     assert_equal 'Ruby Chess test suite', loaded_pgn.site
     assert_equal '1984.10.21', loaded_pgn.date
@@ -97,9 +101,11 @@ class ChessTest < Minitest::Test
   def test_set_date
     pgn = Chess::Pgn.new
     pgn.date = Time.parse('21-10-1984')
+
     assert_equal '1984.10.21', pgn.date
 
     pgn.date = '1984.10.21'
+
     assert_equal '1984.10.21', pgn.date
   end
 end

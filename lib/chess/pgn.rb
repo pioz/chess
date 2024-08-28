@@ -62,7 +62,7 @@ module Chess
     def load_from_string(str, check_moves: false)
       str.gsub!(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
-        instance_variable_set("@#{t}", str.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
+        instance_variable_set(:"@#{t}", str.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
       end
       @result = '1/2-1/2' if @result == '1/2'
       game_index = str.index(/^1\./)
@@ -82,7 +82,7 @@ module Chess
     def to_s
       s = ''
       TAGS.each do |t|
-        tag = instance_variable_defined?("@#{t}") ? instance_variable_get("@#{t}") : ''
+        tag = instance_variable_defined?(:"@#{t}") ? instance_variable_get(:"@#{t}") : ''
         s << "[#{t.capitalize} \"#{tag}\"]\n"
       end
       s << "\n"

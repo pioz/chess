@@ -15,15 +15,17 @@ class ChessTest < Minitest::Test
   ].freeze
 
   FENS.each_with_index do |fen, i|
-    define_method("test_insufficient_material_by_fen_#{i}") do
+    define_method :"test_insufficient_material_by_fen_#{i}" do
       game = Chess::Game.load_fen(fen)
+
       assert game.board.insufficient_material?
     end
   end
 
   ONLY_KINGS_FENS.each_with_index do |fen, i|
-    define_method("test_only_kings_by_fen_#{i}") do
+    define_method :"test_only_kings_by_fen_#{i}" do
       game = Chess::Game.load_fen(fen)
+
       assert game.board.insufficient_material?
       assert game.board.only_kings?
     end
@@ -31,9 +33,11 @@ class ChessTest < Minitest::Test
 
   TestHelper.pgns('insufficient_material').each do |file|
     name = File.basename(file, '.pgn')
-    define_method "test_insufficient_material_#{name}" do
+
+    define_method :"test_insufficient_material_#{name}" do
       pgn = Chess::Pgn.new(file)
       game = Chess::Game.new(pgn.moves)
+
       assert game.board.insufficient_material?
     end
   end

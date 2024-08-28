@@ -35,7 +35,7 @@ jobs:
       - name: Run tests
         run: bundle exec rake test
         env:
-          CODECOV: true
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       # - name: Upload coverage report to Codecov
       #   uses: codecov/codecov-action@v1
       #   with:
@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.6', '2.7', '3.0', '3.1', '3.2']
+        ruby-version: ['2.6', '2.7', '3.0', '3.1', '3.2', '3.3']
 
     steps:
       - uses: actions/checkout@v2

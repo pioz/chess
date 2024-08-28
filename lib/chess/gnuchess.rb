@@ -75,7 +75,8 @@ module Chess
         until done
           pipe.write("go\n")
           while (line = pipe.gets)
-            break if /My move is : /.match?(line) || / : resign/.match?(line)
+            break if line.include?('My move is : ')
+            break if line.include?(' : resign')
 
             if / : 1-0 {White mates}/.match?(line)
               done = :white_won

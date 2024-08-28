@@ -17,10 +17,11 @@ class ChessTest < Minitest::Test
   }.freeze
 
   GENS.each do |fen, generators|
-    define_method("test_move_generator_#{fen}") do
+    define_method :"test_move_generator_#{fen}" do
       game = Chess::Game.load_fen(fen)
       generators.each do |from, moves|
         result = game.board.generate_moves(from)
+
         assert_equal moves.sort, result.sort
       end
     end

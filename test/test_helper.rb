@@ -2,14 +2,14 @@ require 'simplecov'
 SimpleCov.start do
   add_filter 'lib/chess/gnuchess.rb'
 end
-if ENV['CODECOV'] == 'true'
+if ENV['CODECOV_TOKEN'].present?
   require 'codecov'
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
 require 'chess'
+require 'debug'
 require 'minitest/autorun'
-require 'byebug'
 
 module TestHelper
   PGN_COLLECTION = 'test/pgn_collection'.freeze

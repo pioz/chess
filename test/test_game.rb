@@ -4,24 +4,28 @@ class ChessTest < Minitest::Test
   def test_moves
     game = Chess::Game.new
     game.moves = %w[e4 e5]
+
     assert_equal %w[e4 e5], game.moves
   end
 
   def test_active_player
     game = Chess::Game.new
     game << 'a3'
+
     assert_equal :black, game.active_player
   end
 
   def test_inactive_player
     game = Chess::Game.new
     game.moves = %w[a3 f5]
+
     assert_equal :black, game.inactive_player
   end
 
   def test_status_white_won_resign
     game = Chess::Game.new
     game.resign(:black)
+
     assert_equal :white_won_resign, game.status
     assert game.over?
     assert_equal '1-0', game.result
@@ -31,6 +35,7 @@ class ChessTest < Minitest::Test
     game = Chess::Game.new
     game << 'e4'
     game.resign(:white)
+
     assert_equal :black_won_resign, game.status
     assert game.over?
     assert_equal '0-1', game.result
@@ -39,6 +44,7 @@ class ChessTest < Minitest::Test
   def test_status_insufficient_material
     pgn = TestHelper.pick_pgn('insufficient_material/0001.pgn')
     game = Chess::Game.new(pgn.moves)
+
     assert_equal :insufficient_material, game.status
   end
 
@@ -46,6 +52,7 @@ class ChessTest < Minitest::Test
     pgn = TestHelper.pick_pgn('fifty_move_rule/0001.pgn')
     game = Chess::Game.new(pgn.moves)
     game.draw
+
     assert_equal :fifty_move_rule, game.status
   end
 
@@ -53,12 +60,14 @@ class ChessTest < Minitest::Test
     pgn = TestHelper.pick_pgn('threefold_repetition/0001.pgn')
     game = Chess::Game.new(pgn.moves)
     game.draw
+
     assert_equal :threefold_repetition, game.status
   end
 
   def test_pgn
     pgn = TestHelper.pick_pgn('valid/0001.pgn')
     game = Chess::Game.new(pgn.moves)
+
     expected_pgn = <<~PGN
       [Event ""]
       [Site ""]

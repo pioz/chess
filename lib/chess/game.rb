@@ -155,13 +155,8 @@ module Chess
         expand[:from] = match[2] if match[2] && match[2].size == 2
 
         # Support UCI protocol (Lichess)
-        if expand[:from] == 'e1' && self.board['e1'] == 'K'
-          expand[:to] = 'g1' if expand[:to] == 'h1' # UCI protocol (Lichess) white king short castling
-          expand[:to] = 'c1' if expand[:to] == 'a1' # UCI protocol (Lichess) white king long castling
-        elsif expand[:from] == 'e8' && self.board['e8'] == 'k'
-          expand[:to] = 'g8' if expand[:to] == 'h8' # UCI protocol (Lichess) black king short castling
-          expand[:to] = 'c8' if expand[:to] == 'a8' # UCI protocol (Lichess) black king long castling
-        end
+        uci_to_coord = uci_castling_to_coord(expand[:from], expand[:to])
+        expand[:to] = uci_to_coord if uci_to_coord
 
         return expand
       end
@@ -179,6 +174,19 @@ module Chess
       end
 
       raise BadNotationError.new(notation)
+    end
+
+    # Support Castling notation valid in UCI (Universal Chess Interface)
+    # protocol (Lichess)
+    def uci_castling_to_coord(from, to)
+      if from == 'e1' && self.board['e1'] == 'K'
+        return 'g1' if to == 'h1' # UCI protocol (Lichess) white king short castling
+        return 'c1' if to == 'a1' # UCI protocol (Lichess) white king long castling
+      elsif from == 'e8' && self.board['e8'] == 'k'
+        return 'g8' if to == 'h8' # UCI protocol (Lichess) black king short castling
+        return 'c8' if to == 'a8' # UCI protocol (Lichess) black king long castling
+      end
+      return nil
     end
   end
 
