@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start do
   add_filter 'lib/chess/gnuchess.rb'
 end
-if ENV['CODECOV_TOKEN'].present?
+if ENV['CODECOV_TOKEN']
   require 'codecov'
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
