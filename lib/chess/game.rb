@@ -155,11 +155,10 @@ module Chess
         expand[:from] = match[2] if match[2] && match[2].size == 2
 
         # Support UCI protocol (Lichess)
-        case expand[:from]
-        when 'e1'
+        if expand[:from] == 'e1' && self.board['e1'] == 'K'
           expand[:to] = 'g1' if expand[:to] == 'h1' # UCI protocol (Lichess) white king short castling
           expand[:to] = 'c1' if expand[:to] == 'a1' # UCI protocol (Lichess) white king long castling
-        when 'e8'
+        elsif expand[:from] == 'e8' && self.board['e8'] == 'k'
           expand[:to] = 'g8' if expand[:to] == 'h8' # UCI protocol (Lichess) black king short castling
           expand[:to] = 'c8' if expand[:to] == 'a8' # UCI protocol (Lichess) black king long castling
         end

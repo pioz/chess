@@ -31,4 +31,15 @@ class UCICastrlingTest < Minitest::Test
       game.moves = %w[e4 c5 Nf3 Nc6 d4 cxd4 Nxd4 Nf6 Nc3 d6 Bg5 Qb6 Nb3 e6 Qd2 Be7 e8a8]
     end
   end
+
+  def test_github_issue_31
+    g = Chess::Game.load_fen('4Q3/8/8/8/8/8/4K3/7k w - - 0 1')
+    assert_equal 'Q', g.board['e8']
+    assert_equal 'K', g.board['e2']
+    assert_equal 'k', g.board['h1']
+    assert_equal '*', g.result
+    assert_equal :in_progress, g.status
+    g << 'e8a8' # It should not be considered as a UCI casting
+    assert_equal 'Q', g.board['a8']
+  end
 end
