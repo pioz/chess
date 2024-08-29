@@ -26,4 +26,12 @@ class ChessTest < Minitest::Test
       end
     end
   end
+
+  def test_github_issue32
+    game = Chess::Game.new
+    game.moves = %w[f2f4 d7d6 d2d3 h7h5 b1d2 e7e5 f4f5 a7a5 c2c3 d8f6 d2c4 b7b6 c4d2 a8a6 d2f3 a6a7 f3e5 b6b5 h2h4]
+    generated_moves = game.board.generate_moves('a5')
+
+    assert_equal %w[a4], generated_moves
+  end
 end

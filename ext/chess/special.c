@@ -170,12 +170,12 @@ update_en_passant (Board *board, int from, int to)
 int
 have_en_passant (Board *board, int from, int to)
 {
-  if (board->placement[from] == 'P' && to == board->en_passant
-      && (from == to - 7 || from == to - 9))
-    return to - 8;
-  else if (board->placement[from] == 'p' && to == board->en_passant
-      && (from == to + 7 || from == to + 9))
-    return to + 8;
+  if (board->placement[from] == 'P' && to == board->en_passant) {
+    return xray_attack_white_pawn(from) & (1ULL << to) ? to - 8 : 0;
+  }
+  if (board->placement[from] == 'p' && to == board->en_passant) {
+    return xray_attack_black_pawn(from) & (1ULL << to) ? to + 8 : 0;
+  }
   return 0;
 }
 
