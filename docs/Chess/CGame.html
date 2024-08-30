@@ -94,8 +94,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>ext/chess.c<span class="defines">,<br />
-  ext/chess.c</span>
+    <dd>ext/chess/chess.c<span class="defines">,<br />
+  ext/chess/chess.c</span>
 </dd>
   </dl>
   
@@ -389,7 +389,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The game result is set to &#39;1-0&#39; if <code>color</code> is <em>black</em>, otherwise is set to &#39;0-1&#39; if color is <em>white</em>.</p>
+<p>The game result is set to ‘1-0’ if <code>color</code> is <em>black</em>, otherwise is set to ‘0-1’ if color is <em>white</em>.</p>
 </div></span>
   
 </li>
@@ -611,7 +611,7 @@
 220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 210</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 210</span>
 
 VALUE
 game_boards (VALUE self, VALUE index)
@@ -691,7 +691,7 @@ game_boards (VALUE self, VALUE index)
 267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 258</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 258</span>
 
 VALUE
 game_coord_moves (VALUE self)
@@ -771,7 +771,7 @@ game_coord_moves (VALUE self)
 234</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 228</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 228</span>
 
 VALUE
 game_current_board (VALUE self)
@@ -845,7 +845,7 @@ game_current_board (VALUE self)
 202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 195</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 195</span>
 
 VALUE
 game_draw (VALUE self)
@@ -964,7 +964,7 @@ game_draw (VALUE self)
 353</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 339</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 339</span>
 
 VALUE
 game_each (VALUE self)
@@ -1032,7 +1032,7 @@ game_each (VALUE self)
 278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 273</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 273</span>
 
 VALUE
 game_full_moves (VALUE self)
@@ -1093,7 +1093,7 @@ game_full_moves (VALUE self)
       
         &mdash;
         <div class='inline'>
-<p>The character of the moving piece <em>(&#39;P&#39;, &#39;R&#39;, &#39;N&#39;, &#39;B&#39;, &#39;Q&#39;, &#39;K&#39;)</em>.</p>
+<p>The character of the moving piece <em>(‘P’, ‘R’, ‘N’, ‘B’, ‘Q’, ‘K’)</em>.</p>
 </div>
       
     </li>
@@ -1109,13 +1109,13 @@ game_full_moves (VALUE self)
       
         &mdash;
         <div class='inline'>
-<p>When two (or more) identical pieces can move to the same square, the moving piece is uniquely identified by specifying the piece&#39;s letter, followed by (in descending order of preference):</p>
+<p>When two (or more) identical pieces can move to the same square, the moving piece is uniquely identified by specifying the piece’s letter, followed by (in descending order of preference):</p>
 <ul><li>
 <p>the file of departure (if they differ);</p>
 </li><li>
 <p>the rank of departure (if the files are the same but the ranks differ);</p>
 </li><li>
-<p>both the rank and file (if neither alone is sufficient to identify the  piece—which occurs only in rare cases where one or more pawns have  promoted, resulting in a player having three or more identical pieces  able to reach the same square). Keep <code>nil</code> if no needed.</p>
+<p>both the rank and file (if neither alone is sufficient to identify the piece—which occurs only in rare cases where one or more pawns have promoted, resulting in a player having three or more identical pieces able to reach the same square). Keep <code>nil</code> if no needed.</p>
 </li></ul>
 </div>
       
@@ -1132,7 +1132,7 @@ game_full_moves (VALUE self)
       
         &mdash;
         <div class='inline'>
-<p>The square where the moving piece will <em>(&#39;a1&#39;, &#39;a2&#39;, … , &#39;h7&#39;, &#39;h8&#39;)</em>.</p>
+<p>The square where the moving piece will <em>(‘a1’, ‘a2’, … , ‘h7’, ‘h8’)</em>.</p>
 </div>
       
     </li>
@@ -1148,7 +1148,7 @@ game_full_moves (VALUE self)
       
         &mdash;
         <div class='inline'>
-<p>The character of promotion piece <em>(&#39;R&#39;, &#39;N&#39;, &#39;B&#39;, &#39;Q&#39;)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>&#39;Q&#39;</em> is the default.</p>
+<p>The character of promotion piece <em>(‘R’, ‘N’, ‘B’, ‘Q’)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>‘Q’</em> is the default.</p>
 </div>
       
     </li>
@@ -1217,7 +1217,7 @@ game_full_moves (VALUE self)
 89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 71</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 71</span>
 
 VALUE
 game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coord, VALUE rb_promote_in)
@@ -1291,7 +1291,7 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
       
         &mdash;
         <div class='inline'>
-<p>The 2 character string representing the starting square of the moving piece <em>(&#39;a1&#39;, &#39;a2&#39;, … , &#39;h7&#39;, &#39;h8&#39;)</em>.</p>
+<p>The 2 character string representing the starting square of the moving piece <em>(‘a1’, ‘a2’, … , ‘h7’, ‘h8’)</em>.</p>
 </div>
       
     </li>
@@ -1307,7 +1307,7 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
       
         &mdash;
         <div class='inline'>
-<p>The 2 character string representing the ending square of the moving piece <em>(&#39;a1&#39;, &#39;a2&#39;, … , &#39;h7&#39;, &#39;h8&#39;)</em>.</p>
+<p>The 2 character string representing the ending square of the moving piece <em>(‘a1’, ‘a2’, … , ‘h7’, ‘h8’)</em>.</p>
 </div>
       
     </li>
@@ -1323,7 +1323,7 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
       
         &mdash;
         <div class='inline'>
-<p>The character of promotion piece <em>(&#39;R&#39;, &#39;N&#39;, &#39;B&#39;, &#39;Q&#39;)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>&#39;Q&#39;</em> is the default.</p>
+<p>The character of promotion piece <em>(‘R’, ‘N’, ‘B’, ‘Q’)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>‘Q’</em> is the default.</p>
 </div>
       
     </li>
@@ -1387,7 +1387,7 @@ game_move (VALUE self, VALUE rb_piece, VALUE rb_disambiguating, VALUE rb_to_coor
 119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 106</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 106</span>
 
 VALUE
 game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
@@ -1500,7 +1500,7 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
       
         &mdash;
         <div class='inline'>
-<p>The character of promotion piece <em>(&#39;R&#39;, &#39;N&#39;, &#39;B&#39;, &#39;Q&#39;)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>&#39;Q&#39;</em> is the default.</p>
+<p>The character of promotion piece <em>(‘R’, ‘N’, ‘B’, ‘Q’)</em>. If not <code>nil</code> and no promotion occured raise an <span class='object_link'><a href="IllegalMoveError.html" title="Chess::IllegalMoveError (class)">IllegalMoveError</a></span>. If <code>nil</code>, <em>‘Q’</em> is the default.</p>
 </div>
       
     </li>
@@ -1564,7 +1564,7 @@ game_move2 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
 163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 150</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 150</span>
 
 VALUE
 game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
@@ -1647,7 +1647,7 @@ game_move3 (VALUE self, VALUE rb_from, VALUE rb_to, VALUE rb_promote_in)
 250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 241</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 241</span>
 
 VALUE
 game_moves (VALUE self)
@@ -1684,7 +1684,7 @@ game_moves (VALUE self)
   <div class="docstring">
   <div class="discussion">
     
-<p>The game result is set to &#39;1-0&#39; if <code>color</code> is <em>black</em>, otherwise is set to &#39;0-1&#39; if color is <em>white</em>.</p>
+<p>The game result is set to ‘1-0’ if <code>color</code> is <em>black</em>, otherwise is set to ‘0-1’ if color is <em>white</em>.</p>
 
 
   </div>
@@ -1752,7 +1752,7 @@ game_moves (VALUE self)
 188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 173</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 173</span>
 
 VALUE
 game_resign (VALUE self, VALUE color)
@@ -1851,7 +1851,7 @@ game_resign (VALUE self, VALUE color)
 315</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 306</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 306</span>
 
 VALUE
 game_result (VALUE self)
@@ -1933,7 +1933,7 @@ game_result (VALUE self)
 367</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 360</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 360</span>
 
 VALUE
 game_rollback (VALUE self)
@@ -2033,7 +2033,7 @@ game_rollback (VALUE self)
 43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 36</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 36</span>
 
 VALUE
 game_set_fen (VALUE self, VALUE fen)
@@ -2107,7 +2107,7 @@ game_set_fen (VALUE self, VALUE fen)
 328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 322</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 322</span>
 
 VALUE
 game_size (VALUE self)
@@ -2183,7 +2183,7 @@ game_size (VALUE self)
 294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 285</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 285</span>
 
 VALUE
 game_threefold_repetition (VALUE self)
@@ -2263,7 +2263,7 @@ game_threefold_repetition (VALUE self)
 384</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 374</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 374</span>
 
 VALUE
 game_to_s (VALUE self)
@@ -2286,9 +2286,9 @@ game_to_s (VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Thu Jan 28 17:31:41 2021 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.6.1).
+  Generated on Fri Aug 30 11:09:51 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.2).
 </div>
 
     </div>

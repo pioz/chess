@@ -94,8 +94,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>ext/chess.c<span class="defines">,<br />
-  ext/chess.c</span>
+    <dd>ext/chess/chess.c<span class="defines">,<br />
+  ext/chess/chess.c</span>
 </dd>
   </dl>
   
@@ -266,6 +266,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns the fullmove number: the number of the full move.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_all_moves-instance_method" title="#generate_all_moves (instance method)">#<strong>generate_all_moves</strong>  &#x21d2; Array&lt;String&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate all legal moves for the current board position.</p>
 </div></span>
   
 </li>
@@ -524,7 +548,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string like &#39;a2&#39;, &#39;c5&#39;…</p>
+<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string like ‘a2’, ‘c5’…</p>
 </div>
       
     </li>
@@ -543,7 +567,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The symbol that identify the piece <em>(&#39;P&#39;, &#39;R&#39;, &#39;N&#39;, &#39;B&#39;, &#39;Q&#39;, &#39;K&#39;)</em>. Upcase for a white piece, downcase for a black piece.</p>
+<p>The symbol that identify the piece <em>(‘P’, ‘R’, ‘N’, ‘B’, ‘Q’, ‘K’)</em>. Upcase for a white piece, downcase for a black piece.</p>
 </div>
       
     </li>
@@ -577,7 +601,7 @@
 461</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 446</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 446</span>
 
 VALUE
 board_get_piece (VALUE self, VALUE square)
@@ -662,7 +686,7 @@ board_get_piece (VALUE self, VALUE square)
 574</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 565</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 565</span>
 
 VALUE
 board_active_color (VALUE self)
@@ -741,7 +765,7 @@ board_active_color (VALUE self)
 477</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 468</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 468</span>
 
 VALUE
 board_king_in_check (VALUE self)
@@ -820,7 +844,7 @@ board_king_in_check (VALUE self)
 493</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 484</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 484</span>
 
 VALUE
 board_king_in_checkmate (VALUE self)
@@ -899,7 +923,7 @@ board_king_in_checkmate (VALUE self)
 557</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 548</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 548</span>
 
 VALUE
 board_fifty_move_rule (VALUE self)
@@ -936,7 +960,7 @@ board_fifty_move_rule (VALUE self)
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns the fullmove number: the number of the full move. It starts at 1, and * is incremented after black&#39;s move.</p>
+<p>Returns the fullmove number: the number of the full move. It starts at 1, and * is incremented after black’s move.</p>
 
 
   </div>
@@ -975,7 +999,7 @@ board_fifty_move_rule (VALUE self)
 603</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 597</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 597</span>
 
 VALUE
 board_fullmove_number (VALUE self)
@@ -983,6 +1007,119 @@ board_fullmove_number (VALUE self)
   Board *board;
   Data_Get_Struct (self, Board, board);
   return INT2FIX (board-&gt;fullmove_number);
+}</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_all_moves-instance_method">
+  
+    #<strong>generate_all_moves</strong>  &#x21d2; <tt>Array&lt;String&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Generate all legal moves for the current board position.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>:001 &gt; g = Chess::Game.new
+ =&gt; #&lt;Chess::Game:0x007f88a529fa88&gt;
+:002 &gt; g.board.generate_all_moves
+ =&gt; [&quot;Na3&quot;, &quot;Nc3&quot;, &quot;Nf3&quot;, &quot;Nh3&quot;, &quot;a3&quot;, &quot;a4&quot;, &quot;b3&quot;, &quot;b4&quot;, &quot;c3&quot;, &quot;c4&quot;, &quot;d3&quot;, &quot;d4&quot;, &quot;e3&quot;, &quot;e4&quot;, &quot;f3&quot;, &quot;f4&quot;, &quot;g3&quot;, &quot;g4&quot;, &quot;h3&quot;, &quot;h4&quot;]</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns all legal moves that can be performed in the current board position. The moves are in short algebraic chess notation format.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 655</span>
+
+VALUE
+board_generate_all_moves (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  VALUE moves = rb_ary_new ();
+  Board new_board;
+  char *move_done;
+  char capture;
+  for (int i = 0; i &lt; 64; i++)
+    for (int j = 0; j &lt; 64; j++)
+      if (pseudo_legal_move (board, i, j))
+        {
+          move_done = castling (board, castling_type (board, i, j), &amp;new_board);
+          if (move_done || try_move (board, i, j, &#39;Q&#39;, &amp;new_board, &amp;move_done, &amp;capture))
+            rb_ary_push (moves, rb_str_new2 (move_done));
+        }
+  return moves;
 }</pre>
     </td>
   </tr>
@@ -1040,7 +1177,7 @@ board_fullmove_number (VALUE self)
       
         &mdash;
         <div class='inline'>
-<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string like &#39;a2&#39;, &#39;c5&#39;…</p>
+<p>The square of the <span class='object_link'><a href="" title="Chess::Board (class)">Chess::Board</a></span>. Can be an integer between 0 and 63 or a string like ‘a2’, ‘c5’…</p>
 </div>
       
     </li>
@@ -1100,7 +1237,7 @@ board_fullmove_number (VALUE self)
 641</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 619</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 619</span>
 
 VALUE
 board_generate_moves (VALUE self, VALUE square)
@@ -1189,7 +1326,7 @@ board_generate_moves (VALUE self, VALUE square)
 589</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 583</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 583</span>
 
 VALUE
 board_halfmove_clock (VALUE self)
@@ -1265,7 +1402,7 @@ board_halfmove_clock (VALUE self)
 525</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 516</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 516</span>
 
 VALUE
 board_insufficient_material (VALUE self)
@@ -1344,7 +1481,7 @@ board_insufficient_material (VALUE self)
 541</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 532</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 532</span>
 
 VALUE
 board_only_kings (VALUE self)
@@ -1475,7 +1612,7 @@ board_only_kings (VALUE self)
 421</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 397</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 397</span>
 
 VALUE
 board_placement (VALUE self)
@@ -1569,7 +1706,7 @@ board_placement (VALUE self)
 509</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 500</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 500</span>
 
 VALUE
 board_stalemate (VALUE self)
@@ -1636,19 +1773,19 @@ board_stalemate (VALUE self)
       <pre class="lines">
 
 
-648
-649
-650
-651
-652
-653
-654
-655
-656
-657</pre>
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 648</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 680</span>
 
 VALUE
 board_to_fen (VALUE self)
@@ -1715,19 +1852,19 @@ board_to_fen (VALUE self)
       <pre class="lines">
 
 
-664
-665
-666
-667
-668
-669
-670
-671
-672
-673</pre>
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'ext/chess.c', line 664</span>
+      <pre class="code"><span class="info file"># File 'ext/chess/chess.c', line 696</span>
 
 VALUE
 board_to_s (VALUE self)
@@ -1749,9 +1886,9 @@ board_to_s (VALUE self)
 </div>
 
       <div id="footer">
-  Generated on Thu Jan 28 17:31:41 2021 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.6.1).
+  Generated on Fri Aug 30 11:09:51 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.36 (ruby-3.3.2).
 </div>
 
     </div>
