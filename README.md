@@ -34,7 +34,7 @@ end
 puts g.status
 ```
 
-**Documentation** is available **[here](http://pioz.github.io/chess)**.
+📚 **Documentation** is available [here](https://pioz.github.io/chess).
 
 ## Questions or problems?
 
@@ -44,5 +44,5 @@ pull request.
 
 ## Copyright
 
-Copyright (c) 2021 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
+Copyright (c) 2024 [Enrico Pilotto (@pioz)](https://github.com/pioz). See
 [LICENSE](https://github.com/pioz/chess/blob/master/LICENSE) for details.

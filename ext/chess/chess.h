@@ -42,6 +42,7 @@ VALUE board_active_color (VALUE self);
 VALUE board_halfmove_clock (VALUE self);
 VALUE board_fullmove_number (VALUE self);
 VALUE board_generate_moves (VALUE self, VALUE square);
+VALUE board_generate_all_moves (VALUE self);
 VALUE board_to_fen (VALUE self);
 VALUE board_to_s (VALUE self);
 

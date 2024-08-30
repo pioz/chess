@@ -641,6 +641,38 @@ board_generate_moves (VALUE self, VALUE square)
 }
 
 /*
+ * @overload generate_all_moves
+ *   Generate all legal moves for the current board position.
+ *   @return [Array<String>] Returns all legal moves that can be performed
+ *     in the current board position. The moves are in short algebraic chess
+ *     notation format.
+ *   @example
+ *     :001 > g = Chess::Game.new
+ *      => #<Chess::Game:0x007f88a529fa88>
+ *     :002 > g.board.generate_all_moves
+ *      => ["Na3", "Nc3", "Nf3", "Nh3", "a3", "a4", "b3", "b4", "c3", "c4", "d3", "d4", "e3", "e4", "f3", "f4", "g3", "g4", "h3", "h4"]
+ */
+VALUE
+board_generate_all_moves (VALUE self)
+{
+  Board *board;
+  Data_Get_Struct (self, Board, board);
+  VALUE moves = rb_ary_new ();
+  Board new_board;
+  char *move_done;
+  char capture;
+  for (int i = 0; i < 64; i++)
+    for (int j = 0; j < 64; j++)
+      if (pseudo_legal_move (board, i, j))
+        {
+          move_done = castling (board, castling_type (board, i, j), &new_board);
+          if (move_done || try_move (board, i, j, 'Q', &new_board, &move_done, &capture))
+            rb_ary_push (moves, rb_str_new2 (move_done));
+        }
+  return moves;
+}
+
+/*
  * @overload to_fen
  *   Returns the FEN string of the board.
  *   @return [String]
@@ -729,6 +761,7 @@ Init_chess ()
   rb_define_method (board_klass, "halfmove_clock", board_halfmove_clock, 0);
   rb_define_method (board_klass, "fullmove_number", board_fullmove_number, 0);
   rb_define_method (board_klass, "generate_moves", board_generate_moves, 1);
+  rb_define_method (board_klass, "generate_all_moves", board_generate_all_moves, 0);
   rb_define_method (board_klass, "to_fen", board_to_fen, 0);
   rb_define_method (board_klass, "to_s", board_to_s, 0);
 
