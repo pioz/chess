@@ -83,6 +83,7 @@ current_coord_move (Game *g)
 bool
 apply_move (Game *g, int from, int to, char promote_in)
 {
+  if (g->current >= BUFFER_SIZE) return FALSE;
   if (g->result != IN_PROGRESS && g->result != DRAW) return FALSE;
   Board *board = current_board (g);
   if (promote_in && invalid_promotion (board, from, to)) return FALSE;
@@ -330,6 +331,12 @@ set_fen (Game *g, const char *fen)
       pch = strtok (NULL, " /");
     }
   set_occupied (board);
+  if (g->current >= BUFFER_SIZE)
+    {
+      free (board);
+      free (s);
+      return;
+    }
   g->boards[g->current] = board;
   g->moves[g->current] = (char *) malloc (11);
   g->coord_moves[g->current] = (char *) malloc (11);
