@@ -573,7 +573,9 @@ char*
 to_fen (Board *board)
 {
   // 1. Placement
-  char placement[65];
+  // Max legal length is 71: 8 ranks * 8 piece chars (no empty-square
+  // digits) + 7 slashes. Plus a NUL terminator = 72 bytes.
+  char placement[72];
   int cur = 0;
   char p, pp = '-';
   for (int i = 7; i >= 0; i--)
@@ -633,7 +635,10 @@ to_fen (Board *board)
   // > board->fullmove_number
 
   // join all in fen string
-  char *fen = (char *) malloc (80);
+  // Max size: 71 placement + 1 space + 1 active + 1 space + 4 castling
+  // + 1 space + 2 ep + 1 space + 10 halfmove + 1 space + 10 fullmove
+  // + 1 NUL = 104.
+  char *fen = (char *) malloc (104);
   sprintf (fen, "%s %c %s %s %d %d", placement, active_color, castling, ep, board->halfmove_clock, board->fullmove_number);
 
   free (castling);
