@@ -94,7 +94,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  bundler (= 2.7.2)
+  bundler (< 2.5)
   chess!
   codecov
   debug
@@ -108,4 +108,4 @@ DEPENDENCIES
   yard (>= 0.9.20)
 
 BUNDLED WITH
-  2.7.2
+  2.4.22

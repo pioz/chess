@@ -7,7 +7,7 @@ A fast Ruby gem to play chess with Ruby. This library is quite fast because mana
 
 ## Requirements
 
-- Ruby 2.5 or higher
+- Ruby 2.7 or higher
 
 ## Installation
 

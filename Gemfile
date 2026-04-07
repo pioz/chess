@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 # Specify your gem's dependencies in chess.gemspec
 gemspec
 
-gem 'bundler', '2.7.2' # working with ruby 2.7+
+gem 'bundler', '< 2.5' # required for ruby 2.7
 gem 'codecov'
 gem 'debug'
 gem 'minitest'

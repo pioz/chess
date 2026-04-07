@@ -68,8 +68,8 @@ module Chess
       game_index = fen.index(/^1\./)
       raise Chess::InvalidPgnFormatError.new if game_index.nil?
 
-      game = fen[game_index..-1].strip
-      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].map(&:split).flatten
+      game = fen[game_index..].strip
+      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..].map(&:split).flatten
       @moves.delete_at(@moves.size - 1) if @moves.last.match?(/(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/)
       @moves.each do |m|
         raise Chess::InvalidPgnFormatError.new if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
