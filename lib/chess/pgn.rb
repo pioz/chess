@@ -60,15 +60,15 @@ module Chess
     # @raise [InvalidPgnFormatError]
     # @raise [IllegalMoveError]
     def load_from_string(str, check_moves: false)
-      fen_without_comments = str.gsub(/\{.*?\}/, '') # remove comments
+      fen = str.gsub(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
-        instance_variable_set(:"@#{t}", fen_without_comments.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
+        instance_variable_set(:"@#{t}", fen.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[(t.size + 3)..-3])
       end
       @result = '1/2-1/2' if @result == '1/2'
-      game_index = fen_without_comments.index(/^1\./)
+      game_index = fen.index(/^1\./)
       raise Chess::InvalidPgnFormatError.new if game_index.nil?
 
-      game = fen_without_comments[game_index..-1].strip
+      game = fen[game_index..-1].strip
       @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].map(&:split).flatten
       @moves.delete_at(@moves.size - 1) if @moves.last.match?(/(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/)
       @moves.each do |m|

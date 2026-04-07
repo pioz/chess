@@ -633,7 +633,7 @@ to_fen (Board *board)
   // > board->fullmove_number
 
   // join all in fen string
-  char *fen = (char *) malloc (80);
+  char *fen = (char *) malloc (104); // Max size: 71 placement + 1 space + 1 active + 1 space + 4 castling + 1 space + 2 ep + 1 space + 10 halfmove + 1 space + 10 fullmove + 1 NUL = 104.
   sprintf (fen, "%s %c %s %s %d %d", placement, active_color, castling, ep, board->halfmove_clock, board->fullmove_number);
 
   free (castling);
