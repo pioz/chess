@@ -152,7 +152,7 @@ threefold_repetition (Game *g)
 {
   if (g->current < 6) // Minimum moves to get a threefold repetition
     return FALSE;
-  char placement[65];
+  char placement[72]; // 8 * 8 + 7 (slash separators) + 1 (null terminator)
   char turn;
   char *fen, *castling, *ep;
   char* s[g->current + 1];

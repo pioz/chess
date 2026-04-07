@@ -48,6 +48,13 @@ class ChessTest < Minitest::Test
     assert_equal '2b1kbnr/rpq1pp1p/2n3p1/8/3Q4/2P5/PP3PPP/RN1K1BNR b k - 1 9', g.board.to_fen
   end
 
+  def test_fen_long_placement_no_overflow
+    # Issue #35: placement strings >= 65 chars caused a stack buffer overflow
+    g = Chess::Game.load_fen('r2q1rk1/1pp2pp1/p1np1n1p/2b1p3/2B1P1b1/P1NP1N2/1PP1QPPP/R1B1R1K1 w - - 2 10')
+    g.move('h2h3')
+    assert_equal 'r2q1rk1/1pp2pp1/p1np1n1p/2b1p3/2B1P1b1/P1NP1N1P/1PP1QPP1/R1B1R1K1 b - - 0 10', g.board.to_fen
+  end
+
   def test_fen_castling_to
     g = Chess::Game.load_fen('2b1kbnr/rpq1pp1p/2n3p1/8/3Q4/2P5/PP3PPP/RN2KBNR w KQk - 0 9')
     g.move('Qh8')

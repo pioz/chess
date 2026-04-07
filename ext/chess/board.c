@@ -573,7 +573,7 @@ char*
 to_fen (Board *board)
 {
   // 1. Placement
-  char placement[65];
+  char placement[72]; // 8 * 8 + 7 (slash separators) + 1 (null terminator)
   int cur = 0;
   char p, pp = '-';
   for (int i = 7; i >= 0; i--)

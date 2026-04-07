@@ -5,7 +5,7 @@
 .yardoc/
 coverage/
 ext/chess/Makefile
-ext/chess/*.bundle
+ext/chess/*.bundle*
 ext/chess/*.o
 lib/chess/chess.bundle
 main.rb
