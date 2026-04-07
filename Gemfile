@@ -4,7 +4,6 @@ source 'http://rubygems.org'
 gemspec
 
 gem 'bundler'
-gem 'codecov'
 gem 'debug'
 gem 'minitest'
 gem 'rake'
@@ -13,4 +12,5 @@ gem 'rubocop-minitest'
 gem 'rubocop-performance'
 gem 'rubocop-rake'
 gem 'simplecov'
+gem 'simplecov-cobertura'
 gem 'yard', '>= 0.9.20'

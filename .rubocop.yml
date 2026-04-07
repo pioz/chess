@@ -1,11 +1,11 @@
-require:
+plugins:
   - rubocop-minitest
   - rubocop-performance
   - rubocop-rake
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.4
 
 Layout/LineLength:
   Enabled: false

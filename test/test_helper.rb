@@ -1,10 +1,8 @@
 require 'simplecov'
+require 'simplecov-cobertura'
+SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter if ENV['CI']
 SimpleCov.start do
   add_filter 'lib/chess/gnuchess.rb'
-end
-if ENV['CODECOV_TOKEN']
-  require 'codecov'
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
 require 'chess'

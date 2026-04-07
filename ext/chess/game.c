@@ -152,11 +152,11 @@ threefold_repetition (Game *g)
 {
   if (g->current < 6) // Minimum moves to get a threefold repetition
     return FALSE;
-  char placement[65];
+  char placement[72]; // 8 * 8 + 7 (slash separators) + 1 (null terminator)
   char turn;
   char *fen, *castling, *ep;
   char* s[g->current + 1];
-  s[0] = (char *) malloc (80);
+  s[0] = (char *) malloc (104); // Max size: 71 placement + 1 space + 1 active + 1 space + 4 castling + 1 space + 2 ep + 1 space + 10 halfmove + 1 space + 10 fullmove + 1 NUL = 104.
   strcpy (s[0], "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -");
   bool found = FALSE;
   int i, j;
@@ -166,7 +166,7 @@ threefold_repetition (Game *g)
       for (j = 0; fen[j] != ' '; j++)
         placement[j] = fen[j];
       placement[j] = '\0';
-      s[i+1] = (char *) malloc (80);
+      s[i+1] = (char *) malloc (104);
       turn = g->boards[i]->active_color ? 'b' : 'w';
       castling = castling_to_s (g->boards[i]->castling);
       ep = en_passant_to_s (g->boards[i]->en_passant);

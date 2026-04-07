@@ -60,16 +60,16 @@ module Chess
     # @raise [InvalidPgnFormatError]
     # @raise [IllegalMoveError]
     def load_from_string(str, check_moves: false)
-      str.gsub!(/\{.*?\}/, '') # remove comments
+      fen = str.gsub(/\{.*?\}/, '') # remove comments
       TAGS.each do |t|
-        instance_variable_set(:"@#{t}", str.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[t.size + 3..-3])
+        instance_variable_set(:"@#{t}", fen.match(/^\[#{t.capitalize} ".*"\]\s?$/).to_s.strip[(t.size + 3)..-3])
       end
       @result = '1/2-1/2' if @result == '1/2'
-      game_index = str.index(/^1\./)
+      game_index = fen.index(/^1\./)
       raise Chess::InvalidPgnFormatError.new if game_index.nil?
 
-      game = str[game_index..-1].strip
-      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..-1].map(&:split).flatten
+      game = fen[game_index..].strip
+      @moves = game.tr("\n", ' ').split(/\d+\./).collect(&:strip)[1..].map(&:split).flatten
       @moves.delete_at(@moves.size - 1) if @moves.last.match?(/(0-1)|(1-0)|(1\/2)|(1\/2-1\/2)|(\*)/)
       @moves.each do |m|
         raise Chess::InvalidPgnFormatError.new if m !~ MOVE_REGEXP && m !~ SHORT_CASTLING_REGEXP && m !~ LONG_CASTLING_REGEXP
@@ -80,19 +80,20 @@ module Chess
 
     # PGN to string.
     def to_s
-      s = ''
+      s = []
       TAGS.each do |t|
         tag = instance_variable_defined?(:"@#{t}") ? instance_variable_get(:"@#{t}") : ''
         s << "[#{t.capitalize} \"#{tag}\"]\n"
       end
       s << "\n"
-      m = ''
+      m = []
       @moves.each_with_index do |move, i|
         m << "#{(i / 2) + 1}. " if i.even?
         m << "#{move} "
       end
       m << @result unless @result.nil?
-      s << m.gsub(/(.{1,78})(?: +|$)\n?|(.{78})/, "\\1\\2\n")
+      s << m.join.gsub(/(.{1,78})(?: +|$)\n?|(.{78})/, "\\1\\2\n")
+      return s.join
     end
 
     # Write PGN to file.
