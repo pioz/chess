@@ -7,8 +7,9 @@ GEM
   remote: http://rubygems.org/
   specs:
     ast (2.4.3)
-    codecov (0.6.0)
-      simplecov (>= 0.15, < 0.22)
+    codecov (0.2.12)
+      json
+      simplecov
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -75,7 +76,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1)
     ruby-progressbar (1.13.0)
-    simplecov (0.21.2)
+    simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
@@ -90,8 +91,7 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-darwin-18
-  x86_64-darwin-19
+  arm64-darwin-24
 
 DEPENDENCIES
   bundler (< 2.5)
@@ -108,4 +108,4 @@ DEPENDENCIES
   yard (>= 0.9.20)
 
 BUNDLED WITH
-  2.4.22
+   2.4.22
