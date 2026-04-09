@@ -9,6 +9,14 @@ YARD::Rake::YardocTask.new do |t|
   t.options << '--output-dir=docs'
 end
 
+# require 'rdoc/task'
+# RDoc::Task.new(:rdoc) do |rd|
+#   rd.rdoc_dir = 'rdoc'
+#   rd.rdoc_files.include('lib/**/*.rb', 'ext/**/*.c', 'README.md')
+#   rd.title = 'Chess'
+#   rd.main = 'README.md'
+# end
+
 require 'rake/testtask'
 task default: :test
 Rake::TestTask.new do |test|
