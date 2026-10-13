@@ -36,6 +36,7 @@ jobs:
       - name: Run tests
         run: bundle exec rake test
       - name: Upload coverage to Codecov
+        if: matrix.ruby-version == '4.0'
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -46,11 +47,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'
+          ruby-version: '4.0'
           bundler-cache: true
       - name: Run Rubocop
         run: bundle exec rubocop
