@@ -40,7 +40,8 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+          # Secrets are not available on pull requests from forks: tokenless upload is best-effort
+          fail_ci_if_error: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
 
   rubocop:
     runs-on: ubuntu-latest
