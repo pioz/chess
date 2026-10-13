@@ -15,10 +15,12 @@
 
 // Boolean definition
 
-#ifndef RUBY_BACKWARD2_BOOL_H
+#include <stdbool.h>
+#ifndef FALSE
 #define FALSE 0
+#endif
+#ifndef TRUE
 #define TRUE 1
-typedef unsigned short bool;
 #endif
 
 // Macros
