@@ -1,6 +1,9 @@
+require 'bundler/setup'
 require 'simplecov'
-require 'simplecov-cobertura'
-SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter if ENV['CI']
+if ENV['CI']
+  require 'simplecov-cobertura'
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+end
 SimpleCov.start do
   add_filter 'lib/chess/gnuchess.rb'
 end
