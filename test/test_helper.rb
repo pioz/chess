@@ -5,7 +5,7 @@ if ENV['CI']
   SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
 SimpleCov.start do
-  add_filter 'lib/chess/gnuchess.rb'
+  skip 'lib/chess/gnuchess.rb'
 end
 
 require 'chess'
